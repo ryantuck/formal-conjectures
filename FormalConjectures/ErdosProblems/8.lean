@@ -29,21 +29,24 @@ namespace Erdos8
 open scoped BigOperators
 
 /--
-Does there exist a covering system of congruences with distinct moduli such that all moduli are
-odd and square-free?
+For any finite colouring of the integers, is there a covering system all of whose moduli are
+monochromatic?
 
-The answer is known to be negative.
-Proved by Balister, Bollobás, Morris, Sahasrabudhe, and Tiba [BBMST22].
+Erdős and Graham also asked a density-type version: for example, is
+$$ \sum_{a \in A, a > N} \frac{1}{a} \gg \log N $$
+a sufficient condition for $A$ to contain the moduli of a covering system?
 
-[BBMST22] Balister, P., Bollobás, B., Morris, R., Sahasrabudhe, J., and Tiba, M.,
-_On the j-th smallest modulus of a covering system with distinct moduli_.
-Geometry & Topology (2022), 26(2), 509-561.
+The answer (to both colouring and density versions) is negative, due to the result of
+Hough [Ho15] on the minimum size of a modulus in a covering system.
+
+[Ho15] R. Hough, _Solution of the minimum modulus problem for covering systems_.
+Annals of Mathematics (2015), 181(1), 361-382.
 -/
 @[category research solved, AMS 11]
-theorem erdos_8 : answer(False) ↔ ∃ (c : StrictCoveringSystem ℤ),
-    (∀ i, (Submodule.IsPrincipal.generator (c.moduli i)).natAbs % 2 = 1) ∧
-    (∀ i, (Submodule.IsPrincipal.generator (c.moduli i)).natAbs > 1) ∧
-    (∀ i, Squarefree (Submodule.IsPrincipal.generator (c.moduli i)).natAbs) := by
+theorem erdos_8 : answer(False) ↔ ∀ (C : Type*) [Fintype C] (f : ℕ → C),
+    ∃ (c : StrictCoveringSystem ℤ), ∀ i j,
+      f (Submodule.IsPrincipal.generator (c.moduli i)).natAbs =
+      f (Submodule.IsPrincipal.generator (c.moduli j)).natAbs := by
   sorry
 
 end Erdos8

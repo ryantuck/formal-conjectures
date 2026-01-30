@@ -7,15 +7,15 @@ Formalize Erdős Problem 8 in `FormalConjectures/ErdosProblems/8.lean`.
 
 ## Process
 1.  **Identification:**
-    - Problem 8 in `erdos-problems-data.yaml` is tagged with "number theory", "covering systems" and "disproved".
-    - Identified as the **Odd Square-free Covering Problem**: "Does there exist a covering system with distinct odd square-free moduli?"
-    - Confirmed via external search and HTML content of Problem 7 (which referenced this as a stronger variant asked by Erdős and Selfridge, disproved by Balister et al.).
+    - Used content from `erdos-problems-html/8.html` to confirm the problem statement.
+    - Identified as the **Erdős-Graham Monochromatic Covering Problem**: "For any finite colouring of the integers is there a covering system all of whose moduli are monochromatic?"
+    - Status is "disproved" based on Hough's result [Ho15] (minimum modulus of any strict covering system is bounded).
 
 2.  **Implementation:**
     - Created `FormalConjectures/ErdosProblems/8.lean`.
-    - Defined `erdos_8` as the existence of a `StrictCoveringSystem ℤ` with distinct odd square-free moduli > 1.
-    - Used `answer(False)` as it is disproved.
-    - Cited Balister et al. [BBMST22].
+    - Defined `erdos_8` as the question: for any finite coloring `f : ℕ → C`, does there exist a `StrictCoveringSystem ℤ` such that all moduli have the same color under `f`.
+    - Used `answer(False)` as the conjecture is disproved.
+    - Cited Hough [Ho15].
 
 3.  **Metadata Update:**
     - Updated `erdos-problems-data.yaml`:
