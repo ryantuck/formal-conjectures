@@ -4,3 +4,6 @@
 .cache
 # `lake` stores its files here:
 .lake
+
+erdos-problems-data.yaml
+erdos-problems-html/
