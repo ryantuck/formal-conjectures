@@ -17,6 +17,7 @@ Formalize Erdős Problem 32 in `FormalConjectures/ErdosProblems/32.lean`.
     - Defined `erdos_32` as the existence of such a set with logarithmic growth.
     - Added `erdos_32.variants.liminf` for the necessary lower bound condition.
     - Used `Real.eulerMascheroniConstant`.
+    - Fixed issues with `n!` syntax (used `n.factorial`) and `Real.gamma` (used `eulerMascheroniConstant`).
 
 3.  **Verification:**
     - Successfully built `FormalConjectures/ErdosProblems/32.lean`.
