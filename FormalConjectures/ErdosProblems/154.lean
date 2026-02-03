@@ -1,9 +1,8 @@
-
 /- Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+you may obtain a copy of the License at
 
     https://www.apache.org/licenses/LICENSE-2.0
 
@@ -19,7 +18,7 @@ import FormalConjectures.Util.ProblemImports
 /-! # Erdős Problem 154
 
 *Reference:* [erdosproblems.com/154](https://www.erdosproblems.com/154)
--/ 
+-/
 
 open Filter Set Finset Asymptotics Topology
 
@@ -41,7 +40,7 @@ It is noted that this property for $A+A$ follows immediately using the Sidon pro
 [Ko99] M. N. Kolountzakis, "The density of Sidon sets and the distribution of their sums", Acta Arith. 89 (1999), 115–127.
 -/ 
 @[category research solved, AMS 11] 
-theorem erdos_154 :
+theorem erdos_154 : answer(True) ↔
     ∀ (m : ℕ) (r : ℕ), m > 0 → r < m →
     ∀ (A : ℕ → Finset ℕ),
     (∀ N, A N ⊆ Icc 1 N) →
