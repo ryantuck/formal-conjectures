@@ -2,30 +2,40 @@
 
 ## Problem Statement
 
-Is there an entire non-linear function $f$ such that, for all $x \in \mathbb{R}$, $x$ is rational if and only if $f(x)$ is?
+Is there an entire non-linear function $f$ such that, for all $x\in\mathbb{R}$, $x$ is rational if and only if $f(x)$ is?
 
 ## Status
 
-**SOLVED** (Yes, such functions exist)
+**PROVED** (Yes, such functions exist) - Verified in Lean
+
+## Key Results
+
+- **Barth and Schneider [BaSc70]**: Proved that if $A,B\subset\mathbb{R}$ are countable dense sets, then there exists a transcendental entire function $f$ such that $f(z)\in B$ if and only if $z\in A$
+- **Extension [BaSc71]**: Extended to countable dense subsets of $\mathbb{C}$
+
+## More General Result
+
+If $A,B\subseteq \mathbb{R}$ are two countable dense sets, then there exists an entire function such that $f(A)=B$.
 
 ## Formalization Details
 
-### Main Components
+### Main Theorem
 
-The problem asks for the existence of an entire function $f : \mathbb{C} \to \mathbb{C}$ such that:
+**`erdos_226`**: There exists an entire function $f : \mathbb{C} \to \mathbb{C}$ such that:
 1. $f$ is differentiable everywhere (entire function)
-2. $f$ is not linear (i.e., not of the form $f(z) = az + b$)
+2. $f$ is not linear
 3. For all real $x$, $x$ is rational if and only if $f(x)$ is rational
-
-### Theorem
-
-**`erdos_226`**: States the existence of such a function, with the answer being `True`
 
 ## Technical Notes
 
-- The function is defined on the complex plane but the rationality condition only applies to real inputs
-- The non-linearity condition explicitly excludes functions of the form $f(z) = az + b$
-- Uses Lean's `Differentiable ℂ f` to express that $f$ is an entire function
+- An entire function is one that is complex-differentiable everywhere
+- The non-linearity condition explicitly rules out $f(z) = az + b$
+- The rationality condition only applies when restricting to real inputs
+
+## References
+
+- [BaSc70] Barth, K. F. and Schneider, W. J., _Entire functions mapping countable dense subsets of the reals onto each other monotonically_. J. London Math. Soc. (1970), 620-626.
+- [BaSc71] Extension to complex case
 
 ## Build Status
 

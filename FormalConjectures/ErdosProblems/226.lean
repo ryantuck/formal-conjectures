@@ -24,18 +24,24 @@ import FormalConjectures.Util.ProblemImports
 
 open Complex
 
-open scoped Topology Real
-
 namespace Erdos226
 
 /--
-Is there an entire non-linear function $f$ such that, for all $x\in\mathbb{R}$, 
+Is there an entire non-linear function $f$ such that, for all $x\in\mathbb{R}$,
 $x$ is rational if and only if $f(x)$ is?
+
+Solved by Barth and Schneider [BaSc70], who proved that if $A,B\subset\mathbb{R}$
+are countable dense sets then there exists a transcendental entire function $f$
+such that $f(z)\in B$ if and only if $z\in A$.
+
+[BaSc70] Barth, K. F. and Schneider, W. J., _Entire functions mapping countable
+  dense subsets of the reals onto each other monotonically_.
+  J. London Math. Soc. (1970), 620-626.
 -/
 @[category research solved, AMS 30]
-theorem erdos_226 : answer(True) ↔ ∃ f : ℂ → ℂ, 
-    Differentiable ℂ f ∧ 
-    ¬ (∃ a b : ℂ, f = fun z => a * z + b) ∧ 
+theorem erdos_226 : ∃ f : ℂ → ℂ,
+    Differentiable ℂ f ∧
+    ¬ (∃ a b : ℂ, f = fun z => a * z + b) ∧
     ∀ x : ℝ, (∃ q : ℚ, (x : ℝ) = q) ↔ (∃ q : ℚ, f x = q) := by
   sorry
 
