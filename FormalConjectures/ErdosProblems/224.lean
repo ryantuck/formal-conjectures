@@ -35,6 +35,11 @@ def IsObtuse {d : ℕ} (a b c : EuclideanSpace ℝ (Fin d)) : Prop :=
 /--
 If $A \subseteq \mathbb{R}^d$ is any set of $2^d + 1$ points then some three points
 in $A$ determine an obtuse angle.
+
+This was proved by Danzer and Grünbaum [DaGr62].
+
+[DaGr62] Danzer, L. and Grünbaum, B., _Über zwei Probleme bezüglich konvexer Körper von P. Erdős und von V. L. Klee_.
+  Math. Z. (1962), 214-230.
 -/
 @[category research solved, AMS 52]
 theorem erdos_224 : ∀ {d : ℕ} (A : Finset (EuclideanSpace ℝ (Fin d))),
@@ -49,7 +54,7 @@ The vertices of a $d$-cube have no obtuse angles.
 @[category research solved, AMS 52]
 theorem erdos_224.sharp : ∀ d : ℕ,
     ∃ A : Finset (EuclideanSpace ℝ (Fin d)), A.card = 2^d ∧
-      ∀ a b c, a ∈ A ∧ b ∈ A ∧ c ∈ A ∧ a ≠ b ∧ b ≠ c ∧ a ≠ c → ¬ IsObtuse a b c := by
+      ∀ a b c, a ∈ A → b ∈ A → c ∈ A → a ≠ b → b ≠ c → a ≠ c → ¬ IsObtuse a b c := by
   sorry
 
 end Erdos224
