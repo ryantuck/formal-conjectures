@@ -1,5 +1,9 @@
 # AI Formalization - Erdos Problems
 
+## Style
+
+The `README.md` contains style guidance that should be adhered to for lean formalizations. 
+
 ## Fetch data
 
 To fetch the overview of the numbered Erdos Problem, retrieve the following URL:
@@ -7,10 +11,6 @@ To fetch the overview of the numbered Erdos Problem, retrieve the following URL:
 ```
 https://www.erdosproblems.com/NUMBER
 ```
-
-## Canonical dataset
-
-The file at `erdos-problems-data.yaml` is the canonical source of erdos problems and their current status. Review this file to determine which ones are currently marked as formalized versus not.
 
 ## Lean file location
 
@@ -24,17 +24,19 @@ FormalConjectures/ErdosProblems/NUMBER.lean
 
 To determine all unformalized problems:
 
-1. Get list of all problems marked as not-yet-formalized from `erdos-problems-data.yaml`
+1. Get list of all problem numbers marked as not-yet-formalized from `unformalized-erdos-problems.txt`
 2. List all lean files in `FormalizedConjectures/ErdosProblems/`
-3. Diff these sets
+3. Diff these sets (ensure sorting is in numerical order)
 
 ## Build
 
-To build, just build the particular file in question:
+To build, just build the particular file in question, using its filepath:
 
 ```
 lake build FormalConjectures/ErdosProblems/NUMBER.lean
 ```
+
+NOTE: do NOT run `lake clean` while debugging. Stop working on specific problem if lake build continues to fail.
 
 ## Documentation
 
@@ -46,5 +48,5 @@ erdos-NUMBER-formalization-log.md
 
 ## Git
 
-- Commit changes after every file formalized.
+- Commit changes after each individual problem is formalized.
 - Do not push unless explicitly instructed by user.
