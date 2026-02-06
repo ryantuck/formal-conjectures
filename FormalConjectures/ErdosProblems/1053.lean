@@ -1,0 +1,48 @@
+/-
+Copyright 2026 The Formal Conjectures Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-/
+
+import FormalConjectures.Util.ProblemImports
+
+/-!
+# Erdős Problem 1053
+
+k-Perfect numbers and growth of k.
+
+OPEN
+
+*Reference:* [erdosproblems.com/1053](https://www.erdosproblems.com/1053)
+-/
+
+open Finset
+
+open scoped Topology Real
+
+namespace Erdos1053
+
+/-- k-perfect number predicate -/
+def kPerfect (n k : ℕ) : Prop :=
+  k * n = (Nat.divisors n).sum id
+
+/-- Growth rate of k for k-perfect numbers -/
+@[category research open, AMS 11]
+theorem k_perfect_growth :
+    ∃ (f : ℕ → ℕ), (∀ n, 0 < f n) ∧
+      (∀ k n, kPerfect n k → k ≤ f n) ∧
+      Filter.Tendsto (fun n => (f n : ℝ) / Real.log (Real.log n))
+        Filter.atTop Filter.atTop := by
+  sorry
+
+end Erdos1053
