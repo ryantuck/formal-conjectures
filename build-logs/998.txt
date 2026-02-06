@@ -1,0 +1,24 @@
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«998»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/998.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/998.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/998.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/998.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/998.setup.json --json
+error: FormalConjectures/ErdosProblems/998.lean:41:42: failed to synthesize
+  Singleton ℝ ℝ
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: FormalConjectures/ErdosProblems/998.lean:42:19: type mismatch
+  v - u
+has type
+  ℝ : outParam Type
+but is expected to have type
+  ℕ : Type
+error: FormalConjectures/ErdosProblems/998.lean:43:18: failed to synthesize
+  Singleton ℝ ℝ
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: FormalConjectures/ErdosProblems/998.lean:43:43: failed to synthesize
+  Singleton ℝ ℝ
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«998»
+error: build failed

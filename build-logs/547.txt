@@ -1,0 +1,5 @@
+⚠ [7168/7168] Replayed FormalConjectures.ErdosProblems.«547»
+warning: FormalConjectures/ErdosProblems/547.lean:36:10: unused variable `n`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully.

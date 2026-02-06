@@ -1,0 +1,3 @@
+⚠ [7168/7168] Replayed FormalConjectures.ErdosProblems.«552»
+warning: FormalConjectures/ErdosProblems/552.lean:36:2: If a problem has a sorry-free proof, it should not be categorised as `open`.
+Build completed successfully.

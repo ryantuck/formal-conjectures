@@ -1,0 +1,9 @@
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«696»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/696.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/696.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/696.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/696.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/696.setup.json --json
+error: FormalConjectures/ErdosProblems/696.lean:44:32: expected token
+error: FormalConjectures/ErdosProblems/696.lean:44:28: type expected, got
+  (h n : ℕ)
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«696»
+error: build failed

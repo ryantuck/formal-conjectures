@@ -1,0 +1,12 @@
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«992»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/992.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/992.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/992.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/992.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/992.setup.json --json
+error: FormalConjectures/ErdosProblems/992.lean:41:61: unexpected token '('; expected ':=', 'where' or '|'
+error: FormalConjectures/ErdosProblems/992.lean:40:61: failed to synthesize
+  Singleton ℝ ℝ
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: FormalConjectures/ErdosProblems/992.lean:41:60: unknown identifier 'o'
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«992»
+error: build failed

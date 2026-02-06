@@ -1,0 +1,3 @@
+✔ [7168/7169] Built FormalConjectures.Wikipedia.Schinzel
+✔ [7169/7169] Built FormalConjectures.ErdosProblems.«252»
+Build completed successfully.

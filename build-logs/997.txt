@@ -1,0 +1,3 @@
+⚠ [7168/7168] Built FormalConjectures.ErdosProblems.«997»
+warning: FormalConjectures/ErdosProblems/997.lean:39:24: `List.get!` has been deprecated: Use `a[i]!` instead.
+Build completed successfully.

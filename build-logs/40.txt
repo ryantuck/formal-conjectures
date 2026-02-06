@@ -1,0 +1,2 @@
+✔ [7169/7169] Built FormalConjectures.ErdosProblems.«40»
+Build completed successfully.

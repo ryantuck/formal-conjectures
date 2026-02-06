@@ -1,0 +1,5 @@
+⚠ [7168/7168] Replayed FormalConjectures.ErdosProblems.«232»
+warning: FormalConjectures/ErdosProblems/232.lean:42:23: unused variable `h`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully.

@@ -1,0 +1,9 @@
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«746»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/746.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/746.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/746.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/746.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/746.setup.json --json
+error: FormalConjectures/ErdosProblems/746.lean:31:26: unknown namespace 'Probability'
+error: FormalConjectures/ErdosProblems/746.lean:40:0: type of theorem 'Erdos746.random_graph_hamiltonian' is not a proposition
+  (ε : ℝ) → ε > 0 → sorry
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«746»
+error: build failed

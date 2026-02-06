@@ -1,0 +1,3 @@
+⚠ [7168/7168] Replayed FormalConjectures.ErdosProblems.«601»
+warning: FormalConjectures/ErdosProblems/601.lean:38:70: `Ordinal.IsLimit` has been deprecated: use `Order.IsSuccLimit` instead
+Build completed successfully.

@@ -1,0 +1,5 @@
+⚠ [7168/7168] Built FormalConjectures.ErdosProblems.«114»
+warning: FormalConjectures/ErdosProblems/114.lean:42:36: unused variable `p`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully.

@@ -1,0 +1,6 @@
+⚠ [7168/7168] Replayed FormalConjectures.ErdosProblems.«554»
+warning: FormalConjectures/ErdosProblems/554.lean:33:2: If a problem has a sorry-free proof, it should not be categorised as `open`.
+warning: FormalConjectures/ErdosProblems/554.lean:34:51: unused variable `hn`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully.

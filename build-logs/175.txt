@@ -1,0 +1,5 @@
+⚠ [7168/7168] Replayed FormalConjectures.ErdosProblems.«175»
+warning: FormalConjectures/ErdosProblems/175.lean:32:0: The AMS tags should be ordered as AMS 05 11
+
+Note: This linter can be disabled with `set_option linter.style.ams_attribute false`
+Build completed successfully.

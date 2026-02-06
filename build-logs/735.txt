@@ -1,0 +1,11 @@
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«735»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/735.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/735.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/735.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/735.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/735.setup.json --json
+error: FormalConjectures/ErdosProblems/735.lean:35:0: type of theorem 'Erdos735.weighted_points_equal_lines' is not a proposition
+  (n : ℕ) →
+    (pts : Finset (Fin 2 → ℝ)) →
+      (w : (Fin 2 → ℝ) → ℝ) →
+        pts.card = n → (∀ p ∈ pts, w p > 0) → ((L : Finset (Fin 2 → ℝ)) → L ⊆ pts → L.card ≥ 2 → sorry) → sorry
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«735»
+error: build failed

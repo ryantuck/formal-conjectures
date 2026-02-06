@@ -1,0 +1,9 @@
+⚠ [3050/3050] Replayed FormalConjectures.ErdosProblems.«498»
+warning: FormalConjectures/ErdosProblems/498.lean:25:52: unused variable `center`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: FormalConjectures/ErdosProblems/498.lean:25:59: unused variable `radius`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: FormalConjectures/ErdosProblems/498.lean:29:61: `Complex.abs` has been deprecated: use the norm instead
+Build completed successfully.

@@ -1,0 +1,10 @@
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«842»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/842.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/842.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/842.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/842.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/842.setup.json --json
+error: FormalConjectures/ErdosProblems/842.lean:35:0: type of theorem 'Erdos842.triangles_hamiltonian_chromatic' is not a proposition
+  (n : ℕ) →
+    (G : SimpleGraph (Fin (3 * n))) →
+      [DecidableRel G.Adj] → (∃ T, #T = n ∧ (∀ t ∈ T, #t = 3) ∧ sorry) → (∃ C, sorry) → sorry
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«842»
+error: build failed
