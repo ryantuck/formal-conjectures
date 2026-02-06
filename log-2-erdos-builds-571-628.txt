@@ -1,0 +1,102 @@
+Building 571
+Build completed successfully.
+Building 572
+Build completed successfully.
+Building 573
+Build completed successfully.
+Building 574
+Build completed successfully.
+Building 575
+Build completed successfully.
+Building 576
+Build completed successfully.
+Building 577
+Build completed successfully.
+Building 578
+Build completed successfully.
+Building 579
+Build completed successfully.
+Building 580
+Build completed successfully.
+Building 581
+Build completed successfully.
+Building 582
+Build completed successfully.
+Building 583
+Build completed successfully.
+Building 584
+Build completed successfully.
+Building 585
+Build completed successfully.
+Building 586
+Build completed successfully.
+Building 588
+Build completed successfully.
+Building 589
+Build completed successfully.
+Building 593
+Build completed successfully.
+Building 594
+Build completed successfully.
+Building 595
+Build completed successfully.
+Building 596
+Build completed successfully.
+Building 597
+Build completed successfully.
+Building 599
+Build completed successfully.
+Building 600
+Build completed successfully.
+Building 601
+⚠ [7168/7168] Replayed FormalConjectures.ErdosProblems.«601»
+warning: FormalConjectures/ErdosProblems/601.lean:38:70: `Ordinal.IsLimit` has been deprecated: use `Order.IsSuccLimit` instead
+Build completed successfully.
+Building 602
+Build completed successfully.
+Building 603
+Build completed successfully.
+Building 604
+Build completed successfully.
+Building 605
+Build completed successfully.
+Building 606
+Build completed successfully.
+Building 607
+Build completed successfully.
+Building 608
+Build completed successfully.
+Building 609
+Build completed successfully.
+Building 610
+Build completed successfully.
+Building 611
+Build completed successfully.
+Building 612
+Build completed successfully.
+Building 613
+Build completed successfully.
+Building 614
+Build completed successfully.
+Building 615
+Build completed successfully.
+Building 616
+Build completed successfully.
+Building 618
+Build completed successfully.
+Building 619
+Build completed successfully.
+Building 620
+Build completed successfully.
+Building 621
+Build completed successfully.
+Building 622
+Build completed successfully.
+Building 625
+Build completed successfully.
+Building 626
+Build completed successfully.
+Building 627
+Build completed successfully.
+Building 628
+Build completed successfully.

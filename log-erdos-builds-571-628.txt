@@ -1,0 +1,384 @@
+Building 571
+Build completed successfully.
+Building 572
+Build completed successfully.
+Building 573
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«573»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/573.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/573.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/573.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/573.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/573.setup.json --json
+error: FormalConjectures/ErdosProblems/573.lean:47:47: failed to synthesize
+  Insert (SimpleGraph (Fin 3)) (Set (SimpleGraph (Fin 4)))
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«573»
+Building 574
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«574»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/574.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/574.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/574.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/574.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/574.setup.json --json
+error: FormalConjectures/ErdosProblems/574.lean:47:47: failed to synthesize
+  Insert (SimpleGraph (Fin (2 * k - 1))) (Set (SimpleGraph (Fin (2 * k))))
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«574»
+Building 575
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«575»
+Build completed successfully.
+Building 576
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«576»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/576.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/576.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/576.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/576.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/576.setup.json --json
+error: FormalConjectures/ErdosProblems/576.lean:48:65: expected token
+error: FormalConjectures/ErdosProblems/576.lean:48:6: Application type mismatch: In the application
+  c > 0 ∧ fun n ↦ ↑(extremalNumber n (hypercubeGraph 3))
+the argument
+  fun n ↦ ↑(extremalNumber n (hypercubeGraph 3))
+has type
+  ℕ → ℝ : Type
+but is expected to have type
+  Prop : Type
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«576»
+Building 577
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«577»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/577.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/577.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/577.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/577.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/577.setup.json --json
+error: FormalConjectures/ErdosProblems/577.lean:42:17: failed to synthesize
+  Fintype ↑(G.neighborSet v)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: FormalConjectures/ErdosProblems/577.lean:45:49: failed to synthesize
+  LinearOrder α
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: FormalConjectures/ErdosProblems/577.lean:45:64: failed to synthesize
+  LinearOrder α
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«577»
+Building 578
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«578»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/578.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/578.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/578.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/578.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/578.setup.json --json
+error: FormalConjectures/ErdosProblems/578.lean:47:6: typeclass instance problem is stuck, it is often due to metavariables
+  (x : Ω) → MeasurableSpace (?m.2574 edges x)
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«578»
+Building 579
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«579»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/579.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/579.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/579.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/579.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/579.setup.json --json
+error: FormalConjectures/ErdosProblems/579.lean:46:24: Invalid field `floor`: The environment does not contain `Real.floor`
+  δ * ↑n ^ 2
+has type
+  ℝ
+error: FormalConjectures/ErdosProblems/579.lean:47:78: Invalid field `floor`: The environment does not contain `Real.floor`
+  c * ↑n
+has type
+  ℝ
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«579»
+Building 580
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«580»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/580.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/580.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/580.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/580.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/580.setup.json --json
+error: FormalConjectures/ErdosProblems/580.lean:45:36: failed to synthesize
+  Fintype ↑(G.neighborSet v)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: FormalConjectures/ErdosProblems/580.lean:46:53: failed to synthesize
+  Fintype β
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«580»
+Building 581
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«581»
+Build completed successfully.
+Building 582
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«582»
+Build completed successfully.
+Building 583
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«583»
+Build completed successfully.
+Building 584
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«584»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/584.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/584.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/584.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/584.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/584.setup.json --json
+error: FormalConjectures/ErdosProblems/584.lean:43:24: Invalid field `floor`: The environment does not contain `Real.floor`
+  δ * ↑n ^ 2
+has type
+  ℝ
+error: FormalConjectures/ErdosProblems/584.lean:46:26: Invalid field `floor`: The environment does not contain `Real.floor`
+  c * δ ^ 3 * ↑n ^ 2
+has type
+  ℝ
+error: FormalConjectures/ErdosProblems/584.lean:55:24: Invalid field `floor`: The environment does not contain `Real.floor`
+  δ * ↑n ^ 2
+has type
+  ℝ
+error: FormalConjectures/ErdosProblems/584.lean:58:26: Invalid field `floor`: The environment does not contain `Real.floor`
+  c * δ ^ 2 * ↑n ^ 2
+has type
+  ℝ
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«584»
+Building 585
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«585»
+Build completed successfully.
+Building 586
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«586»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/586.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/586.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/586.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/586.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/586.setup.json --json
+error: FormalConjectures/ErdosProblems/586.lean:37:10: unexpected token '∈'; expected ','
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«586»
+Building 588
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«588»
+Build completed successfully.
+Building 589
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«589»
+Build completed successfully.
+Building 593
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«593»
+Build completed successfully.
+Building 594
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«594»
+Build completed successfully.
+Building 595
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«595»
+Build completed successfully.
+Building 596
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«596»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/596.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/596.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/596.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/596.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/596.setup.json --json
+error: FormalConjectures/ErdosProblems/596.lean:44:53: Application type mismatch: In the application
+  f i
+the argument
+  i
+has type
+  ℕ : Type
+but is expected to have type
+  α : Type u_1
+error: FormalConjectures/ErdosProblems/596.lean:44:59: Application type mismatch: In the application
+  f j
+the argument
+  j
+has type
+  ℕ : Type
+but is expected to have type
+  α : Type u_1
+error: FormalConjectures/ErdosProblems/596.lean:47:53: Application type mismatch: In the application
+  f i
+the argument
+  i
+has type
+  ℕ : Type
+but is expected to have type
+  α : Type u_1
+error: FormalConjectures/ErdosProblems/596.lean:47:59: Application type mismatch: In the application
+  f j
+the argument
+  j
+has type
+  ℕ : Type
+but is expected to have type
+  α : Type u_1
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«596»
+Building 597
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«597»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/597.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/597.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/597.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/597.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/597.setup.json --json
+error: FormalConjectures/ErdosProblems/597.lean:36:0: type of theorem 'Erdos597.partition_relation_omega_one_graph' is not a proposition
+  (G : SimpleGraph Ordinal.{0}) → (∀ (f : Fin 4 ↪ Ordinal.{0}), ¬∀ (i j : Fin 4), i ≠ j → G.Adj (f i) (f j)) → sorry
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«597»
+Building 599
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«599»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/599.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/599.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/599.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/599.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/599.setup.json --json
+error: FormalConjectures/ErdosProblems/599.lean:46:34: typeclass instance problem is stuck, it is often due to metavariables
+  Membership α (?m.1391 paths S p v)
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«599»
+Building 600
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«600»
+Build completed successfully.
+Building 601
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«601»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/601.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/601.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/601.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/601.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/601.setup.json --json
+warning: FormalConjectures/ErdosProblems/601.lean:38:70: `Ordinal.IsLimit` has been deprecated: use `Order.IsSuccLimit` instead
+error: FormalConjectures/ErdosProblems/601.lean:36:0: type of theorem 'Erdos601.limit_ordinal_path_or_independent' is not a proposition
+  (α : Ordinal.{0}) → α.IsLimit → (∀ (G : SimpleGraph α.toType), (∃ path, sorry) ∨ ∃ indep, sorry) → sorry
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«601»
+Building 602
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«602»
+Build completed successfully.
+Building 603
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«603»
+Build completed successfully.
+Building 604
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«604»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/604.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/604.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/604.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/604.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/604.setup.json --json
+error: FormalConjectures/ErdosProblems/604.lean:42:54: Invalid field `floor`: The environment does not contain `Real.floor`
+  c * ↑n ^ (1 - ε)
+has type
+  ℝ
+error: FormalConjectures/ErdosProblems/604.lean:51:10: Invalid field `floor`: The environment does not contain `Real.floor`
+  c * ↑n / √(Real.log ↑n)
+has type
+  ℝ
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«604»
+Building 605
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«605»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/605.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/605.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/605.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/605.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/605.setup.json --json
+error: FormalConjectures/ErdosProblems/605.lean:44:72: Invalid field `floor`: The environment does not contain `Real.floor`
+  f n * ↑n
+has type
+  ℝ
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«605»
+Building 606
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«606»
+Build completed successfully.
+Building 607
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«607»
+Build completed successfully.
+Building 608
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«608»
+Build completed successfully.
+Building 609
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«609»
+Build completed successfully.
+Building 610
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«610»
+Build completed successfully.
+Building 611
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«611»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/611.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/611.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/611.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/611.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/611.setup.json --json
+error: FormalConjectures/ErdosProblems/611.lean:46:60: Invalid field `floor`: The environment does not contain `Real.floor`
+  c * ↑n
+has type
+  ℝ
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«611»
+Building 612
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«612»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/612.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/612.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/612.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/612.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/612.setup.json --json
+error: FormalConjectures/ErdosProblems/612.lean:41:17: failed to synthesize
+  Fintype ↑(G.neighborSet v)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«612»
+Building 613
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«613»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/613.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/613.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/613.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/613.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/613.setup.json --json
+error: FormalConjectures/ErdosProblems/613.lean:50:14: failed to synthesize
+  Fintype ↑(D.neighborSet v)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«613»
+Building 614
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«614»
+Build completed successfully.
+Building 615
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«615»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/615.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/615.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/615.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/615.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/615.setup.json --json
+error: FormalConjectures/ErdosProblems/615.lean:45:17: Invalid field `floor`: The environment does not contain `Real.floor`
+  ↑n / Real.log ↑n
+has type
+  ℝ
+error: FormalConjectures/ErdosProblems/615.lean:42:24: Invalid field notation: Function `Nat.floor` does not have a usable parameter of type `Nat` for which to substitute `(1 /
+      8 -
+    c) *
+  n ^ 2`
+
+Note: Such a parameter must be explicit, or implicit with a unique name, to be used by field notation
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«615»
+Building 616
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«616»
+Build completed successfully.
+Building 618
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«618»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/618.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/618.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/618.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/618.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/618.setup.json --json
+error: FormalConjectures/ErdosProblems/618.lean:47:15: failed to synthesize
+  Fintype ↑(G.neighborSet v)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«618»
+Building 619
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«619»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/619.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/619.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/619.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/619.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/619.setup.json --json
+error: FormalConjectures/ErdosProblems/619.lean:47:18: Invalid field notation: Function `Nat.floor` does not have a usable parameter of type `Nat` for which to substitute `(1 -
+    c) *
+  n`
+
+Note: Such a parameter must be explicit, or implicit with a unique name, to be used by field notation
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«619»
+Building 620
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«620»
+Build completed successfully.
+Building 621
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«621»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/621.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/621.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/621.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/621.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/621.setup.json --json
+error: FormalConjectures/ErdosProblems/621.lean:47:58: Application type mismatch: In the application
+  Fin n
+the argument
+  n
+has type
+  SimpleGraph ?m.56 → ℝ : Type ?u.55
+but is expected to have type
+  ℕ : Type
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«621»
+Building 622
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«622»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/622.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/622.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/622.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/622.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/622.setup.json --json
+error: FormalConjectures/ErdosProblems/622.lean:41:17: failed to synthesize
+  Fintype ↑(G.neighborSet v)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«622»
+Building 625
+✖ [7168/7168] Building FormalConjectures.ErdosProblems.«625»
+trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/625.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/625.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/625.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/625.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/625.setup.json --json
+error: FormalConjectures/ErdosProblems/625.lean:49:31: type mismatch
+  ↑(chromaticNumber (G n ω)) - ↑(cochromaticNumber (G n ω))
+has type
+  ℝ : outParam Type
+but is expected to have type
+  Prop : Type
+error: Lean exited with code 1
+Some required builds logged failures:
+- FormalConjectures.ErdosProblems.«625»
+Building 626
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«626»
+Build completed successfully.
+Building 627
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«627»
+Build completed successfully.
+Building 628
+✔ [7168/7168] Built FormalConjectures.ErdosProblems.«628»
+Build completed successfully.
