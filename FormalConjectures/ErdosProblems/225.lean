@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -57,8 +57,8 @@ and Saff and Sheil-Small [SaSh74] (for complex coefficients).
 theorem erdos_225 : ∀ f : ℝ → ℂ,
     IsTrigonometricPolynomial f →
     HasAllRealRoots (fun z ↦ f z.re) →
-    (⨆ θ ∈ Set.Icc 0 (2 * Real.pi), Complex.norm (f θ)) = 1 →
-    ∫ θ in (0)..(2 * Real.pi), Complex.norm (f θ) ≤ 4 := by
+    (⨆ θ ∈ Set.Icc 0 (2 * Real.pi), ‖f θ‖) = 1 →
+    ∫ θ in (0)..(2 * Real.pi), ‖f θ‖ ≤ 4 := by
   sorry
 
 end Erdos225
