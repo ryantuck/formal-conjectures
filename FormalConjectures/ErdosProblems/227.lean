@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Erdos227
 The ratio of the maximum coefficient magnitude to the maximum function value on a circle.
 -/
 noncomputable def coefficientRatio (f : ℂ → ℂ) (a : ℕ → ℂ) (r : ℝ) : ℝ :=
-  (⨆ n : ℕ, Complex.norm (a n * r^n)) / (⨆ z : ℂ, if Complex.norm z = r then Complex.norm (f z) else 0)
+  (⨆ n : ℕ, ‖a n * r^n‖) / (⨆ z : ℂ, if ‖z‖ = r then ‖f z‖ else 0)
 
 /--
 Let $f=\sum_{n=0}^\infty a_nz^n$ be an entire function which is not a polynomial.
