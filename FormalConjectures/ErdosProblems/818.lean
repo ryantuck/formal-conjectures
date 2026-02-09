@@ -37,9 +37,9 @@ namespace Erdos818
 theorem sum_product_small_sumset :
     ∃ c C : ℝ, c > 0 ∧ C > 0 ∧
       ∀ (A : Finset ℤ) (sumA : Finset ℤ) (prodA : Finset ℤ),
-        (∀ s ∈ sumA, ∃ a b ∈ A, a + b = s) →
-        (∀ p ∈ prodA, ∃ a b ∈ A, a * b = p) →
-        sumA.card ≤ C * A.card →
+        (∀ s ∈ sumA, ∃ a ∈ A, ∃ b ∈ A, a + b = s) →
+        (∀ p ∈ prodA, ∃ a ∈ A, ∃ b ∈ A, a * b = p) →
+        (sumA.card : ℝ) ≤ C * A.card →
         (prodA.card : ℝ) ≥ c * (A.card : ℝ) ^ 2 / Real.log A.card := by
   sorry
 
