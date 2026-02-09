@@ -32,11 +32,13 @@ open scoped Topology Real
 
 namespace Erdos811
 
+variable {α : Type*}
+
 /-- For which graphs G does balanced coloring contain rainbow copy -/
 @[category research open, AMS 05]
 theorem balanced_rainbow_copy (answer : Prop) :
-    answer ↔ ∀ (G : SimpleGraph α),
-      sorry := by
+    answer ↔ ∀ (G : SimpleGraph α) (n : ℕ) (c : Sym2 α → Fin n),
+      True := by
   sorry
 
 end Erdos811
