@@ -43,7 +43,7 @@ theorem kr_free_independence (r : ℕ) (answer : Prop) :
     answer ↔ ∃ c : ℝ, c > 0 ∧
       ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] [G.LocallyFinite] (t : ℝ),
         G.CliqueFree r →
-        (Finset.univ.sum G.degree : ℝ) / (2 * n) = t →
+        (Finset.univ.sum fun v => (G.degree v : ℝ)) / (2 * n) = t →
         independenceNumber G ≥ c * (Real.log t / t) * n := by
   sorry
 
