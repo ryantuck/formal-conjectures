@@ -36,7 +36,7 @@ namespace Erdos646
 @[category research solved, AMS 11]
 theorem factorial_even_prime_powers :
     ∀ M : ℕ, ∃ n > M, ∀ p : ℕ, p.Prime →
-      ∃ k : ℕ, (p ^ (2*k)) ∣ n! := by
+      ∃ k : ℕ, (p ^ (2*k)) ∣ factorial n := by
   sorry
 
 end Erdos646
