@@ -26,7 +26,7 @@ PROVED (LEAN verified)
 *Reference:* [erdosproblems.com/729](https://www.erdosproblems.com/729)
 -/
 
-open Finset Nat
+open Finset Nat Filter
 
 open scoped Topology Real
 
@@ -39,7 +39,7 @@ theorem binomial_denominator_small_primes (C : ℝ) (hC : C > 0) :
       let ⟨a, b, n⟩ := p
       a + b > n + C * Real.log n ∧
       ∀ p : ℕ, p.Prime →
-        p ∣ (factorial n / (factorial a * factorial b)).den →
+        p ∣ ((factorial n : ℚ) / (factorial a * factorial b)).den →
         p ≤ sorry := by
   sorry
 
