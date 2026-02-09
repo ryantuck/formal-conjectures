@@ -26,11 +26,13 @@ SOLVED
 *Reference:* [erdosproblems.com/759](https://www.erdosproblems.com/759)
 -/
 
-open Finset
+open Finset Filter
 
 open scoped Topology Real
 
 namespace Erdos759
+
+variable {α : Type*}
 
 /-- Cochromatic number -/
 noncomputable def cochromaticNumber (G : SimpleGraph α) : ℕ := sorry
