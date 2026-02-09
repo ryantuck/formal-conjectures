@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos808
 
+variable {α : Type*}
+
 /-- Graph sum -/
 def graphSum (G : SimpleGraph α) (A : Finset α) : Finset α := sorry
 
