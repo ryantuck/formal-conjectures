@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/726](https://www.erdosproblems.com/726)
 -/
 
-open Finset Nat
+open Finset Nat Filter
 
 open scoped Topology Real BigOperators
 
@@ -34,7 +34,7 @@ namespace Erdos726
 
 /-- Sum over primes in residue classes -/
 noncomputable def S (n : ℕ) : ℝ :=
-  ∑ p in (Finset.range (n+1)).filter Nat.Prime, (1 : ℝ) / p
+  ∑ p ∈ (Finset.range (n+1)).filter Nat.Prime, (1 : ℝ) / p
 
 /-- Residue class sum conjecture -/
 @[category research open, AMS 11]
