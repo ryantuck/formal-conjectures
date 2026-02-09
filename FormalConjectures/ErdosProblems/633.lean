@@ -35,9 +35,9 @@ def CanBeCutInto (T : Set (Fin 2 → ℝ)) (n : ℕ) : Prop := sorry
 
 /-- Classify triangles cuttable only into square number of congruent triangles -/
 @[category research open, AMS 52]
-theorem triangle_square_dissection (T : Set (Fin 2 → ℝ)) :
-    (∀ n : ℕ, CanBeCutInto T n → ∃ k : ℕ, n = k^2) →
-    sorry := by
+theorem triangle_square_dissection :
+    ∃ S : Set (Set (Fin 2 → ℝ)),
+      ∀ T : Set (Fin 2 → ℝ), (∀ n : ℕ, CanBeCutInto T n → ∃ k : ℕ, n = k^2) ↔ T ∈ S := by
   sorry
 
 end Erdos633
