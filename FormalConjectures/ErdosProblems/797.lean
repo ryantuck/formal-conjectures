@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos797
 
+variable {α : Type*}
+
 /-- Acyclic chromatic number -/
 noncomputable def acyclicChromaticNumber (G : SimpleGraph α) : ℕ := sorry
 
