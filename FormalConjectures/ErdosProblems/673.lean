@@ -27,7 +27,7 @@ PROVED: Tao established bounds; Erdős-Tenenbaum proved distribution
 *Reference:* [erdosproblems.com/673](https://www.erdosproblems.com/673)
 -/
 
-open Nat
+open Nat Filter
 
 open scoped Topology Real
 
@@ -39,8 +39,8 @@ noncomputable def G (n : ℕ) : ℝ := sorry
 /-- G(n) → ∞ for almost all n -/
 @[category research solved, AMS 11]
 theorem G_tends_infinity_almost_all :
-    ∀ ε > 0, Filter.Tendsto
-      (fun X => (Finset.range X).filter (fun n => G n < sorry) |>.card / X)
+    ∀ ε : ℝ, ε > 0 → Filter.Tendsto
+      (fun X : ℕ => (((Finset.range X).filter (fun n => G n < ε)).card : ℝ) / (X : ℝ))
       Filter.atTop (nhds 0) := by
   sorry
 
