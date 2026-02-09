@@ -38,7 +38,7 @@ noncomputable def n_k (k : ℕ) : ℕ := sorry
 /-- Determine n_k -/
 @[category research open, AMS 52]
 theorem distinct_circle_radii :
-    sorry := by
+    ∀ (k : ℕ), n_k k ≥ k + 2 := by
   sorry
 
 end Erdos827
