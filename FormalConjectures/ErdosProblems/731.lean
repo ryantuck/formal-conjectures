@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/731](https://www.erdosproblems.com/731)
 -/
 
-open Finset Nat
+open Finset Nat Filter Asymptotics
 
 open scoped Topology Real
 
@@ -38,7 +38,7 @@ noncomputable def m (n : ℕ) : ℕ := sorry
 /-- Asymptotic behavior of m(n) -/
 @[category research open, AMS 11]
 theorem binomial_nondivisor_asymptotic :
-    ∃ f : ℕ → ℝ, ∀ᶠ (n : ℕ) in Filter.atTop, m n ~ f n := by
+    ∃ f : ℕ → ℝ, (fun n => (m n : ℝ)) ~[atTop] f := by
   sorry
 
 end Erdos731
