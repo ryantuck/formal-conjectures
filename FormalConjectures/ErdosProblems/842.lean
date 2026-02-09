@@ -26,22 +26,30 @@ SOLVED
 *Reference:* [erdosproblems.com/842](https://www.erdosproblems.com/842)
 -/
 
-open Finset
+open Finset Classical
 
 open scoped Topology Real
 
 namespace Erdos842
 
+variable {α : Type*}
+
+/-- Chromatic number -/
+noncomputable def chromaticNumber (G : SimpleGraph α) : ℕ := sorry
+
+/-- Hamiltonian cycle -/
+def IsHamiltonianCycle {α : Type*} (G : SimpleGraph α) (C : List α) : Prop := sorry
+
 /-- Graph with n triangles and Hamiltonian cycle has χ ≤ 3 -/
 @[category research solved, AMS 05]
 theorem triangles_hamiltonian_chromatic :
-    ∀ (n : ℕ) (G : SimpleGraph (Fin (3 * n))) [DecidableRel G.Adj],
+    ∀ (n : ℕ) (G : SimpleGraph (Fin (3 * n))),
       (∃ (T : Finset (Finset (Fin (3 * n)))),
         T.card = n ∧
         (∀ t ∈ T, t.card = 3) ∧
-        sorry) →
-      (∃ (C : sorry), sorry) →
-      sorry := by
+        (∀ t ∈ T, ∀ v ∈ t, ∀ w ∈ t, v ≠ w → G.Adj v w)) →
+      (∃ (C : List (Fin (3 * n))), IsHamiltonianCycle G C) →
+      chromaticNumber G ≤ 3 := by
   sorry
 
 end Erdos842
