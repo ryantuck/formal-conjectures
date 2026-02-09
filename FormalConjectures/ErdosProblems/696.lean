@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/696](https://www.erdosproblems.com/696)
 -/
 
-open Nat
+open Nat Filter Asymptotics
 
 open scoped Topology Real
 
@@ -41,7 +41,9 @@ noncomputable def H (n : ℕ) : ℕ := sorry
 /-- Bounds for h(n) and H(n) -/
 @[category research open, AMS 11]
 theorem prime_sequence_congruence_bounds :
-    ∃ f g : ℕ → ℕ, ∀ n : ℕ, h n ~ f n ∧ H n ~ g n := by
+    ∃ f g : ℕ → ℕ,
+      (fun n => (h n : ℝ)) ~[atTop] (fun n => (f n : ℝ)) ∧
+      (fun n => (H n : ℝ)) ~[atTop] (fun n => (g n : ℝ)) := by
   sorry
 
 end Erdos696
