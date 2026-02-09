@@ -40,8 +40,8 @@ noncomputable def nondivisibilityCount (A : Finset ℕ) (n : ℕ) : ℕ := sorry
 theorem largest_primes_minimize (C : ℝ) (k n : ℕ) (answer : Prop) :
     answer ↔ ∀ (A : Finset ℕ),
       A ⊆ Finset.range (n + 1) \ {0, 1} →
-      (∑ a in A, (1 : ℝ) / a) ≤ C →
-      nondivisibilityCount A n ≥ sorry := by
+      (∑ a ∈ A, (1 : ℝ) / a) ≤ C →
+      nondivisibilityCount A n ≥ k := by
   sorry
 
 end Erdos783
