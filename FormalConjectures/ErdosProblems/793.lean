@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/793](https://www.erdosproblems.com/793)
 -/
 
-open Finset Nat
+open Finset Nat Filter Classical
 
 open scoped Topology Real
 
@@ -38,9 +38,9 @@ noncomputable def F (N : ℕ) : ℕ := sorry
 /-- Conjecture for F(n) -/
 @[category research open, AMS 11]
 theorem divisibility_avoidance_bound (answer : Prop) :
-    answer ↔ ∃ C : ℝ, ∀ᶠ (N : ℕ) in Filter.atTop,
-      F N = (Finset.filter Nat.Prime (Finset.range (N + 1))).card +
-        (C + sorry) * (N : ℝ) ^ (2/3 : ℝ) * (Real.log N) ^ (-2) := by
+    answer ↔ ∃ C : ℝ, ∀ᶠ (N : ℕ) in atTop,
+      (F N : ℝ) = (Finset.filter Nat.Prime (Finset.range (N + 1))).card +
+        C * (N : ℝ) ^ (2/3 : ℝ) * (Real.log N) ^ (-2 : ℝ) := by
   sorry
 
 end Erdos793
