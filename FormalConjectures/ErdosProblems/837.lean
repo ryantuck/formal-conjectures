@@ -32,10 +32,16 @@ open scoped Topology Real
 
 namespace Erdos837
 
+variable {α : Type*}
+
 /-- Density threshold A₃ -/
 @[category research open, AMS 05]
 theorem hypergraph_density_threshold :
-    sorry := by
+    ∃ A₃ : ℝ, A₃ > 0 ∧
+      ∀ (n r : ℕ) (H : Finset (Finset α)),
+        (∀ e ∈ H, e.card = r) →
+        (H.card : ℝ) / (n.choose r : ℝ) ≥ A₃ →
+        ∃ (S : Finset α), S.card = 3 ∧ sorry := by
   sorry
 
 end Erdos837
