@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/839](https://www.erdosproblems.com/839)
 -/
 
-open Finset
+open Finset Filter
 
 open scoped Topology Real BigOperators
 
@@ -42,13 +42,17 @@ theorem consecutive_sum_growth_one (answer : Prop) :
       StrictMono a →
       a 0 = 1 →
       NoConsecutiveSum a →
-      Filter.limsup (fun n => (a n : ℝ) / n) Filter.atTop = ⊤ := by
+      limsup (fun n => ((a n : ℝ) / n : EReal)) atTop = ⊤ := by
   sorry
 
 /-- Does lim (1/log x) Σ(1/aₙ) = 0? -/
 @[category research open, AMS 11]
 theorem consecutive_sum_reciprocal (answer : Prop) :
-    answer ↔ sorry := by
+    answer ↔ ∀ (a : ℕ → ℕ),
+      StrictMono a →
+      a 0 = 1 →
+      NoConsecutiveSum a →
+      Tendsto (fun n : ℕ => (1 / Real.log n) * ∑ k ∈ range n, (1 / (a k : ℝ))) atTop (𝓝 0) := by
   sorry
 
 end Erdos839
