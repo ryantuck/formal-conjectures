@@ -26,7 +26,7 @@ SOLVED
 *Reference:* [erdosproblems.com/841](https://www.erdosproblems.com/841)
 -/
 
-open Finset Nat
+open Finset Nat Filter Asymptotics
 
 open scoped Topology Real
 
@@ -38,7 +38,8 @@ noncomputable def t (n : ℕ) : ℕ := sorry
 /-- Estimate tₙ -/
 @[category research solved, AMS 11]
 theorem perfect_square_product :
-    sorry := by
+    ∃ c₁ c₂ : ℝ, c₁ > 0 ∧ c₂ > 0 ∧
+      ∀ᶠ (n : ℕ) in atTop, c₁ * Real.log (n : ℝ) ≤ (t n : ℝ) ∧ (t n : ℝ) ≤ c₂ * Real.log (n : ℝ) := by
   sorry
 
 end Erdos841
