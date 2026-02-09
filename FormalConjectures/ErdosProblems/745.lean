@@ -26,19 +26,22 @@ PROVED
 *Reference:* [erdosproblems.com/745](https://www.erdosproblems.com/745)
 -/
 
-open Finset
+open Finset Filter Asymptotics
 
-open scoped Topology Real Probability
+open scoped Topology Real
 
 namespace Erdos745
 
 /-- Size of second largest component -/
-noncomputable def secondLargestComponent (G : SimpleGraph (Fin n)) : ℕ := sorry
+noncomputable def secondLargestComponent {n : ℕ} (G : SimpleGraph (Fin n)) : ℕ := sorry
 
 /-- Second largest component is o(log n) -/
 @[category research solved, AMS 05]
-theorem second_largest_component_small (n : ℕ) :
-    sorry := by
+theorem second_largest_component_small :
+    ∃ (f : ℕ → ℝ), (f =o[atTop] fun n => Real.log n) ∧
+      ∀ᶠ (n : ℕ) in atTop,
+        ∀ (G : SimpleGraph (Fin n)),
+          (secondLargestComponent G : ℝ) ≤ f n := by
   sorry
 
 end Erdos745
