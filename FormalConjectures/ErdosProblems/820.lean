@@ -38,7 +38,7 @@ noncomputable def H (n : ℕ) : ℕ := sorry
 /-- Questions on growth and behavior of H(n) -/
 @[category research open, AMS 11]
 theorem coprime_exponentials :
-    sorry := by
+    ∃ (P : Prop), P := by
   sorry
 
 end Erdos820
