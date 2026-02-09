@@ -26,9 +26,9 @@ SOLVED (threshold ≈ n log n)
 *Reference:* [erdosproblems.com/747](https://www.erdosproblems.com/747)
 -/
 
-open Finset
+open Finset Filter
 
-open scoped Topology Real Probability
+open scoped Topology Real
 
 namespace Erdos747
 
@@ -36,7 +36,14 @@ namespace Erdos747
 @[category research solved, AMS 05]
 theorem shamir_problem :
     ∃ c : ℝ, c > 0 ∧
-      sorry := by
+      ∀ᶠ (n : ℕ) in atTop,
+        ∀ (m : ℕ), m ≥ ⌊c * n * Real.log n⌋₊ →
+          ∃ (H : Finset (Finset (Fin n))),
+            H.card = m ∧
+            (∀ e ∈ H, e.card = 3) ∧
+            (∃ (M : Finset (Finset (Fin n))),
+              M ⊆ H ∧ M.card = n / 3 ∧
+              (∀ e₁ ∈ M, ∀ e₂ ∈ M, e₁ ≠ e₂ → Disjoint e₁ e₂)) := by
   sorry
 
 end Erdos747
