@@ -41,7 +41,7 @@ noncomputable def numDistinctCycleLengths (G : SimpleGraph α) : ℕ := sorry
 @[category research solved, AMS 05]
 theorem min_degree_girth_cycle_lengths (k s : ℕ) :
     ∃ C : ℝ, C > 0 ∧
-      ∀ (G : SimpleGraph α) [DecidableRel G.Adj],
+      ∀ (G : SimpleGraph α) [DecidableRel G.Adj] [G.LocallyFinite],
         (∀ v : α, G.degree v ≥ k) →
         G.girth > 2 * s →
         numDistinctCycleLengths G ≥ C * (k : ℝ) ^ s := by
