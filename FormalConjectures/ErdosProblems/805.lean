@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos805
 
+variable {α : Type*}
+
 /-- Clique number -/
 noncomputable def cliqueNumber (G : SimpleGraph α) : ℕ := sorry
 
