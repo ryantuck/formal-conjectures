@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos801
 
+variable {α : Type*}
+
 /-- Independence number -/
 noncomputable def independenceNumber (G : SimpleGraph α) : ℕ := sorry
 
