@@ -38,9 +38,12 @@ theorem weighted_points_equal_lines :
     ∀ (n : ℕ) (pts : Finset (Fin 2 → ℝ)) (w : (Fin 2 → ℝ) → ℝ),
       pts.card = n →
       (∀ p ∈ pts, w p > 0) →
-      (∀ L : Finset (Fin 2 → ℝ), L ⊆ pts → L.card ≥ 2 →
-        sorry) →
-      sorry := by
+      (∀ L₁ L₂ : Finset (Fin 2 → ℝ), L₁ ⊆ pts → L₂ ⊆ pts →
+        L₁.card ≥ 2 → L₂.card ≥ 2 →
+        (∃ (line : Set (Fin 2 → ℝ)), ∀ p ∈ L₁, p ∈ line) →
+        (∃ (line : Set (Fin 2 → ℝ)), ∀ p ∈ L₂, p ∈ line) →
+        ∑ p ∈ L₁, w p = ∑ p ∈ L₂, w p) →
+      n ≤ 4 := by
   sorry
 
 end Erdos735
