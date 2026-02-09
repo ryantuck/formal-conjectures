@@ -26,7 +26,7 @@ SOLVED
 *Reference:* [erdosproblems.com/833](https://www.erdosproblems.com/833)
 -/
 
-open Finset
+open Finset Classical
 
 open scoped Topology Real
 
