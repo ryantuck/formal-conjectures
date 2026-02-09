@@ -38,7 +38,7 @@ noncomputable def h (n : ℕ) : ℕ := sorry
 /-- Estimate h(n) -/
 @[category research open, AMS 52]
 theorem distinct_circle_radii_general :
-    sorry := by
+    ∃ (f : ℕ → ℕ), ∀ (n : ℕ), h n ≥ f n := by
   sorry
 
 end Erdos831
