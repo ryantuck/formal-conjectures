@@ -36,11 +36,11 @@ namespace Erdos814
 @[category research solved, AMS 05]
 theorem induced_large_min_degree (k : ℕ) :
     ∃ c : ℝ, c > 0 ∧ c < 1 ∧
-      ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
-        G.edgeFinset.card ≥ sorry →
-        ∃ (S : Finset (Fin n)),
-          S.card ≤ (1 - c) * n ∧
-          ∀ v ∈ S, (G.induce S).degree v ≥ k := by
+      ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] [G.LocallyFinite],
+        G.edgeFinset.card ≥ k * n →
+        ∃ (S : Finset (Fin n)) (_ : (G.induce ↑S).LocallyFinite),
+          (S.card : ℝ) ≤ (1 - c) * n ∧
+          ∀ v : S, (G.induce ↑S).degree v ≥ k := by
   sorry
 
 end Erdos814
