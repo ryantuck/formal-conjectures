@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/725](https://www.erdosproblems.com/725)
 -/
 
-open Finset Nat
+open Finset Nat Filter Asymptotics
 
 open scoped Topology Real
 
@@ -38,8 +38,7 @@ noncomputable def latinRectangles (k n : ℕ) : ℕ := sorry
 /-- Asymptotic formula for Latin rectangles -/
 @[category research open, AMS 05]
 theorem latin_rectangles_asymptotic (k : ℕ) :
-    ∃ f : ℕ → ℝ, ∀ᶠ (n : ℕ) in Filter.atTop,
-      latinRectangles k n ~ f n := by
+    ∃ f : ℕ → ℝ, (fun n => (latinRectangles k n : ℝ)) ~[atTop] f := by
   sorry
 
 end Erdos725
