@@ -26,7 +26,7 @@ OPEN ($500 reward)
 *Reference:* [erdosproblems.com/713](https://www.erdosproblems.com/713)
 -/
 
-open Finset
+open Finset Filter Asymptotics
 
 open scoped Topology Real
 
@@ -42,7 +42,7 @@ noncomputable def ex (n : ℕ) (G : SimpleGraph α) : ℕ := sorry
 theorem bipartite_turan_power_law (answer : Prop) :
     answer ↔ ∀ (G : SimpleGraph α), G.IsBipartite →
       ∃ (α : ℝ) (c : ℝ), α ∈ Set.Ioo 1 2 ∧ c > 0 ∧
-        ∀ᶠ (n : ℕ) in Filter.atTop, ex n G ~ fun n => c * (n : ℝ) ^ α := by
+        (fun n => (ex n G : ℝ)) ~[atTop] (fun n => c * (n : ℝ) ^ α) := by
   sorry
 
 end Erdos713
