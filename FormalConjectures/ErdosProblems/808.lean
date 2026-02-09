@@ -45,8 +45,8 @@ def graphProduct (G : SimpleGraph α) (A : Finset α) : Finset α := sorry
 theorem not_graph_sum_product :
     ¬ ∀ (c : ℝ) (ε : ℝ), c > 0 → ε > 0 →
       ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (A : Finset (Fin n)),
-        G.edgeFinset.card ≥ (n : ℝ) ^ (1 + c) →
-        max (graphSum G A).card (graphProduct G A).card ≥ A.card ^ (1 + c - ε) := by
+        (G.edgeFinset.card : ℝ) ≥ (n : ℝ) ^ (1 + c) →
+        max (graphSum G A).card (graphProduct G A).card ≥ ⌊(A.card : ℝ) ^ (1 + c - ε)⌋₊ := by
   sorry
 
 end Erdos808
