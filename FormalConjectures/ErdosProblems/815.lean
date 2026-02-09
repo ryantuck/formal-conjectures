@@ -38,8 +38,9 @@ theorem not_restricted_long_cycle :
     ∃ (k : ℕ), k = 23 ∧
       ¬ ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
         G.edgeFinset.card = 2 * n - 2 →
-        sorry →
-        ∃ (C : sorry), C.card = k := by
+        (∀ (S : Finset (Fin n)), S.card ≤ n / 2 →
+          (G.induce ↑S).edgeFinset.card ≤ S.card) →
+        ∃ (C : Finset (Fin n)), C.card = k := by
   sorry
 
 end Erdos815
