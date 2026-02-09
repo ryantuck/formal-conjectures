@@ -26,9 +26,9 @@ PROVED
 *Reference:* [erdosproblems.com/746](https://www.erdosproblems.com/746)
 -/
 
-open Finset
+open Finset Filter
 
-open scoped Topology Real Probability
+open scoped Topology Real
 
 namespace Erdos746
 
@@ -40,7 +40,10 @@ def isHamiltonian (G : SimpleGraph α) : Prop := sorry
 /-- Random graphs with (1/2+ε)n log n edges are Hamiltonian -/
 @[category research solved, AMS 05]
 theorem random_graph_hamiltonian (ε : ℝ) (hε : ε > 0) :
-    sorry := by
+    ∀ᶠ (n : ℕ) in atTop,
+      ∀ (G : SimpleGraph (Fin n)),
+        G.edgeSet.ncard ≥ ⌊(1/2 + ε) * n * Real.log n⌋₊ →
+        isHamiltonian G := by
   sorry
 
 end Erdos746
