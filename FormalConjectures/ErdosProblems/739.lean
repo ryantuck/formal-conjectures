@@ -42,7 +42,7 @@ noncomputable def chromaticCardinal (G : SimpleGraph α) : Cardinal := sorry
 theorem chromatic_subgraph_ladder (answer : Prop) :
     answer ↔ ∀ (m : Cardinal) (G : SimpleGraph α),
       chromaticCardinal G = m →
-      ∀ n : Cardinal, n < m → n.IsInfinite →
+      ∀ n : Cardinal, n < m → aleph0 ≤ n →
         ∃ (S : Set α), ∃ (H : SimpleGraph S),
           chromaticCardinal H = n := by
   sorry
