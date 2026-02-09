@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos833
 
+variable {α : Type*}
+
 /-- Chromatic number -/
 noncomputable def chromaticNumber (H : Finset (Finset α)) : ℕ := sorry
 
