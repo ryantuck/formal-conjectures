@@ -28,9 +28,11 @@ DISPROVED
 
 open Finset
 
-open scoped Topology Real Probability
+open scoped Topology Real
 
 namespace Erdos807
+
+variable {α : Type*}
 
 /-- Bipartition number -/
 noncomputable def bipartitionNumber (G : SimpleGraph α) : ℕ := sorry
@@ -41,7 +43,8 @@ noncomputable def independenceNumber (G : SimpleGraph α) : ℕ := sorry
 /-- Disproved: τ(G) = n - α(G) almost surely -/
 @[category research solved, AMS 05]
 theorem not_random_bipartition :
-    sorry := by
+    ¬ ∀ (n : ℕ), ∀ᶠ (G : SimpleGraph (Fin n)) in Filter.atTop,
+      bipartitionNumber G = n - independenceNumber G := by
   sorry
 
 end Erdos807
