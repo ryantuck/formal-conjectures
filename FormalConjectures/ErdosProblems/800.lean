@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos800
 
+variable {α : Type*}
+
 /-- Ramsey number -/
 noncomputable def ramseyNumber (G : SimpleGraph α) : ℕ := sorry
 
@@ -39,7 +41,7 @@ noncomputable def ramseyNumber (G : SimpleGraph α) : ℕ := sorry
 @[category research solved, AMS 05]
 theorem ramsey_restricted_adjacency :
     ∃ C : ℝ, C > 0 ∧
-      ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+      ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] [G.LocallyFinite],
         (∀ u v : Fin n, G.Adj u v →
           G.degree u < 3 ∨ G.degree v < 3) →
         ramseyNumber G ≤ C * n := by
