@@ -26,7 +26,7 @@ PROVED
 *Reference:* [erdosproblems.com/748](https://www.erdosproblems.com/748)
 -/
 
-open Finset
+open Finset Classical
 
 open scoped Topology Real
 
