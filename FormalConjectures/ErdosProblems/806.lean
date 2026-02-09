@@ -39,7 +39,7 @@ theorem small_set_in_sumset :
       A ⊆ Finset.range (n + 1) →
       A.card ≤ (n : ℝ) ^ (1/2 : ℝ) →
       ∃ (B : Finset ℕ),
-        (∀ a ∈ A, ∃ b₁ b₂ ∈ B, b₁ + b₂ = a) ∧
+        (∀ a ∈ A, ∃ b₁ ∈ B, ∃ b₂ ∈ B, b₁ + b₂ = a) ∧
         B.card ≤ A.card := by
   sorry
 
