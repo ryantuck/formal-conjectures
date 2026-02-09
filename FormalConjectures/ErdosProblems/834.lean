@@ -26,11 +26,13 @@ SOLVED
 *Reference:* [erdosproblems.com/834](https://www.erdosproblems.com/834)
 -/
 
-open Finset
+open Finset Classical
 
 open scoped Topology Real
 
 namespace Erdos834
+
+variable {α : Type*}
 
 /-- 3-critical hypergraph -/
 def IsCritical3 (H : Finset (Finset α)) : Prop := sorry
