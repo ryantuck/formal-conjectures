@@ -27,18 +27,20 @@ OPEN (Erdős proved it for d=1)
 *Reference:* [erdosproblems.com/670](https://www.erdosproblems.com/670)
 -/
 
-open EuclideanSpace Metric Finset
+open EuclideanSpace Metric Finset Filter
 
 open scoped Topology Real
 
 namespace Erdos670
+
+variable {d : ℕ}
 
 /-- Diameter of set -/
 noncomputable def diameter (A : Finset (Fin d → ℝ)) : ℝ := sorry
 
 /-- Pairwise distances differ by ≥ 1 implies diameter ≥ (1+o(1))n² -/
 @[category research open, AMS 52]
-theorem distance_separation_implies_large_diameter (d : ℕ) (answer : Prop) :
+theorem distance_separation_implies_large_diameter (answer : Prop) :
     answer ↔ ∀ ε > 0, ∀ᶠ (n : ℕ) in Filter.atTop,
       ∀ (A : Finset (Fin d → ℝ)), A.card = n →
         (∀ x y z w, x ∈ A → y ∈ A → z ∈ A → w ∈ A →
