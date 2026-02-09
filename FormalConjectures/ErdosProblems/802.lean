@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos802
 
+variable {α : Type*}
+
 /-- Independence number -/
 noncomputable def independenceNumber (G : SimpleGraph α) : ℕ := sorry
 
@@ -39,9 +41,9 @@ noncomputable def independenceNumber (G : SimpleGraph α) : ℕ := sorry
 @[category research open, AMS 05]
 theorem kr_free_independence (r : ℕ) (answer : Prop) :
     answer ↔ ∃ c : ℝ, c > 0 ∧
-      ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (t : ℝ),
+      ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] [G.LocallyFinite] (t : ℝ),
         G.CliqueFree r →
-        sorry →
+        (Finset.univ.sum G.degree : ℝ) / (2 * n) = t →
         independenceNumber G ≥ c * (Real.log t / t) * n := by
   sorry
 
