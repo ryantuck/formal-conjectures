@@ -26,15 +26,18 @@ OPEN
 *Reference:* [erdosproblems.com/840](https://www.erdosproblems.com/840)
 -/
 
-open Finset
+open Finset Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos840
 
+/-- Sumset of A with itself -/
+def sumset (A : Finset ℕ) : Finset ℕ := sorry
+
 /-- Quasi-Sidon property -/
-def IsQuasiSidon (A : Finset ℕ) : Prop :=
-  (A + A).card = (1 + sorry) * Nat.choose A.card 2
+def IsQuasiSidon (A : Finset ℕ) (o : ℕ → ℝ) : Prop :=
+  (sumset A).card = (1 + o A.card) * Nat.choose A.card 2
 
 /-- f(N): largest quasi-Sidon subset -/
 noncomputable def f (N : ℕ) : ℕ := sorry
@@ -42,7 +45,8 @@ noncomputable def f (N : ℕ) : ℕ := sorry
 /-- Growth of f(N) -/
 @[category research open, AMS 11]
 theorem quasi_sidon_growth :
-    sorry := by
+    ∃ c : ℝ, c > 0 ∧
+      (fun N => (f N : ℝ)) ~[atTop] fun N => c * (N : ℝ) ^ (1/3 : ℝ) := by
   sorry
 
 end Erdos840
