@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos836
 
+variable {α : Type*}
+
 /-- Chromatic number -/
 noncomputable def chromaticNumber (H : Finset (Finset α)) : ℕ := sorry
 
@@ -39,11 +41,11 @@ noncomputable def chromaticNumber (H : Finset (Finset α)) : ℕ := sorry
 @[category research open, AMS 05]
 theorem chromatic_intersecting_vertices (r : ℕ) (answer : Prop) :
     answer ↔ ∃ C : ℝ, C > 0 ∧
-      ∀ (H : Finset (Finset (Fin n))),
+      ∀ (n : ℕ) (H : Finset (Finset (Fin n))),
         (∀ e ∈ H, e.card = r) →
         (∀ e₁ e₂ : Finset (Fin n), e₁ ∈ H → e₂ ∈ H → e₁ ∩ e₂ ≠ ∅) →
         chromaticNumber H = 3 →
-        n ≤ C * (r : ℝ) ^ 2 := by
+        (n : ℝ) ≤ C * (r : ℝ) ^ 2 := by
   sorry
 
 end Erdos836
