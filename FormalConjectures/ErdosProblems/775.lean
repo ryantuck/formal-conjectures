@@ -32,8 +32,10 @@ open scoped Topology Real
 
 namespace Erdos775
 
+variable {α : Type*}
+
 /-- Number of distinct clique sizes -/
-noncomputable def numDistinctCliqueSizes (H : Finset (Finset ℕ)) : ℕ := sorry
+noncomputable def numDistinctCliqueSizes (H : Finset (Finset α)) : ℕ := sorry
 
 /-- Disproved: 3-uniform hypergraph has n-O(1) clique sizes -/
 @[category research solved, AMS 05]
