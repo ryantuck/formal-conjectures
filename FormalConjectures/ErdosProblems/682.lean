@@ -27,9 +27,9 @@ PROVED by Gafni and Tao
 *Reference:* [erdosproblems.com/682](https://www.erdosproblems.com/682)
 -/
 
-open Nat
+open Nat Filter
 
-open scoped Topology Real
+open scoped Topology Real Classical
 
 namespace Erdos682
 
@@ -42,8 +42,10 @@ noncomputable def nthPrime (n : ℕ) : ℕ := sorry
 /-- For almost all n, ∃m ∈ (p_n, p_{n+1}) with p(m) ≥ p_{n+1} - p_n -/
 @[category research solved, AMS 11]
 theorem prime_gap_least_prime_factor :
-    ∀ ε > 0, Filter.Tendsto
-      (fun X => ((Finset.range X).filter (fun n => sorry)).card / X)
+    ∀ ε : ℝ, ε > 0 → Filter.Tendsto
+      (fun X : ℕ => (((Finset.range X).filter (fun n =>
+        ∃ m, nthPrime n < m ∧ m < nthPrime (n+1) ∧
+          leastPrimeFactor m ≥ nthPrime (n+1) - nthPrime n)).card : ℝ) / (X : ℝ))
       Filter.atTop (nhds 1) := by
   sorry
 
