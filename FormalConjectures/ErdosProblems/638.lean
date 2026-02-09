@@ -36,7 +36,7 @@ namespace Erdos638
 /-- Graph property on monochromatic triangles (simplified) -/
 @[category research open, AMS 03]
 theorem infinite_cardinal_triangle_property (κ : Cardinal.{0}) (answer : Prop) :
-    answer ↔ ∃ (G : SimpleGraph κ.toType), sorry := by
+    answer ↔ ∃ (V : Type) (_ : Cardinal.mk V = κ) (G : SimpleGraph V), sorry := by
   sorry
 
 end Erdos638
