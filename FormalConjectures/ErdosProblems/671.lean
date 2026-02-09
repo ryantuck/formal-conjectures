@@ -40,9 +40,9 @@ def lagrangeConverges (nodes : Set ℝ) (x : ℝ) : Prop := sorry
 /-- Interpolation nodes with divergent Lebesgue constant but convergent Lagrange interpolation -/
 @[category research open, AMS 41]
 theorem interpolation_divergent_lebesgue_convergent_lagrange (answer : Prop) :
-    answer ↔ ∃ (nodes : Set ℝ),
-      (∃ x : ℝ, ¬ BddAbove (Set.range (fun n => lebesgueConstant nodes x))) ∧
-      (∃ x : ℝ, lagrangeConverges nodes x) := by
+    answer ↔ ∃ (nodes : ℕ → Set ℝ),
+      (∃ x : ℝ, ¬ BddAbove (Set.range (fun n => lebesgueConstant (nodes n) x))) ∧
+      (∃ x : ℝ, ∃ n : ℕ, lagrangeConverges (nodes n) x) := by
   sorry
 
 end Erdos671
