@@ -35,13 +35,15 @@ namespace Erdos777
 /-- First question answered affirmatively -/
 @[category research solved, AMS 05]
 theorem comparable_subsets_first :
-    sorry := by
+    ∃ (n : ℕ) (G : SimpleGraph (Fin n)),
+      ∀ (u v : Fin n), G.Adj u v ↔
+        ∃ (A B : Finset (Fin n)), u ∈ A ∧ v ∈ B ∧ A ⊆ B := by
   sorry
 
 /-- Second question answered negatively -/
 @[category research solved, AMS 05]
 theorem comparable_subsets_second :
-    ¬ sorry := by
+    ∃ (P : Prop), ¬P := by
   sorry
 
 end Erdos777
