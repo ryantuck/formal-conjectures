@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos803
 
+variable {α : Type*}
+
 /-- D-balanced subgraph -/
 def isDBalanced (G : SimpleGraph α) (D : ℕ) : Prop := sorry
 
