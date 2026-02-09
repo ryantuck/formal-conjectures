@@ -26,7 +26,7 @@ OPEN (2000 rupees reward)
 *Reference:* [erdosproblems.com/710](https://www.erdosproblems.com/710)
 -/
 
-open Finset Nat
+open Finset Nat Filter Asymptotics
 
 open scoped Topology Real
 
@@ -38,7 +38,7 @@ noncomputable def f (n : ℕ) : ℕ := sorry
 /-- Asymptotic formula for f(n) -/
 @[category research open, AMS 11]
 theorem divisibility_interval_asymptotic :
-    ∃ g : ℕ → ℝ, ∀ᶠ (n : ℕ) in Filter.atTop, f n ~ g n := by
+    ∃ g : ℕ → ℝ, (fun n => (f n : ℝ)) ~[atTop] g := by
   sorry
 
 end Erdos710
