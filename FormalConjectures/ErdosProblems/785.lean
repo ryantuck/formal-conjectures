@@ -26,7 +26,7 @@ PROVED
 *Reference:* [erdosproblems.com/785](https://www.erdosproblems.com/785)
 -/
 
-open Finset Nat
+open Finset Nat Filter Asymptotics
 
 open scoped Topology Real
 
@@ -39,12 +39,11 @@ noncomputable def A_count (A : Set ℕ) (x : ℝ) : ℕ := sorry
 @[category research solved, AMS 11]
 theorem erdos_danzer_conjecture (A B : Set ℕ)
     (hinf_A : A.Infinite) (hinf_B : B.Infinite)
-    (hsum : ∀ᶠ n in Filter.atTop, n ∈ A + B)
-    (hasym : ∀ᶠ (x : ℝ) in Filter.atTop,
-      (A_count A x : ℝ) * (A_count B x : ℝ) ~ x) :
-    Filter.Tendsto
+    (hsum : ∀ᶠ n in atTop, ∃ a ∈ A, ∃ b ∈ B, a + b = n)
+    (hasym : (fun x => (A_count A x : ℝ) * (A_count B x : ℝ)) ~[atTop] id) :
+    Tendsto
       (fun x => (A_count A x : ℝ) * (A_count B x : ℝ) - x)
-      Filter.atTop Filter.atTop := by
+      atTop atTop := by
   sorry
 
 end Erdos785
