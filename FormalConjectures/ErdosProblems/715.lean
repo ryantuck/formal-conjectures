@@ -37,9 +37,9 @@ variable {α : Type*}
 /-- Every r-regular graph with r≥4 contains a 3-regular subgraph -/
 @[category research solved, AMS 05]
 theorem regular_graph_contains_three_regular (r : ℕ) (hr : r ≥ 4) :
-    ∀ (G : SimpleGraph α) [DecidableRel G.Adj],
+    ∀ (G : SimpleGraph α) [DecidableRel G.Adj] [G.LocallyFinite],
       G.IsRegularOfDegree r →
-      ∃ (S : Set α), ∃ (H : SimpleGraph S),
+      ∃ (S : Set α) (H : SimpleGraph S) (_ : H.LocallyFinite),
         H.IsRegularOfDegree 3 := by
   sorry
 
