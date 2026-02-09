@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/693](https://www.erdosproblems.com/693)
 -/
 
-open Nat
+open Nat Filter Asymptotics
 
 open scoped Topology Real
 
@@ -38,7 +38,7 @@ noncomputable def maxGap (n k : ℕ) : ℕ := sorry
 /-- Estimate maxGap(n,k) -/
 @[category research open, AMS 11]
 theorem max_gap_divisors_in_range (k : ℕ) :
-    ∃ f : ℕ → ℕ, ∀ n : ℕ, maxGap n k ~ f n := by
+    ∃ f : ℕ → ℕ, (fun n => (maxGap n k : ℝ)) ~[atTop] (fun n => (f n : ℝ)) := by
   sorry
 
 end Erdos693
