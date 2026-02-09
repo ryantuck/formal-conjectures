@@ -27,7 +27,7 @@ OPEN ($50 reward)
 *Reference:* [erdosproblems.com/661](https://www.erdosproblems.com/661)
 -/
 
-open EuclideanSpace Metric Finset
+open EuclideanSpace Metric Finset Filter
 
 open scoped Topology Real
 
@@ -38,7 +38,7 @@ namespace Erdos661
 theorem bipartite_few_distances (answer : Prop) :
     answer ↔ ∀ᶠ (n : ℕ) in Filter.atTop,
       ∃ (X Y : Finset (Fin 2 → ℝ)), X.card = n ∧ Y.card = n ∧
-        ∀ ε > 0, (X ×ˢ Y).image (fun (x, y) => dist x y) |>.card
+        ∀ ε : ℝ, ε > 0 → ((X ×ˢ Y).image (fun (x, y) => dist x y)).card
           < Nat.floor (ε * n / Real.sqrt (Real.log n)) := by
   sorry
 
