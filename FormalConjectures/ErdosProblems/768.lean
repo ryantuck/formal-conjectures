@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/768](https://www.erdosproblems.com/768)
 -/
 
-open Finset Nat
+open Finset Nat Filter Classical
 
 open scoped Topology Real
 
@@ -41,7 +41,7 @@ def hasPrimeDivisorProperty (n : ℕ) : Prop :=
 theorem prime_divisor_property_density (answer : Prop) :
     answer ↔ ∃ c : ℝ, c > 0 ∧
       Filter.Tendsto
-        (fun N => (Finset.filter hasPrimeDivisorProperty (Finset.range (N + 1))).card /
+        (fun N : ℕ => ((Finset.filter hasPrimeDivisorProperty (Finset.range (N + 1))).card : ℝ) /
           Real.exp (c * (Real.log N * Real.log (Real.log N)) ^ (1/2 : ℝ)))
         Filter.atTop (nhds 1) := by
   sorry
