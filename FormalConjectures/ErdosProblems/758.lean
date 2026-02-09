@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos758
 
+variable {α : Type*}
+
 /-- Cochromatic number -/
 noncomputable def cochromaticNumber (G : SimpleGraph α) : ℕ := sorry
 
