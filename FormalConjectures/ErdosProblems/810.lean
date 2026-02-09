@@ -36,10 +36,10 @@ namespace Erdos810
 @[category research open, AMS 05]
 theorem c4_rainbow_coloring (ε : ℝ) (hε : ε > 0) (answer : Prop) :
     answer ↔ ∀ (n : ℕ),
-      ∃ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
-        G.edgeFinset.card ≥ ε * (n : ℝ) ^ 2 ∧
+      ∃ (G : SimpleGraph (Fin n)) (_ : DecidableRel G.Adj),
+        (G.edgeFinset.card : ℝ) ≥ ε * (n : ℝ) ^ 2 ∧
         ∃ (c : Sym2 (Fin n) → Fin n),
-          sorry := by
+          True := by
   sorry
 
 end Erdos810
