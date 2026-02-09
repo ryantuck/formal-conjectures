@@ -26,11 +26,13 @@ SOLVED
 *Reference:* [erdosproblems.com/799](https://www.erdosproblems.com/799)
 -/
 
-open Finset
+open Finset Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos799
+
+variable {α : Type*}
 
 /-- List chromatic number -/
 noncomputable def listChromaticNumber (G : SimpleGraph α) : ℕ := sorry
@@ -38,7 +40,9 @@ noncomputable def listChromaticNumber (G : SimpleGraph α) : ℕ := sorry
 /-- χ_L(G) ≈ n/(log n) for almost all graphs -/
 @[category research solved, AMS 05]
 theorem random_graph_list_chromatic :
-    sorry := by
+    ∀ᶠ (n : ℕ) in atTop,
+      ∀ (G : SimpleGraph (Fin n)),
+        (fun n => (listChromaticNumber G : ℝ)) ~[atTop] (fun n => n / Real.log n) := by
   sorry
 
 end Erdos799
