@@ -34,13 +34,11 @@ namespace Erdos754
 
 /-- Maximum number of equidistant points in ℝ⁴ -/
 @[category research solved, AMS 52]
-theorem max_equidistant_points_four_dim (n : ℕ) :
-    ∀ (A : Finset (Fin 4 → ℝ)),
-      A.card = n →
-      (∀ S : Finset (Fin 4 → ℝ), S ⊆ A →
-        (∀ x y : Fin 4 → ℝ, x ∈ S → y ∈ S → x ≠ y →
-          dist x (Classical.choose sorry) = dist y (Classical.choose sorry))) →
-      S.card ≤ n / 2 + sorry := by
+theorem max_equidistant_points_four_dim :
+    ∀ (S : Finset (Fin 4 → ℝ)) (c : Fin 4 → ℝ),
+      (∀ x y : Fin 4 → ℝ, x ∈ S → y ∈ S → x ≠ y →
+        dist x c = dist y c) →
+      S.card ≤ 5 := by
   sorry
 
 end Erdos754
