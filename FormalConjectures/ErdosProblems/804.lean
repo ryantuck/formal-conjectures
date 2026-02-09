@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos804
 
+variable {α : Type*}
+
 /-- Independence number -/
 noncomputable def independenceNumber (G : SimpleGraph α) : ℕ := sorry
 
@@ -41,7 +43,10 @@ noncomputable def f (m n : ℕ) : ℕ := sorry
 /-- Disproved conjecture -/
 @[category research solved, AMS 05]
 theorem not_induced_independence_bound :
-    sorry := by
+    ¬ ∀ (m n : ℕ), ∃ (G : SimpleGraph (Fin (m * n))),
+      ∀ (S : Finset (Fin (m * n))), S.card = m →
+        ∃ (T : Finset (Fin (m * n))), T ⊆ S ∧
+          independenceNumber (G.induce T) ≥ f m n := by
   sorry
 
 end Erdos804
