@@ -39,8 +39,8 @@ noncomputable def R (k n : ℕ) : ℕ := sorry
 @[category research open, AMS 05]
 theorem ramsey_lower_bound (k : ℕ) (hk : 3 ≤ k) (answer : Prop) :
     answer ↔ ∃ (c : ℝ), 0 < c ∧
-      ∀ᶠ n in Filter.atTop,
-        (n : ℝ) ^ (k - 1 : ℝ) / (Real.log n) ^ c ≤ R k n := by
+      ∀ᶠ n : ℕ in Filter.atTop,
+        (n : ℝ) ^ ((k : ℝ) - 1) / (Real.log n) ^ c ≤ R k n := by
   sorry
 
 end Erdos986

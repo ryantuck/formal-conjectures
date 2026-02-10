@@ -34,10 +34,10 @@ namespace Erdos974
 
 /-- Characterization via consecutive zero power sums -/
 @[category research solved, AMS 12]
-theorem roots_unity_characterization (n : ℕ) :
+theorem roots_unity_characterization (n : ℕ) (hn : n ≥ 1) :
     ∀ (z : Fin n → ℂ),
-      z 0 = 1 →
-      (∃ᶠ m in Filter.atTop, ∀ k : Fin (n - 1), ∑ i : Fin n, (z i) ^ (m + k) = 0) →
+      z ⟨0, by omega⟩ = 1 →
+      (∃ᶠ m in Filter.atTop, ∀ k : Fin (n - 1), ∑ i : Fin n, (z i) ^ (m + k.val) = 0) →
       ∃ (ζ : ℂ), ζ ^ n = 1 ∧
         ∀ i : Fin n, ∃ j : Fin n, z i = ζ ^ j.val := by
   sorry

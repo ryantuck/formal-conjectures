@@ -36,7 +36,7 @@ namespace Erdos967
 @[category research solved, AMS 11]
 theorem not_series_nonvanishing :
     ¬ ∀ (a : ℕ → ℕ), StrictMono a →
-      (∑' k : ℕ, (1 : ℝ) / a k) < ∞ →
+      Summable (fun k : ℕ => (1 : ℝ) / a k) →
       ∀ t : ℝ, 1 + ∑' k : ℕ, (1 : ℂ) / (a k : ℂ) ^ (1 + t * Complex.I) ≠ 0 := by
   sorry
 

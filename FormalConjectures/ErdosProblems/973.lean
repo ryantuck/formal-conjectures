@@ -36,9 +36,10 @@ namespace Erdos973
 @[category research open, AMS 41]
 theorem complex_power_sum_bounds (answer : Prop) :
     answer ↔ ∃ (C : ℝ), 1 < C ∧
-      ∀ n ≥ 2, ∃ (z : Fin n → ℂ),
-        z 0 = 1 ∧ (∀ i : Fin n, 1 ≤ ‖z i‖) ∧
-        ∀ k : ℕ, ‖∑ i : Fin n, (z i) ^ k‖ < C ^ (-n : ℝ) := by
+      ∀ n ≥ 2, ∃ (z : Fin n → ℂ) (h0 : 0 < n),
+        z ⟨0, h0⟩ = 1 ∧
+        (∀ i : Fin n, 1 ≤ ‖z i‖) ∧
+        ∀ k : ℕ, ‖∑ i : Fin n, (z i) ^ k‖ < C ^ (-(n : ℝ)) := by
   sorry
 
 end Erdos973

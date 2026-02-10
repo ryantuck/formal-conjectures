@@ -40,7 +40,7 @@ noncomputable def F (f : ℤ[X]) (n : ℕ) : ℕ := sorry
 theorem prime_divisor_product_growth (f : ℤ[X]) (answer : Prop) :
     answer ↔ f.degree ≥ 2 → Irreducible f →
       ∃ (c : ℝ), 0 < c ∧
-        ∀ᶠ n in atTop, (n : ℝ) ^ (1 + c) ≤ F f n := by
+        ∀ᶠ n : ℕ in atTop, (n : ℝ) ^ (1 + c) ≤ F f n := by
   sorry
 
 end Erdos976

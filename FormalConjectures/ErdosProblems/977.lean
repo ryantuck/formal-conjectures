@@ -34,12 +34,12 @@ namespace Erdos977
 
 /-- Greatest prime divisor function -/
 noncomputable def P (m : ℕ) : ℕ :=
-  (Nat.factors m).maximum?.getD 1
+  if h : m.primeFactors.Nonempty then m.primeFactors.max' h else 1
 
 /-- Mersenne numbers have unbounded relative prime divisors -/
 @[category research solved, AMS 11]
 theorem mersenne_prime_divisor_growth :
-    Tendsto (fun n => (P (2 ^ n - 1) : ℝ) / n) atTop atTop := by
+    Tendsto (fun n : ℕ => (P (2 ^ n - 1) : ℝ) / n) atTop atTop := by
   sorry
 
 end Erdos977

@@ -36,7 +36,7 @@ namespace Erdos964
 @[category research solved, AMS 11]
 theorem divisor_ratio_dense :
     ∀ x > 0, ∀ ε > 0,
-      ∃ n : ℕ, |(Nat.divisors (n + 1)).card / (Nat.divisors n).card - x| < ε := by
+      ∃ n : ℕ, |((Nat.divisors (n + 1)).card : ℝ) / (Nat.divisors n).card - x| < ε := by
   sorry
 
 end Erdos964

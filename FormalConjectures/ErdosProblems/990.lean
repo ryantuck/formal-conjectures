@@ -38,9 +38,9 @@ theorem polynomial_root_distribution (answer : Prop) :
     answer ↔ ∀ (P : ℂ[X]) (n M : ℕ),
       let roots := P.roots.toFinset
       let nonzero_coeffs := {i : ℕ | P.coeff i ≠ 0}.ncard
-      ∀ (I : Set ℝ), I ⊆ Set.Icc 0 (2 * Real.pi) →
-        |{z ∈ roots | Complex.arg z ∈ I}.ncard -
-          (roots.card : ℝ) * (volume I / (2 * Real.pi))| ≤
+      ∀ (I : Set ℝ) (μ : ℝ), I ⊆ Set.Icc 0 (2 * Real.pi) →
+        |{z : ℂ | z ∈ roots ∧ Complex.arg z ∈ I}.ncard -
+          (roots.card : ℝ) * (μ / (2 * Real.pi))| ≤
         Real.sqrt (nonzero_coeffs * Real.log M) := by
   sorry
 

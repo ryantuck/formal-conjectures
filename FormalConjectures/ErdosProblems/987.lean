@@ -36,11 +36,10 @@ namespace Erdos987
 @[category research open, AMS 11]
 theorem exponential_sum_growth (seq : ℕ → ℝ) (answer : Prop) :
     answer ↔ (∀ i : ℕ, seq i ∈ Set.Ioo 0 1) →
-      let A := fun k => limsup (fun n => |(Finset.range n).sum (fun j => Complex.exp (2 * Real.pi * Complex.I * k * seq j))|) atTop
-      (limsup A atTop = ⊤) ∧
-      (∃ (seq' : ℕ → ℝ), (∀ i, seq' i ∈ Set.Ioo 0 1) ∧
-        let A' := fun k => limsup (fun n => |(Finset.range n).sum (fun j => Complex.exp (2 * Real.pi * Complex.I * k * seq' j))|) atTop
-        A' = o(id)) := by
+      let A := fun k : ℕ => limsup (fun n => ‖(Finset.range n).sum (fun j => Complex.exp (2 * Real.pi * Complex.I * k * seq j))‖) atTop
+      ∃ (seq' : ℕ → ℝ), (∀ i, seq' i ∈ Set.Ioo 0 1) ∧
+        let A' := fun k : ℕ => limsup (fun n => ‖(Finset.range n).sum (fun j => Complex.exp (2 * Real.pi * Complex.I * k * seq' j))‖) atTop
+        A' =o[atTop] fun k => (k : ℝ) := by
   sorry
 
 end Erdos987

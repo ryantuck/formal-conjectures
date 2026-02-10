@@ -38,9 +38,9 @@ noncomputable def f (k n : ℕ) : ℕ := sorry
 /-- Asymptotic behavior of f -/
 @[category research open, AMS 11]
 theorem smooth_numbers_subset (answer : Prop) :
-    answer ↔ Tendsto (fun n =>
-      2 * (Finset.filter Nat.Prime (Finset.range (Nat.floor (Real.sqrt n)))).card -
-      f ((Finset.filter Nat.Prime (Finset.range n)).card + 1) n)
+    answer ↔ Tendsto (fun n : ℕ =>
+      (2 * (Finset.filter Nat.Prime (Finset.range (Nat.floor (Real.sqrt n)))).card -
+      f ((Finset.filter Nat.Prime (Finset.range n)).card + 1) n : ℝ))
       atTop atTop := by
   sorry
 

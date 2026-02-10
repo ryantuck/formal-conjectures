@@ -26,7 +26,7 @@ SOLVED
 *Reference:* [erdosproblems.com/988](https://www.erdosproblems.com/988)
 -/
 
-open Finset MeasureTheory
+open Finset MeasureTheory Filter
 
 open scoped Topology Real
 
@@ -35,8 +35,8 @@ namespace Erdos988
 /-- Minimum discrepancy tends to infinity -/
 @[category research solved, AMS 11]
 theorem sphere_discrepancy_unbounded (d : ℕ) :
-    ∀ (D : Finset (EuclideanSpace ℝ (Fin d)) → ℝ),
-      Tendsto (fun n => sInf {D P | P.card = n ∧ ∀ p ∈ P, ‖p‖ = 1})
+    ∀ (disc : Finset (EuclideanSpace ℝ (Fin d)) → ℝ),
+      Tendsto (fun n => sInf {val : ℝ | ∃ P : Finset (EuclideanSpace ℝ (Fin d)), P.card = n ∧ (∀ p ∈ P, ‖p‖ = 1) ∧ val = disc P})
         atTop atTop := by
   sorry
 

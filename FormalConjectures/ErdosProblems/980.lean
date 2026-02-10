@@ -39,7 +39,7 @@ noncomputable def n_k (k p : ℕ) : ℕ := sorry
 @[category research solved, AMS 11]
 theorem power_nonresidue_sum (k : ℕ) :
     ∃ (c : ℝ), 0 < c ∧
-      Tendsto (fun x => ((Finset.filter Nat.Prime (Finset.range x)).sum (n_k k) : ℝ) / (x / Real.log x))
+      Tendsto (fun x => ((Finset.filter Nat.Prime (Finset.range x)).sum (fun p => n_k k p) : ℝ) / (x / Real.log x))
         atTop (nhds c) := by
   sorry
 

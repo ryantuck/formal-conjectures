@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/963](https://www.erdosproblems.com/963)
 -/
 
-open Finset
+open Finset Filter
 
 open scoped Topology Real
 
