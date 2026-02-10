@@ -26,19 +26,45 @@ OPEN
 *Reference:* [erdosproblems.com/866](https://www.erdosproblems.com/866)
 -/
 
-open Finset
+open Finset Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos866
 
-/-- gₖ(N): minimal value for k pairwise sums guarantee -/
-noncomputable def g_k (k N : ℕ) : ℕ := sorry
+/-- A set contains k pairwise sums -/
+def ContainsKPairwiseSums (A : Finset ℤ) (k : ℕ) : Prop :=
+  ∃ b : Fin k → ℤ, ∀ i j : Fin k, i < j →
+    (b i + b j) ∈ A
 
-/-- Estimate gₖ(N) -/
+/-- gₖ(N): minimal value such that if |A∩{1,...,2N}| ≥ N + gₖ(N),
+    then A contains k pairwise sums -/
+noncomputable def g_k (k N : ℕ) : ℕ :=
+  sInf {g : ℕ | ∀ A : Finset ℤ,
+    (A ∩ Finset.Icc 1 (2*N)).card ≥ N + g →
+    ContainsKPairwiseSums A k}
+
+/-- Main question: estimate gₖ(N) -/
 @[category research open, AMS 11]
-theorem k_pairwise_sums (k : ℕ) (hk : k ≥ 3) :
-    sorry := by
+theorem estimate_g_k (k : ℕ) (hk : k ≥ 3) :
+    ∃ f : ℕ → ℝ, (fun N => (g_k k N : ℝ)) ~[Filter.atTop] f := by
+  sorry
+
+/-- Known values: g₃(N) = 2 -/
+@[category research solved, AMS 11]
+theorem g_3_value : ∀ N : ℕ, g_k 3 N = 2 := by
+  sorry
+
+/-- Known bound: g₄(N) ≤ 2032 -/
+@[category research solved, AMS 11]
+theorem g_4_bound : ∀ N : ℕ, g_k 4 N ≤ 2032 := by
+  sorry
+
+/-- General upper bound: gₖ(N) ≪ₖ N^{1-2^{-k}} -/
+@[category research solved, AMS 11]
+theorem general_upper_bound (k : ℕ) (hk : k ≥ 3) :
+    ∃ C : ℝ, C > 0 ∧ ∀ N : ℕ, N ≥ 1 →
+      (g_k k N : ℝ) ≤ C * (N : ℝ) ^ (1 - (2 : ℝ) ^ (-(k : ℝ))) := by
   sorry
 
 end Erdos866

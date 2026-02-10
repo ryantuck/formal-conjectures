@@ -26,22 +26,55 @@ OPEN
 *Reference:* [erdosproblems.com/878](https://www.erdosproblems.com/878)
 -/
 
-open Finset Nat
+open Finset Nat Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos878
 
-/-- Number-theoretic function f(n) -/
-noncomputable def f (n : ℕ) : ℕ := sorry
+/-- f(n) = ∑ pᵢ^ℓᵢ where n ∈ [pᵢ^ℓᵢ, pᵢ^{ℓᵢ+1}) for each prime factor pᵢ -/
+noncomputable def f (n : ℕ) : ℕ :=
+  ∑ p ∈ n.primeFactors, p ^ (Nat.log p n)
 
-/-- Number-theoretic function F(n) -/
-noncomputable def F (n : ℕ) : ℕ := sorry
+/-- F(n) = max ∑ aᵢ where aᵢ ≤ n are pairwise coprime and all primes dividing aᵢ divide n -/
+noncomputable def F (n : ℕ) : ℕ :=
+  sSup {k : ℕ | ∃ S : Finset ℕ, (∀ a ∈ S, a ≤ n) ∧
+    (∀ a b, a ∈ S → b ∈ S → a ≠ b → Nat.Coprime a b) ∧
+    (∀ a ∈ S, ∀ p : ℕ, p.Prime → p ∣ a → p ∣ n) ∧
+    k = ∑ a ∈ S, a}
 
-/-- Asymptotic formulas and maximum value questions -/
+/-- Question 1: For almost all n, f(n) = o(n log log n) and F(n) ≫ n log log n -/
 @[category research open, AMS 11]
-theorem number_theoretic_functions :
-    sorry := by
+theorem f_small_F_large :
+    (∀ ε > 0, ∀ᶠ n in atTop, (f n : ℝ) < ε * n * Real.log (Real.log n)) ∧
+    (∃ C > 0, ∀ᶠ n in atTop, (F n : ℝ) > C * n * Real.log (Real.log n)) := by
+  sorry
+
+/-- Question 2: max_{n≤x} f(n) ~ x log x / log log x -/
+@[category research open, AMS 11]
+theorem max_f_asymptotic :
+    (fun x => sSup {(f n : ℝ) | n ≤ x}) ~[atTop]
+    (fun x => x * Real.log x / Real.log (Real.log x)) := by
+  sorry
+
+/-- Question 3: max_{n≤x} f(n) = max_{n≤x} F(n) for all large x -/
+@[category research open, AMS 11]
+theorem max_f_equals_max_F :
+    ∀ᶠ x in atTop, sSup {f n | n ≤ x} = sSup {F n | n ≤ x} := by
+  sorry
+
+/-- Question 5: Asymptotic formula for H(x) = ∑_{n<x} f(n)/n -/
+@[category research open, AMS 11]
+theorem H_asymptotic :
+    ∃ g : ℝ → ℝ, (fun x => ∑ n ∈ Finset.range ⌊x⌋₊, (f n : ℝ) / n) ~[atTop] g := by
+  sorry
+
+/-- Question 6: H(x) ≪ x log log log log x -/
+@[category research open, AMS 11]
+theorem H_upper_bound :
+    ∃ C : ℝ, C > 0 ∧ ∀ x : ℝ, x ≥ 2 →
+      (∑ n ∈ Finset.range ⌊x⌋₊, (f n : ℝ) / n) ≤
+      C * x * Real.log (Real.log (Real.log (Real.log x))) := by
   sorry
 
 end Erdos878
