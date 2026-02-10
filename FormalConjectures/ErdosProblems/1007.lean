@@ -40,10 +40,10 @@ noncomputable def dimension (G : SimpleGraph α) : ℕ := sorry
 /-- Minimum edges for dimension 4 is 9 -/
 @[category research solved, AMS 05]
 theorem min_edges_dimension_four :
-    (∀ (G : SimpleGraph α) [Fintype α],
+    (∀ (G : SimpleGraph α) [Fintype α] [DecidableRel G.Adj],
       dimension G = 4 →
       9 ≤ G.edgeFinset.card) ∧
-    (∃ (G : SimpleGraph (Fin sorry)) [Fintype (Fin sorry)],
+    (∃ (n : ℕ) (G : SimpleGraph (Fin n)) (_ : DecidableRel G.Adj),
       dimension G = 4 ∧ G.edgeFinset.card = 9) := by
   sorry
 

@@ -38,9 +38,9 @@ theorem equidistribution_endpoint_condition (α : ℝ) (u v : ℝ) :
     Irrational α →
     0 ≤ u → u < v → v ≤ 1 →
     (∀ m : ℕ, Tendsto (fun N =>
-      (Finset.range N |>.filter (fun k => {α * m} ∈ Set.Ioo u v)).card / N)
+      ((Finset.range N |>.filter (fun k => Int.fract (α * m) ∈ Set.Ioo u v)).card : ℝ) / N)
       atTop (nhds (v - u))) →
-    (∃ k : ℕ, u = {α * k}) ∧ (∃ k : ℕ, v = {α * k}) := by
+    (∃ k : ℕ, u = Int.fract (α * k)) ∧ (∃ k : ℕ, v = Int.fract (α * k)) := by
   sorry
 
 end Erdos998

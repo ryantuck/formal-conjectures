@@ -37,11 +37,11 @@ variable {α : Type*}
 /-- Every graph contains C₄-free subgraph with many edges -/
 @[category research solved, AMS 05]
 theorem c4_free_subgraph (m : ℕ) :
-    ∀ (G : SimpleGraph α) [Fintype α],
+    ∀ (G : SimpleGraph α) [Fintype α] [DecidableRel G.Adj],
       G.edgeFinset.card = m →
-      ∃ (H : SimpleGraph α),
+      ∃ (H : SimpleGraph α) (_ : DecidableRel H.Adj),
         H ≤ G ∧ H.CliqueFree 4 ∧
-        ∃ (c : ℝ), 0 < c ∧ c * m ^ (2/3 : ℝ) ≤ H.edgeFinset.card := by
+        ∃ (c : ℝ), 0 < c ∧ c * (m : ℝ) ^ (2/3) ≤ H.edgeFinset.card := by
   sorry
 
 end Erdos1008

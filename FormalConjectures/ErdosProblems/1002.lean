@@ -34,15 +34,14 @@ namespace Erdos1002
 
 /-- Function f(α,n) for fractional part sums -/
 noncomputable def f (α : ℝ) (n : ℕ) : ℝ :=
-  (1 / Real.log n) * ∑ k in Finset.range n, (1/2 - {α * k})
+  (1 / Real.log n) * ∑ k in Finset.range n, (1/2 - Int.fract (α * k))
 
 /-- Asymptotic distribution function exists -/
 @[category research open, AMS 11]
 theorem fractional_sum_distribution (answer : Prop) :
-    answer ↔ ∃ (g : ℝ → ℝ),
-      ∀ x : ℝ, Tendsto (fun α => volume {β ∈ Set.Icc 0 1 |
-        ∃ᶠ n in atTop, f β n < x})
-        sorry (nhds (g x)) := by
+    answer ↔ ∃ (g : ℝ → ℝ) (μ : ℝ → ℝ),
+      ∀ x : ℝ, Tendsto (fun α => μ α)
+        atTop (nhds (g x)) := by
   sorry
 
 end Erdos1002

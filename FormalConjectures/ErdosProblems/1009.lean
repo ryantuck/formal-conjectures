@@ -38,14 +38,14 @@ variable {α : Type*}
 @[category research solved, AMS 05]
 theorem edge_disjoint_triangles (c : ℝ) (hc : 0 < c) :
     ∃ (f : ℝ → ℕ),
-      ∀ (n k : ℕ), k < c * n →
-        ∀ (G : SimpleGraph (Fin n)),
-          Nat.floor (n ^ 2 / 4) + k ≤ G.edgeFinset.card →
+      ∀ (n k : ℕ), (k : ℝ) < c * n →
+        ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+          Nat.floor ((n : ℝ) ^ 2 / 4) + k ≤ G.edgeFinset.card →
           ∃ (triangles : Finset (Finset (Fin n))),
             k - f c ≤ triangles.card ∧
             (∀ T ∈ triangles, T.card = 3 ∧ G.IsClique T) ∧
             (∀ T₁ ∈ triangles, ∀ T₂ ∈ triangles, T₁ ≠ T₂ →
-              ∀ e ∈ T₁.product T₁, e ∉ T₂.product T₂) := by
+              Disjoint T₁ T₂) := by
   sorry
 
 end Erdos1009

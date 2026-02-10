@@ -37,14 +37,19 @@ variable {α : Type*}
 /-- Minimum n for cycle existence threshold -/
 noncomputable def f (k : ℕ) : ℕ := sorry
 
+/-- A cycle in a graph (simplified formulation) -/
+def IsCycle (G : SimpleGraph α) (C : List α) : Prop :=
+  C.length ≥ 3 ∧ C.Nodup ∧
+  (∀ i (hi : i < C.length), G.Adj (C[i]) (C[(i + 1) % C.length]))
+
 /-- Graphs with many edges contain long cycles -/
 @[category research solved, AMS 05]
 theorem cycle_edge_density (k n : ℕ) :
     f k ≤ n →
-    ∀ (G : SimpleGraph (Fin n)),
+    ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
       Nat.choose (n - k - 1) 2 + Nat.choose (k + 2) 2 + 1 ≤ G.edgeFinset.card →
       ∃ (C : List (Fin n)),
-        G.IsCycle C ∧ C.length = n - k := by
+        IsCycle G C ∧ C.length = n - k := by
   sorry
 
 end Erdos1012

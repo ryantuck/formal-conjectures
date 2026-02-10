@@ -43,7 +43,7 @@ theorem sphere_max_product_discrepancy (d : ℕ) :
         (B.product B |>.filter (fun (p, q) => p ≠ q) |>.prod (fun (p, q) => ‖p - q‖))) →
       ∀ (C : Set (EuclideanSpace ℝ (Fin d))),
         MeasurableSet C →
-        |(A.filter (fun p => p ∈ C)).card - volume C * A.card| = o(A.card) := by
+        (((A.filter (fun p => p ∈ C)).card : ℝ) - volume C * A.card : ℝ).natAbs =o[atTop] fun _ => (A.card : ℝ) := by
   sorry
 
 end Erdos991

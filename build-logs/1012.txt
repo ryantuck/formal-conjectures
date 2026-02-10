@@ -1,13 +1,16 @@
 ✖ [7168/7168] Building FormalConjectures.ErdosProblems.«1012»
 trace: .> LEAN_PATH=/workspaces/formal-conjectures/.lake/packages/Cli/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/batteries/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/Qq/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/aesop/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/importGraph/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/plausible/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/packages/mathlib/.lake/build/lib/lean:/workspaces/formal-conjectures/.lake/build/lib/lean /home/gitpod/.elan/toolchains/leanprover--lean4---v4.22.0/bin/lean /workspaces/formal-conjectures/FormalConjectures/ErdosProblems/1012.lean -o /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/1012.olean -i /workspaces/formal-conjectures/.lake/build/lib/lean/FormalConjectures/ErdosProblems/1012.ilean -c /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/1012.c --setup /workspaces/formal-conjectures/.lake/build/ir/FormalConjectures/ErdosProblems/1012.setup.json --json
-error: FormalConjectures/ErdosProblems/1012.lean:45:60: failed to synthesize
-  Fintype ↑G.edgeSet
-
-Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
-error: FormalConjectures/ErdosProblems/1012.lean:47:8: Invalid field `IsCycle`: The environment does not contain `SimpleGraph.IsCycle`
-  G
-has type
-  SimpleGraph (Fin n)
+error: FormalConjectures/ErdosProblems/1012.lean:43:42: failed to prove index is valid, possible solutions:
+  - Use `have`-expressions to prove the index is valid
+  - Use `a[i]!` notation instead, runtime check is performed, and 'Panic' error message is produced if index is not valid
+  - Use `a[i]?` notation instead, result is an `Option` type
+  - Use `a[i]'h` notation instead, where `h` is a proof that index is valid
+α : Type u_1
+G : SimpleGraph α
+C : List α
+i : ℕ
+hi : i < C.length
+⊢ (i + 1) % C.length < C.length
 error: Lean exited with code 1
 Some required builds logged failures:
 - FormalConjectures.ErdosProblems.«1012»

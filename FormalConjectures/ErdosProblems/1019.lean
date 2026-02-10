@@ -34,13 +34,17 @@ namespace Erdos1019
 
 variable {α : Type*}
 
+/-- Graph is planar -/
+def IsPlanar (G : SimpleGraph α) : Prop := sorry
+
 /-- Dense graphs contain saturated planar subgraphs -/
 @[category research solved, AMS 05]
 theorem saturated_planar_subgraph (n : ℕ) :
-    ∀ (G : SimpleGraph (Fin n)),
-      Nat.floor (n ^ 2 / 4) + Nat.floor ((n + 1) / 2) ≤ G.edgeFinset.card →
+    ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+      Nat.floor ((n : ℝ) ^ 2 / 4) + Nat.floor (((n : ℝ) + 1) / 2) ≤ G.edgeFinset.card →
       ∃ (H : SimpleGraph (Fin n)),
-        H ≤ G ∧ H.IsPlanar ∧ sorry := by
+        H ≤ G ∧ IsPlanar H ∧
+        (∀ u v : Fin n, ¬H.Adj u v → (∃ K : SimpleGraph (Fin n), K ≤ G ∧ ¬IsPlanar K)) := by
   sorry
 
 end Erdos1019

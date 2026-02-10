@@ -36,10 +36,10 @@ variable {α : Type*}
 
 /-- Dense graphs have many triangles -/
 @[category research solved, AMS 05]
-theorem triangle_count_dense (n t : ℕ) (ht : t < Nat.floor (n / 2)) :
-    ∀ (G : SimpleGraph (Fin n)),
-      Nat.floor (n ^ 2 / 4) + t ≤ G.edgeFinset.card →
-      t * Nat.floor (n / 2) ≤ {T : Finset (Fin n) | T.card = 3 ∧ G.IsClique T}.ncard := by
+theorem triangle_count_dense (n t : ℕ) (ht : (t : ℝ) < Nat.floor ((n : ℝ) / 2)) :
+    ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+      Nat.floor ((n : ℝ) ^ 2 / 4) + t ≤ G.edgeFinset.card →
+      t * Nat.floor ((n : ℝ) / 2) ≤ {T : Finset (Fin n) | T.card = 3 ∧ G.IsClique T}.ncard := by
   sorry
 
 end Erdos1010

@@ -36,9 +36,9 @@ namespace Erdos994
 @[category research solved, AMS 11]
 theorem not_all_measurable_equidistribution :
     ¬ ∀ α ∈ Set.Icc (0 : ℝ) 1,
-      (volume {α} = 0 → sorry) →
+      Irrational α →
       ∀ (E : Set ℝ), MeasurableSet E → E ⊆ Set.Ioo 0 1 →
-        Tendsto (fun N => (Finset.range N |>.filter (fun k => {k * α} ∈ E)).card / N)
+        Tendsto (fun N => ((Finset.range N |>.filter (fun k => Int.fract (k * α) ∈ E)).card : ℝ) / N)
           atTop (nhds (volume E).toReal) := by
   sorry
 

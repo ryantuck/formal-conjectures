@@ -35,12 +35,11 @@ namespace Erdos995
 /-- Growth of lacunary sequence sums -/
 @[category research open, AMS 11]
 theorem lacunary_sum_growth (answer : Prop) :
-    answer ↔ ∀ (n : ℕ → ℕ), StrictMono n →
-      (∀ k : ℕ, (n (k + 1) : ℝ) / n k ≥ 1 + sorry) →
+    answer ↔ ∀ (n : ℕ → ℕ) (λ : ℝ), StrictMono n → λ > 0 →
+      (∀ k : ℕ, (n (k + 1) : ℝ) / n k ≥ 1 + λ) →
       ∀ (f : ℝ → ℝ), Measurable f →
-        ∫ x in Set.Icc 0 1, f x ^ 2 < ∞ →
-        ∀ᵐ α, |(Finset.range sorry |>.sum (fun k => f {α * n k}))| =
-          o(fun N => N * Real.sqrt (Real.log (Real.log N))) := by
+        Integrable (fun x => f x ^ 2) (volume.restrict (Set.Icc 0 1)) →
+        ∃ (g : ℕ → ℝ), ∀ᵐ α, g =o[atTop] fun N => (N : ℝ) * Real.sqrt (Real.log (Real.log N)) := by
   sorry
 
 end Erdos995

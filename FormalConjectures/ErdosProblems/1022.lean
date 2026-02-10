@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos1022
 
+variable {α : Type*}
+
 /-- Hypergraphs of size ≥t have chromatic number 2 -/
 @[category research solved, AMS 05]
 theorem property_b_hypergraphs (t : ℕ) :

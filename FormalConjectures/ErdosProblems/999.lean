@@ -32,12 +32,13 @@ open scoped Topology Real
 
 namespace Erdos999
 
+open scoped EReal in
 /-- The Duffin-Schaeffer conjecture -/
 @[category research solved, AMS 11]
 theorem duffin_schaeffer (f : ℕ → ℕ) :
-    (∀ᵐ α, ∃ᶠ (p, q) : ℕ × ℕ in atTop,
-      Nat.Coprime p q ∧ |α - p / q| < (f q : ℝ) / q) ↔
-    (∑' q : ℕ, (Nat.totient q * f q : ℝ) / q) = ∞ := by
+    (∀ᵐ α, ∃ᶠ pq : ℕ × ℕ in atTop,
+      Nat.Coprime pq.1 pq.2 ∧ |α - (pq.1 : ℝ) / pq.2| < (f pq.2 : ℝ) / pq.2) ↔
+    (∑' q : ℕ, ((Nat.totient q * f q : ℝ) / q : EReal)) = ⊤ := by
   sorry
 
 end Erdos999

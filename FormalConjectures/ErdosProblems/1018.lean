@@ -34,14 +34,17 @@ namespace Erdos1018
 
 variable {α : Type*}
 
+/-- Graph is planar -/
+def IsPlanar (G : SimpleGraph α) : Prop := sorry
+
 /-- Dense graphs contain small non-planar subgraphs -/
 @[category research solved, AMS 05]
 theorem nonplanar_subgraph (ε : ℝ) (hε : 0 < ε) :
     ∃ (f : ℝ → ℕ),
-      ∀ (n : ℕ) (G : SimpleGraph (Fin n)),
+      ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
         (n : ℝ) ^ (1 + ε) ≤ G.edgeFinset.card →
-        ∃ (H : SimpleGraph (Fin (f ε))),
-          H ≤ G ∧ ¬ H.IsPlanar := by
+        ∃ (m : ℕ) (H : SimpleGraph (Fin m)),
+          m = f ε ∧ ¬ IsPlanar H := by
   sorry
 
 end Erdos1018

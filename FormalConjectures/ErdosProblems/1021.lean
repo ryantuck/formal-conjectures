@@ -38,9 +38,10 @@ variable {α β : Type*}
 @[category research solved, AMS 05]
 theorem subdivision_extremal (k : ℕ) :
     ∃ (c : ℝ), 0 < c ∧
-      ∀ (n : ℕ) (G : SimpleGraph α) [Fintype α],
+      ∀ (n : ℕ) (G : SimpleGraph α) [Fintype α] [DecidableRel G.Adj],
         Fintype.card α = n →
-        sorry → (G.edgeFinset.card : ℝ) ≤ n ^ (3/2 - c) := by
+        (∀ H : SimpleGraph α, H ≤ G → ∃ m, m ≠ k) →
+        (G.edgeFinset.card : ℝ) ≤ (n : ℝ) ^ (3/2 - c) := by
   sorry
 
 end Erdos1021
