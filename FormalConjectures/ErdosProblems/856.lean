@@ -32,13 +32,30 @@ open scoped Topology Real BigOperators
 
 namespace Erdos856
 
-/-- fₖ(N): max reciprocal sum with no k-subset having identical LCMs -/
-noncomputable def f_k (k N : ℕ) : ℝ := sorry
+/-- A k-subset has identical pairwise LCMs -/
+def IdenticalPairwiseLCMs (S : Finset ℕ) (k : ℕ) : Prop :=
+  ∃ (T : Finset ℕ), T ⊆ S ∧ T.card = k ∧
+    ∃ ℓ : ℕ, ∀ a b, a ∈ T → b ∈ T → a ≠ b → Nat.lcm a b = ℓ
 
-/-- Estimate fₖ(N) -/
+/-- fₖ(N): max reciprocal sum over subsets with no k-subset having identical pairwise LCMs -/
+noncomputable def f_k (k N : ℕ) : ℝ :=
+  sSup {x : ℝ | ∃ A : Finset ℕ, (∀ n ∈ A, n ≤ N) ∧ ¬IdenticalPairwiseLCMs A k ∧
+    x = ∑ n ∈ A, (1 : ℝ) / n}
+
+/-- Erdős upper bound: fₖ(N) ≪ log N / log log N -/
 @[category research open, AMS 11]
-theorem identical_lcm_reciprocals :
-    sorry := by
+theorem erdos_upper_bound (k : ℕ) (hk : k ≥ 3) :
+    ∃ C : ℝ, ∀ N : ℕ, N ≥ 2 →
+      f_k k N ≤ C * (Real.log N) / (Real.log (Real.log N)) := by
+  sorry
+
+/-- Tang-Zhang bounds: (log N)^(b_k - o(1)) ≤ fₖ(N) ≤ (log N)^(c_k + o(1)) -/
+@[category research open, AMS 11]
+theorem tang_zhang_bounds (k : ℕ) (hk : k ≥ 3) :
+    ∃ b_k c_k : ℝ, 0 < b_k ∧ b_k < c_k ∧
+      (∀ ε > 0, ∃ N₀ : ℕ, ∀ N : ℕ, N ≥ N₀ →
+        (Real.log N) ^ (b_k - ε) ≤ f_k k N ∧
+        f_k k N ≤ (Real.log N) ^ (c_k + ε)) := by
   sorry
 
 end Erdos856

@@ -26,22 +26,36 @@ OPEN
 *Reference:* [erdosproblems.com/857](https://www.erdosproblems.com/857)
 -/
 
-open Finset
+open Finset Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos857
 
-/-- Sunflower -/
-def IsSunflower (F : Finset (Finset α)) (k : ℕ) : Prop := sorry
+variable {α : Type*} [DecidableEq α]
 
-/-- m(n,k): minimal m for sunflower guarantee -/
-noncomputable def m (n k : ℕ) : ℕ := sorry
+/-- A k-sunflower: k sets with pairwise identical intersection -/
+def IsSunflower (F : Finset (Finset α)) (k : ℕ) : Prop :=
+  ∃ (S : Finset (Finset α)) (core : Finset α),
+    S ⊆ F ∧ S.card = k ∧
+    ∀ A B, A ∈ S → B ∈ S → A ≠ B → A ∩ B = core
 
-/-- Estimate m(n,k) -/
-@[category research open, AMS 05]
-theorem sunflower_bound :
-    sorry := by
+/-- m(n,k): minimal m such that any m subsets of [n] contain a k-sunflower -/
+noncomputable def m (n k : ℕ) : ℕ :=
+  sInf {m : ℕ | ∀ F : Finset (Finset (Fin n)), F.card ≥ m → IsSunflower F k}
+
+/-- Main conjecture: estimate m(n,k) or give asymptotic formula -/
+@[category research open, AMS 5]
+theorem sunflower_bound_conjecture (k : ℕ) (hk : k ≥ 2) :
+    ∃ f : ℕ → ℝ, (fun n => (m n k : ℝ)) ~[atTop] f := by
+  sorry
+
+/-- Known result for k=3 (Naslund-Sawin) -/
+@[category research solved, AMS 5]
+theorem naslund_sawin_k3 :
+    ∃ C : ℝ, C = 3 / (2 : ℝ) ^ (2/3) ∧
+      ∀ ε > 0, ∃ n₀ : ℕ, ∀ n : ℕ, n ≥ n₀ →
+        (m n 3 : ℝ) ≤ C ^ ((1 + ε) * n) := by
   sorry
 
 end Erdos857
