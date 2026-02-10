@@ -26,19 +26,35 @@ PROVED by Frankl and Rödl (1987); optimal bounds by Frankl and Füredi ($250 re
 *Reference:* [erdosproblems.com/703](https://www.erdosproblems.com/703)
 -/
 
-open Finset Nat
+open Finset Nat Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos703
 
-/-- T(n,r): max size of family with no intersection of size exactly r -/
-noncomputable def T (n r : ℕ) : ℕ := sorry
+variable {α : Type*} [DecidableEq α]
 
-/-- Optimal bounds for T(n,r) -/
-@[category research solved, AMS 05]
-theorem max_family_no_intersection_size_r (r : ℕ) :
-    ∃ f : ℕ → ℕ, ∀ n : ℕ, T n r ~ f n := by
+/-- A family of sets has no intersection of size exactly r -/
+def NoIntersectionSizeR (𝓕 : Finset (Finset α)) (r : ℕ) : Prop :=
+  ∀ A B, A ∈ 𝓕 → B ∈ 𝓕 → A ≠ B → (A ∩ B).card ≠ r
+
+/-- T(n,r): max size of family of subsets of [n] with no intersection of size exactly r -/
+noncomputable def T (n r : ℕ) : ℕ :=
+  sSup {k | ∃ 𝓕 : Finset (Finset (Fin n)), 𝓕.card = k ∧ NoIntersectionSizeR 𝓕 r}
+
+/-- The trivial case: T(n,0) = 2^(n-1) -/
+@[category research solved, AMS 5]
+theorem T_zero (n : ℕ) (hn : 0 < n) : T n 0 = 2^(n-1) := by
+  sorry
+
+/-- Frankl-Rödl (1987): Exponential bound for T(n,r) in the middle range.
+    For every ε > 0, there exists δ > 0 such that T(n,r) < (2-δ)^n
+    when εn < r < (1/2 - ε)n. -/
+@[category research solved, AMS 5]
+theorem frankl_rodl_exponential_bound :
+    ∀ ε > 0, ∃ δ > 0, ∀ n r : ℕ,
+      (ε * n < r) → (r < (1/2 - ε) * n) →
+      (T n r : ℝ) < (2 - δ) ^ n := by
   sorry
 
 end Erdos703
