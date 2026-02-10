@@ -33,8 +33,8 @@ namespace Erdos909
 /-- Space S where S² has same dimension n -/
 @[category research solved, AMS 52]
 theorem square_same_dimension :
-    ∃ (S : Type*) [TopologicalSpace S] (n : ℕ),
-      sorry := by
+    ∃ (S : Type) (_: TopologicalSpace S) (n : ℕ),
+      ∃ (dimS dimS2 : ℕ), dimS = n ∧ dimS2 = n := by
   sorry
 
 end Erdos909

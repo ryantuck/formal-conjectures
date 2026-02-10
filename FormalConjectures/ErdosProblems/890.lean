@@ -26,19 +26,31 @@ OPEN
 *Reference:* [erdosproblems.com/890](https://www.erdosproblems.com/890)
 -/
 
-open Finset Nat
+open Finset Nat Filter
 
 open scoped Topology Real BigOperators
 
 namespace Erdos890
 
-/-- Sum of distinct prime factors -/
-def sumDistinctPrimeFactors (n : ℕ) : ℕ := sorry
+/-- ω(n): count of distinct prime factors of n -/
+def omega (n : ℕ) : ℕ := n.primeFactors.card
 
-/-- liminf and limsup questions -/
+/-- Question 1: liminf of sum ≤ k + π(k) -/
 @[category research open, AMS 11]
-theorem consecutive_prime_factor_sums :
-    sorry := by
+theorem erdos_selfridge_liminf (k : ℕ) (hk : k ≥ 1) :
+    liminf (fun n => (∑ i ∈ Finset.range k, omega (n + i) : ℝ)) atTop ≤ k + Nat.primeCounting k := by
+  sorry
+
+/-- Erdős-Selfridge lower bound: liminf ≥ k + π(k) - 1 -/
+@[category research solved, AMS 11]
+theorem erdos_selfridge_lower_bound (k : ℕ) (hk : k ≥ 1) :
+    k + Nat.primeCounting k - 1 ≤ liminf (fun n => (∑ i ∈ Finset.range k, omega (n + i) : ℝ)) atTop := by
+  sorry
+
+/-- Question 2: limsup equals 1 -/
+@[category research open, AMS 11]
+theorem erdos_selfridge_limsup (k : ℕ) (hk : k ≥ 1) :
+    limsup (fun n => (∑ i ∈ Finset.range k, omega (n + i) : ℝ) * Real.log (Real.log n) / Real.log n) atTop = 1 := by
   sorry
 
 end Erdos890

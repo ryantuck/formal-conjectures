@@ -36,7 +36,7 @@ theorem not_connected_subsets :
     ¬ ∀ (n : ℕ) (S : Set (Fin n → ℝ)),
       IsConnected S →
       ∃ (T : Set (Fin n → ℝ)),
-        T ⊊ S ∧ T.Nonempty ∧ IsConnected T := by
+        T ⊂ S ∧ T.Nonempty ∧ IsConnected T := by
   sorry
 
 end Erdos910

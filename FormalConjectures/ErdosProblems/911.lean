@@ -32,15 +32,21 @@ open scoped Topology Real
 
 namespace Erdos911
 
-/-- Size Ramsey number -/
+variable {α : Type*}
+
+/-- Size Ramsey number: minimal edges m such that some graph with m edges is Ramsey for G -/
 noncomputable def sizeRamsey (G : SimpleGraph α) : ℕ := sorry
 
-/-- Function f with f(x)/x → ∞ and Ramsey number > f(C)e -/
-@[category research open, AMS 05]
+/-- Question: Does there exist f with f(x)/x → ∞ such that
+    dense graphs have size Ramsey number > f(C)·e? -/
+@[category research open, AMS 5]
 theorem size_ramsey_growth (answer : Prop) :
     answer ↔ ∃ (f : ℕ → ℝ),
       Filter.Tendsto (fun x => f x / x) Filter.atTop Filter.atTop ∧
-      sorry := by
+      ∀ C : ℕ, C > 0 → ∀ᶠ n in Filter.atTop,
+        ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+          Fintype.card {e : Sym2 (Fin n) | e ∈ G.edgeSet} ≥ C * n →
+          (sizeRamsey G : ℝ) > f C * Real.exp 1 := by
   sorry
 
 end Erdos911

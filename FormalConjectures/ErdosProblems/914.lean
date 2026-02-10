@@ -35,13 +35,13 @@ namespace Erdos914
 variable {α : Type*}
 
 /-- Every graph with rm vertices and minimum degree ≥ m(r-1) contains m vertex disjoint K_r -/
-@[category research solved, AMS 05]
+@[category research solved, AMS 5]
 theorem vertex_disjoint_cliques (r m : ℕ) :
-    ∀ (G : SimpleGraph (Fin (r * m))),
+    ∀ (G : SimpleGraph (Fin (r * m))) [DecidableRel G.Adj],
       (∀ v : Fin (r * m), m * (r - 1) ≤ G.degree v) →
       ∃ (cliques : Finset (Finset (Fin (r * m)))),
         cliques.card = m ∧
-        (∀ C ∈ cliques, C.card = r ∧ G.IsClique C) ∧
+        (∀ C ∈ cliques, C.card = r ∧ G.IsClique (C : Set (Fin (r * m)))) ∧
         (∀ C₁ ∈ cliques, ∀ C₂ ∈ cliques, C₁ ≠ C₂ → Disjoint C₁ C₂) := by
   sorry
 

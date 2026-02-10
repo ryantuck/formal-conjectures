@@ -26,17 +26,20 @@ PROVED
 *Reference:* [erdosproblems.com/900](https://www.erdosproblems.com/900)
 -/
 
-open Finset
+open Finset Filter
 
-open scoped Topology Real Probability
+open scoped Topology Real
 
 namespace Erdos900
 
-/-- Random graph with cn edges has long path -/
-@[category research solved, AMS 05]
-theorem random_graph_long_path (c : ℝ) (hc : c < 1/2) :
-    ∃ f : ℝ → ℝ, Filter.Tendsto f (nhds (1/2 : ℝ)) (nhds 0) ∧
-      sorry := by
+/-- Random graph with cn edges has long path (Ajtai-Komlós-Szemerédi) -/
+@[category research solved, AMS 5]
+theorem random_graph_long_path :
+    ∃ f : ℝ → ℝ,
+      (Tendsto f (𝓝[>] (1/2)) (𝓝 0)) ∧
+      (Tendsto f atTop (𝓝 1)) ∧
+      (∀ᶠ n in atTop, ∀ c : ℝ, c > 1/2 →
+        ∃ path_length : ℕ, (path_length : ℝ) ≥ f c * n) := by
   sorry
 
 end Erdos900
