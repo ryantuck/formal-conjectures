@@ -32,18 +32,27 @@ open scoped Topology Real
 
 namespace Erdos960
 
+/-- A line in ℝ² -/
+def IsLine (L : Set (ℝ × ℝ)) : Prop :=
+  ∃ (a b c : ℝ), (a ≠ 0 ∨ b ≠ 0) ∧ L = {p : ℝ × ℝ | a * p.1 + b * p.2 = c}
+
+/-- Line determined by two distinct points is ordinary for a point set -/
+def IsOrdinaryLine (A : Finset (ℝ × ℝ)) (p q : ℝ × ℝ) : Prop :=
+  p ≠ q ∧ p ∈ A ∧ q ∈ A ∧
+  ∀ r ∈ A, r ≠ p → r ≠ q →
+    ¬∃ (L : Set (ℝ × ℝ)), IsLine L ∧ p ∈ L ∧ q ∈ L ∧ r ∈ L
+
 /-- Threshold for existence of r points with all ordinary lines -/
 @[category research open, AMS 52]
-theorem ordinary_lines_threshold (r k : ℕ) (answer : ℕ → ℕ) :
+theorem ordinary_lines_threshold (r k : ℕ) :
     ∃ (f : ℕ → ℕ → ℕ),
       ∀ n : ℕ, ∀ (A : Finset (ℝ × ℝ)),
         A.card = n →
-        (∀ L : Set (ℝ × ℝ), sorry → (A ∩ L).card < k) →
-        f r k n ≤ {L : Set (ℝ × ℝ) | sorry ∧ (A ∩ L).card = 2}.ncard →
+        (∀ L : Set (ℝ × ℝ), IsLine L → {p : ℝ × ℝ | p ∈ A ∧ p ∈ L}.ncard < k) →
+        f r k ≤ {pq : (ℝ × ℝ) × (ℝ × ℝ) | IsOrdinaryLine A pq.1 pq.2}.ncard →
         ∃ (A' : Finset (ℝ × ℝ)),
           A' ⊆ A ∧ A'.card = r ∧
-          ∀ p q : ℝ × ℝ, p ∈ A' → q ∈ A' → p ≠ q →
-            sorry := by
+          ∀ p ∈ A', ∀ q ∈ A', p ≠ q → IsOrdinaryLine A p q := by
   sorry
 
 end Erdos960

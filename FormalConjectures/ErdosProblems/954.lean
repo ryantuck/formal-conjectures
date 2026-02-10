@@ -42,7 +42,7 @@ noncomputable def a : ℕ → ℕ
 @[category research open, AMS 11]
 theorem sequence_sum_growth (answer : Prop) :
     answer ↔ ∃ (c : ℝ), 0 < c ∧
-      Tendsto (fun x => |{(i, j) : ℕ × ℕ | a i + a j ≤ x}.ncard - x| / x ^ (1/4 + c : ℝ))
+      Tendsto (fun x => ((({(i, j) : ℕ × ℕ | a i + a j ≤ x}.ncard : ℤ) - (x : ℤ)).natAbs : ℝ) / (x : ℝ) ^ (1/4 + c))
         atTop (nhds 0) := by
   sorry
 

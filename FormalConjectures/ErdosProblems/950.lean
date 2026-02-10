@@ -36,11 +36,13 @@ namespace Erdos950
 noncomputable def f (n : ℕ) : ℝ :=
   (Finset.filter Nat.Prime (Finset.range n)).sum (fun p => 1 / (n - p : ℝ))
 
+open scoped EReal in
 /-- Growth properties of f -/
 @[category research open, AMS 11]
 theorem f_limit_properties (answer : Prop) :
-    answer ↔ (liminf f atTop = 1 ∧ limsup f atTop = ⊤) ∧
-      (∀ n : ℕ, f n = o(fun n => Real.log (Real.log n))) := by
+    answer ↔ (liminf (fun n => (f n : EReal)) atTop = 1 ∧
+               limsup (fun n => (f n : EReal)) atTop = ⊤) ∧
+      (f =o[atTop] fun n => Real.log (Real.log n)) := by
   sorry
 
 end Erdos950

@@ -38,10 +38,10 @@ theorem unit_distance_translates (answer : Prop) :
     answer ↔ ∃ (c : ℝ), 0 < c ∧
       ∀ (n : ℕ), ∃ (C : Set (ℝ × ℝ)) (points : Finset (ℝ × ℝ)),
         IsCompact C ∧ Convex ℝ C ∧ points.card = n ∧
-        (∀ p q : ℝ × ℝ, p ∈ points → q ∈ points → p ≠ q →
+        (∀ p ∈ points, ∀ q ∈ points, p ≠ q →
           Disjoint ({x | ∃ y ∈ C, x = y + p}) ({x | ∃ y ∈ C, x = y + q})) →
-        c * n ^ (1 + c : ℝ) ≤ {(p, q) : ℝ × ℝ × ℝ × ℝ |
-          p ∈ points ∧ q ∈ points ∧ dist p q = 1}.ncard := by
+        c * (n : ℝ) ^ (1 + c) ≤ {pq : (ℝ × ℝ) × (ℝ × ℝ) |
+          pq.1 ∈ points ∧ pq.2 ∈ points ∧ dist pq.1 pq.2 = 1}.ncard := by
   sorry
 
 end Erdos956

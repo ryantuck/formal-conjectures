@@ -34,11 +34,17 @@ namespace Erdos925
 
 variable {α : Type*}
 
+/-- Graph complement -/
+def SimpleGraphCompl (G : SimpleGraph α) : SimpleGraph α where
+  Adj x y := x ≠ y ∧ ¬G.Adj x y
+  symm := fun _ _ h => ⟨h.1.symm, fun adj => h.2 (G.symm adj)⟩
+  loopless := fun _ h => h.1 rfl
+
 /-- Disproved: large independent sets in non-Ramsey graphs -/
 @[category research solved, AMS 05]
 theorem not_independent_ramsey :
     ¬ ∀ (k : ℕ) (G : SimpleGraph α) [Fintype α],
-      G.CliqueFree k → (G.compl).CliqueFree k →
+      G.CliqueFree k → (SimpleGraphCompl G).CliqueFree k →
       ∃ (S : Finset α), G.IsIndepSet S ∧
         Real.log (Fintype.card α) ≤ S.card := by
   sorry

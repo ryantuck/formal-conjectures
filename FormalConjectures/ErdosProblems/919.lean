@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/919](https://www.erdosproblems.com/919)
 -/
 
-open Finset
+open Finset Cardinal
 
 open scoped Topology Real
 
@@ -35,9 +35,9 @@ namespace Erdos919
 /-- Chromatic number on ordinal products -/
 @[category research open, AMS 03]
 theorem chromatic_ordinal_product (answer : Prop) :
-    answer ↔ ∃ (G : SimpleGraph (ω × ω)),
-      G.chromaticNumber = ℵ₀ ∧
-      ∀ n : ℕ, (G.induce (Finset.range n ×ˢ Finset.range n : Set (ℕ × ℕ))).chromaticNumber < ℵ₀ := by
+    answer ↔ ∃ (G : SimpleGraph (ℕ × ℕ)),
+      G.chromaticNumber = aleph0 ∧
+      ∀ n : ℕ, (G.induce (Finset.range n ×ˢ Finset.range n : Set (ℕ × ℕ))).chromaticNumber < aleph0 := by
   sorry
 
 end Erdos919

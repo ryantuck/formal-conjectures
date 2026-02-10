@@ -32,12 +32,14 @@ open scoped Topology Real
 
 namespace Erdos933
 
+/-- Largest prime power exponent dividing n(n+1) -/
+noncomputable def maxPrimePowerExp (n : ℕ) : ℕ :=
+  (n.primeFactors ∪ (n + 1).primeFactors).sup (fun p => Nat.log p (n * (n + 1)))
+
 /-- Growth rate of largest prime power dividing n(n+1) -/
 @[category research open, AMS 11]
 theorem prime_power_product_growth (answer : Prop) :
-    answer ↔ Tendsto (fun n =>
-      let powers := {k : ℕ | ∃ p : ℕ, p.Prime ∧ p ^ k ∣ (n * (n + 1))}
-      (powers.toFinset.max' sorry : ℝ) / Real.log n)
+    answer ↔ Tendsto (fun n => (maxPrimePowerExp n : ℝ) / Real.log n)
       atTop atTop := by
   sorry
 

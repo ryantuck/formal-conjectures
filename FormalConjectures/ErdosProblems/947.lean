@@ -34,9 +34,9 @@ namespace Erdos947
 
 /-- Covering system with distinct odd moduli -/
 def CoveringSystem (S : Finset (ℕ × ℕ)) : Prop :=
-  (∀ (m r) ∈ S, Odd m ∧ r < m) ∧
-  (∀ (m₁ r₁) ∈ S, ∀ (m₂ r₂) ∈ S, (m₁, r₁) ≠ (m₂, r₂) → m₁ ≠ m₂) ∧
-  (∀ n : ℕ, ∃ (m r) ∈ S, n ≡ r [MOD m])
+  (∀ p ∈ S, Odd p.1 ∧ p.2 < p.1) ∧
+  (∀ p₁ ∈ S, ∀ p₂ ∈ S, p₁ ≠ p₂ → p₁.1 ≠ p₂.1) ∧
+  (∀ n : ℕ, ∃ p ∈ S, n ≡ p.2 [MOD p.1])
 
 /-- No covering system with distinct odd moduli exists -/
 @[category research solved, AMS 11]

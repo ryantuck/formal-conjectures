@@ -34,13 +34,18 @@ namespace Erdos916
 
 variable {α : Type*}
 
+/-- A cycle in a graph (simplified formulation) -/
+def IsCycle (G : SimpleGraph α) (C : List α) : Prop :=
+  C.length ≥ 3 ∧ C.Nodup ∧
+  (∀ i (hi : i < C.length), G.Adj (C.get ⟨i, hi⟩) (C.get ⟨(i + 1) % C.length, Nat.mod_lt _ (Nat.zero_lt_of_lt hi)⟩))
+
 /-- Graph cycles and adjacent vertices property -/
 @[category research solved, AMS 05]
 theorem cycles_adjacent_vertices (k : ℕ) (n : ℕ) :
-    ∀ (G : SimpleGraph (Fin n)),
+    ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
       (∀ v : Fin n, k ≤ G.degree v) →
       ∃ (C : List (Fin n)),
-        G.IsCycle C ∧
+        IsCycle G C ∧
         ∀ v ∈ C, ∃ u : Fin n, u ∉ C ∧ G.Adj v u := by
   sorry
 

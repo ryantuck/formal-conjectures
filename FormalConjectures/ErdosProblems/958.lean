@@ -32,6 +32,14 @@ open scoped Topology Real
 
 namespace Erdos958
 
+/-- Points are collinear -/
+def Collinear (A : Finset (ℝ × ℝ)) : Prop :=
+  ∃ (a b c : ℝ), a ≠ 0 ∨ b ≠ 0 ∧ ∀ p ∈ A, a * p.1 + b * p.2 = c
+
+/-- Points are concyclic -/
+def Concyclic (A : Finset (ℝ × ℝ)) : Prop :=
+  ∃ (c : ℝ × ℝ) (r : ℝ), ∀ p ∈ A, dist p c = r
+
 /-- Disproved: characterization of equidistant points -/
 @[category research solved, AMS 52]
 theorem not_equidistant_characterization :
@@ -39,9 +47,8 @@ theorem not_equidistant_characterization :
       A.card = n →
       let dists := (A.product A |>.filter (fun (p, q) => p ≠ q) |>.image (fun (p, q) => dist p q)).sort (· ≤ ·)
       let f := fun d => (A.product A |>.filter (fun (p, q) => dist p q = d)).card
-      (dists.length = n - 1 ∧ {f d | d ∈ dists}.toFinset = Finset.range (n - 1) \ {0}) →
-      (∃ (L : Set (ℝ × ℝ)), (∀ p ∈ A, p ∈ L) ∧ sorry) ∨
-      (∃ (c : ℝ × ℝ) (r : ℝ), ∀ p ∈ A, dist p c = r) := by
+      (dists.length = n - 1 ∧ (dists.map f).toFinset = Finset.range (n - 1) \ {0}) →
+      Collinear A ∨ Concyclic A := by
   sorry
 
 end Erdos958

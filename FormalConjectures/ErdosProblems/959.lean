@@ -40,7 +40,7 @@ theorem distance_frequency_gap (answer : Prop) :
         A.card = n ∧
         let dists := (A.product A |>.filter (fun (p, q) => p ≠ q) |>.image (fun (p, q) => dist p q)).sort (· ≥ ·)
         let f := fun d => (A.product A |>.filter (fun (p, q) => dist p q = d)).card
-        g n ≤ |f (dists.get! 0) - f (dists.get! 1)| := by
+        g n ≤ (((f (dists[0]!) : ℤ) - (f (dists[1]!) : ℤ)).natAbs : ℝ) := by
   sorry
 
 end Erdos959

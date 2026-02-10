@@ -37,10 +37,10 @@ variable {α : Type*}
 /-- Graphs with large triangle-free subgraphs have bounded chromatic number -/
 @[category research solved, AMS 05]
 theorem triangle_free_chromatic (c : ℝ) (hc : 0 < c) :
-    ∀ (G : SimpleGraph α) [Fintype α],
-      (∃ (H : SimpleGraph α), H ≤ G ∧ H.CliqueFree 3 ∧
+    ∃ (f : ℝ → ℕ), ∀ (G : SimpleGraph α) [Fintype α] [DecidableRel G.Adj],
+      (∃ (H : SimpleGraph α) (_ : DecidableRel H.Adj), H ≤ G ∧ H.CliqueFree 3 ∧
         c * (Fintype.card α : ℝ) ≤ H.edgeFinset.card) →
-      G.chromaticNumber = O(1 / c) := by
+      G.chromaticNumber ≤ f (1 / c) := by
   sorry
 
 end Erdos923

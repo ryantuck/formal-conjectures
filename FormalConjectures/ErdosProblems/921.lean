@@ -34,12 +34,17 @@ namespace Erdos921
 
 variable {α : Type*}
 
+/-- A cycle in a graph (simplified formulation) -/
+def IsCycle (G : SimpleGraph α) (C : List α) : Prop :=
+  C.length ≥ 3 ∧ C.Nodup ∧
+  (∀ i (hi : i < C.length), G.Adj (C.get ⟨i, hi⟩) (C.get ⟨(i + 1) % C.length, Nat.mod_lt _ (Nat.zero_lt_of_lt hi)⟩))
+
 /-- Graphs with large chromatic number contain long odd cycles -/
 @[category research solved, AMS 05]
 theorem chromatic_odd_cycle (k : ℕ) :
     ∀ (G : SimpleGraph α) [Fintype α],
       k ≤ G.chromaticNumber →
-      ∃ (C : List α), G.IsCycle C ∧ Odd C.length ∧ k ≤ C.length := by
+      ∃ (C : List α), IsCycle G C ∧ Odd C.length ∧ k ≤ C.length := by
   sorry
 
 end Erdos921

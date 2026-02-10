@@ -34,12 +34,19 @@ namespace Erdos926
 
 variable {α β : Type*}
 
-/-- Extremal number for specific graph family -/
+/-- Graph H_k structure (k disjoint paths of length k) - simplified formulation -/
+def H_k_free {α : Type*} [DecidableEq α] (k : ℕ) (G : SimpleGraph α) : Prop :=
+  ∀ (paths : Fin k → List α),
+    (∀ i, (paths i).length = k + 1) →
+    (∀ i j, i ≠ j → (paths i).toFinset ∩ (paths j).toFinset = ∅) →
+    ¬(∀ i, ∀ j (hj : j + 1 < (paths i).length), G.Adj ((paths i)[j]'(Nat.lt_of_succ_lt hj)) ((paths i)[j + 1]'hj))
+
+/-- Extremal number for H_k-free graphs -/
 @[category research solved, AMS 05]
 theorem extremal_h_k (k : ℕ) :
     ∃ (c : ℝ), 0 < c ∧
-      ∀ (n : ℕ), ∀ (G : SimpleGraph (Fin n)),
-        sorry → c * n ^ (3/2 : ℝ) ≤ G.edgeFinset.card := by
+      ∀ (n : ℕ), ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+        H_k_free k G → c * (n : ℝ) ^ (3/2) ≤ G.edgeFinset.card := by
   sorry
 
 end Erdos926

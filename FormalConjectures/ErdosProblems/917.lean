@@ -34,14 +34,20 @@ namespace Erdos917
 
 variable {α : Type*}
 
+/-- Delete edges from a graph -/
+def deleteEdges (G : SimpleGraph α) (E : Set (α × α)) : SimpleGraph α where
+  Adj x y := G.Adj x y ∧ (x, y) ∉ E ∧ (y, x) ∉ E
+  symm := fun _ _ h => ⟨G.symm h.1, h.2.2, h.2.1⟩
+  loopless := fun _ h => G.loopless _ h.1
+
 /-- Critical graphs have many edges -/
 @[category research open, AMS 05]
 theorem critical_graph_edges (answer : Prop) :
     answer ↔ ∀ k : ℕ, ∃ c : ℝ, c > 0 ∧
-      ∀ (G : SimpleGraph α) [Fintype α],
+      ∀ (G : SimpleGraph α) [Fintype α] [DecidableRel G.Adj],
         G.chromaticNumber = k →
         (∀ e : α × α, G.Adj e.1 e.2 →
-          (G.deleteEdges {e}).chromaticNumber < k) →
+          (deleteEdges G {e}).chromaticNumber < k) →
         c * (Fintype.card α : ℝ) ^ 2 ≤ G.edgeFinset.card := by
   sorry
 

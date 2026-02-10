@@ -34,15 +34,15 @@ namespace Erdos957
 
 /-- Product of minimum and maximum distance frequencies bounded -/
 @[category research solved, AMS 52]
-theorem extreme_distance_product (n : ℕ) :
-    ∀ (A : Finset (ℝ × ℝ)),
+theorem extreme_distance_product :
+    ∀ ε > 0, ∃ N₀ : ℕ, ∀ n ≥ N₀, ∀ (A : Finset (ℝ × ℝ)),
       A.card = n →
       let dists := A.product A |>.filter (fun (p, q) => p ≠ q) |>.image (fun (p, q) => dist p q)
       ∀ d₁ ∈ dists, ∀ d_k ∈ dists,
         (∀ d ∈ dists, d₁ ≤ d) →
         (∀ d ∈ dists, d ≤ d_k) →
         let f := fun d => (A.product A |>.filter (fun (p, q) => dist p q = d)).card
-        (f d₁ : ℝ) * f d_k ≤ (9/8 + o(1)) * n ^ 2 := by
+        (f d₁ : ℝ) * f d_k ≤ (9/8 + ε) * n ^ 2 := by
   sorry
 
 end Erdos957

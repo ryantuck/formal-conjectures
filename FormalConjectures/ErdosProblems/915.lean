@@ -34,16 +34,23 @@ namespace Erdos915
 
 variable {α : Type*}
 
+/-- Delete vertices from a graph -/
+def deleteVerts (G : SimpleGraph α) (S : Set α) : SimpleGraph α where
+  Adj x y := x ∉ S ∧ y ∉ S ∧ G.Adj x y
+  symm := fun _ _ h => ⟨h.2.1, h.1, G.symm h.2.2⟩
+  loopless := fun _ h => G.loopless _ h.2.2
+
 /-- Graph connectivity implies existence of vertex-disjoint paths -/
 @[category research solved, AMS 05]
 theorem connectivity_disjoint_paths (k : ℕ) (n : ℕ) :
     ∀ (G : SimpleGraph (Fin n)),
       G.Connected →
-      (∀ S : Finset (Fin n), S.card < k → (G.deleteVerts S).Connected) →
+      (∀ S : Finset (Fin n), S.card < k → (deleteVerts G S.toSet).Connected) →
       ∀ (pairs : Finset (Fin n × Fin n)),
         pairs.card = k →
-        ∃ (paths : Finset (List (Fin n))),
-          sorry := by
+        ∃ (paths : (Fin k) → List (Fin n)),
+          (∀ i, ∃ p ∈ pairs, (paths i).head? = some p.1 ∧ (paths i).getLast? = some p.2) ∧
+          (∀ i j, i ≠ j → (paths i).toFinset ∩ (paths j).toFinset = ∅) := by
   sorry
 
 end Erdos915

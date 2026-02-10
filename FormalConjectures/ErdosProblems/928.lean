@@ -32,13 +32,17 @@ open scoped Topology Real
 
 namespace Erdos928
 
+/-- n is y-smooth if all prime factors are ≤ y -/
+def isSmooth (y n : ℕ) : Bool :=
+  decide (∀ p ∈ n.primeFactors, p ≤ y)
+
 /-- Density of n where both n and n+1 have all prime factors ≤ y -/
 @[category research open, AMS 11]
 theorem smooth_consecutive_density (answer : Prop) :
-    answer ↔ ∃ (f : ℕ → ℝ), ∀ y : ℕ,
-      Tendsto (fun x => (Finset.filter (fun n =>
-        (∀ p : ℕ, p.Prime → p ∣ n → p ≤ y) ∧
-        (∀ p : ℕ, p.Prime → p ∣ (n + 1) → p ≤ y)) (Finset.range x)).card / x)
+    answer ↔ ∃ (f : ℕ → ℝ), ∀ y : ℕ, y ≥ 1 →
+      Tendsto (fun x : ℕ =>
+        (((Finset.range x).filter fun n =>
+          isSmooth y n && isSmooth y (n + 1)).card : ℝ) / (x : ℝ))
       atTop (nhds (f y)) := by
   sorry
 

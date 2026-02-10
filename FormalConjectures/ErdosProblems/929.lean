@@ -32,15 +32,16 @@ open scoped Topology Real
 
 namespace Erdos929
 
+/-- Largest prime factor of n -/
+noncomputable def largestPrimeFactor (n : ℕ) : ℕ :=
+  if h : n.primeFactors.Nonempty then n.primeFactors.max' h else 1
+
 /-- Growth of gap between largest prime factors -/
 @[category research open, AMS 11]
 theorem prime_factor_gap (answer : Prop) :
     answer ↔ Tendsto (fun n =>
-      let P_n := Nat.factors n |>.maximum?
-      let P_n1 := Nat.factors (n + 1) |>.maximum?
-      match P_n, P_n1 with
-      | some p, some q => |((p : ℝ) - q)| / Real.log n
-      | _, _ => 0) atTop atTop := by
+      |((largestPrimeFactor n : ℝ) - largestPrimeFactor (n + 1))| / Real.log n)
+      atTop atTop := by
   sorry
 
 end Erdos929

@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/920](https://www.erdosproblems.com/920)
 -/
 
-open Finset
+open Finset Filter
 
 open scoped Topology Real
 
@@ -41,7 +41,7 @@ noncomputable def h (k r : ℕ) : ℕ := sorry
 @[category research open, AMS 05]
 theorem chromatic_clique_free_asymptotic (k : ℕ) (answer : Prop) :
     answer ↔ ∃ (f : ℕ → ℝ),
-      (∀ r : ℕ, h k (r + 1) / h k r → 1 as r → ∞) := by
+      Tendsto (fun r => (h k (r + 1) : ℝ) / h k r) atTop (nhds 1) := by
   sorry
 
 end Erdos920
