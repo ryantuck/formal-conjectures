@@ -32,13 +32,15 @@ open scoped Topology Real
 
 namespace Erdos994
 
+open Classical in
 /-- Disproved: equidistribution for all measurable sets -/
 @[category research solved, AMS 11]
 theorem not_all_measurable_equidistribution :
     ¬ ∀ α ∈ Set.Icc (0 : ℝ) 1,
       Irrational α →
       ∀ (E : Set ℝ), MeasurableSet E → E ⊆ Set.Ioo 0 1 →
-        Tendsto (fun N => ((Finset.range N |>.filter (fun k => Int.fract (k * α) ∈ E)).card : ℝ) / N)
+        Tendsto (fun (N : ℕ) => (((Finset.range N).filter
+          (fun k => Int.fract ((k : ℝ) * α) ∈ E)).card : ℝ) / (N : ℝ))
           atTop (nhds (volume E).toReal) := by
   sorry
 

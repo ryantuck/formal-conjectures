@@ -26,24 +26,27 @@ PROVED
 *Reference:* [erdosproblems.com/991](https://www.erdosproblems.com/991)
 -/
 
-open Finset MeasureTheory
+open Finset MeasureTheory Filter
 
 open scoped Topology Real
 
 namespace Erdos991
 
+open Classical in
 /-- Maximum product implies low discrepancy -/
 @[category research solved, AMS 11]
 theorem sphere_max_product_discrepancy (d : ℕ) :
-    ∀ (A : Finset (EuclideanSpace ℝ (Fin d))),
-      (∀ p ∈ A, ‖p‖ = 1) →
-      (∀ B : Finset (EuclideanSpace ℝ (Fin d)),
-        (∀ p ∈ B, ‖p‖ = 1) → B.card = A.card →
-        (A.product A |>.filter (fun (p, q) => p ≠ q) |>.prod (fun (p, q) => ‖p - q‖)) ≤
+    ∀ (A : ℕ → Finset (EuclideanSpace ℝ (Fin d))),
+      (∀ N, ∀ p ∈ A N, ‖p‖ = 1) →
+      (∀ N, (A N).card = N) →
+      (∀ N, ∀ B : Finset (EuclideanSpace ℝ (Fin d)),
+        (∀ p ∈ B, ‖p‖ = 1) → B.card = (A N).card →
+        ((A N).product (A N) |>.filter (fun (p, q) => p ≠ q) |>.prod (fun (p, q) => ‖p - q‖)) ≤
         (B.product B |>.filter (fun (p, q) => p ≠ q) |>.prod (fun (p, q) => ‖p - q‖))) →
       ∀ (C : Set (EuclideanSpace ℝ (Fin d))),
         MeasurableSet C →
-        (((A.filter (fun p => p ∈ C)).card : ℝ) - volume C * A.card : ℝ).natAbs =o[atTop] fun _ => (A.card : ℝ) := by
+        (fun (N : ℕ) => |(((A N).filter (fun p => p ∈ C)).card : ℝ) -
+          (volume C).toReal * (N : ℝ)|) =o[atTop] fun (N : ℕ) => (N : ℝ) := by
   sorry
 
 end Erdos991

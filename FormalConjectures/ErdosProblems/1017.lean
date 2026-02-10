@@ -40,9 +40,8 @@ noncomputable def f (n k : ℕ) : ℕ := sorry
 /-- Estimate for clique partition threshold -/
 @[category research open, AMS 05]
 theorem clique_partition_estimate (answer : ℕ → ℕ → ℝ) :
-    ∃ (g : ℕ → ℕ → ℝ),
-      ∀ n k : ℕ, Nat.floor (n ^ 2 / 4) < k →
-        Filter.Tendsto (fun m => (f n k : ℝ) / g n k) Filter.atTop (nhds 1) := by
+    ∀ k : ℕ,
+      Filter.Tendsto (fun (n : ℕ) => (f n k : ℝ) / answer n k) Filter.atTop (nhds 1) := by
   sorry
 
 end Erdos1017

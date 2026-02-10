@@ -34,7 +34,7 @@ namespace Erdos1002
 
 /-- Function f(α,n) for fractional part sums -/
 noncomputable def f (α : ℝ) (n : ℕ) : ℝ :=
-  (1 / Real.log n) * ∑ k in Finset.range n, (1/2 - Int.fract (α * k))
+  (1 / Real.log (n : ℝ)) * (Finset.range n).sum (fun k => (1/2 - Int.fract (α * (k : ℝ))))
 
 /-- Asymptotic distribution function exists -/
 @[category research open, AMS 11]

@@ -37,7 +37,7 @@ namespace Erdos992
 theorem not_discrepancy_bound :
     ¬ ∀ (x : ℕ → ℕ), StrictMono x →
       ∀ α ∈ Set.Icc (0 : ℝ) 1,
-        let D := fun N => ((((Finset.range N).sum (fun k => if Int.fract ((x k : ℝ) * α) < α then (1 : ℝ) else 0) - α * N) : ℝ).natAbs : ℝ)
+        let D := fun (N : ℕ) => |((Finset.range N).sum (fun k => if Int.fract ((x k : ℝ) * α) < α then (1 : ℝ) else 0)) - α * (N : ℝ)|
         ∃ ε > 0, ∀ᶠ N in atTop, D N ≤ (N : ℝ) ^ (1/2) * (Real.log N) ^ ε := by
   sorry
 
