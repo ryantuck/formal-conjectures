@@ -32,10 +32,25 @@ open scoped Topology Real
 
 namespace Erdos1160
 
-/-- Number of groups of given order -/
+/-- Let g(n) denote the number of groups (up to isomorphism) of order n.
+    Conjecture: If n ≤ 2^m then g(n) ≤ g(2^m).
+
+    Pantelidakis proved this holds when n is odd and m ≥ 3619.
+
+    A stronger variant conjectures that for sufficiently large m,
+    ∑_{n < 2^m} g(n) ≤ g(2^m). -/
 @[category research open, AMS 20]
-theorem number_of_groups_order :
-    True := by
+theorem group_order_conjecture :
+    ∀ (n m : ℕ), n ≤ 2^m →
+    ∃ (g : ℕ → ℕ), g n ≤ g (2^m) := by
+  sorry
+
+/-- Stronger variant: For sufficiently large m, the sum of g(n) for n < 2^m
+    is bounded by g(2^m). -/
+@[category research open, AMS 20]
+theorem group_order_sum_conjecture :
+    ∃ (M : ℕ), ∀ m ≥ M,
+      ∃ (g : ℕ → ℕ), (Finset.range (2^m)).sum g ≤ g (2^m) := by
   sorry
 
 end Erdos1160
