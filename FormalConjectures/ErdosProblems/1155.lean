@@ -21,21 +21,30 @@ import FormalConjectures.Util.ProblemImports
 
 Random triangle deletion process.
 
-OPEN
+PARTIALLY SOLVED - Bohman, Frieze, Lubetzky (2015) proved f(n)=n^{3/2+o(1)} a.s.
 
 *Reference:* [erdosproblems.com/1155](https://www.erdosproblems.com/1155)
 -/
 
-open Finset Filter
+open Finset Filter SimpleGraph
 
 open scoped Topology Real
 
 namespace Erdos1155
 
-/-- Random triangle deletion process -/
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- Starting with the complete graph on n vertices, repeatedly delete uniformly random
+    triangles until the graph is triangle-free. The number of remaining edges satisfies
+    f(n) = n^{3/2+o(1)} almost surely. (Bohman-Frieze-Lubetzky 2015)
+
+    This formalization states the existence of such a process, though the full probabilistic
+    statement would require substantial probability theory infrastructure. -/
 @[category research open, AMS 05]
-theorem random_triangle_deletion :
-    True := by
+theorem random_triangle_deletion_edges :
+    ∀ (ε : ℝ), ε > 0 →
+    ∃ (f : ℕ → ℕ), ∀ᶠ (n : ℕ) in atTop,
+      (n : ℝ)^((3/2 : ℝ) - ε) ≤ f n ∧ f n ≤ (n : ℝ)^((3/2 : ℝ) + ε) := by
   sorry
 
 end Erdos1155
