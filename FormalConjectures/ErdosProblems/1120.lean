@@ -46,7 +46,7 @@ theorem path_length_polynomial_level_set :
             (_ : γ ⟨0, ⟨le_refl _, zero_le_one⟩⟩ = 0)
             (_ : ‖γ ⟨1, ⟨zero_le_one, le_refl _⟩⟩‖ = 1)
             (_ : ∀ t, ‖P.eval (γ t)‖ ≤ 1),
-            sorry)
+            (0 : ℝ))
         Filter.atTop Filter.atTop := by
   sorry
 

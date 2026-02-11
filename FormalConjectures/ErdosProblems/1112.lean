@@ -34,7 +34,7 @@ namespace Erdos1112
 
 /-- k-fold sumset: sums of k elements from A -/
 def kSumset (k : ℕ) (A : Set ℕ) : Set ℕ :=
-  {n | ∃ (s : Finset ℕ), s ⊆ A ∧ s.card = k ∧ s.sum id = n}
+  {n | ∃ (s : Finset ℕ), (s : Set ℕ) ⊆ A ∧ s.card = k ∧ s.sum id = n}
 
 /-- Does there exist r (depending on d₁, d₂, k) such that for all lacunary sequences B
     with ratio >= r, there exists a sequence A with bounded gaps whose k-fold sumset avoids B -/

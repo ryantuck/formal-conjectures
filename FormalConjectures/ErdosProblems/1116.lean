@@ -44,7 +44,7 @@ theorem meromorphic_root_distribution :
         let n : ℝ → ℂ → ℕ := fun r c =>
           Nat.card {z : ℂ | ‖z‖ < r ∧ f z = c}
         Filter.atTop.limsup
-          (fun r : ℝ => (n r a : ℝ) / (n r b : ℝ))
+          (fun r : ℝ => (n r a : EReal) / (n r b : EReal))
           = ⊤ := by
   sorry
 

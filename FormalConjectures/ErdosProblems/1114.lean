@@ -45,9 +45,9 @@ theorem polynomial_derivative_zeros_monotone_gaps
     (hP_deg : P.natDegree = n + 1)
     (dz : Fin (n + 1) → ℝ) (hdz_sorted : StrictMono dz)
     (hdz_roots : ∀ i, (Polynomial.derivative P).IsRoot (dz i)) :
-    ∃ center : ℕ,
-      ∀ i j : Fin (n + 1), i < j → j ≤ center →
-        dz (j.succ) - dz j ≥ dz (i.succ) - dz i := by
+    ∃ center : Fin n,
+      ∀ i j : Fin n, i < j → j ≤ center →
+        dz j.succ - dz j.castSucc ≥ dz i.succ - dz i.castSucc := by
   sorry
 
 end Erdos1114

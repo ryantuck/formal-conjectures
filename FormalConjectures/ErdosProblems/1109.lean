@@ -40,14 +40,14 @@ noncomputable def f (N : ℕ) : ℕ :=
 /-- Lower bound: f(N) >> (log N)^2 * log(log N) (Konyagin). -/
 @[category research open, AMS 11]
 theorem squarefree_sumsets_lower :
-    ∃ c > 0, ∀ᶠ N in Filter.atTop,
+    ∃ c > 0, ∀ᶠ N : ℕ in Filter.atTop,
       c * (Real.log N)^2 * Real.log (Real.log N) ≤ (f N : ℝ) := by
   sorry
 
 /-- Upper bound: f(N) << N^{11/15 + o(1)} (Konyagin). -/
 @[category research open, AMS 11]
 theorem squarefree_sumsets_upper :
-    ∀ ε > 0, ∃ C > 0, ∀ᶠ N in Filter.atTop,
+    ∀ ε > 0, ∃ C > 0, ∀ᶠ N : ℕ in Filter.atTop,
       (f N : ℝ) ≤ C * (N : ℝ) ^ (11/15 + ε) := by
   sorry
 

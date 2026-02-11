@@ -41,8 +41,9 @@ theorem entire_function_level_set_measure (f : ℂ → ℂ)
     (hf : Differentiable ℂ f) (hnc : ¬∀ z, f z = f 0) :
     ∀ c : ℝ,
       volume {z : ℂ | c < ‖f z‖} < ⊤ →
-        ∫ (r : ℝ) in Set.Ioi 0,
-          r / Real.log (Real.log (⨆ (z : ℂ) (_ : ‖z‖ = r), ‖f z‖)) < ⊤ := by
+        Integrable (fun r : ℝ =>
+          r / Real.log (Real.log (⨆ (z : ℂ) (_ : ‖z‖ = r), ‖f z‖)))
+          (volume.restrict (Set.Ioi 0)) := by
   sorry
 
 end Erdos1118

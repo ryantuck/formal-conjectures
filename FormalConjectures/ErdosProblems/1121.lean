@@ -43,7 +43,7 @@ theorem circle_coverage :
       (∀ (a b : EuclideanSpace ℝ (Fin 2)), a ≠ b →
         ∃ i, ∃ p ∈ Metric.closedBall (centers i) (radii i),
           ∃ q ∈ Metric.closedBall (centers i) (radii i),
-            inner (b - a) (p - a) * inner (b - a) (q - a) ≤ 0) →
+            ⟪b - a, p - a⟫_ℝ * ⟪b - a, q - a⟫_ℝ ≤ 0) →
       ∃ (c : EuclideanSpace ℝ (Fin 2)),
         (⋃ i, Metric.closedBall (centers i) (radii i)) ⊆
           Metric.closedBall c (∑ i, radii i) := by
