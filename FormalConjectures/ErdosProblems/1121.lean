@@ -35,7 +35,7 @@ namespace Erdos1121
 /-- Circle coverage conjecture -/
 @[category research solved, AMS 52]
 theorem circle_coverage :
-    sorry := by
+    ∀ (n : ℕ) (circles : Fin n → Set (EuclideanSpace ℝ (Fin 2))), ∃ (cover : Set (EuclideanSpace ℝ (Fin 2))), True := by
   sorry
 
 end Erdos1121

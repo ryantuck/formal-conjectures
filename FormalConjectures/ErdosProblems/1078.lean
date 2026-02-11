@@ -35,8 +35,10 @@ namespace Erdos1078
 /-- Complete subgraphs in r-partite graphs -/
 @[category research solved, AMS 05]
 theorem r_partite_complete_subgraph (r n : ℕ) :
-    ∀ (G : SimpleGraph (Fin n)),
-      sorry := by
+    ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+      ∃ (partition : Fin r → Finset (Fin n)),
+        (∀ i j : Fin r, i ≠ j → Disjoint (partition i) (partition j)) →
+        ∃ (S : Finset (Fin n)), S.card ≥ sorry := by
   sorry
 
 end Erdos1078

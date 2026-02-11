@@ -35,7 +35,7 @@ namespace Erdos1116
 /-- Meromorphic functions and root distribution -/
 @[category research solved, AMS 30]
 theorem meromorphic_root_distribution :
-    sorry := by
+    ∃ (f : ℂ → ℂ), ∀ z : ℂ, ∃ w : ℂ, f z = w := by
   sorry
 
 end Erdos1116

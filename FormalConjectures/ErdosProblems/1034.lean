@@ -34,14 +34,15 @@ namespace Erdos1034
 
 variable {α : Type*}
 
+open Classical in
 /-- Dense graphs contain triangles with many adjacent vertices -/
 @[category research open, AMS 05]
 theorem triangle_vertex_count (answer : Prop) :
     answer ↔ ∃ (c : ℝ), 0 < c ∧
-      ∀ᶠ n in Filter.atTop, ∀ (G : SimpleGraph (Fin n)),
-        G.edgeSet.toFinset.card ≥ n^2 / 4 →
-        ∃ (u v w : Fin n), G.Adj u v ∧ G.Adj v w ∧ G.Adj w u ∧
-          {x : Fin n | G.Adj x u ∨ G.Adj x v ∨ G.Adj x w}.toFinset.card ≥ c * n := by
+      ∀ᶠ (n : ℕ) in Filter.atTop, ∀ (G : SimpleGraph (Fin n)),
+        (∀ [DecidableRel G.Adj], G.edgeFinset.card ≥ n^2 / 4 →
+          ∃ (u v w : Fin n), G.Adj u v ∧ G.Adj v w ∧ G.Adj w u ∧
+            ({x : Fin n | G.Adj x u ∨ G.Adj x v ∨ G.Adj x w}.toFinset.card : ℝ) ≥ c * (n : ℝ)) := by
   sorry
 
 end Erdos1034

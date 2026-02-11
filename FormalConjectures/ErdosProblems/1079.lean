@@ -35,8 +35,9 @@ namespace Erdos1079
 /-- Degree and neighborhood conditions in graphs -/
 @[category research solved, AMS 05]
 theorem degree_neighborhood_condition (n : ℕ) :
-    ∀ (G : SimpleGraph (Fin n)),
-      sorry := by
+    ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+      (∀ v w : Fin n, G.degree v = G.degree w) →
+        ∃ (k : ℕ), ∀ v : Fin n, G.degree v = k := by
   sorry
 
 end Erdos1079

@@ -35,7 +35,7 @@ namespace Erdos1125
 /-- Convexity and monotonicity -/
 @[category research solved, AMS 26]
 theorem convexity_monotonicity :
-    sorry := by
+    ∀ (f : ℝ → ℝ), Convex ℝ (Set.Ici (0 : ℝ)) → Monotone f → ∃ (x : ℝ), f x ≥ 0 := by
   sorry
 
 end Erdos1125

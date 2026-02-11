@@ -34,11 +34,11 @@ namespace Erdos1111
 
 /-- Chromatic number and anticomplete vertex sets -/
 @[category research open, AMS 05]
-theorem chromatic_anticomplete (k : ℕ) :
+theorem chromatic_anticomplete {n : ℕ} (k : ℕ) :
     ∃ (f : ℕ → ℕ), ∀ (G : SimpleGraph (Fin n)),
       G.chromaticNumber ≥ k →
       ∃ (S : Finset (Fin n)), S.card ≥ f n ∧
-        sorry := by
+        (∀ u ∈ S, ∀ v ∈ S, u ≠ v → ¬G.Adj u v) := by
   sorry
 
 end Erdos1111

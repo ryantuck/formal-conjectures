@@ -36,12 +36,11 @@ variable {α : Type*}
 
 /-- Graphs without large trivial subgraphs contain induced regular subgraphs -/
 @[category research solved, AMS 05]
-theorem induced_regular_subgraph (n : ℕ) :
-    ∀ (G : SimpleGraph (Fin n)),
+theorem induced_regular_subgraph (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] :
       (∀ S : Finset (Fin n), S.card ≥ 10 * Nat.log n →
         ∃ v ∈ S, ∃ w ∈ S, v ≠ w ∧ (G.Adj v w ∨ ¬G.Adj v w)) →
       ∃ (H : SimpleGraph (Fin n)) (d : ℕ),
-        H ≤ G ∧ ∀ v : Fin n, H.degree v = d := by
+        H ≤ G ∧ ∀ [DecidableRel H.Adj] (v : Fin n), H.degree v = d := by
   sorry
 
 end Erdos1031

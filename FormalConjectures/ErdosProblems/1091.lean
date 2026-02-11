@@ -34,12 +34,12 @@ namespace Erdos1091
 
 /-- K₄-free graphs with chromatic number 4 contain odd cycles with diagonals -/
 @[category research open, AMS 05]
-theorem odd_cycles_with_diagonals (answer : Prop) :
+theorem odd_cycles_with_diagonals {n : ℕ} (answer : Prop) :
     answer ↔ ∀ (G : SimpleGraph (Fin n)),
       G.chromaticNumber = 4 →
       (∀ (K4 : Finset (Fin n)), K4.card = 4 →
         ∃ u ∈ K4, ∃ v ∈ K4, u ≠ v ∧ ¬G.Adj u v) →
-      ∃ (C : List (Fin n)), sorry := by
+      ∃ (C : List (Fin n)), C.length ≥ 5 ∧ Odd C.length ∧ sorry := by
   sorry
 
 end Erdos1091

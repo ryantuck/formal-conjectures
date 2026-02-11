@@ -36,7 +36,7 @@ variable {G : Type*} [Group G]
 
 /-- Non-commuting graph has bounded clique size iff center has finite index -/
 @[category research solved, AMS 20]
-theorem non_commuting_graph_cliques :
+theorem non_commuting_graph_cliques [Fintype G] :
     (∃ (n : ℕ), ∀ (S : Finset G),
       (∀ x ∈ S, ∀ y ∈ S, x ≠ y → x * y ≠ y * x) →
       S.card ≤ n) ↔

@@ -35,7 +35,7 @@ namespace Erdos1058
 /-- Infinitely many primes of the form n! + 1 -/
 @[category research solved, AMS 11]
 theorem factorial_plus_one_primes :
-    Set.Infinite {p : ℕ | p.Prime ∧ ∃ n, p = n.factorial + 1} := by
+    Set.Infinite {p : ℕ | p.Prime ∧ ∃ n, p = Nat.factorial n + 1} := by
   sorry
 
 end Erdos1058

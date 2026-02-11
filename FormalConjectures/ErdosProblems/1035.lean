@@ -37,9 +37,9 @@ variable {α : Type*}
 /-- Dense graphs contain hypercube subgraph -/
 @[category research open, AMS 05]
 theorem hypercube_subgraph (n : ℕ) (answer : Prop) :
-    answer ↔ ∃ (c : ℝ), 0 < c < 1 ∧
-      ∀ (G : SimpleGraph (Fin (2^n))),
-        (∀ v : Fin (2^n), G.degree v > (1 - c) * 2^n) →
+    answer ↔ ∃ (c : ℝ), 0 < c ∧ c < 1 ∧
+      ∀ (G : SimpleGraph (Fin (2^n))) [DecidableRel G.Adj],
+        (∀ v : Fin (2^n), (G.degree v : ℝ) > (1 - c) * (2^n : ℝ)) →
         ∃ (f : Fin (2^n) → Fin (2^n)), Function.Injective f ∧
           ∀ (i j : Fin (2^n)), sorry := by
   sorry

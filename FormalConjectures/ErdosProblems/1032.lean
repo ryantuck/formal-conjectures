@@ -38,10 +38,10 @@ variable {α : Type*}
 @[category research open, AMS 05]
 theorem four_chromatic_critical (answer : Prop) :
     answer ↔ ∃ (c : ℝ), 0 < c ∧
-      ∀ᶠ n in Filter.atTop, ∃ (G : SimpleGraph (Fin n)),
+      ∀ᶠ (n : ℕ) in Filter.atTop, ∃ (G : SimpleGraph (Fin n)),
         G.chromaticNumber = 4 ∧
-        (∀ e : Sym2 (Fin n), G.deleteEdges {e} |>.chromaticNumber < 4) ∧
-        (∀ v : Fin n, G.degree v ≥ c * n) := by
+        (∀ e : Sym2 (Fin n), (G.deleteEdges {e}).chromaticNumber < 4) ∧
+        (∀ [DecidableRel G.Adj] (v : Fin n), (G.degree v : ℝ) ≥ c * (n : ℝ)) := by
   sorry
 
 end Erdos1032

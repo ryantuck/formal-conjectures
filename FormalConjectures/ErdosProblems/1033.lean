@@ -39,8 +39,8 @@ noncomputable def h (n : ℕ) : ℕ := sorry
 
 @[category research open, AMS 05]
 theorem triangle_degree_sum (n : ℕ) :
-    ∀ (G : SimpleGraph (Fin n)),
-      G.edgeSet.toFinset.card ≥ n^2 / 4 →
+    ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+      G.edgeFinset.card ≥ n^2 / 4 →
       ∃ (u v w : Fin n), G.Adj u v ∧ G.Adj v w ∧ G.Adj w u ∧
         G.degree u + G.degree v + G.degree w ≥ h n := by
   sorry

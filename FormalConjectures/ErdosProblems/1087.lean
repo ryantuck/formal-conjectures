@@ -37,7 +37,7 @@ namespace Erdos1087
 theorem degenerate_four_points (n : ℕ) :
     ∀ (S : Finset (EuclideanSpace ℝ (Fin 2))),
       S.card = n →
-      sorry := by
+      ∃ (T : Finset (EuclideanSpace ℝ (Fin 2))), T ⊆ S ∧ T.card = 4 ∧ sorry := by
   sorry
 
 end Erdos1087

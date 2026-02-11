@@ -35,7 +35,7 @@ namespace Erdos1122
 /-- Additive functions and monotonicity -/
 @[category research open, AMS 11]
 theorem additive_function_monotonicity :
-    sorry := by
+    ∀ (f : ℕ → ℕ), (∀ m n, f (m + n) = f m + f n) → ∃ (k : ℕ), ∀ n, f n ≤ k * n := by
   sorry
 
 end Erdos1122

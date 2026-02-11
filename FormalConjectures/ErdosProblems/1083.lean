@@ -38,7 +38,7 @@ theorem distinct_distances_higher_dim (d n : ℕ) :
     ∀ (S : Finset (EuclideanSpace ℝ (Fin d))),
       S.card = n →
       ∃ (D : Finset ℝ),
-        (∀ dist ∈ D, ∃ x ∈ S, ∃ y ∈ S, dist x y = dist) ∧
+        (∀ d_val ∈ D, ∃ x ∈ S, ∃ y ∈ S, dist x y = d_val) ∧
         D.card ≥ sorry := by
   sorry
 

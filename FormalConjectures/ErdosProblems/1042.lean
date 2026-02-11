@@ -41,7 +41,7 @@ theorem connected_components (n : ℕ) (F : Set ℂ) (d : ℝ) :
     IsClosed F →
     0 < d →
     d ≤ 1 →
-    sorry := by
+    ∃ (f : Polynomial ℂ), f.natDegree ≤ n ∧ componentCount f ≥ n := by
   sorry
 
 end Erdos1042

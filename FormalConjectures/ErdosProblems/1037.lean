@@ -38,9 +38,9 @@ variable {α : Type*}
 @[category research open, AMS 05]
 theorem degree_diversity (answer : Prop) :
     answer ↔ ∃ (f : ℕ → ℝ), (∀ n, 0 < f n) ∧
-      ∀ᶠ n in Filter.atTop, ∀ (G : SimpleGraph (Fin n)),
+      ∀ᶠ (n : ℕ) in Filter.atTop, ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
         (∀ v w : Fin n, v ≠ w → G.degree v ≠ G.degree w) →
-        (∀ S : Finset (Fin n), S.card ≥ f n →
+        (∀ S : Finset (Fin n), (S.card : ℝ) ≥ f n →
           ∃ v ∈ S, ∃ w ∈ S, v ≠ w ∧ (G.Adj v w ∨ ¬G.Adj v w)) := by
   sorry
 

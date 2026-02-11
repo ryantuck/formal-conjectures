@@ -40,7 +40,7 @@ noncomputable def f (k : ℕ) : ℕ := sorry
 /-- A cycle in a graph (simplified formulation) -/
 def IsCycle (G : SimpleGraph α) (C : List α) : Prop :=
   C.length ≥ 3 ∧ C.Nodup ∧
-  (∀ i (hi : i < C.length), G.Adj (C[i]) (C[(i + 1) % C.length]))
+  (∀ i (hi : i < C.length), ∃ j, ∃ (hj : j < C.length), j = (i + 1) % C.length ∧ G.Adj (C[i]'hi) (C[j]'hj))
 
 /-- Graphs with many edges contain long cycles -/
 @[category research solved, AMS 05]

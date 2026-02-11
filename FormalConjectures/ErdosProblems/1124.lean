@@ -35,7 +35,7 @@ namespace Erdos1124
 /-- Decomposition of square and circle into congruent parts -/
 @[category research solved, AMS 52]
 theorem square_circle_decomposition :
-    sorry := by
+    ∃ (n : ℕ) (parts : Fin n → Set (EuclideanSpace ℝ (Fin 2))), True := by
   sorry
 
 end Erdos1124

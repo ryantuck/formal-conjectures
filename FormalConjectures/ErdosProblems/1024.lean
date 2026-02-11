@@ -32,6 +32,8 @@ open scoped Topology Real
 
 namespace Erdos1024
 
+variable {α : Type*}
+
 /-- Minimum independent set size in 3-uniform linear hypergraph -/
 noncomputable def f (n : ℕ) : ℕ := sorry
 
@@ -41,7 +43,7 @@ theorem hypergraph_independent_set :
     ∃ (c : ℝ), 0 < c ∧
       ∀ (n : ℕ) (H : Finset (Finset α)) [Fintype α],
         (∀ e ∈ H, e.card = 3) →
-        sorry := by
+        f n ≤ sorry := by
   sorry
 
 end Erdos1024

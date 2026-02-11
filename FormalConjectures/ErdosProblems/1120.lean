@@ -35,7 +35,7 @@ namespace Erdos1120
 /-- Path length in polynomial level set -/
 @[category research open, AMS 30]
 theorem path_length_polynomial_level_set (P : Polynomial ℂ) :
-    sorry := by
+    ∃ (L : ℝ), 0 ≤ L ∧ L ≤ sorry := by
   sorry
 
 end Erdos1120

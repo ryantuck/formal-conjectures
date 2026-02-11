@@ -35,7 +35,7 @@ namespace Erdos1119
 /-- Cardinality of families of entire functions -/
 @[category research solved, AMS 30]
 theorem cardinality_entire_function_families :
-    sorry := by
+    ∃ (n : ℕ), ∀ (S : Finset (ℂ → ℂ)), S.card ≤ n := by
   sorry
 
 end Erdos1119

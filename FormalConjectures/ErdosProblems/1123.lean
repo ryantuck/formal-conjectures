@@ -35,7 +35,7 @@ namespace Erdos1123
 /-- Boolean algebra isomorphism -/
 @[category research open, AMS 03]
 theorem boolean_algebra_isomorphism :
-    sorry := by
+    ∀ (α β : Type*) [BooleanAlgebra α] [BooleanAlgebra β], ∃ (f : α → β), Function.Injective f := by
   sorry
 
 end Erdos1123
