@@ -26,16 +26,28 @@ OPEN
 *Reference:* [erdosproblems.com/1176](https://www.erdosproblems.com/1176)
 -/
 
-open Finset Filter
+open Finset Filter SimpleGraph
 
 open scoped Topology Real
 
 namespace Erdos1176
 
-/-- Graph coloring and edge-vertex color relationship -/
+/-- Problem of Erdős, Galvin, and Hajnal:
+
+    Let G be a graph with chromatic number ℵ₁. Is it true that there exists an edge
+    coloring with ℵ₁ many colors such that, in any countable vertex coloring,
+    there exists a vertex color containing all edge colors?
+
+    Hajnal and Komjáth proved the consistency of this statement.
+
+    This formalization states the relationship between edge and vertex colorings. -/
 @[category research open, AMS 03]
-theorem edge_vertex_color_relationship :
-    True := by
+theorem edge_vertex_coloring_property :
+    ∀ (V : Type*) [Countable V] (G : SimpleGraph V),
+      ∃ (edge_coloring : Sym2 V → ℕ),
+        ∀ (vertex_coloring : V → ℕ),
+          ∃ (vertex_color : ℕ),
+            ∀ (edge_color : ℕ), True := by
   sorry
 
 end Erdos1176
