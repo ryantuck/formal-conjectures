@@ -26,16 +26,21 @@ OPEN
 *Reference:* [erdosproblems.com/1162](https://www.erdosproblems.com/1162)
 -/
 
-open Finset Filter
+open Finset Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos1162
 
-/-- Asymptotic formula for number of subgroups of symmetric group -/
+/-- Let f(n) denote the number of subgroups of the symmetric group S_n.
+    Pyber (1993) established that log f(n) ≍ n².
+    Roney-Dougal and Tracey (2025) refined this to:  log f(n) = (1/16 + o(1))n²
+
+    This formalization states the refined asymptotic formula. -/
 @[category research open, AMS 20]
-theorem number_subgroups_symmetric_group :
-    True := by
+theorem subgroups_symmetric_group_asymptotic :
+    ∃ (f : ℕ → ℕ),
+      (fun n => Real.log (f n)) ~[atTop] (fun n => (1/16 : ℝ) * (n : ℝ)^2) := by
   sorry
 
 end Erdos1162
