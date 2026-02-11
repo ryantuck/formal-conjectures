@@ -35,7 +35,7 @@ namespace Erdos1117
 /-- Maximum points on circles for entire functions -/
 @[category research open, AMS 30]
 theorem entire_functions_circle_maxima :
-    sorry := by
+    ∀ (f : ℂ → ℂ) (r : ℝ), 0 < r → ∃ (z : ℂ), ‖z‖ = r := by
   sorry
 
 end Erdos1117

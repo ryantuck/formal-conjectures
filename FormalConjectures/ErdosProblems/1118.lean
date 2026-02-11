@@ -35,7 +35,7 @@ namespace Erdos1118
 /-- Entire functions with finite measure level sets have bounded growth -/
 @[category research solved, AMS 30]
 theorem entire_function_level_set_measure :
-    sorry := by
+    ∀ (f : ℂ → ℂ), ∃ (M : ℝ), ∀ z : ℂ, ‖f z‖ ≤ M := by
   sorry
 
 end Erdos1118

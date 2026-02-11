@@ -33,14 +33,14 @@ open scoped Topology Real
 namespace Erdos1045
 
 /-- Product of pairwise distances -/
-noncomputable def Δ (z : Fin n → ℂ) : ℝ :=
-  ∏ i : Fin n, ∏ j : Fin n, if i ≠ j then Complex.abs (z i - z j) else 1
+noncomputable def Δ {n : ℕ} (z : Fin n → ℂ) : ℝ :=
+  ∏ i : Fin n, ∏ j : Fin n, if i ≠ j then ‖z i - z j‖ else 1
 
 /-- Maximum product of pairwise distances -/
 @[category research open, AMS 52]
 theorem max_product_distances (n : ℕ) :
     ∃ (M : ℝ), ∀ (z : Fin n → ℂ),
-      (∀ i j : Fin n, Complex.abs (z i - z j) ≤ 2) →
+      (∀ i j : Fin n, ‖z i - z j‖ ≤ 2) →
       Δ z ≤ M := by
   sorry
 

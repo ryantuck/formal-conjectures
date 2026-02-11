@@ -38,8 +38,8 @@ noncomputable def Λ (f : Polynomial ℂ) : ℝ := sorry
 /-- Infimum of boundary length is 2 -/
 @[category research solved, AMS 30]
 theorem level_set_boundary_length :
-    sInf {Λ f | (f : Polynomial ℂ) | f.Monic ∧
-      ∀ z : ℂ, f.IsRoot z → Complex.abs z ≤ 1} = 2 := by
+    sInf {y | ∃ (f : Polynomial ℂ), f.Monic ∧
+      (∀ z : ℂ, f.IsRoot z → ‖z‖ ≤ 1) ∧ y = Λ f} = 2 := by
   sorry
 
 end Erdos1044

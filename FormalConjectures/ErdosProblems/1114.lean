@@ -35,8 +35,8 @@ namespace Erdos1114
 /-- Polynomials with roots in unit disc have derivative zeros nearby -/
 @[category research solved, AMS 30]
 theorem polynomial_derivative_zeros (P : Polynomial ℂ) :
-    (∀ z : ℂ, P.IsRoot z → Complex.abs z ≤ 1) →
-    sorry := by
+    (∀ z : ℂ, P.IsRoot z → ‖z‖ ≤ 1) →
+    ∀ z : ℂ, Polynomial.derivative P |>.IsRoot z → ‖z‖ ≤ 1 + sorry := by
   sorry
 
 end Erdos1114
