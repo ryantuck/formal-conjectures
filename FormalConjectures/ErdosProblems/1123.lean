@@ -38,11 +38,10 @@ namespace Erdos1123
     Under CH they are isomorphic (Just and Krawczyk 1984); without CH, the question is open. -/
 @[category research open, AMS 03]
 theorem boolean_algebra_isomorphism :
-    let densityZeroIdeal : Ideal (Set ℕ) := sorry
-    let logDensityZeroIdeal : Ideal (Set ℕ) := sorry
-    let B1 := sorry
-    let B2 := sorry
-    answer(sorry) ↔ ¬ Nonempty (B1 ≃o B2) := by
+    let B1 : Type := sorry  -- Boolean algebra mod density-zero sets
+    let B2 : Type := sorry  -- Boolean algebra mod log-density-zero sets
+    answer(sorry) ↔ ∀ [BooleanAlgebra B1] [BooleanAlgebra B2],
+      ¬ Nonempty (B1 ≃o B2) := by
   sorry
 
 end Erdos1123

@@ -34,7 +34,8 @@ namespace Erdos1138
 
 /-- Maximum prime gap below x -/
 noncomputable def d (x : ℝ) : ℝ :=
-  sSup {(p' - p : ℝ) | ∃ p p' : ℕ, p.Prime ∧ p' = Nat.nextPrime p ∧ (p : ℝ) < x}
+  sSup {g : ℝ | ∃ (p p' : ℕ), p.Prime ∧ p'.Prime ∧ p < p' ∧
+    (∀ q : ℕ, p < q → q < p' → ¬ q.Prime) ∧ (p : ℝ) < x ∧ g = (p' - p : ℝ)}
 
 /-- Let x/2 < y < x and C > 1. If d = max_{p_n < x} (p_{n+1} - p_n) denotes the maximum
     prime gap below x, is it true that pi(y + Cd) - pi(y) ~ Cd / log y as x -> infinity? -/

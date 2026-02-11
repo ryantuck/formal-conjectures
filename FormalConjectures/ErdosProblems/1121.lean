@@ -41,9 +41,9 @@ theorem circle_coverage :
     ∀ (n : ℕ) (centers : Fin n → EuclideanSpace ℝ (Fin 2)) (radii : Fin n → ℝ),
       (∀ i, 0 < radii i) →
       (∀ (a b : EuclideanSpace ℝ (Fin 2)), a ≠ b →
-        ∃ i, ∃ p ∈ Metric.closedBall (centers i) (radii i),
-          ∃ q ∈ Metric.closedBall (centers i) (radii i),
-            ⟪b - a, p - a⟫_ℝ * ⟪b - a, q - a⟫_ℝ ≤ 0) →
+        ∃ i, ∃ (p : EuclideanSpace ℝ (Fin 2)) (_ : p ∈ Metric.closedBall (centers i) (radii i)),
+          ∃ (q : EuclideanSpace ℝ (Fin 2)) (_ : q ∈ Metric.closedBall (centers i) (radii i)),
+            ‖b - a‖ * ‖p - q‖ ≤ radii i) →
       ∃ (c : EuclideanSpace ℝ (Fin 2)),
         (⋃ i, Metric.closedBall (centers i) (radii i)) ⊆
           Metric.closedBall c (∑ i, radii i) := by
