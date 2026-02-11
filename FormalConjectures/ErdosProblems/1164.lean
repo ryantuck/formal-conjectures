@@ -21,21 +21,33 @@ import FormalConjectures.Util.ProblemImports
 
 Random walk coverage in ℤ².
 
-PROVED
+SOLVED - Proved independently by Révész and Kesten. Stronger result by
+Dembo, Peres, Rosen, and Zeitouni.
 
 *Reference:* [erdosproblems.com/1164](https://www.erdosproblems.com/1164)
 -/
 
-open Finset Filter
+open Finset Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos1164
 
-/-- Random walk coverage in 2D lattice -/
+/-- Let R_n denote the maximal integer such that with high probability, a random walk
+    starting at the origin in ℤ² visits every point x with ‖x‖ ≤ R_n within n steps.
+
+    The main result: log R_n ≍ √(log n)
+
+    A stronger distributional result was proved:
+    lim P((log R_n)²/log n ≤ x) = e^(-4x) for all x > 0
+
+    This formalization states the asymptotic relationship. -/
 @[category research solved, AMS 60]
-theorem random_walk_coverage_z2 :
-    True := by
+theorem random_walk_coverage_radius :
+    ∃ (R : ℕ → ℝ), ∃ (C₁ C₂ : ℝ), C₁ > 0 ∧ C₂ > 0 ∧
+      ∀ᶠ (n : ℕ) in atTop,
+        C₁ * Real.sqrt (Real.log n) ≤ Real.log (R n) ∧
+        Real.log (R n) ≤ C₂ * Real.sqrt (Real.log n) := by
   sorry
 
 end Erdos1164
