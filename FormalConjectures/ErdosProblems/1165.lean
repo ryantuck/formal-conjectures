@@ -42,11 +42,17 @@ namespace Erdos1165
     - Tóth (2001): P(|F(n)| = r infinitely often) = 0 for all r ≥ 4
     - Hao, Li, Okada, Zheng (2024): P(|F(n)| = 3 infinitely often) = 1
 
-    This formalization states these results as a characterization. -/
+    This formalization asks whether the probability equals 1 for r=3 and 0 for r≥4.
+
+    Note: Without probability infrastructure for random walks, this is a placeholder
+    capturing the yes/no nature of the results. The actual probability measures and
+    random walk definitions are not formalized. -/
 @[category research solved, AMS 60]
 theorem favorite_set_cardinality_probability :
-    ∀ (r : ℕ), r ≥ 3 →
-      ((r = 3 → True) ∧ (r ≥ 4 → True)) := by
+    answer(True) ↔
+      ∃ (probability_r_infinitely_often : ℕ → ℝ),
+        (probability_r_infinitely_often 3 = 1) ∧
+        (∀ r ≥ 4, probability_r_infinitely_often r = 0) := by
   sorry
 
 end Erdos1165

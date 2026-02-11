@@ -41,12 +41,15 @@ namespace Erdos1166
     1. Almost surely |F(n)| ≤ 3 for all large n (Problem 1165)
     2. Erdős-Taylor: maximum visits ≪ (log n)²
 
-    This formalization states the asymptotic bound. -/
+    This formalization states the asymptotic bound.
+
+    Note: Without probability infrastructure, this asks whether such a function exists.
+    The "almost surely" aspect is not captured. -/
 @[category research solved, AMS 60]
 theorem union_favorite_sets_bound :
-    ∃ (C : ℝ), C > 0 ∧
-      ∀ᶠ (n : ℕ) in atTop,
-        ∃ (union_size : ℕ → ℕ),
+    answer(True) ↔
+      ∃ (union_size : ℕ → ℕ) (C : ℝ), C > 0 ∧
+        ∀ᶠ (n : ℕ) in atTop,
           (union_size n : ℝ) ≤ C * (Real.log n)^2 := by
   sorry
 

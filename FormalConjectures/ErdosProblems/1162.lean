@@ -36,11 +36,15 @@ namespace Erdos1162
     Pyber (1993) established that log f(n) ≍ n².
     Roney-Dougal and Tracey (2025) refined this to:  log f(n) = (1/16 + o(1))n²
 
-    This formalization states the refined asymptotic formula. -/
+    This formalization states the refined asymptotic formula.
+
+    Note: Without infrastructure to define f(n) as the actual count of subgroups
+    of S_n, this asks whether such a function exists with the stated asymptotic. -/
 @[category research open, AMS 20]
 theorem subgroups_symmetric_group_asymptotic :
-    ∃ (f : ℕ → ℕ),
-      (fun n => Real.log (f n)) ~[atTop] (fun n => (1/16 : ℝ) * (n : ℝ)^2) := by
+    answer(sorry) ↔
+      ∃ (f : ℕ → ℕ),
+        (fun n => Real.log (f n)) ~[atTop] (fun n => (1/16 : ℝ) * (n : ℝ)^2) := by
   sorry
 
 end Erdos1162

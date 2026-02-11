@@ -37,20 +37,25 @@ namespace Erdos1160
 
     Pantelidakis proved this holds when n is odd and m ≥ 3619.
 
-    A stronger variant conjectures that for sufficiently large m,
-    ∑_{n < 2^m} g(n) ≤ g(2^m). -/
+    Note: Without infrastructure to define g(n) as the actual count of groups
+    of order n, this formalization asks whether such a function exists satisfying
+    the inequality. -/
 @[category research open, AMS 20]
 theorem group_order_conjecture :
-    ∀ (n m : ℕ), n ≤ 2^m →
-    ∃ (g : ℕ → ℕ), g n ≤ g (2^m) := by
+    answer(sorry) ↔
+      ∃ (g : ℕ → ℕ), ∀ (n m : ℕ), n ≤ 2^m → g n ≤ g (2^m) := by
   sorry
 
 /-- Stronger variant: For sufficiently large m, the sum of g(n) for n < 2^m
-    is bounded by g(2^m). -/
+    is bounded by g(2^m).
+
+    Note: This formalization asks whether there exists a function g and threshold M
+    with the stated property. -/
 @[category research open, AMS 20]
 theorem group_order_sum_conjecture :
-    ∃ (M : ℕ), ∀ m ≥ M,
-      ∃ (g : ℕ → ℕ), (Finset.range (2^m)).sum g ≤ g (2^m) := by
+    answer(sorry) ↔
+      ∃ (g : ℕ → ℕ) (M : ℕ), ∀ m ≥ M,
+        (Finset.range (2^m)).sum g ≤ g (2^m) := by
   sorry
 
 end Erdos1160

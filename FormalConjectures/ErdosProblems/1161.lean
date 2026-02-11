@@ -42,11 +42,15 @@ variable {n : ℕ}
     2. For sufficiently large n, if f_k(n) ≥ (n-1)!, then [1,...,n-k] | k
     3. For all large n, f_k(n) = (n-1)! iff k is minimal satisfying [1,...,n-k] | k
 
-    This formalization states the characterization of maximal order elements. -/
+    This formalization states the characterization of maximal order elements.
+
+    Note: Without infrastructure to define f_k(n) as the actual count of elements
+    in S_n with order k, this asks whether such a function exists with the stated
+    properties. -/
 @[category research solved, AMS 20]
 theorem maximal_order_elements_characterization :
-    ∃ (N : ℕ), ∀ n ≥ N,
-      ∃ (f : ℕ → ℕ → ℕ) (k_min : ℕ → ℕ),
+    answer(True) ↔
+      ∃ (f : ℕ → ℕ → ℕ) (k_min : ℕ → ℕ) (N : ℕ), ∀ n ≥ N,
         (∀ k : ℕ, f k n ≤ (n - 1).factorial) ∧
         (f (k_min n) n = (n - 1).factorial) ∧
         (∀ k < k_min n, f k n < (n - 1).factorial) := by

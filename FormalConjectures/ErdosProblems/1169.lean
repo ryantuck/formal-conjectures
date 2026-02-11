@@ -32,8 +32,7 @@ open scoped Topology Real
 
 namespace Erdos1169
 
-/-- Problem of Erdős and Hajnal: For all finite k < ω,
-    does ω₁² ↛ (ω₁², 3)²?
+/-- Problem of Erdős and Hajnal: Does ω₁² ↛ (ω₁², 3)²?
 
     This asks whether for the ordinal ω₁² (omega-one squared), there exists a 2-coloring
     of pairs such that there is no monochromatic copy of ω₁² in one color, and no 3-element
@@ -41,17 +40,20 @@ namespace Erdos1169
 
     Hajnal proved this holds under the continuum hypothesis.
 
-    The formulation uses types to represent ordinals/cardinals of the appropriate size. -/
+    The formulation uses types to represent ordinals/cardinals of the appropriate size.
+
+    Note: The original problem mentions "for all finite k < ω" but the role of k is unclear
+    from available sources. This formalization addresses the main question for ω₁². -/
 @[category research open, AMS 03]
 theorem ramsey_omega_one_squared :
-    ∀ (k : ℕ), k < ω →
-    ∀ (α : Type*) [Infinite α],
-      ∃ (coloring : Finset α → Fin 2),
-        (∀ (H : Set α), (∃ f : α → α, Function.Injective f ∧ Set.range f ⊆ H) →
-          ∃ (s : Finset α), s.card = 2 ∧ (↑s : Set α) ⊆ H ∧ coloring s ≠ 0) ∧
-        (∀ (H : Set α), True →
-          ∃ (s : Finset α), s.card = 2 ∧ (↑s : Set α) ⊆ H ∧ coloring s ≠ 1 ∨
-          ∃ (t : Finset α), t.card = 3) := by
+    answer(sorry) ↔
+      ∀ (α : Type*) [Infinite α],
+        ∃ (coloring : Finset α → Fin 2),
+          (∀ (H : Set α), (∃ f : α → α, Function.Injective f ∧ Set.range f ⊆ H) →
+            ∃ (s : Finset α), s.card = 2 ∧ (↑s : Set α) ⊆ H ∧ coloring s ≠ 0) ∧
+          (∀ (t : Finset α), t.card = 3 →
+            ∃ (pair : Finset α), pair.card = 2 ∧ (↑pair : Set α) ⊆ (↑t : Set α) ∧
+              coloring pair ≠ 1) := by
   sorry
 
 end Erdos1169

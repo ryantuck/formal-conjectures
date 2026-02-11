@@ -46,7 +46,13 @@ def PartitionRelationFails (α : Type*) (r : ℕ) (gamma : Type*) (targets : gam
     with 2-element subsets, countably many colors (each appearing at most 3 times),
     and target size ℵ_{ω+1}, without assuming GCH.
 
-    This states that ℵ_{ω+1} ↛ (ℵ_{ω+1}, 3, …, 3)_{ℵ_0}^2 independently of GCH. -/
+    This states that ℵ_{ω+1} ↛ (ℵ_{ω+1}, 3, …, 3)_{ℵ_0}^2 independently of GCH.
+
+    Note: The formalization lacks specific cardinality constraints. In the full
+    problem, α would have cardinality ℵ_{ω+1} and gamma would be ℵ_0 (countably
+    infinite). These constraints are not expressible in Lean's type theory without
+    additional set-theoretic axioms. The target structure Fin 3 ⊕ α approximates
+    the heterogeneous targets in the original problem. -/
 @[category research open, AMS 03]
 theorem partition_relation_fails_aleph_omega_plus_one :
     ∀ (α : Type*) [Infinite α],

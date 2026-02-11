@@ -37,11 +37,17 @@ namespace Erdos1163
 
     The problem statement is somewhat vague. A formal statement would need to clarify
     what "describe by statistical means" entails - likely involving asymptotic density,
-    distribution properties, or characterization of the set of possible subgroup orders. -/
+    distribution properties, or characterization of the set of possible subgroup orders.
+
+    This placeholder formalization asks whether the set of subgroup orders has been
+    characterized. The divisibility constraint (all orders divide n!) is a basic
+    necessary condition. -/
 @[category research open, AMS 20]
 theorem arithmetic_structure_subgroup_orders :
-    ∃ (orders : ℕ → Finset ℕ), ∀ n : ℕ,
-      ∀ d ∈ orders n, d ∣ n.factorial := by
+    answer(sorry) ↔
+      ∃ (orders : ℕ → Finset ℕ),
+        (∀ n : ℕ, ∀ d ∈ orders n, d ∣ n.factorial) ∧
+        (∀ n : ℕ, (orders n).Nonempty) := by
   sorry
 
 end Erdos1163

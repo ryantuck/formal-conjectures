@@ -41,13 +41,18 @@ namespace Erdos1164
     A stronger distributional result was proved:
     lim P((log R_n)²/log n ≤ x) = e^(-4x) for all x > 0
 
-    This formalization states the asymptotic relationship. -/
+    This formalization states the asymptotic relationship.
+
+    Note: Without probability infrastructure to define R_n from the random walk
+    process, this asks whether such a function exists with the stated bounds.
+    The "with high probability" aspect is not captured. -/
 @[category research solved, AMS 60]
 theorem random_walk_coverage_radius :
-    ∃ (R : ℕ → ℝ), ∃ (C₁ C₂ : ℝ), C₁ > 0 ∧ C₂ > 0 ∧
-      ∀ᶠ (n : ℕ) in atTop,
-        C₁ * Real.sqrt (Real.log n) ≤ Real.log (R n) ∧
-        Real.log (R n) ≤ C₂ * Real.sqrt (Real.log n) := by
+    answer(True) ↔
+      ∃ (R : ℕ → ℝ) (C₁ C₂ : ℝ), C₁ > 0 ∧ C₂ > 0 ∧
+        ∀ᶠ (n : ℕ) in atTop,
+          C₁ * Real.sqrt (Real.log n) ≤ Real.log (R n) ∧
+          Real.log (R n) ≤ C₂ * Real.sqrt (Real.log n) := by
   sorry
 
 end Erdos1164
