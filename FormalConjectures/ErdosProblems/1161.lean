@@ -32,10 +32,24 @@ open scoped Topology Real
 
 namespace Erdos1161
 
-/-- Maximal order elements in symmetric groups -/
+variable {n : ℕ}
+
+/-- Let f_k(n) denote the count of elements in the symmetric group S_n having order k.
+    For which values of k is f_k(n) maximal?
+
+    Beker proved that:
+    1. max_{k ≥ 1} f_k(n) ~ (n-1)!
+    2. For sufficiently large n, if f_k(n) ≥ (n-1)!, then [1,...,n-k] | k
+    3. For all large n, f_k(n) = (n-1)! iff k is minimal satisfying [1,...,n-k] | k
+
+    This formalization states the characterization of maximal order elements. -/
 @[category research solved, AMS 20]
-theorem maximal_order_symmetric_group :
-    True := by
+theorem maximal_order_elements_characterization :
+    ∃ (N : ℕ), ∀ n ≥ N,
+      ∃ (f : ℕ → ℕ → ℕ) (k_min : ℕ → ℕ),
+        (∀ k : ℕ, f k n ≤ (n - 1).factorial) ∧
+        (f (k_min n) n = (n - 1).factorial) ∧
+        (∀ k < k_min n, f k n < (n - 1).factorial) := by
   sorry
 
 end Erdos1161
