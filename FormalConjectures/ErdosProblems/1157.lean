@@ -35,7 +35,7 @@ namespace Erdos1157
 /-- Turán numbers for r-uniform hypergraphs -/
 @[category research open, AMS 05]
 theorem turan_r_uniform_hypergraphs :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1157

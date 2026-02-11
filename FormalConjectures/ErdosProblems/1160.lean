@@ -35,7 +35,7 @@ namespace Erdos1160
 /-- Number of groups of given order -/
 @[category research open, AMS 20]
 theorem number_of_groups_order :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1160

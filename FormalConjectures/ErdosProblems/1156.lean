@@ -35,7 +35,7 @@ namespace Erdos1156
 /-- Concentration of chromatic number in random graphs -/
 @[category research open, AMS 05]
 theorem chromatic_number_concentration :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1156

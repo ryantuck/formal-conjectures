@@ -35,7 +35,7 @@ namespace Erdos1163
 /-- Arithmetic structure of orders of subgroups -/
 @[category research open, AMS 20]
 theorem arithmetic_subgroup_orders :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1163

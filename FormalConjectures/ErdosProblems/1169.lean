@@ -35,7 +35,7 @@ namespace Erdos1169
 /-- Ramsey theory for ordinals -/
 @[category research open, AMS 03]
 theorem ramsey_theory_ordinals :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1169

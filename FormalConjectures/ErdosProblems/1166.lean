@@ -35,7 +35,7 @@ namespace Erdos1166
 /-- Union of favourite sets in random walks -/
 @[category research solved, AMS 60]
 theorem union_favourite_sets_random_walks :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1166

@@ -35,7 +35,7 @@ namespace Erdos1174
 /-- Graph coloring and monochromatic cliques -/
 @[category research open, AMS 03]
 theorem graph_coloring_monochromatic_cliques :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1174

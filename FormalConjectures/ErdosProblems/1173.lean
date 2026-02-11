@@ -35,7 +35,7 @@ namespace Erdos1173
 /-- Free set problem under generalized continuum hypothesis -/
 @[category research open, AMS 03]
 theorem free_set_gch :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1173

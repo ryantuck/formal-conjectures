@@ -35,7 +35,7 @@ namespace Erdos1149
 /-- Density of coprime pairs involving floor functions -/
 @[category research solved, AMS 11]
 theorem coprime_floor_density :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1149

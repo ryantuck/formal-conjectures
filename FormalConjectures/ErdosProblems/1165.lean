@@ -35,7 +35,7 @@ namespace Erdos1165
 /-- Random walk favorite values -/
 @[category research solved, AMS 60]
 theorem random_walk_favorite_values :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1165

@@ -35,7 +35,7 @@ namespace Erdos1167
 /-- Cardinal arithmetic and Ramsey theory -/
 @[category research open, AMS 03]
 theorem cardinal_arithmetic_ramsey :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1167

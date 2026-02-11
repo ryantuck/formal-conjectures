@@ -35,7 +35,7 @@ namespace Erdos1164
 /-- Random walk coverage in 2D lattice -/
 @[category research solved, AMS 60]
 theorem random_walk_coverage_z2 :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1164

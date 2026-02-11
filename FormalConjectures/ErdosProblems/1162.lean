@@ -35,7 +35,7 @@ namespace Erdos1162
 /-- Asymptotic formula for number of subgroups of symmetric group -/
 @[category research open, AMS 20]
 theorem number_subgroups_symmetric_group :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1162

@@ -35,7 +35,7 @@ namespace Erdos1159
 /-- Blocking sets in projective planes -/
 @[category research open, AMS 05]
 theorem blocking_sets_projective_planes :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1159

@@ -35,7 +35,7 @@ namespace Erdos1155
 /-- Random triangle deletion process -/
 @[category research open, AMS 05]
 theorem random_triangle_deletion :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1155

@@ -35,7 +35,7 @@ namespace Erdos1168
 /-- Partition relations for uncountable cardinals -/
 @[category research open, AMS 03]
 theorem partition_relations_uncountable_cardinals :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1168

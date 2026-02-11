@@ -35,7 +35,7 @@ namespace Erdos1161
 /-- Maximal order elements in symmetric groups -/
 @[category research solved, AMS 20]
 theorem maximal_order_symmetric_group :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1161

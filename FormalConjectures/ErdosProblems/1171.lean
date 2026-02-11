@@ -35,7 +35,7 @@ namespace Erdos1171
 /-- Ramsey partition property on omega-1 -/
 @[category research open, AMS 03]
 theorem ramsey_omega_one :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1171

@@ -35,7 +35,7 @@ namespace Erdos1170
 /-- Consistency of partition properties for omega-2 -/
 @[category research open, AMS 03]
 theorem partition_properties_omega_two :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1170

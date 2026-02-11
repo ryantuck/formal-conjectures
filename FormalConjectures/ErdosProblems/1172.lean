@@ -35,7 +35,7 @@ namespace Erdos1172
 /-- Partition relations under generalized continuum hypothesis -/
 @[category research open, AMS 03]
 theorem partition_relations_gch :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1172

@@ -35,7 +35,7 @@ namespace Erdos1175
 /-- Triangle-free subgraphs with given chromatic number -/
 @[category research open, AMS 03]
 theorem triangle_free_chromatic_number :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1175

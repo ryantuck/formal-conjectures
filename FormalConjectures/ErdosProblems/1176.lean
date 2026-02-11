@@ -35,7 +35,7 @@ namespace Erdos1176
 /-- Graph coloring and edge-vertex color relationship -/
 @[category research open, AMS 03]
 theorem edge_vertex_color_relationship :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1176

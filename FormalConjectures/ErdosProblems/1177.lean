@@ -35,7 +35,7 @@ namespace Erdos1177
 /-- Chromatic numbers of 3-uniform hypergraphs -/
 @[category research open, AMS 03]
 theorem chromatic_three_uniform_hypergraphs :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1177

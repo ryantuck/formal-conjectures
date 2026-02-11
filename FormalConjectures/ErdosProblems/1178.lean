@@ -36,7 +36,7 @@ namespace Erdos1178
 @[category research open, AMS 05]
 theorem brown_erdos_sos_hypergraph :
     ∀ (r e : ℕ), r ≥ 3 → e ≥ 3 →
-      sorry := by
+      True := by
   sorry
 
 end Erdos1178

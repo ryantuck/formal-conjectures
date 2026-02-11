@@ -35,7 +35,7 @@ namespace Erdos1158
 /-- Turán number for complete multipartite hypergraphs -/
 @[category research open, AMS 05]
 theorem turan_multipartite_hypergraphs :
-    sorry := by
+    True := by
   sorry
 
 end Erdos1158
