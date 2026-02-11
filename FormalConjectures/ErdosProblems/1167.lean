@@ -32,10 +32,28 @@ open scoped Topology Real
 
 namespace Erdos1167
 
-/-- Cardinal arithmetic and Ramsey theory -/
+/-- A partition relation for types: given a type α, natural number r, type γ of colors,
+    and family of target types indexed by γ, the relation holds if every r-coloring
+    admits a monochromatic subset of the appropriate size. -/
+def PartitionRelation (α : Type*) (r : ℕ) (γ : Type*) (targets : γ → Type*) : Prop :=
+  ∀ (coloring : Finset α → γ),
+    ∃ (color : γ) (H : Set α),
+      (∃ (f : targets color → α), Function.Injective f ∧ Set.range f ⊆ H) ∧
+      ∀ (s : Finset α), s.card = r → (↑s : Set α) ⊆ H → coloring s = color
+
+/-- Problem of Erdős, Hajnal, and Rado:
+
+    Let r ≥ 2 be finite, let kappa be an infinite type, and let (kappa_α) be types indexed by γ.
+    Does the partition relation for (Set kappa) with r+1 and targets (kappa_α + 1)
+    imply the partition relation for kappa with r and targets kappa_α?
+
+    This captures the implication structure between partition relations on cardinals. -/
 @[category research open, AMS 03]
-theorem cardinal_arithmetic_ramsey :
-    True := by
+theorem partition_relation_implication :
+    ∀ (r : ℕ), r ≥ 2 →
+    ∀ (kappa : Type*) [Infinite kappa] (gamma : Type*) (kappa_targets : gamma → Type*),
+      PartitionRelation (Set kappa) (r + 1) gamma (fun α => Sum (kappa_targets α) Unit) →
+      PartitionRelation kappa r gamma kappa_targets := by
   sorry
 
 end Erdos1167
