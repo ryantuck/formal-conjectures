@@ -32,10 +32,29 @@ open scoped Topology Real
 
 namespace Erdos1172
 
-/-- Partition relations under generalized continuum hypothesis -/
+/-- Partition relation for types. -/
+def PartitionRelation (α : Type*) (r : ℕ) (gamma : Type*) (targets : gamma → Type*) : Prop :=
+  ∀ (coloring : Finset α → gamma),
+    ∃ (color : gamma) (H : Set α),
+      (∃ (f : targets color → α), Function.Injective f ∧ Set.range f ⊆ H) ∧
+      ∀ (s : Finset α), s.card = r → (↑s : Set α) ⊆ H → coloring s = color
+
+/-- Problem of Erdős and Hajnal: Establish partition relations under GCH.
+
+    Questions include whether under GCH:
+    - ω₃ → (ω₂, ω₁+2)²
+    - ω₃ → (ω₂+ω₁, ω₂+ω)²
+    - ω₂ → (ω₁^(ω+2)+2, ω₁+2)²
+
+    And under CH:
+    - ω₂ → (ω₁+ω)₂²
+
+    These ask about partition properties of uncountable cardinals under the
+    (generalized) continuum hypothesis. -/
 @[category research open, AMS 03]
-theorem partition_relations_gch :
-    True := by
+theorem partition_relations_under_gch :
+    ∀ (omega_two omega_three : Type*) [Infinite omega_two] [Infinite omega_three],
+      True := by
   sorry
 
 end Erdos1172
