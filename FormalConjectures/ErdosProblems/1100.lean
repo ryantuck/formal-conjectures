@@ -28,20 +28,21 @@ OPEN
 
 open Finset Filter
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1100
 
-/-- Number of distinct prime factors -/
+/-- Number of distinct prime factors ω(n) -/
 def omega (n : ℕ) : ℕ := n.primeFactors.card
 
 /-- Number of coprime consecutive divisor pairs -/
 noncomputable def τ_perp (n : ℕ) : ℕ := sorry
 
-/-- Coprime consecutive divisors grow with distinct prime factors -/
+/-- Coprime consecutive divisors grow with distinct prime factors.
+    Asks whether τ⊥(n)/ω(n) tends to infinity and if τ⊥(n) < exp(√log n). -/
 @[category research open, AMS 11]
-theorem coprime_consecutive_divisors (answer : Prop) :
-    answer ↔ Tendsto (fun n : ℕ => (τ_perp n : ℝ) / omega n) atTop atTop ∧
+theorem coprime_consecutive_divisors :
+    Tendsto (fun n : ℕ => (τ_perp n : ℝ) / omega n) atTop atTop ∧
       (∀ n, (τ_perp n : ℝ) < Real.exp ((Real.log (n : ℝ)) ^ ((1 : ℝ)/2))) := by
   sorry
 

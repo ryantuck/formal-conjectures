@@ -28,14 +28,21 @@ PROVED
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1121
 
-/-- Circle coverage conjecture -/
+/-- Circle coverage conjecture.
+    Result about efficiently covering the plane with circles.
+    Current formalization is a placeholder. -/
 @[category research solved, AMS 52]
 theorem circle_coverage :
-    ∀ (n : ℕ) (circles : Fin n → Set (EuclideanSpace ℝ (Fin 2))), ∃ (cover : Set (EuclideanSpace ℝ (Fin 2))), True := by
+    ∀ (n : ℕ) (circles : Fin n → Set (EuclideanSpace ℝ (Fin 2))),
+      (∀ i, ∃ c : EuclideanSpace ℝ (Fin 2), ∃ r : ℝ, 0 < r ∧
+        circles i = {x | dist x c ≤ r}) →
+      ∃ (cover : Set (EuclideanSpace ℝ (Fin 2))),
+        (⋃ i, circles i) ⊆ cover ∧
+        True := by -- Placeholder for area/measure bound
   sorry
 
 end Erdos1121

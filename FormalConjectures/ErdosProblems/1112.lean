@@ -26,16 +26,19 @@ OPEN
 *Reference:* [erdosproblems.com/1112](https://www.erdosproblems.com/1112)
 -/
 
-open Finset
+open Finset Filter
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1112
 
-/-- Lacunary sequences and sumset gaps -/
+/-- Lacunary sequences and sumset gaps.
+    Asks about lacunary sequences whose sumsets have large gaps. -/
 @[category research open, AMS 11]
 theorem lacunary_sumset_gaps :
-    ∃ (A : Set ℕ), sorry := by
+    ∃ (A : Set ℕ),
+      (∀ᶠ n in atTop, ∀ a ∈ A, a < n → ∀ a' ∈ A, a' < n → a' ≠ a → (a' : ℝ) / a ≥ 2) ∧
+      (∃ gap : ℕ, ∀ n, ∃ k, ∀ m ∈ Set.Icc k (k + gap), m ∉ {a + b | (a ∈ A) (b ∈ A)}) := by
   sorry
 
 end Erdos1112

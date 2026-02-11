@@ -28,14 +28,20 @@ PROVED
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1124
 
-/-- Decomposition of square and circle into congruent parts -/
+/-- Decomposition of square and circle into congruent parts.
+    A square and circle can be decomposed into finitely many congruent pieces
+    that can be rearranged via isometries. Current formalization is a placeholder. -/
 @[category research solved, AMS 52]
 theorem square_circle_decomposition :
-    ∃ (n : ℕ) (parts : Fin n → Set (EuclideanSpace ℝ (Fin 2))), True := by
+    ∃ (n : ℕ) (square_parts circle_parts : Fin n → Set (EuclideanSpace ℝ (Fin 2))),
+      (∀ i j, i ≠ j → Disjoint (square_parts i) (square_parts j)) ∧
+      (∀ i j, i ≠ j → Disjoint (circle_parts i) (circle_parts j)) ∧
+      (∃ isometries : Fin n → (EuclideanSpace ℝ (Fin 2) → EuclideanSpace ℝ (Fin 2)),
+        ∀ i, True) := by -- Placeholder for isometry condition
   sorry
 
 end Erdos1124

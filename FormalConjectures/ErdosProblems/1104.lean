@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,7 +18,11 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1104
 
-*Reference:* https://www.erdosproblems.com/1104
+Bounds on the maximum chromatic number of triangle-free graphs.
+
+STATUS: SOLVED
+
+*Reference:* [erdosproblems.com/1104](https://www.erdosproblems.com/1104)
 -/
 
 namespace Erdos1104

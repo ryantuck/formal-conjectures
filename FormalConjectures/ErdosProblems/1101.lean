@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,6 +18,10 @@ import FormalConjectures.Util.ProblemImports
 
 /-!
 # Erdős Problem 1101
+
+Properties of sequences where integers not divisible by any sequence element have bounded gaps.
+
+STATUS: OPEN
 
 *Reference:* [erdosproblems.com/1101](https://www.erdosproblems.com/1101)
 -/

@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -17,6 +17,10 @@ import FormalConjectures.Util.ProblemImports
 
 /-!
 # Erdős Problem 1107
+
+Representing large integers as sums of r-powerful numbers.
+
+STATUS: OPEN (r=2 solved)
 
 *References:*
 - [erdosproblems.com/1107](https://www.erdosproblems.com/1107)

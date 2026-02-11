@@ -28,14 +28,17 @@ OPEN
 
 open Finset Filter
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1103
 
-/-- Growth rate of sequences with squarefree sumsets -/
+/-- Growth rate of sequences with squarefree sumsets.
+    Asks about growth rate of sequences A(n) where A(n)+A(n) consists only of squarefree numbers. -/
 @[category research open, AMS 11]
 theorem squarefree_sumset_growth :
-    ∃ (A : ℕ → Finset ℕ), sorry := by
+    ∃ (A : ℕ → Finset ℕ),
+      (∀ n, ∀ a ∈ A n, ∀ b ∈ A n, Squarefree (a + b)) ∧
+      (∀ᶠ n in atTop, (A n).card ≥ n) := by
   sorry
 
 end Erdos1103

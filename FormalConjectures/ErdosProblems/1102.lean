@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -20,6 +20,10 @@ open Squarefree Set Order Filter Topology
 
 /-!
 # Erdős Problem 1102
+
+Properties P and Q for sets of natural numbers related to squarefree sums.
+
+STATUS: SOLVED
 
 *Reference:* [erdosproblems.com/1102](https://www.erdosproblems.com/1102)
 -/

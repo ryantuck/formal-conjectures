@@ -28,14 +28,19 @@ OPEN
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1117
 
-/-- Maximum points on circles for entire functions -/
+/-- Maximum points on circles for entire functions.
+    Asks about properties of where entire functions achieve their maximum modulus on circles.
+    The current formalization is a placeholder. -/
 @[category research open, AMS 30]
 theorem entire_functions_circle_maxima :
-    ∀ (f : ℂ → ℂ) (r : ℝ), 0 < r → ∃ (z : ℂ), ‖z‖ = r := by
+    ∀ (f : ℂ → ℂ) (r : ℝ), 0 < r →
+      ∃ (z : ℂ), ‖z‖ = r ∧
+        (∀ w : ℂ, ‖w‖ = r → ‖f z‖ ≥ ‖f w‖) ∧ -- z is a maximum on the circle
+        True := by -- Additional property about such maxima
   sorry
 
 end Erdos1117

@@ -28,14 +28,19 @@ OPEN
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1123
 
-/-- Boolean algebra isomorphism -/
+/-- Boolean algebra isomorphism.
+    Asks about conditions under which Boolean algebras admit isomorphisms or embeddings.
+    Current statement is a placeholder requiring proper specification of cardinality constraints. -/
 @[category research open, AMS 03]
 theorem boolean_algebra_isomorphism :
-    ∀ (α β : Type*) [BooleanAlgebra α] [BooleanAlgebra β], ∃ (f : α → β), Function.Injective f := by
+    ∀ (α β : Type*) [BooleanAlgebra α] [BooleanAlgebra β] [Finite α],
+      ∃ (f : α → β), Function.Injective f ∧
+        (∀ a b, f (a ⊓ b) = f a ⊓ f b) ∧
+        (∀ a b, f (a ⊔ b) = f a ⊔ f b) := by
   sorry
 
 end Erdos1123

@@ -26,21 +26,24 @@ OPEN
 *Reference:* [erdosproblems.com/1133](https://www.erdosproblems.com/1133)
 -/
 
-open Finset
+open Finset Filter
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1133
 
-/-- Existence of polynomials with large bounds -/
+/-- Existence of polynomials with large bounds.
+    For given nodes x, there exist evaluation points y where polynomials
+    attain values exceeding given bounds. -/
 @[category research open, AMS 41]
 theorem polynomial_large_bounds (C : ℝ) (hC : 0 < C) :
     ∃ (ε : ℝ), 0 < ε ∧
-      ∀ᶠ n in Filter.atTop, ∀ (x : Fin n → ℝ),
+      ∀ᶠ n in atTop, ∀ (x : Fin n → ℝ),
         (∀ i, x i ∈ Set.Icc (-1 : ℝ) 1) →
         ∃ (y : Fin n → ℝ),
           (∀ i, y i ∈ Set.Icc (-1 : ℝ) 1) ∧
-          sorry := by
+          (∃ P : Polynomial ℝ, P.natDegree ≤ n ∧
+            ∀ i, P.eval (y i) ≥ C * n ^ ε) := by
   sorry
 
 end Erdos1133

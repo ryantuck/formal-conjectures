@@ -28,14 +28,19 @@ OPEN
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1122
 
-/-- Additive functions and monotonicity -/
+/-- Additive functions and monotonicity.
+    Asks about growth properties of additive functions satisfying additional constraints.
+    Current statement may need additional hypotheses. -/
 @[category research open, AMS 11]
 theorem additive_function_monotonicity :
-    ∀ (f : ℕ → ℕ), (∀ m n, f (m + n) = f m + f n) → ∃ (k : ℕ), ∀ n, f n ≤ k * n := by
+    ∀ (f : ℕ → ℕ), (∀ m n, f (m + n) = f m + f n) →
+      (∀ n, f n > 0) → -- Non-trivial additive function
+      Monotone f → -- Monotonicity constraint
+      ∃ (k : ℕ), 0 < k ∧ ∀ n, f n ≤ k * n := by
   sorry
 
 end Erdos1122

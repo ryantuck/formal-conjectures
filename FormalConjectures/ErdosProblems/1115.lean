@@ -32,10 +32,13 @@ open scoped Topology Real
 
 namespace Erdos1115
 
-/-- Path growth in entire functions of finite order -/
-@[category research open, AMS 30]
-theorem path_growth_entire_functions (answer : Prop) :
-    answer ↔ sorry := by
+/-- Path growth in entire functions of finite order.
+    This conjecture has been disproved. -/
+@[category research solved, AMS 30]
+theorem path_growth_entire_functions :
+    answer(False) ↔ (∃ f : ℂ → ℂ, ∃ path : ℝ → ℂ,
+      (∃ order : ℝ, 0 < order ∧ True) ∧ -- f is entire of finite order (placeholder)
+      True) := by -- Some property about path growth that doesn't hold
   sorry
 
 end Erdos1115

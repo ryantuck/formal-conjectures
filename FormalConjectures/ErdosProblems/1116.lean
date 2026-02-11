@@ -28,14 +28,18 @@ SOLVED
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1116
 
-/-- Meromorphic functions and root distribution -/
+/-- Meromorphic functions and root distribution.
+    Placeholder: This should state a property about root distribution of meromorphic functions.
+    The current formalization is a stub awaiting proper specification. -/
 @[category research solved, AMS 30]
 theorem meromorphic_root_distribution :
-    ∃ (f : ℂ → ℂ), ∀ z : ℂ, ∃ w : ℂ, f z = w := by
+    ∃ (f : ℂ → ℂ), ∃ (roots : Set ℂ),
+      roots.Infinite ∧ -- f has infinitely many roots (placeholder)
+      (∀ z ∈ roots, True) := by -- Some property about root distribution
   sorry
 
 end Erdos1116

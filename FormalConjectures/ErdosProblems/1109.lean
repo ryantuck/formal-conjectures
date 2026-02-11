@@ -28,15 +28,17 @@ OPEN
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1109
 
-/-- Squarefree sumsets property -/
+/-- Squarefree sumsets property.
+    Asks about sets A, B where A+B consists only of squarefree numbers, with positive density. -/
 @[category research open, AMS 11]
 theorem squarefree_sumsets :
     ∃ (A B : Set ℕ), (∀ a ∈ A, ∀ b ∈ B, Squarefree (a + b)) ∧
-      sorry := by
+      (∃ c : ℝ, 0 < c ∧ ∀ᶠ n in Filter.atTop,
+        ((A ∩ Set.Icc 1 n).ncard : ℝ) / n ≥ c) := by
   sorry
 
 end Erdos1109

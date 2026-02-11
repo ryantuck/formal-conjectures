@@ -28,14 +28,18 @@ OPEN
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1120
 
-/-- Path length in polynomial level set -/
+/-- Path length in polynomial level set.
+    Asks about bounds on the total path length in level sets of polynomials. -/
 @[category research open, AMS 30]
-theorem path_length_polynomial_level_set (P : Polynomial ℂ) :
-    ∃ (L : ℝ), 0 ≤ L ∧ L ≤ sorry := by
+theorem path_length_polynomial_level_set (P : Polynomial ℂ) (c : ℂ) :
+    ∃ (L : ℝ), 0 ≤ L ∧
+      (∀ path : ℝ → ℂ, (∀ t, P.eval (path t) = c) →
+        True) ∧ -- Placeholder for path length bound condition
+      L ≤ (P.natDegree : ℝ) * (1 + ‖c‖) := by
   sorry
 
 end Erdos1120

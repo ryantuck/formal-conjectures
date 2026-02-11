@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,7 +18,11 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1106
 
-*Reference:* [erdosproblems.com/1064](https://www.erdosproblems.com/1106)
+Prime factors of products of partition numbers.
+
+STATUS: OPEN
+
+*Reference:* [erdosproblems.com/1106](https://www.erdosproblems.com/1106)
 -/
 
 open Nat Finset Filter Topology

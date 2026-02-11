@@ -28,14 +28,15 @@ OPEN
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1110
 
-/-- Representability using powers of coprime integers -/
+/-- Representability using powers of coprime integers.
+    Asks whether every natural number can be represented as aᵏ + bᵏ where gcd(a,b) = 1. -/
 @[category research open, AMS 11]
-theorem coprime_power_representation (answer : Prop) :
-    answer ↔ ∀ n : ℕ, ∃ a b k : ℕ,
+theorem coprime_power_representation :
+    answer(sorry) ↔ ∀ n : ℕ, ∃ a b k : ℕ,
       Nat.Coprime a b ∧ n = a^k + b^k := by
   sorry
 

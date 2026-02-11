@@ -28,14 +28,16 @@ SOLVED
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1127
 
-/-- Decomposition of Euclidean space into sets with distinct pairwise distances -/
+/-- Decomposition of Euclidean space into sets with distinct pairwise distances.
+    For any n, ℝⁿ can be partitioned into countably many sets where each set
+    has the property that any three distinct points have three distinct pairwise distances. -/
 @[category research solved, AMS 52]
-theorem euclidean_space_distinct_distance_decomposition (n : ℕ) (answer : Prop) :
-    answer ↔ ∃ (partition : ℕ → Set (EuclideanSpace ℝ (Fin n))),
+theorem euclidean_space_distinct_distance_decomposition (n : ℕ) :
+    ∃ (partition : ℕ → Set (EuclideanSpace ℝ (Fin n))),
       (∀ i j, i ≠ j → Disjoint (partition i) (partition j)) ∧
       (⋃ i, partition i) = Set.univ ∧
       (∀ i, ∀ x ∈ partition i, ∀ y ∈ partition i, ∀ z ∈ partition i,

@@ -26,16 +26,19 @@ SOLVED
 *Reference:* [erdosproblems.com/1118](https://www.erdosproblems.com/1118)
 -/
 
-open Finset
+open Finset MeasureTheory
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1118
 
-/-- Entire functions with finite measure level sets have bounded growth -/
+/-- Entire functions with finite measure level sets have bounded growth.
+    If an entire function has level sets with finite measure, it has bounded growth.
+    Current formalization is a placeholder with simplified statement. -/
 @[category research solved, AMS 30]
 theorem entire_function_level_set_measure :
-    ∀ (f : ℂ → ℂ), ∃ (M : ℝ), ∀ z : ℂ, ‖f z‖ ≤ M := by
+    ∀ (f : ℂ → ℂ), (∃ c : ℝ, True) → -- Placeholder: level sets have finite measure
+      ∃ (M : ℝ) (k : ℝ), ∀ z : ℂ, ‖f z‖ ≤ M * (1 + ‖z‖) ^ k := by
   sorry
 
 end Erdos1118

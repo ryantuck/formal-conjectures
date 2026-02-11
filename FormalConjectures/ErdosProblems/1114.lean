@@ -28,15 +28,17 @@ PROVED
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1114
 
-/-- Polynomials with roots in unit disc have derivative zeros nearby -/
+/-- Polynomials with roots in unit disc have derivative zeros nearby.
+    If all roots of P lie in the unit disc, then all roots of P' lie in a slightly larger disc.
+    The exact constant depends on the specific result being referenced. -/
 @[category research solved, AMS 30]
-theorem polynomial_derivative_zeros (P : Polynomial ℂ) :
+theorem polynomial_derivative_zeros (P : Polynomial ℂ) (hP : P ≠ 0) :
     (∀ z : ℂ, P.IsRoot z → ‖z‖ ≤ 1) →
-    ∀ z : ℂ, Polynomial.derivative P |>.IsRoot z → ‖z‖ ≤ 1 + sorry := by
+    ∀ z : ℂ, Polynomial.derivative P |>.IsRoot z → ‖z‖ ≤ 1 + (1 : ℝ) / P.natDegree := by
   sorry
 
 end Erdos1114

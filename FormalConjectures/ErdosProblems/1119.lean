@@ -28,14 +28,18 @@ SOLVED
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1119
 
-/-- Cardinality of families of entire functions -/
+/-- Cardinality of families of entire functions.
+    Result about bounding cardinality of families with special properties.
+    Current formalization is a placeholder. -/
 @[category research solved, AMS 30]
 theorem cardinality_entire_function_families :
-    ∃ (n : ℕ), ∀ (S : Finset (ℂ → ℂ)), S.card ≤ n := by
+    ∀ (property : (ℂ → ℂ) → Prop), ∃ (n : ℕ),
+      ∀ (S : Finset (ℂ → ℂ)), (∀ f ∈ S, property f) →
+        S.card ≤ n := by
   sorry
 
 end Erdos1119

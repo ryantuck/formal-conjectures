@@ -28,16 +28,19 @@ OPEN
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1113
 
-/-- Sierpinski numbers without finite covering sets -/
+/-- Sierpinski numbers without finite covering sets.
+    Asks whether there exists an odd k such that k·2ⁿ+1 is never prime,
+    but k doesn't have a finite covering set of primes. -/
 @[category research open, AMS 11]
-theorem sierpinski_without_covering (answer : Prop) :
-    answer ↔ ∃ k : ℕ, Odd k ∧
+theorem sierpinski_without_covering :
+    answer(sorry) ↔ ∃ k : ℕ, Odd k ∧
       (∀ n : ℕ, ¬ Nat.Prime (k * 2^n + 1)) ∧
-      sorry := by
+      (¬ ∃ (S : Finset ℕ), ∀ p ∈ S, Nat.Prime p ∧
+        ∀ n : ℕ, ∃ p ∈ S, p ∣ (k * 2^n + 1)) := by
   sorry
 
 end Erdos1113

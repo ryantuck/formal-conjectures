@@ -28,14 +28,19 @@ PROVED
 
 open Finset
 
-open scoped Topology Real
+open scoped Real
 
 namespace Erdos1125
 
-/-- Convexity and monotonicity -/
+/-- Convexity and monotonicity.
+    Result relating convexity and monotonicity properties of real functions.
+    Current formalization is a placeholder requiring proper specification. -/
 @[category research solved, AMS 26]
 theorem convexity_monotonicity :
-    ∀ (f : ℝ → ℝ), Convex ℝ (Set.Ici (0 : ℝ)) → Monotone f → ∃ (x : ℝ), f x ≥ 0 := by
+    ∀ (f : ℝ → ℝ), ConvexOn ℝ (Set.Ici 0) f →
+      Monotone f →
+      (∀ x ≥ 0, f x ≥ f 0) ∧ -- Follows from monotonicity
+      True := by -- Placeholder for the actual relationship
   sorry
 
 end Erdos1125

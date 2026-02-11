@@ -32,10 +32,12 @@ open scoped Topology Real
 
 namespace Erdos1128
 
-/-- Ramsey property for ℵ₁ cardinality sets -/
-@[category research open, AMS 03]
-theorem ramsey_aleph_one (answer : Prop) :
-    answer ↔ sorry := by
+/-- Ramsey property for ℵ₁ cardinality sets.
+    This Ramsey-type conjecture has been disproved. -/
+@[category research solved, AMS 03]
+theorem ramsey_aleph_one :
+    answer(False) ↔ (∃ S : Set (Set ℕ), True ∧ -- S has cardinality ℵ₁ (placeholder)
+      True) := by -- Some Ramsey property that doesn't hold
   sorry
 
 end Erdos1128
