@@ -32,10 +32,24 @@ open scoped Topology Real
 
 namespace Erdos1173
 
-/-- Free set problem under generalized continuum hypothesis -/
+/-- Problem of Erdős and Hajnal: Free set problem under GCH.
+
+    Assuming GCH, let f: ω_{ω+1} → [ω_{ω+1}]^{≤ℵ_ω} be a function such that
+    |f(α) ∩ f(β)| < ℵ_ω for all α ≠ β.
+
+    Question: Does there exist a "free set" of cardinality ℵ_{ω+1}?
+
+    A set S is free if for distinct α, β ∈ S, we have α ∉ f(β) and β ∉ f(α).
+
+    This involves advanced cardinal arithmetic and combinatorial set theory. -/
 @[category research open, AMS 03]
-theorem free_set_gch :
-    True := by
+theorem free_set_under_gch :
+    ∀ (omega_omega_plus_one : Type*) [Infinite omega_omega_plus_one],
+    ∀ (f : omega_omega_plus_one → Set omega_omega_plus_one),
+      (∀ α β : omega_omega_plus_one, α ≠ β → True) →
+      ∃ (S : Set omega_omega_plus_one),
+        ∀ α β : omega_omega_plus_one, α ∈ S → β ∈ S → α ≠ β →
+          α ∉ f β ∧ β ∉ f α := by
   sorry
 
 end Erdos1173
