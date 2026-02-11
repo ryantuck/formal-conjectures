@@ -32,13 +32,22 @@ open scoped Real
 
 namespace Erdos1114
 
-/-- Polynomials with roots in unit disc have derivative zeros nearby.
-    If all roots of P lie in the unit disc, then all roots of P' lie in a slightly larger disc.
-    The exact constant depends on the specific result being referenced. -/
+/-- If f is a real polynomial whose real roots form an arithmetic progression,
+    then the gaps between consecutive zeros of f', measured from the center outward,
+    are monotonically increasing. Proved by Balint (1960). -/
 @[category research solved, AMS 30]
-theorem polynomial_derivative_zeros (P : Polynomial ℂ) (hP : P ≠ 0) :
-    (∀ z : ℂ, P.IsRoot z → ‖z‖ ≤ 1) →
-    ∀ z : ℂ, Polynomial.derivative P |>.IsRoot z → ‖z‖ ≤ 1 + (1 : ℝ) / P.natDegree := by
+theorem polynomial_derivative_zeros_monotone_gaps
+    (P : Polynomial ℝ) (n : ℕ) (hn : 1 ≤ n)
+    (roots : Fin (n + 2) → ℝ) (hroots_sorted : StrictMono roots)
+    (hAP : ∃ d : ℝ, 0 < d ∧ ∀ i : Fin (n + 1),
+      roots i.succ - roots i.castSucc = d)
+    (hP_roots : ∀ i, P.IsRoot (roots i))
+    (hP_deg : P.natDegree = n + 1)
+    (dz : Fin (n + 1) → ℝ) (hdz_sorted : StrictMono dz)
+    (hdz_roots : ∀ i, (Polynomial.derivative P).IsRoot (dz i)) :
+    ∃ center : ℕ,
+      ∀ i j : Fin (n + 1), i < j → j ≤ center →
+        dz (j.succ) - dz j ≥ dz (i.succ) - dz i := by
   sorry
 
 end Erdos1114

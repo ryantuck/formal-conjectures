@@ -32,15 +32,18 @@ open scoped Real
 
 namespace Erdos1117
 
-/-- Maximum points on circles for entire functions.
-    Asks about properties of where entire functions achieve their maximum modulus on circles.
-    The current formalization is a placeholder. -/
+/-- Does there exist a non-monomial entire function f such that
+    lim inf_{r→∞} ν(r) = ∞, where ν(r) = #{z : |z|=r, |f(z)| = M(r)}
+    is the number of points achieving the maximum modulus on the circle |z| = r? -/
 @[category research open, AMS 30]
 theorem entire_functions_circle_maxima :
-    ∀ (f : ℂ → ℂ) (r : ℝ), 0 < r →
-      ∃ (z : ℂ), ‖z‖ = r ∧
-        (∀ w : ℂ, ‖w‖ = r → ‖f z‖ ≥ ‖f w‖) ∧ -- z is a maximum on the circle
-        True := by -- Additional property about such maxima
+    answer(sorry) ↔
+      ∃ (f : ℂ → ℂ), Differentiable ℂ f ∧
+        (¬∃ (c : ℂ) (n : ℕ), ∀ z, f z = c * z ^ n) ∧
+        Filter.Tendsto
+          (fun r : ℝ => Nat.card {z : ℂ | ‖z‖ = r ∧
+            ‖f z‖ = ⨆ (w : ℂ) (_ : ‖w‖ = r), ‖f w‖})
+          Filter.atTop Filter.atTop := by
   sorry
 
 end Erdos1117

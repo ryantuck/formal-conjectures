@@ -32,13 +32,21 @@ open scoped Topology Real
 
 namespace Erdos1115
 
-/-- Path growth in entire functions of finite order.
-    This conjecture has been disproved. -/
+/-- For any phi(r) -> infinity, there exists an entire function f of finite order
+    with log M(r) << phi(r)(log r)^2 such that no rectifiable path Gamma
+    on which f -> infinity satisfies l(r) = o(r).
+    Disproved by Gol'dberg and Eremenko (1979). -/
 @[category research solved, AMS 30]
 theorem path_growth_entire_functions :
-    answer(False) ↔ (∃ f : ℂ → ℂ, ∃ path : ℝ → ℂ,
-      (∃ order : ℝ, 0 < order ∧ True) ∧ -- f is entire of finite order (placeholder)
-      True) := by -- Some property about path growth that doesn't hold
+    ∀ (φ : ℝ → ℝ), Filter.Tendsto φ Filter.atTop Filter.atTop →
+      ∃ (f : ℂ → ℂ), Differentiable ℂ f ∧
+        (∀ᶠ r in Filter.atTop,
+          Real.log (⨆ (z : ℂ) (_ : ‖z‖ = r), ‖f z‖) ≤
+            φ r * (Real.log r) ^ 2) ∧
+        ¬∃ (γ : ℝ → ℂ) (hγ : Continuous γ),
+          Filter.Tendsto (fun t => ‖f (γ t)‖) Filter.atTop Filter.atTop ∧
+          ∃ (pathLength : ℝ → ℝ),
+            Filter.Tendsto (fun r => pathLength r / r) Filter.atTop (𝓝 0) := by
   sorry
 
 end Erdos1115

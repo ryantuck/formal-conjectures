@@ -32,13 +32,30 @@ open scoped Real
 
 namespace Erdos1109
 
-/-- Squarefree sumsets property.
-    Asks about sets A, B where A+B consists only of squarefree numbers, with positive density. -/
+/-- f(N) = the size of the largest A ⊆ {1,...,N} with A+A squarefree. -/
+noncomputable def f (N : ℕ) : ℕ :=
+  sSup {k | ∃ A : Finset ℕ, A ⊆ Finset.Icc 1 N ∧ A.card = k ∧
+    ∀ a ∈ A, ∀ b ∈ A, Squarefree (a + b)}
+
+/-- Lower bound: f(N) >> (log N)^2 * log(log N) (Konyagin). -/
 @[category research open, AMS 11]
-theorem squarefree_sumsets :
-    ∃ (A B : Set ℕ), (∀ a ∈ A, ∀ b ∈ B, Squarefree (a + b)) ∧
-      (∃ c : ℝ, 0 < c ∧ ∀ᶠ n in Filter.atTop,
-        ((A ∩ Set.Icc 1 n).ncard : ℝ) / n ≥ c) := by
+theorem squarefree_sumsets_lower :
+    ∃ c > 0, ∀ᶠ N in Filter.atTop,
+      c * (Real.log N)^2 * Real.log (Real.log N) ≤ (f N : ℝ) := by
+  sorry
+
+/-- Upper bound: f(N) << N^{11/15 + o(1)} (Konyagin). -/
+@[category research open, AMS 11]
+theorem squarefree_sumsets_upper :
+    ∀ ε > 0, ∃ C > 0, ∀ᶠ N in Filter.atTop,
+      (f N : ℝ) ≤ C * (N : ℝ) ^ (11/15 + ε) := by
+  sorry
+
+/-- Open: Is f(N) ≤ N^{o(1)}? -/
+@[category research open, AMS 11]
+theorem squarefree_sumsets_subpolynomial :
+    answer(sorry) ↔ ∀ ε > 0, ∃ C > 0, ∀ᶠ N in Filter.atTop,
+      (f N : ℝ) ≤ C * (N : ℝ) ^ ε := by
   sorry
 
 end Erdos1109

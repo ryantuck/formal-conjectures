@@ -32,17 +32,21 @@ open scoped Real
 
 namespace Erdos1121
 
-/-- Circle coverage conjecture.
-    Result about efficiently covering the plane with circles.
-    Current formalization is a placeholder. -/
+/-- If C_1, ..., C_n are circles in R^2 with radii r_1, ..., r_n such that
+    no line disjoint from all the circles divides them into two non-empty sets,
+    then the circles can be covered by a single circle of radius r = r_1 + ... + r_n.
+    Proved by Goodman and Goodman. -/
 @[category research solved, AMS 52]
 theorem circle_coverage :
-    ∀ (n : ℕ) (circles : Fin n → Set (EuclideanSpace ℝ (Fin 2))),
-      (∀ i, ∃ c : EuclideanSpace ℝ (Fin 2), ∃ r : ℝ, 0 < r ∧
-        circles i = {x | dist x c ≤ r}) →
-      ∃ (cover : Set (EuclideanSpace ℝ (Fin 2))),
-        (⋃ i, circles i) ⊆ cover ∧
-        True := by -- Placeholder for area/measure bound
+    ∀ (n : ℕ) (centers : Fin n → EuclideanSpace ℝ (Fin 2)) (radii : Fin n → ℝ),
+      (∀ i, 0 < radii i) →
+      (∀ (a b : EuclideanSpace ℝ (Fin 2)), a ≠ b →
+        ∃ i, ∃ p ∈ Metric.closedBall (centers i) (radii i),
+          ∃ q ∈ Metric.closedBall (centers i) (radii i),
+            inner (b - a) (p - a) * inner (b - a) (q - a) ≤ 0) →
+      ∃ (c : EuclideanSpace ℝ (Fin 2)),
+        (⋃ i, Metric.closedBall (centers i) (radii i)) ⊆
+          Metric.closedBall c (∑ i, radii i) := by
   sorry
 
 end Erdos1121

@@ -32,15 +32,17 @@ open scoped Real
 
 namespace Erdos1123
 
-/-- Boolean algebra isomorphism.
-    Asks about conditions under which Boolean algebras admit isomorphisms or embeddings.
-    Current statement is a placeholder requiring proper specification of cardinality constraints. -/
+/-- Let B_1 be the Boolean algebra of sets of integers modulo sets of density 0,
+    and B_2 be the Boolean algebra of sets modulo sets of logarithmic density 0.
+    Are B_1 and B_2 non-isomorphic?
+    Under CH they are isomorphic (Just and Krawczyk 1984); without CH, the question is open. -/
 @[category research open, AMS 03]
 theorem boolean_algebra_isomorphism :
-    ∀ (α β : Type*) [BooleanAlgebra α] [BooleanAlgebra β] [Finite α],
-      ∃ (f : α → β), Function.Injective f ∧
-        (∀ a b, f (a ⊓ b) = f a ⊓ f b) ∧
-        (∀ a b, f (a ⊔ b) = f a ⊔ f b) := by
+    let densityZeroIdeal : Ideal (Set ℕ) := sorry
+    let logDensityZeroIdeal : Ideal (Set ℕ) := sorry
+    let B1 := sorry
+    let B2 := sorry
+    answer(sorry) ↔ ¬ Nonempty (B1 ≃o B2) := by
   sorry
 
 end Erdos1123

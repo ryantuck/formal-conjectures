@@ -32,13 +32,20 @@ open scoped Topology Real
 
 namespace Erdos1111
 
-/-- Chromatic number and anticomplete vertex sets -/
+/-- For any t, c >= 1, there exists d such that any graph with
+    chi(G) >= d and omega(G) < t contains anticomplete sets A, B
+    with chi(G[A]) >= c and chi(G[B]) >= c -/
 @[category research open, AMS 05]
-theorem chromatic_anticomplete {n : ℕ} (k : ℕ) :
-    ∃ (f : ℕ → ℕ), ∀ (G : SimpleGraph (Fin n)),
-      G.chromaticNumber ≥ k →
-      ∃ (S : Finset (Fin n)), S.card ≥ f n ∧
-        (∀ u ∈ S, ∀ v ∈ S, u ≠ v → ¬G.Adj u v) := by
+theorem chromatic_anticomplete :
+    ∀ (t c : ℕ), 1 ≤ t → 1 ≤ c →
+      ∃ (d : ℕ), ∀ (V : Type*) [Fintype V] [DecidableEq V]
+        (G : SimpleGraph V) [DecidableRel G.Adj],
+          G.chromaticNumber ≥ d →
+          G.cliqueNum < t →
+          ∃ (A B : Finset V), Disjoint A B ∧
+            (∀ a ∈ A, ∀ b ∈ B, ¬G.Adj a b) ∧
+            (G.induce (↑A)).chromaticNumber ≥ c ∧
+            (G.induce (↑B)).chromaticNumber ≥ c := by
   sorry
 
 end Erdos1111

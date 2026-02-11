@@ -32,13 +32,22 @@ open scoped Real
 
 namespace Erdos1103
 
-/-- Growth rate of sequences with squarefree sumsets.
-    Asks about growth rate of sequences A(n) where A(n)+A(n) consists only of squarefree numbers. -/
+/-- Lower bound on growth: any infinite sequence with squarefree sumset
+    must grow at least as fast as j^{4/3}. -/
 @[category research open, AMS 11]
-theorem squarefree_sumset_growth :
-    ∃ (A : ℕ → Finset ℕ),
-      (∀ n, ∀ a ∈ A n, ∀ b ∈ A n, Squarefree (a + b)) ∧
-      (∀ᶠ n in atTop, (A n).card ≥ n) := by
+theorem squarefree_sumset_growth_lower :
+    ∀ (A : ℕ → ℕ), StrictMono A →
+      (∀ i j, Squarefree (A i + A j)) →
+        ∃ c > 0, ∀ᶠ j in atTop, (A j : ℝ) ≥ c * (j : ℝ) ^ ((4 : ℝ) / 3) := by
+  sorry
+
+/-- Upper bound on growth: there exists an infinite squarefree-sumset sequence
+    growing at most exponentially (sub-exponentially in a precise sense). -/
+@[category research open, AMS 11]
+theorem squarefree_sumset_growth_upper :
+    ∃ (A : ℕ → ℕ), StrictMono A ∧
+      (∀ i j, Squarefree (A i + A j)) ∧
+        ∀ᶠ j in atTop, (A j : ℝ) < Real.exp (5 * j / Real.log j) := by
   sorry
 
 end Erdos1103

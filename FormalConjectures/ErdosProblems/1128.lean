@@ -32,12 +32,22 @@ open scoped Topology Real
 
 namespace Erdos1128
 
-/-- Ramsey property for ℵ₁ cardinality sets.
-    This Ramsey-type conjecture has been disproved. -/
+/-- Let A, B, C be three sets of cardinality aleph_1. In any 2-coloring of A x B x C,
+    must there exist A_1 ⊆ A, B_1 ⊆ B, C_1 ⊆ C, all of cardinality aleph_0,
+    such that A_1 x B_1 x C_1 is monochromatic?
+    Disproved by Prikry and Mills (1978). -/
 @[category research solved, AMS 03]
 theorem ramsey_aleph_one :
-    answer(False) ↔ (∃ S : Set (Set ℕ), True ∧ -- S has cardinality ℵ₁ (placeholder)
-      True) := by -- Some Ramsey property that doesn't hold
+    answer(False) ↔
+      (∀ (α β γ : Type*) (_ : Cardinal.mk α = Cardinal.aleph 1)
+        (_ : Cardinal.mk β = Cardinal.aleph 1) (_ : Cardinal.mk γ = Cardinal.aleph 1)
+        (c : α × β × γ → Fin 2),
+        ∃ (A₁ : Set α) (B₁ : Set β) (C₁ : Set γ),
+          Cardinal.mk A₁ = Cardinal.aleph 0 ∧
+          Cardinal.mk B₁ = Cardinal.aleph 0 ∧
+          Cardinal.mk C₁ = Cardinal.aleph 0 ∧
+          ∃ color : Fin 2, ∀ a ∈ A₁, ∀ b ∈ B₁, ∀ c' ∈ C₁,
+            c (a, b, c') = color) := by
   sorry
 
 end Erdos1128

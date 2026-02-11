@@ -32,12 +32,23 @@ open scoped Real
 
 namespace Erdos1110
 
-/-- Representability using powers of coprime integers.
-    Asks whether every natural number can be represented as aᵏ + bᵏ where gcd(a,b) = 1. -/
+/-- A term of the form p^k * q^l -/
+def pqTerm (p q : ℕ) : Set ℕ :=
+  {n | ∃ k l : ℕ, n = p ^ k * q ^ l}
+
+/-- A number is representable if it is a sum of elements from pqTerm
+    such that no summand divides another -/
+def Representable (p q : ℕ) (n : ℕ) : Prop :=
+  ∃ (S : Finset ℕ), (↑S ⊆ pqTerm p q) ∧
+    (∀ a ∈ S, ∀ b ∈ S, a ≠ b → ¬(a ∣ b)) ∧
+    S.sum id = n
+
+/-- For coprime p > q >= 2 with {p,q} != {2,3},
+    the set of non-representable numbers is infinite -/
 @[category research open, AMS 11]
-theorem coprime_power_representation :
-    answer(sorry) ↔ ∀ n : ℕ, ∃ a b k : ℕ,
-      Nat.Coprime a b ∧ n = a^k + b^k := by
+theorem coprime_power_representation (p q : ℕ) (hq : 2 ≤ q) (hp : q < p)
+    (hcop : Nat.Coprime p q) (hne : ¬((p = 2 ∧ q = 3) ∨ (p = 3 ∧ q = 2))) :
+    {n : ℕ | ¬Representable p q n}.Infinite := by
   sorry
 
 end Erdos1110

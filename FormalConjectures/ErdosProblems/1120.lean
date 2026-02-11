@@ -32,14 +32,22 @@ open scoped Real
 
 namespace Erdos1120
 
-/-- Path length in polynomial level set.
-    Asks about bounds on the total path length in level sets of polynomials. -/
+/-- For a monic polynomial f of degree n with all roots in the closed unit disk,
+    let E = {z : |f(z)| <= 1}. Erdos conjectured that the shortest path in E
+    connecting 0 to the unit circle |z| = 1 has length tending to infinity with n. -/
 @[category research open, AMS 30]
-theorem path_length_polynomial_level_set (P : Polynomial ℂ) (c : ℂ) :
-    ∃ (L : ℝ), 0 ≤ L ∧
-      (∀ path : ℝ → ℂ, (∀ t, P.eval (path t) = c) →
-        True) ∧ -- Placeholder for path length bound condition
-      L ≤ (P.natDegree : ℝ) * (1 + ‖c‖) := by
+theorem path_length_polynomial_level_set :
+    answer(sorry) ↔
+      Filter.Tendsto
+        (fun n : ℕ =>
+          ⨅ (P : Polynomial ℂ) (_ : P.Monic) (_ : P.natDegree = n)
+            (_ : ∀ z, P.IsRoot z → ‖z‖ ≤ 1)
+            (γ : C(Set.Icc (0 : ℝ) 1, ℂ))
+            (_ : γ ⟨0, ⟨le_refl _, zero_le_one⟩⟩ = 0)
+            (_ : ‖γ ⟨1, ⟨zero_le_one, le_refl _⟩⟩‖ = 1)
+            (_ : ∀ t, ‖P.eval (γ t)‖ ≤ 1),
+            sorry)
+        Filter.atTop Filter.atTop := by
   sorry
 
 end Erdos1120

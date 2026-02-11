@@ -32,16 +32,20 @@ open scoped Real
 
 namespace Erdos1124
 
-/-- Decomposition of square and circle into congruent parts.
-    A square and circle can be decomposed into finitely many congruent pieces
-    that can be rearranged via isometries. Current formalization is a placeholder. -/
+/-- A square and a circle of the same area can be decomposed into a finite number
+    of congruent parts. Proved by Laczkovich; can be accomplished using translations only. -/
 @[category research solved, AMS 52]
 theorem square_circle_decomposition :
-    ∃ (n : ℕ) (square_parts circle_parts : Fin n → Set (EuclideanSpace ℝ (Fin 2))),
-      (∀ i j, i ≠ j → Disjoint (square_parts i) (square_parts j)) ∧
-      (∀ i j, i ≠ j → Disjoint (circle_parts i) (circle_parts j)) ∧
-      (∃ isometries : Fin n → (EuclideanSpace ℝ (Fin 2) → EuclideanSpace ℝ (Fin 2)),
-        ∀ i, True) := by -- Placeholder for isometry condition
+    let square := {p : EuclideanSpace ℝ (Fin 2) |
+      |p 0| ≤ 1/2 ∧ |p 1| ≤ 1/2}
+    let circle := Metric.closedBall (0 : EuclideanSpace ℝ (Fin 2)) (1 / Real.sqrt Real.pi)
+    ∃ (n : ℕ) (parts_S parts_C : Fin n → Set (EuclideanSpace ℝ (Fin 2))),
+      (∀ i j, i ≠ j → Disjoint (parts_S i) (parts_S j)) ∧
+      (∀ i j, i ≠ j → Disjoint (parts_C i) (parts_C j)) ∧
+      (⋃ i, parts_S i) = square ∧
+      (⋃ i, parts_C i) = circle ∧
+      (∀ i, ∃ t : EuclideanSpace ℝ (Fin 2),
+        parts_C i = (· + t) '' parts_S i) := by
   sorry
 
 end Erdos1124

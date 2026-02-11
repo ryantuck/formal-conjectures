@@ -32,14 +32,20 @@ open scoped Real
 
 namespace Erdos1116
 
-/-- Meromorphic functions and root distribution.
-    Placeholder: This should state a property about root distribution of meromorphic functions.
-    The current formalization is a stub awaiting proper specification. -/
+/-- There exists an entire function f such that for every pair of
+    distinct complex values a ≠ b,
+    lim sup_{r→∞} n(r,a)/n(r,b) = ∞
+    where n(r,a) is the number of roots of f(z) = a in the disc |z| < r.
+    Proved by Gol'dberg and Toppila independently. -/
 @[category research solved, AMS 30]
 theorem meromorphic_root_distribution :
-    ∃ (f : ℂ → ℂ), ∃ (roots : Set ℂ),
-      roots.Infinite ∧ -- f has infinitely many roots (placeholder)
-      (∀ z ∈ roots, True) := by -- Some property about root distribution
+    ∃ (f : ℂ → ℂ), Differentiable ℂ f ∧
+      ∀ (a b : ℂ), a ≠ b →
+        let n : ℝ → ℂ → ℕ := fun r c =>
+          Nat.card {z : ℂ | ‖z‖ < r ∧ f z = c}
+        Filter.atTop.limsup
+          (fun r : ℝ => (n r a : ℝ) / (n r b : ℝ))
+          = ⊤ := by
   sorry
 
 end Erdos1116

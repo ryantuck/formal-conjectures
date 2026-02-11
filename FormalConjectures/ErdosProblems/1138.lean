@@ -32,16 +32,20 @@ open scoped Topology Real
 
 namespace Erdos1138
 
-/-- Prime counting function -/
-noncomputable def primePi (x : ℝ) : ℕ := sorry
-
 /-- Maximum prime gap below x -/
-noncomputable def d (x : ℝ) : ℕ := sorry
+noncomputable def d (x : ℝ) : ℝ :=
+  sSup {(p' - p : ℝ) | ∃ p p' : ℕ, p.Prime ∧ p' = Nat.nextPrime p ∧ (p : ℝ) < x}
 
-/-- Asymptotic formula for primes near maximum gaps -/
+/-- Let x/2 < y < x and C > 1. If d = max_{p_n < x} (p_{n+1} - p_n) denotes the maximum
+    prime gap below x, is it true that pi(y + Cd) - pi(y) ~ Cd / log y as x -> infinity? -/
 @[category research open, AMS 11]
-theorem primes_near_max_gaps (C : ℝ) (hC : 1 < C) (x y : ℝ) (hxy1 : x / 2 < y) (hxy2 : y < x) :
-    Tendsto (fun _ : ℕ => ((primePi (y + C * d x) : ℝ) - (primePi y : ℝ)) / (((C * d x) : ℝ) / Real.log y)) atTop (𝓝 1) := by
+theorem primes_near_max_gaps (C : ℝ) (hC : 1 < C) :
+    answer(sorry) ↔
+      ∀ (y : ℝ → ℝ), (∀ᶠ x in atTop, x / 2 < y x ∧ y x < x) →
+        Tendsto (fun x : ℝ =>
+          ((Nat.primeCounting ⌊y x + C * d x⌋₊ : ℝ) -
+           (Nat.primeCounting ⌊y x⌋₊ : ℝ)) /
+          (C * d x / Real.log (y x))) atTop (𝓝 1) := by
   sorry
 
 end Erdos1138

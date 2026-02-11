@@ -32,13 +32,17 @@ open scoped Real
 
 namespace Erdos1118
 
-/-- Entire functions with finite measure level sets have bounded growth.
-    If an entire function has level sets with finite measure, it has bounded growth.
-    Current formalization is a placeholder with simplified statement. -/
+/-- If f is a non-constant entire function and E(c) = {z : |f(z)| > c}
+    has finite planar measure for some c, then
+    ∫ r in [0, ∞), r / log(log(M(r))) < ∞ where M(r) = sup_{|z|=r} |f(z)|.
+    Proved by Camera (1977) and Gol'dberg (1979). -/
 @[category research solved, AMS 30]
-theorem entire_function_level_set_measure :
-    ∀ (f : ℂ → ℂ), (∃ c : ℝ, True) → -- Placeholder: level sets have finite measure
-      ∃ (M : ℝ) (k : ℝ), ∀ z : ℂ, ‖f z‖ ≤ M * (1 + ‖z‖) ^ k := by
+theorem entire_function_level_set_measure (f : ℂ → ℂ)
+    (hf : Differentiable ℂ f) (hnc : ¬∀ z, f z = f 0) :
+    ∀ c : ℝ,
+      volume {z : ℂ | c < ‖f z‖} < ⊤ →
+        ∫ (r : ℝ) in Set.Ioi 0,
+          r / Real.log (Real.log (⨆ (z : ℂ) (_ : ‖z‖ = r), ‖f z‖)) < ⊤ := by
   sorry
 
 end Erdos1118

@@ -32,13 +32,20 @@ open scoped Real
 
 namespace Erdos1112
 
-/-- Lacunary sequences and sumset gaps.
-    Asks about lacunary sequences whose sumsets have large gaps. -/
+/-- k-fold sumset: sums of k elements from A -/
+def kSumset (k : ℕ) (A : Set ℕ) : Set ℕ :=
+  {n | ∃ (s : Finset ℕ), s ⊆ A ∧ s.card = k ∧ s.sum id = n}
+
+/-- Does there exist r (depending on d₁, d₂, k) such that for all lacunary sequences B
+    with ratio >= r, there exists a sequence A with bounded gaps whose k-fold sumset avoids B -/
 @[category research open, AMS 11]
-theorem lacunary_sumset_gaps :
-    ∃ (A : Set ℕ),
-      (∀ᶠ n in atTop, ∀ a ∈ A, a < n → ∀ a' ∈ A, a' < n → a' ≠ a → (a' : ℝ) / a ≥ 2) ∧
-      (∃ gap : ℕ, ∀ n, ∃ k, ∀ m ∈ Set.Icc k (k + gap), m ∉ {a + b | (a ∈ A) (b ∈ A)}) := by
+theorem lacunary_sumset_avoidance (d₁ d₂ : ℕ) (hd : 1 ≤ d₁ ∧ d₁ < d₂) (k : ℕ) (hk : 3 ≤ k) :
+    answer(sorry) ↔
+      ∃ (r : ℕ), ∀ (B : ℕ → ℕ),
+        (∀ i, B (i + 1) ≥ r * B i) →
+        ∃ (A : ℕ → ℕ), StrictMono A ∧
+          (∀ i, d₁ ≤ A (i + 1) - A i ∧ A (i + 1) - A i ≤ d₂) ∧
+          Disjoint (kSumset k (Set.range A)) (Set.range B) := by
   sorry
 
 end Erdos1112

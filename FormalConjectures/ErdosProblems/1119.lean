@@ -32,14 +32,18 @@ open scoped Real
 
 namespace Erdos1119
 
-/-- Cardinality of families of entire functions.
-    Result about bounding cardinality of families with special properties.
-    Current formalization is a placeholder. -/
+/-- If F is a family of entire functions such that for every z₀ ∈ ℂ,
+    the set {f(z₀) : f ∈ F} has cardinality ≤ 𝔪, then |F| ≤ 𝔪.
+    This holds when 𝔪⁺ < 𝔠 (Hales 1974). -/
 @[category research solved, AMS 30]
-theorem cardinality_entire_function_families :
-    ∀ (property : (ℂ → ℂ) → Prop), ∃ (n : ℕ),
-      ∀ (S : Finset (ℂ → ℂ)), (∀ f ∈ S, property f) →
-        S.card ≤ n := by
+theorem cardinality_entire_function_families
+    (𝔪 : Cardinal) (h1 : Cardinal.aleph 0 < 𝔪)
+    (h2 : 𝔪 < Cardinal.continuum)
+    (h3 : Order.succ 𝔪 < Cardinal.continuum) :
+    ∀ (F : Set (ℂ → ℂ)),
+      (∀ f ∈ F, Differentiable ℂ f) →
+      (∀ z₀ : ℂ, Cardinal.mk {c : ℂ | ∃ f ∈ F, f z₀ = c} ≤ 𝔪) →
+      Cardinal.mk F ≤ 𝔪 := by
   sorry
 
 end Erdos1119

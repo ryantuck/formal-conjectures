@@ -32,15 +32,18 @@ open scoped Real
 
 namespace Erdos1122
 
-/-- Additive functions and monotonicity.
-    Asks about growth properties of additive functions satisfying additional constraints.
-    Current statement may need additional hypotheses. -/
+/-- Let f : N -> R be a multiplicatively additive function (f(ab) = f(a) + f(b) when gcd(a,b) = 1).
+    Define A = {n >= 1 : f(n+1) < f(n)}.
+    If |A ∩ [1,X]| = o(X), must f(n) = c*log(n) for some constant c? -/
 @[category research open, AMS 11]
 theorem additive_function_monotonicity :
-    ∀ (f : ℕ → ℕ), (∀ m n, f (m + n) = f m + f n) →
-      (∀ n, f n > 0) → -- Non-trivial additive function
-      Monotone f → -- Monotonicity constraint
-      ∃ (k : ℕ), 0 < k ∧ ∀ n, f n ≤ k * n := by
+    answer(sorry) ↔
+      ∀ (f : ℕ → ℝ),
+        (∀ a b, Nat.Coprime a b → f (a * b) = f a + f b) →
+        (Filter.Tendsto (fun X : ℕ =>
+          (Finset.filter (fun n => f (n + 1) < f n) (Finset.range X)).card / (X : ℝ))
+          Filter.atTop (nhds 0)) →
+        ∃ c : ℝ, ∀ n > 0, f n = c * Real.log n := by
   sorry
 
 end Erdos1122
