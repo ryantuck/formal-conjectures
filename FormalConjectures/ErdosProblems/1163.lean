@@ -32,10 +32,16 @@ open scoped Topology Real
 
 namespace Erdos1163
 
-/-- Arithmetic structure of orders of subgroups -/
+/-- Describe by statistical means the arithmetic structure of the orders of subgroups of S_n.
+    (Problem of Erdős and Turán)
+
+    The problem statement is somewhat vague. A formal statement would need to clarify
+    what "describe by statistical means" entails - likely involving asymptotic density,
+    distribution properties, or characterization of the set of possible subgroup orders. -/
 @[category research open, AMS 20]
-theorem arithmetic_subgroup_orders :
-    True := by
+theorem arithmetic_structure_subgroup_orders :
+    ∃ (orders : ℕ → Finset ℕ), ∀ n : ℕ,
+      ∀ d ∈ orders n, d ∣ n.factorial := by
   sorry
 
 end Erdos1163
