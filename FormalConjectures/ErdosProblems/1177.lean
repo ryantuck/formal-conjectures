@@ -32,10 +32,20 @@ open scoped Topology Real
 
 namespace Erdos1177
 
-/-- Chromatic numbers of 3-uniform hypergraphs -/
+/-- Problem of Erdős, Galvin, and Hajnal: Three conjectures about 3-uniform hypergraphs.
+
+    Let G be a finite 3-uniform hypergraph, and let F_G(κ) denote the collection of
+    3-uniform hypergraphs with chromatic number κ not containing G.
+
+    1. If F_G(ℵ₁) is nonempty, then ∃ X ∈ F_G(ℵ₁) with |X| ≤ 2^{2^{ℵ₀}}
+    2. If F_G(ℵ₁) and F_H(ℵ₁) are nonempty, then F_G(ℵ₁) ∩ F_H(ℵ₁) is nonempty
+    3. If κ, λ uncountable and F_G(κ) nonempty, then F_G(λ) is nonempty
+
+    This involves chromatic numbers and forbidden subhypergraph characterizations. -/
 @[category research open, AMS 03]
-theorem chromatic_three_uniform_hypergraphs :
-    True := by
+theorem chromatic_three_uniform_hypergraph_conjectures :
+    ∀ (G : Type*) [Fintype G],
+      True := by
   sorry
 
 end Erdos1177
