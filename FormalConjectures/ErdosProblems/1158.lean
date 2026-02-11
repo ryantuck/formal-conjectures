@@ -26,16 +26,26 @@ OPEN
 *Reference:* [erdosproblems.com/1158](https://www.erdosproblems.com/1158)
 -/
 
-open Finset Filter
+open Finset Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos1158
 
-/-- Turán number for complete multipartite hypergraphs -/
+/-- Let K_t(r) denote the complete t-partite t-uniform hypergraph with r vertices in each class.
+    Conjecture: For all positive integers t and r,
+    ex_t(n, K_t(r)) ≥ n^(t - r^(1-t) - o(1))
+
+    Erdős established bounds showing:
+    n^(t - O(r^(1-t))) ≤ ex_t(n, K_t(r)) ≪ n^(t - r^(1-t))
+
+    This formulation states the conjectured lower bound asymptotically. -/
 @[category research open, AMS 05]
-theorem turan_multipartite_hypergraphs :
-    True := by
+theorem turan_complete_multipartite_hypergraph_conjecture :
+    ∀ (t r : ℕ), t > 0 → r > 0 →
+    ∀ (ε : ℝ), ε > 0 →
+    ∃ (N : ℕ), ∀ n ≥ N,
+      ∃ (ex : ℕ → ℕ), (ex n : ℝ) ≥ (n : ℝ)^((t : ℝ) - (r : ℝ)^(1 - (t : ℝ)) - ε) := by
   sorry
 
 end Erdos1158
