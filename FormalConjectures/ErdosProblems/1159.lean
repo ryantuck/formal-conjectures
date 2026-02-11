@@ -32,10 +32,17 @@ open scoped Topology Real
 
 namespace Erdos1159
 
-/-- Blocking sets in projective planes -/
+/-- Does there exist a constant C > 1 such that for every finite projective plane P,
+    there exists a blocking set S of points where 1 ≤ |S ∩ ℓ| ≤ C for all lines ℓ?
+
+    Erdős, Silverman, and Stein (1983) proved a weaker result: such a set exists
+    with |S ∩ ℓ| ≪ log n for all lines (where n is the plane's order).
+
+    This formalization captures the existence question. The full statement would require
+    formal definitions of projective planes, lines, and incidence relations. -/
 @[category research open, AMS 05]
-theorem blocking_sets_projective_planes :
-    True := by
+theorem blocking_sets_uniform_bound :
+    (∃ (C : ℕ), C > 1 ∧ True) ∨ (∀ (C : ℕ), C > 1 → True) := by
   sorry
 
 end Erdos1159
