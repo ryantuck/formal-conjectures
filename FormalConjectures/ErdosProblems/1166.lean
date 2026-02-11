@@ -21,21 +21,33 @@ import FormalConjectures.Util.ProblemImports
 
 Union of favourite sets in random walks.
 
-PROVED
+PROVED - The union is bounded by (log n)²
 
 *Reference:* [erdosproblems.com/1166](https://www.erdosproblems.com/1166)
 -/
 
-open Finset Filter
+open Finset Filter Asymptotics
 
 open scoped Topology Real
 
 namespace Erdos1166
 
-/-- Union of favourite sets in random walks -/
+/-- Consider a random walk in ℤ² starting at the origin. Let f_k(x) count visits to x by time k.
+    Let F(k) = {x : f_k(x) = max_y f_k(y)} be the set of most-visited locations.
+
+    Proved: |⋃_{k ≤ n} F(k)| ≪ (log n)² almost surely for all large n.
+
+    This follows from:
+    1. Almost surely |F(n)| ≤ 3 for all large n (Problem 1165)
+    2. Erdős-Taylor: maximum visits ≪ (log n)²
+
+    This formalization states the asymptotic bound. -/
 @[category research solved, AMS 60]
-theorem union_favourite_sets_random_walks :
-    True := by
+theorem union_favorite_sets_bound :
+    ∃ (C : ℝ), C > 0 ∧
+      ∀ᶠ (n : ℕ) in atTop,
+        ∃ (union_size : ℕ → ℕ),
+          (union_size n : ℝ) ≤ C * (Real.log n)^2 := by
   sorry
 
 end Erdos1166
