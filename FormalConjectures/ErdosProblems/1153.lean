@@ -41,8 +41,8 @@ noncomputable def Λ {n : ℕ} (nodes : Fin n → ℝ) (x : ℝ) : ℝ :=
 
 /-- Lagrange basis functions and subintervals -/
 @[category research open, AMS 41]
-theorem lagrange_basis_subintervals (answer : Prop) :
-    answer ↔ ∀ (a b : ℝ), -1 ≤ a → a < b → b ≤ 1 →
+theorem lagrange_basis_subintervals :
+    answer(sorry) ↔ ∀ (a b : ℝ), -1 ≤ a → a < b → b ≤ 1 →
       ∀ᶠ n : ℕ in atTop, ∃ (nodes : Fin n → ℝ),
         (∀ i, nodes i ∈ Set.Icc (-1 : ℝ) 1) ∧
         (∀ i j, i ≠ j → nodes i ≠ nodes j) ∧

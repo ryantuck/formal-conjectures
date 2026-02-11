@@ -39,12 +39,16 @@ variable {V : Type*} [Fintype V] [DecidableEq V]
     f(n) = n^{3/2+o(1)} almost surely. (Bohman-Frieze-Lubetzky 2015)
 
     This formalization states the existence of such a process, though the full probabilistic
-    statement would require substantial probability theory infrastructure. -/
+    statement would require substantial probability theory infrastructure.
+
+    NOTE: The existential quantifier over f makes this trivially satisfiable. The actual
+    statement should define a specific random process and prove properties about it. -/
 @[category research open, AMS 05]
 theorem random_triangle_deletion_edges :
-    ∀ (ε : ℝ), ε > 0 →
-    ∃ (f : ℕ → ℕ), ∀ᶠ (n : ℕ) in atTop,
-      (n : ℝ)^((3/2 : ℝ) - ε) ≤ f n ∧ f n ≤ (n : ℝ)^((3/2 : ℝ) + ε) := by
+    answer(True) ↔
+      ∀ (ε : ℝ), ε > 0 →
+      ∃ (f : ℕ → ℕ), ∀ᶠ (n : ℕ) in atTop,
+        (n : ℝ)^((3/2 : ℝ) - ε) ≤ f n ∧ f n ≤ (n : ℝ)^((3/2 : ℝ) + ε) := by
   sorry
 
 end Erdos1155

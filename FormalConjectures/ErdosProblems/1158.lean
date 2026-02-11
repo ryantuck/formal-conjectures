@@ -39,13 +39,17 @@ namespace Erdos1158
     Erdős established bounds showing:
     n^(t - O(r^(1-t))) ≤ ex_t(n, K_t(r)) ≪ n^(t - r^(1-t))
 
-    This formulation states the conjectured lower bound asymptotically. -/
+    This formulation states the conjectured lower bound asymptotically.
+
+    NOTE: The existential quantifier over ex makes this trivially satisfiable.
+    The actual statement should define ex_t as the Turán number and prove the bound. -/
 @[category research open, AMS 05]
 theorem turan_complete_multipartite_hypergraph_conjecture :
-    ∀ (t r : ℕ), t > 0 → r > 0 →
-    ∀ (ε : ℝ), ε > 0 →
-    ∃ (N : ℕ), ∀ n ≥ N,
-      ∃ (ex : ℕ → ℕ), (ex n : ℝ) ≥ (n : ℝ)^((t : ℝ) - (r : ℝ)^(1 - (t : ℝ)) - ε) := by
+    answer(sorry) ↔
+      ∀ (t r : ℕ), t > 0 → r > 0 →
+      ∀ (ε : ℝ), ε > 0 →
+      ∃ (N : ℕ), ∀ n ≥ N,
+        ∃ (ex : ℕ → ℕ), (ex n : ℝ) ≥ (n : ℝ)^((t : ℝ) - (r : ℝ)^(1 - (t : ℝ)) - ε) := by
   sorry
 
 end Erdos1158

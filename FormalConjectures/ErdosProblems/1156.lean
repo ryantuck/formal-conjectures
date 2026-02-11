@@ -39,27 +39,36 @@ variable {V : Type*} [Fintype V] [DecidableEq V]
     concentrated on at most C values?
 
     This formulation asks whether the chromatic number can be bounded to lie within
-    a fixed-size interval for large n. -/
+    a fixed-size interval for large n.
+
+    NOTE: This formulation is incomplete as it lacks the actual chromatic number
+    property and probability measure. A proper formalization would require defining
+    the random graph model and probabilistic concentration. The chromatic number
+    has type ℕ∞ (extended naturals) to handle the infinite case. -/
 @[category research open, AMS 05]
 theorem chromatic_concentration_bounded_range :
-    (∃ (C : ℕ), ∀ᶠ (n : ℕ) in atTop,
-      ∃ (S : Finset ℕ), S.card ≤ C ∧
-        ∀ (G : SimpleGraph (Fin n)), True) ∨
-    (∀ (C : ℕ), ∃ᶠ (n : ℕ) in atTop,
-      ∀ (S : Finset ℕ), S.card ≤ C →
-        ∃ (G : SimpleGraph (Fin n)), True) := by
+    answer(sorry) ↔
+      (∃ (C : ℕ), ∀ᶠ (n : ℕ) in atTop,
+        ∃ (S : Finset ℕ∞), S.card ≤ C ∧
+          ∀ (G : SimpleGraph (Fin n)), G.chromaticNumber ∈ S) := by
   sorry
 
 /-- Question 2: If ω(n) → ∞ sufficiently slowly, for every function f(n),
     does P(|χ(G) - f(n)| < ω(n)) < 1/2 when n is large?
 
-    This asks whether the chromatic number resists concentration around any function. -/
+    This asks whether the chromatic number resists concentration around any function.
+
+    NOTE: This formulation is incomplete as it lacks the actual probability condition.
+    A proper formalization would require defining the random graph model and
+    showing that the probability of concentration around f is bounded away from 1.
+    Chromatic number has type ℕ∞, so distance/difference requires careful handling. -/
 @[category research open, AMS 05]
 theorem chromatic_resists_concentration :
-    ∀ (ω : ℕ → ℝ), (∀ᶠ (n : ℕ) in atTop, ω n > 0) →
-    Tendsto ω atTop atTop →
-    ∀ (f : ℕ → ℕ), ∃ᶠ (n : ℕ) in atTop,
-      True := by
+    answer(sorry) ↔
+      ∀ (ω : ℕ → ℝ), (∀ᶠ (n : ℕ) in atTop, ω n > 0) →
+      Tendsto ω atTop atTop →
+      ∀ (f : ℕ → ℕ∞), ∃ᶠ (n : ℕ) in atTop,
+        ∃ (G : SimpleGraph (Fin n)), True := by
   sorry
 
 end Erdos1156

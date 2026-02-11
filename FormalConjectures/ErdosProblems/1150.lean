@@ -32,10 +32,20 @@ open scoped Topology Real
 
 namespace Erdos1150
 
-/-- Ultraflat polynomials with ±1 coefficients -/
+/-- Question about the existence of ultraflat polynomials with ±1 coefficients.
+
+    An ultraflat polynomial is one where the absolute value remains bounded on some
+    region (typically a curve or arc). The problem asks whether such polynomials
+    exist with all coefficients being ±1.
+
+    Note: Without a precise definition of "ultraflat" and the specific properties
+    being asked about, this is a placeholder formalization. -/
 @[category research open, AMS 26]
 theorem ultraflat_polynomials :
-    ∃ (P : ℕ → Polynomial ℂ), sorry := by
+    answer(sorry) ↔
+      ∃ (P : ℕ → Polynomial ℂ),
+        (∀ n i, (P n).coeff i ∈ ({-1, 1} : Set ℂ)) ∧
+        True := by
   sorry
 
 end Erdos1150

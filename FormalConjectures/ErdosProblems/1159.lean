@@ -39,10 +39,20 @@ namespace Erdos1159
     with |S ∩ ℓ| ≪ log n for all lines (where n is the plane's order).
 
     This formalization captures the existence question. The full statement would require
-    formal definitions of projective planes, lines, and incidence relations. -/
+    formal definitions of projective planes, lines, and incidence relations.
+
+    NOTE: This is a placeholder formulation. A proper formalization would require
+    defining projective planes, blocking sets, lines, and the incidence relation. -/
 @[category research open, AMS 05]
 theorem blocking_sets_uniform_bound :
-    (∃ (C : ℕ), C > 1 ∧ True) ∨ (∀ (C : ℕ), C > 1 → True) := by
+    answer(sorry) ↔
+      ∃ (C : ℕ), C > 1 ∧
+        ∀ (ProjectivePlane Line : Type*),
+        ∃ (BlockingSet : Set ProjectivePlane)
+          (incidence : ProjectivePlane → Line → Prop),
+          ∀ (ℓ : Line),
+            let intersection := {p : ProjectivePlane | p ∈ BlockingSet ∧ incidence p ℓ}
+            1 ≤ intersection.ncard ∧ intersection.ncard ≤ C := by
   sorry
 
 end Erdos1159

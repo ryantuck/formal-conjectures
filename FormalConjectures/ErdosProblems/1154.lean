@@ -32,12 +32,16 @@ open scoped Topology Real
 
 namespace Erdos1154
 
-/-- Hausdorff dimension of rings and fields in reals -/
+/-- Hausdorff dimension of rings and fields in reals
+
+    NOTE: This formulation is incomplete as it lacks proper definitions of
+    what it means for a subset to have ring or field structure. A proper
+    formalization would require defining algebraic structures on subsets. -/
 @[category research open, AMS 28]
-theorem hausdorff_dimension_rings_fields (answer : Prop) :
-    answer ↔ ∀ α : ℝ, α ∈ Set.Icc (0 : ℝ) 1 →
-      (∃ (R : Set ℝ), (∃ _ : Ring R, True) ∧ dimH R = ENNReal.ofReal α) ∨
-      (∃ (F : Set ℝ), (∃ _ : Field F, True) ∧ dimH F = ENNReal.ofReal α) := by
+theorem hausdorff_dimension_rings_fields :
+    answer(sorry) ↔ ∀ α : ℝ, α ∈ Set.Icc (0 : ℝ) 1 →
+      (∃ (R : Set ℝ), (∃ (_ : Ring R), True) ∧ dimH R = ENNReal.ofReal α) ∨
+      (∃ (F : Set ℝ), (∃ (_ : Field F), True) ∧ dimH F = ENNReal.ofReal α) := by
   sorry
 
 end Erdos1154

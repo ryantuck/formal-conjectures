@@ -32,10 +32,15 @@ open scoped Topology Real
 
 namespace Erdos1152
 
-/-- Non-convergent interpolating polynomials -/
+/-- For nodes in [-1,1] and degree bounds (1+ε(n))n with ε(n) → 0, does there exist
+    a continuous function f such that for all interpolating polynomials p,
+    the sequence p(x) fails to converge to f(x) for almost every x?
+
+    This asks whether convergence can fail almost everywhere even with very mild
+    degree bounds above n. -/
 @[category research open, AMS 41]
-theorem non_convergent_interpolating_polynomials (answer : Prop) :
-    answer ↔ ∀ (nodes : (n : ℕ) → Fin n → ℝ) (ε : ℕ → ℝ),
+theorem non_convergent_interpolating_polynomials :
+    answer(sorry) ↔ ∀ (nodes : (n : ℕ) → Fin n → ℝ) (ε : ℕ → ℝ),
       (∀ n i, nodes n i ∈ Set.Icc (-1 : ℝ) 1) →
       (∀ n i j, i ≠ j → nodes n i ≠ nodes n j) →
       Tendsto ε atTop (𝓝 0) →
