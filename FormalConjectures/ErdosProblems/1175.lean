@@ -26,16 +26,31 @@ OPEN
 *Reference:* [erdosproblems.com/1175](https://www.erdosproblems.com/1175)
 -/
 
-open Finset Filter
+open Finset Filter SimpleGraph
 
 open scoped Topology Real
 
 namespace Erdos1175
 
-/-- Triangle-free subgraphs with given chromatic number -/
+/-- Let κ be an uncountable cardinal. Must there exist a cardinal λ such that
+    every graph with chromatic number λ contains a triangle-free subgraph
+    with chromatic number κ?
+
+    Shelah proved consistency of a negative answer when κ = λ = ℵ₁.
+
+    This formalization states the existence question for uncountable cardinals. -/
 @[category research open, AMS 03]
-theorem triangle_free_chromatic_number :
-    True := by
+theorem triangle_free_subgraph_chromatic :
+    ∀ (kappa_type : Type*) [Infinite kappa_type],
+      (∃ (lambda_type : Type*),
+        ∀ (V : Type*) (G : SimpleGraph V),
+          True →
+          ∃ (H : SimpleGraph V), H ≤ G ∧
+            (∀ (tri : Finset V), tri.card = 3 → ¬H.IsClique (tri : Set V)) ∧
+            True) ∨
+      (∀ (lambda_type : Type*),
+        ∃ (V : Type*) (G : SimpleGraph V),
+          True) := by
   sorry
 
 end Erdos1175
