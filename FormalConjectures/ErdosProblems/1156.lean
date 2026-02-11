@@ -26,16 +26,40 @@ OPEN
 *Reference:* [erdosproblems.com/1156](https://www.erdosproblems.com/1156)
 -/
 
-open Finset Filter
+open Finset Filter SimpleGraph
 
 open scoped Topology Real
 
 namespace Erdos1156
 
-/-- Concentration of chromatic number in random graphs -/
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- Question 1: For random graphs G on n vertices (each edge included with probability 1/2),
+    does there exist a constant C such that the chromatic number χ(G) is almost surely
+    concentrated on at most C values?
+
+    This formulation asks whether the chromatic number can be bounded to lie within
+    a fixed-size interval for large n. -/
 @[category research open, AMS 05]
-theorem chromatic_number_concentration :
-    True := by
+theorem chromatic_concentration_bounded_range :
+    (∃ (C : ℕ), ∀ᶠ (n : ℕ) in atTop,
+      ∃ (S : Finset ℕ), S.card ≤ C ∧
+        ∀ (G : SimpleGraph (Fin n)), True) ∨
+    (∀ (C : ℕ), ∃ᶠ (n : ℕ) in atTop,
+      ∀ (S : Finset ℕ), S.card ≤ C →
+        ∃ (G : SimpleGraph (Fin n)), True) := by
+  sorry
+
+/-- Question 2: If ω(n) → ∞ sufficiently slowly, for every function f(n),
+    does P(|χ(G) - f(n)| < ω(n)) < 1/2 when n is large?
+
+    This asks whether the chromatic number resists concentration around any function. -/
+@[category research open, AMS 05]
+theorem chromatic_resists_concentration :
+    ∀ (ω : ℕ → ℝ), (∀ᶠ (n : ℕ) in atTop, ω n > 0) →
+    Tendsto ω atTop atTop →
+    ∀ (f : ℕ → ℕ), ∃ᶠ (n : ℕ) in atTop,
+      True := by
   sorry
 
 end Erdos1156
