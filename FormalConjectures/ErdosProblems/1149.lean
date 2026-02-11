@@ -26,16 +26,21 @@ PROVED
 *Reference:* [erdosproblems.com/1149](https://www.erdosproblems.com/1149)
 -/
 
-open Finset Filter
+open Finset Filter Nat
 
 open scoped Topology Real
 
 namespace Erdos1149
 
-/-- Density of coprime pairs involving floor functions -/
+/-- For any non-integer positive real α, the natural density of integers n ≥ 1
+    such that gcd(n, ⌊n^α⌋) = 1 equals 6/π². Proved by Bergelson and Richter. -/
 @[category research solved, AMS 11]
 theorem coprime_floor_density :
-    True := by
+    ∀ (α : ℝ), α > 0 → (∀ (m : ℤ), α ≠ m) →
+    ∃ (d : ℝ), d = 6 / Real.pi^2 ∧
+    Tendsto (fun N : ℕ => (Finset.filter (fun n =>
+      n ≥ 1 ∧ Nat.gcd n ⌊(n : ℝ)^α⌋₊ = 1) (Finset.range (N + 1))).card / (N : ℝ))
+      atTop (𝓝 d) := by
   sorry
 
 end Erdos1149
