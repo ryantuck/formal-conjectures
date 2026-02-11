@@ -32,14 +32,17 @@ open scoped Topology Real
 
 namespace Erdos1100
 
+/-- Number of distinct prime factors -/
+def omega (n : ℕ) : ℕ := n.primeFactors.card
+
 /-- Number of coprime consecutive divisor pairs -/
 noncomputable def τ_perp (n : ℕ) : ℕ := sorry
 
 /-- Coprime consecutive divisors grow with distinct prime factors -/
 @[category research open, AMS 11]
 theorem coprime_consecutive_divisors (answer : Prop) :
-    answer ↔ (∀ᵐ n, (τ_perp n : ℝ) / Nat.omega n → ∞) ∧
-      (∀ n, τ_perp n < Real.exp ((Real.log n) ^ (1/2))) := by
+    answer ↔ Tendsto (fun n : ℕ => (τ_perp n : ℝ) / omega n) atTop atTop ∧
+      (∀ n, (τ_perp n : ℝ) < Real.exp ((Real.log (n : ℝ)) ^ ((1 : ℝ)/2))) := by
   sorry
 
 end Erdos1100
