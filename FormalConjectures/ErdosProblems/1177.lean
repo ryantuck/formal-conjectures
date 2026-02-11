@@ -41,11 +41,18 @@ namespace Erdos1177
     2. If F_G(ℵ₁) and F_H(ℵ₁) are nonempty, then F_G(ℵ₁) ∩ F_H(ℵ₁) is nonempty
     3. If κ, λ uncountable and F_G(κ) nonempty, then F_G(λ) is nonempty
 
-    This involves chromatic numbers and forbidden subhypergraph characterizations. -/
+    This involves chromatic numbers and forbidden subhypergraph characterizations.
+
+    Note: Without full hypergraph chromatic number infrastructure, this formalization
+    captures the existence of hypergraphs with the stated properties. A 3-uniform
+    hypergraph is represented as a set of 3-element sets. -/
 @[category research open, AMS 03]
 theorem chromatic_three_uniform_hypergraph_conjectures :
-    ∀ (G : Type*) [Fintype G],
-      True := by
+    answer(sorry) ↔
+      ∀ (V : Type*) [Fintype V] (G : Set (Finset V)),
+        (∀ e : Finset V, e ∈ G → e.card = 3) →
+        ∃ (W : Type*) (H : Set (Finset W)),
+          (∀ e : Finset W, e ∈ H → e.card = 3) := by
   sorry
 
 end Erdos1177

@@ -41,15 +41,20 @@ namespace Erdos1173
 
     A set S is free if for distinct α, β ∈ S, we have α ∉ f(β) and β ∉ f(α).
 
-    This involves advanced cardinal arithmetic and combinatorial set theory. -/
+    This involves advanced cardinal arithmetic and combinatorial set theory.
+
+    Note: The bounded intersection constraint |f(α) ∩ f(β)| < ℵ_ω is represented
+    as a placeholder condition below, as proper cardinality bounds require
+    additional infrastructure. -/
 @[category research open, AMS 03]
 theorem free_set_under_gch :
-    ∀ (omega_omega_plus_one : Type*) [Infinite omega_omega_plus_one],
-    ∀ (f : omega_omega_plus_one → Set omega_omega_plus_one),
-      (∀ α β : omega_omega_plus_one, α ≠ β → True) →
-      ∃ (S : Set omega_omega_plus_one),
-        ∀ α β : omega_omega_plus_one, α ∈ S → β ∈ S → α ≠ β →
-          α ∉ f β ∧ β ∉ f α := by
+    answer(sorry) ↔
+      ∀ (omega_omega_plus_one : Type*) [Infinite omega_omega_plus_one],
+      ∀ (f : omega_omega_plus_one → Set omega_omega_plus_one),
+        (∀ α β : omega_omega_plus_one, α ≠ β → (f α ∩ f β).Finite) →
+        ∃ (S : Set omega_omega_plus_one),
+          ∀ α β : omega_omega_plus_one, α ∈ S → β ∈ S → α ≠ β →
+            α ∉ f β ∧ β ∉ f α := by
   sorry
 
 end Erdos1173

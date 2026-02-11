@@ -50,10 +50,11 @@ def PartitionRelation (α : Type*) (r : ℕ) (gamma : Type*) (targets : gamma �
     Baumgartner proved a related result under Martin's axiom. -/
 @[category research open, AMS 03]
 theorem ramsey_omega_one_squared_multicolor :
-    ∀ (k : ℕ),
-    ∀ (omega_one_sq : Type u) [Infinite omega_one_sq] (omega_one_omega : Type u),
-      PartitionRelation omega_one_sq 2 (Fin (k + 1))
-        (fun i : Fin (k + 1) => if i.val = 0 then omega_one_omega else ULift.{u} (Fin 3)) := by
+    answer(sorry) ↔
+      ∀ (k : ℕ),
+      ∀ (omega_one_sq : Type u) [Infinite omega_one_sq] (omega_one_omega : Type u),
+        PartitionRelation omega_one_sq 2 (Fin (k + 1))
+          (fun i : Fin (k + 1) => if i.val = 0 then omega_one_omega else ULift.{u} (Fin 3)) := by
   sorry
 
 end Erdos1171

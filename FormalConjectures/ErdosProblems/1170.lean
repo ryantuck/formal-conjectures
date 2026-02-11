@@ -48,8 +48,9 @@ def PartitionRelation (α : Type*) (r : ℕ) (gamma : Type*) (targets : gamma �
     Laver and Foreman-Hajnal proved related consistency results. -/
 @[category research open, AMS 03]
 theorem partition_omega_two_consistency :
-    ∀ (alpha_type : Type*) (omega_two_type : Type*) [Infinite omega_two_type],
-      PartitionRelation omega_two_type 2 (Fin 2) (fun _ => alpha_type) := by
+    answer(sorry) ↔
+      ∀ (alpha_type : Type*) (omega_two_type : Type*) [Infinite omega_two_type],
+        PartitionRelation omega_two_type 2 (Fin 2) (fun _ => alpha_type) := by
   sorry
 
 end Erdos1170

@@ -40,14 +40,18 @@ namespace Erdos1174
     2. Does there exist a graph G with no K_{ℵ₁} such that every edge coloring of G
        with countably many colors contains a monochromatic K_{ℵ₀}?
 
-    Shelah showed that graphs with either property can consistently exist. -/
+    Shelah showed that graphs with either property can consistently exist.
+
+    Note: This formalization addresses question 1. The coloring type `Sym2 V → ℕ`
+    represents a countable edge coloring. -/
 @[category research open, AMS 03]
 theorem graph_coloring_monochromatic_cliques_question1 :
-    ∃ (V : Type*) (G : SimpleGraph V),
-      (∀ (K4 : Finset V), K4.card = 4 → ¬G.IsClique (K4 : Set V)) ∧
-      (∀ (coloring : Sym2 V → ℕ), True →
-        ∃ (K3 : Finset V) (c : ℕ), K3.card = 3 ∧ G.IsClique (K3 : Set V) ∧
-          ∀ e ∈ K3.sym2, coloring e = c) := by
+    answer(sorry) ↔
+      ∃ (V : Type*) (G : SimpleGraph V),
+        (∀ (K4 : Finset V), K4.card = 4 → ¬G.IsClique (K4 : Set V)) ∧
+        (∀ (coloring : Sym2 V → ℕ),
+          ∃ (K3 : Finset V) (c : ℕ), K3.card = 3 ∧ G.IsClique (K3 : Set V) ∧
+            ∀ e ∈ K3.sym2, coloring e = c) := by
   sorry
 
 end Erdos1174

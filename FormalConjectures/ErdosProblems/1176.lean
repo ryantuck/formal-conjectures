@@ -40,14 +40,20 @@ namespace Erdos1176
 
     Hajnal and Komjáth proved the consistency of this statement.
 
-    This formalization states the relationship between edge and vertex colorings. -/
+    This formalization captures the existence of an edge coloring with the property that
+    for any vertex coloring, some vertex color class touches edges of all colors.
+    The precise "containing all edge colors" property requires additional infrastructure. -/
 @[category research open, AMS 03]
 theorem edge_vertex_coloring_property :
-    ∀ (V : Type*) [Countable V] (G : SimpleGraph V),
-      ∃ (edge_coloring : Sym2 V → ℕ),
-        ∀ (vertex_coloring : V → ℕ),
-          ∃ (vertex_color : ℕ),
-            ∀ (edge_color : ℕ), True := by
+    answer(sorry) ↔
+      ∀ (V : Type*) [Countable V] (G : SimpleGraph V),
+        ∃ (edge_coloring : Sym2 V → ℕ),
+          ∀ (vertex_coloring : V → ℕ),
+            ∃ (vertex_color : ℕ),
+              ∀ (edge_color : ℕ),
+                ∃ e : Sym2 V, edge_coloring e = edge_color ∧
+                  (vertex_coloring e.out.1 = vertex_color ∨
+                   vertex_coloring e.out.2 = vertex_color) := by
   sorry
 
 end Erdos1176

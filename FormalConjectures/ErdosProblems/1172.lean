@@ -50,11 +50,15 @@ def PartitionRelation (α : Type*) (r : ℕ) (gamma : Type*) (targets : gamma �
     - ω₂ → (ω₁+ω)₂²
 
     These ask about partition properties of uncountable cardinals under the
-    (generalized) continuum hypothesis. -/
+    (generalized) continuum hypothesis.
+
+    Note: Source document is incomplete. This formalization captures the existence
+    of such partition relations without specifying which particular ones hold. -/
 @[category research open, AMS 03]
 theorem partition_relations_under_gch :
-    ∀ (omega_two omega_three : Type*) [Infinite omega_two] [Infinite omega_three],
-      True := by
+    answer(sorry) ↔
+      ∃ (omega_two omega_three : Type*),
+        PartitionRelation omega_three 2 (Fin 2) (fun _ => omega_two) := by
   sorry
 
 end Erdos1172

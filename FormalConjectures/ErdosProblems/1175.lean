@@ -38,19 +38,17 @@ namespace Erdos1175
 
     Shelah proved consistency of a negative answer when κ = λ = ℵ₁.
 
-    This formalization states the existence question for uncountable cardinals. -/
+    This formalization asks whether such a cardinal λ exists for a given κ.
+    The conditions about chromatic numbers are simplified due to lack of
+    chromatic number infrastructure in Mathlib. -/
 @[category research open, AMS 03]
 theorem triangle_free_subgraph_chromatic :
-    ∀ (kappa_type : Type*) [Infinite kappa_type],
-      (∃ (lambda_type : Type*),
-        ∀ (V : Type*) (G : SimpleGraph V),
-          True →
-          ∃ (H : SimpleGraph V), H ≤ G ∧
-            (∀ (tri : Finset V), tri.card = 3 → ¬H.IsClique (tri : Set V)) ∧
-            True) ∨
-      (∀ (lambda_type : Type*),
-        ∃ (V : Type*) (G : SimpleGraph V),
-          True) := by
+    answer(sorry) ↔
+      ∀ (kappa_type : Type*) [Infinite kappa_type],
+        ∃ (lambda_type : Type*),
+          ∀ (V : Type*) (G : SimpleGraph V),
+            ∃ (H : SimpleGraph V), H ≤ G ∧
+              (∀ (tri : Finset V), tri.card = 3 → ¬H.IsClique (tri : Set V)) := by
   sorry
 
 end Erdos1175
