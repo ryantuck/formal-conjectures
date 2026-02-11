@@ -33,7 +33,7 @@ open scoped Topology Real
 namespace Erdos1131
 
 /-- Integral of squared Lagrange basis functions -/
-noncomputable def I (x : Fin n → ℝ) : ℝ := sorry
+noncomputable def I {n : ℕ} (x : Fin n → ℝ) : ℝ := sorry
 
 /-- Minimum integral of squared Lagrange basis functions -/
 @[category research open, AMS 41]

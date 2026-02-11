@@ -33,7 +33,7 @@ open scoped Topology Real
 namespace Erdos1130
 
 /-- Lebesgue constant for Lagrange interpolation -/
-noncomputable def Λ (x : Fin n → ℝ) : ℝ := sorry
+noncomputable def Λ {n : ℕ} (x : Fin n → ℝ) : ℝ := sorry
 
 /-- Lebesgue constant bounds -/
 @[category research solved, AMS 41]
