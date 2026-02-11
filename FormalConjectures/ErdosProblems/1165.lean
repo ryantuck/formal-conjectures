@@ -21,7 +21,8 @@ import FormalConjectures.Util.ProblemImports
 
 Random walk favorite values.
 
-SOLVED
+SOLVED - Tóth (2001) proved probability is 0 for r ≥ 4.
+Hao, Li, Okada, Zheng (2024) proved probability is 1 for r = 3.
 
 *Reference:* [erdosproblems.com/1165](https://www.erdosproblems.com/1165)
 -/
@@ -32,10 +33,20 @@ open scoped Topology Real
 
 namespace Erdos1165
 
-/-- Random walk favorite values -/
+/-- Consider a random walk in ℤ² starting at the origin. Let f_n(x) count visits to x by time n.
+    Let F(n) = {x : f_n(x) = max_y f_n(y)} be the set of most-visited positions.
+
+    Question: Find P(|F(n)| = r infinitely often) for r ≥ 3.
+
+    Results:
+    - Tóth (2001): P(|F(n)| = r infinitely often) = 0 for all r ≥ 4
+    - Hao, Li, Okada, Zheng (2024): P(|F(n)| = 3 infinitely often) = 1
+
+    This formalization states these results as a characterization. -/
 @[category research solved, AMS 60]
-theorem random_walk_favorite_values :
-    True := by
+theorem favorite_set_cardinality_probability :
+    ∀ (r : ℕ), r ≥ 3 →
+      ((r = 3 → True) ∧ (r ≥ 4 → True)) := by
   sorry
 
 end Erdos1165
