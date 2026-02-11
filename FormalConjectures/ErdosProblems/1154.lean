@@ -34,8 +34,10 @@ namespace Erdos1154
 
 /-- Hausdorff dimension of rings and fields in reals -/
 @[category research open, AMS 28]
-theorem hausdorff_dimension_rings_fields :
-    sorry := by
+theorem hausdorff_dimension_rings_fields (answer : Prop) :
+    answer ↔ ∀ α : ℝ, α ∈ Set.Icc (0 : ℝ) 1 →
+      (∃ (R : Set ℝ), (∃ _ : Ring R, True) ∧ dimH R = ENNReal.ofReal α) ∨
+      (∃ (F : Set ℝ), (∃ _ : Field F, True) ∧ dimH F = ENNReal.ofReal α) := by
   sorry
 
 end Erdos1154

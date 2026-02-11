@@ -32,10 +32,21 @@ open scoped Topology Real
 
 namespace Erdos1151
 
+/-- Chebyshev nodes in [-1,1] -/
+noncomputable def chebyshevNodes (n : ℕ) (i : Fin n) : ℝ :=
+  Real.cos (Real.pi * (2 * (i : ℝ) + 1) / (2 * n))
+
+/-- Lagrange interpolation operator -/
+noncomputable def lagrangeInterp {n : ℕ} (nodes : Fin n → ℝ) (f : ℝ → ℝ) : ℝ → ℝ := sorry
+
 /-- Lagrange interpolation and limit points -/
 @[category research open, AMS 41]
 theorem lagrange_interpolation_limit_points :
-    sorry := by
+    ∀ (A : Set ℝ), IsClosed A → A ⊆ Set.Icc (-1 : ℝ) 1 →
+      ∃ (f : ℝ → ℝ), Continuous f ∧
+        (∀ x ∈ Set.Icc (-1 : ℝ) 1,
+          {y | ∃ (seq : ℕ → ℕ), Tendsto seq atTop atTop ∧
+            Tendsto (fun n => lagrangeInterp (chebyshevNodes (seq n)) f x) atTop (𝓝 y)} = A) := by
   sorry
 
 end Erdos1151

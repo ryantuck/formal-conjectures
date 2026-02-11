@@ -33,16 +33,15 @@ open scoped Topology Real
 namespace Erdos1138
 
 /-- Prime counting function -/
-noncomputable def π (x : ℝ) : ℕ := sorry
+noncomputable def primePi (x : ℝ) : ℕ := sorry
 
 /-- Maximum prime gap below x -/
 noncomputable def d (x : ℝ) : ℕ := sorry
 
 /-- Asymptotic formula for primes near maximum gaps -/
 @[category research open, AMS 11]
-theorem primes_near_max_gaps (C : ℝ) (hC : 1 < C) :
-    ∀ (x y : ℝ), x / 2 < y → y < x →
-      (π (y + C * d x) - π y : ℝ) / ((C * d x) / Real.log y) → 1 := by
+theorem primes_near_max_gaps (C : ℝ) (hC : 1 < C) (x y : ℝ) (hxy1 : x / 2 < y) (hxy2 : y < x) :
+    Tendsto (fun _ : ℕ => ((primePi (y + C * d x) : ℝ) - (primePi y : ℝ)) / (((C * d x) : ℝ) / Real.log y)) atTop (𝓝 1) := by
   sorry
 
 end Erdos1138

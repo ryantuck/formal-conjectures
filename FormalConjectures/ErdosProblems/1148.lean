@@ -35,7 +35,7 @@ namespace Erdos1148
 /-- Representation as sum or difference of squares -/
 @[category research open, AMS 11]
 theorem sum_difference_squares :
-    ∀ n : ℕ, ∃ a b : ℕ, n = a^2 + b^2 ∨ n = |a^2 - b^2| := by
+    ∀ n : ℕ, ∃ a b : ℕ, n = a^2 + b^2 ∨ (n : ℤ) = |(a : ℤ)^2 - (b : ℤ)^2| := by
   sorry
 
 end Erdos1148

@@ -26,7 +26,7 @@ OPEN
 *Reference:* [erdosproblems.com/1152](https://www.erdosproblems.com/1152)
 -/
 
-open Finset Filter
+open Finset Filter MeasureTheory
 
 open scoped Topology Real
 
@@ -34,8 +34,17 @@ namespace Erdos1152
 
 /-- Non-convergent interpolating polynomials -/
 @[category research open, AMS 41]
-theorem non_convergent_interpolating_polynomials :
-    sorry := by
+theorem non_convergent_interpolating_polynomials (answer : Prop) :
+    answer ↔ ∀ (nodes : (n : ℕ) → Fin n → ℝ) (ε : ℕ → ℝ),
+      (∀ n i, nodes n i ∈ Set.Icc (-1 : ℝ) 1) →
+      (∀ n i j, i ≠ j → nodes n i ≠ nodes n j) →
+      Tendsto ε atTop (𝓝 0) →
+      ∃ (f : ℝ → ℝ), Continuous f ∧
+        ∀ (p : ℕ → Polynomial ℝ),
+          (∀ n, (p n).natDegree < (1 + ε n) * n) →
+          (∀ n i, (p n).eval (nodes n i) = f (nodes n i)) →
+          ∃ᵐ x ∂(volume.restrict (Set.Icc (-1 : ℝ) 1)),
+            ¬ Tendsto (fun n => (p n).eval x) atTop (𝓝 (f x)) := by
   sorry
 
 end Erdos1152
