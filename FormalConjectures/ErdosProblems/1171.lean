@@ -32,10 +32,28 @@ open scoped Topology Real
 
 namespace Erdos1171
 
-/-- Ramsey partition property on omega-1 -/
+universe u
+
+/-- Partition relation for types. -/
+def PartitionRelation (α : Type*) (r : ℕ) (gamma : Type*) (targets : gamma → Type*) : Prop :=
+  ∀ (coloring : Finset α → gamma),
+    ∃ (color : gamma) (H : Set α),
+      (∃ (f : targets color → α), Function.Injective f ∧ Set.range f ⊆ H) ∧
+      ∀ (s : Finset α), s.card = r → (↑s : Set α) ⊆ H → coloring s = color
+
+/-- For all finite k, does ω₁² → (ω₁·ω, 3, …, 3)_{k+1}²?
+
+    This asks whether the ordinal ω₁² has the partition property that every (k+1)-coloring
+    of pairs admits either a monochromatic copy of ω₁·ω in the first color, or a
+    3-element monochromatic set in one of the other colors.
+
+    Baumgartner proved a related result under Martin's axiom. -/
 @[category research open, AMS 03]
-theorem ramsey_omega_one :
-    True := by
+theorem ramsey_omega_one_squared_multicolor :
+    ∀ (k : ℕ),
+    ∀ (omega_one_sq : Type u) [Infinite omega_one_sq] (omega_one_omega : Type u),
+      PartitionRelation omega_one_sq 2 (Fin (k + 1))
+        (fun i : Fin (k + 1) => if i.val = 0 then omega_one_omega else ULift.{u} (Fin 3)) := by
   sorry
 
 end Erdos1171
