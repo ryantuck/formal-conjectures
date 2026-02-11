@@ -21,6 +21,11 @@ import FormalConjectures.Util.ProblemImports
 
 Density of coprime pairs involving floor functions.
 
+This problem asks about the natural density of integers n such that n and ⌊n^α⌋
+are coprime, where α is a non-integer positive real number. The result has been
+PROVED by Bergelson and Richter: the density equals 6/π² (the probability that
+two random integers are coprime).
+
 PROVED
 
 *Reference:* [erdosproblems.com/1149](https://www.erdosproblems.com/1149)
@@ -33,7 +38,9 @@ open scoped Topology Real
 namespace Erdos1149
 
 /-- For any non-integer positive real α, the natural density of integers n ≥ 1
-    such that gcd(n, ⌊n^α⌋) = 1 equals 6/π². Proved by Bergelson and Richter. -/
+    such that gcd(n, ⌊n^α⌋) = 1 equals 6/π². This remarkable result shows that
+    the coprimality condition for (n, ⌊n^α⌋) has the same density as random coprime pairs.
+    Proved by Bergelson and Richter. -/
 @[category research solved, AMS 11]
 theorem coprime_floor_density :
     ∀ (α : ℝ), α > 0 → (∀ (m : ℤ), α ≠ m) →

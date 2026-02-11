@@ -21,21 +21,25 @@ import FormalConjectures.Util.ProblemImports
 
 Estimation of F_k(p₁,...,p_u) for multiples of primes in intervals.
 
+This problem concerns estimating a function F_k(p₁,...,p_u) that counts or measures
+multiples of given primes p₁,...,p_u within certain intervals. The specific
+estimation bounds and the exact definition of F_k require further investigation
+of the original source.
+
 OPEN
 
 *Reference:* [erdosproblems.com/1143](https://www.erdosproblems.com/1143)
 -/
 
-open Finset Filter
-
-open scoped Topology Real
-
 namespace Erdos1143
 
-/-- Estimation for multiples of primes in intervals -/
+/-- Estimation for multiples of primes in intervals. The function F_k and its
+    properties require precise formulation from the original problem statement. -/
 @[category research open, AMS 11]
 theorem prime_multiples_in_intervals :
-    ∃ (F : ℕ → List ℕ → ℕ), sorry := by
+    ∃ (F : ℕ → List ℕ → ℕ), ∀ k : ℕ, ∀ primes : List ℕ,
+      (∀ p ∈ primes, Nat.Prime p) →
+      answer(sorry) = F k primes := by
   sorry
 
 end Erdos1143

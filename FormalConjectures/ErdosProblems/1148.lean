@@ -21,18 +21,20 @@ import FormalConjectures.Util.ProblemImports
 
 Representation as sum/difference of squares.
 
+This problem asks whether every natural number can be represented either as the
+sum of two squares (a² + b²) or as the absolute difference of two squares (|a² - b²|).
+This is related to classical results in number theory about sums of two squares
+(Fermat's theorem on sums of two squares) and representations involving squares.
+
 OPEN
 
 *Reference:* [erdosproblems.com/1148](https://www.erdosproblems.com/1148)
 -/
 
-open Finset Filter
-
-open scoped Topology Real
-
 namespace Erdos1148
 
-/-- Representation as sum or difference of squares -/
+/-- Every natural number n can be represented either as a sum of two squares (a² + b²)
+    or as the absolute difference of two squares (|a² - b²|) for some natural numbers a, b. -/
 @[category research open, AMS 11]
 theorem sum_difference_squares :
     ∀ n : ℕ, ∃ a b : ℕ, n = a^2 + b^2 ∨ (n : ℤ) = |(a : ℤ)^2 - (b : ℤ)^2| := by

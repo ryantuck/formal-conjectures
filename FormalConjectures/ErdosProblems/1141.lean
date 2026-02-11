@@ -21,18 +21,21 @@ import FormalConjectures.Util.ProblemImports
 
 Infinitely many n with property that n-k² is prime for coprime k with k²<n.
 
+This problem asks whether there exist infinitely many natural numbers n such that
+for every k coprime to n with k² < n, the difference n - k² is prime.
+
+This is related to Problem 1140 but requires coprimality between k and n,
+which significantly changes the problem's character.
+
 OPEN
 
 *Reference:* [erdosproblems.com/1141](https://www.erdosproblems.com/1141)
 -/
 
-open Finset Filter
-
-open scoped Topology Real
-
 namespace Erdos1141
 
-/-- Infinitely many n such that n-k² is prime for all coprime k < √n -/
+/-- There are infinitely many natural numbers n such that n-k² is prime for all k
+    coprime to n with k² < n. This is an open problem. -/
 @[category research open, AMS 11]
 theorem infinitely_many_n_prime_shift :
     Set.Infinite {n : ℕ | ∀ k : ℕ, k^2 < n → Nat.Coprime k n →

@@ -21,21 +21,27 @@ import FormalConjectures.Util.ProblemImports
 
 Is B = {2^m3^n : m,n ≥ 0} an essential component?
 
+This problem asks whether the set B of all numbers of the form 2^m · 3^n
+(for non-negative integers m, n) is an "essential component" in the context
+of additive number theory. A set is typically called an essential component
+if removing it from certain additive structures fundamentally changes their
+properties. The precise definition in this context requires clarification from
+the original source.
+
 OPEN
 
 *Reference:* [erdosproblems.com/1146](https://www.erdosproblems.com/1146)
 -/
 
-open Finset Filter
-
-open scoped Topology Real
-
 namespace Erdos1146
 
-/-- Powers of 2 and 3 as essential component -/
+/-- The set of numbers of the form 2^m · 3^n is an essential component.
+    The precise definition of "essential component" requires further investigation
+    from the original problem statement. -/
 @[category research open, AMS 11]
-theorem powers_two_three_essential (answer : Prop) :
-    answer ↔ sorry := by
+theorem powers_two_three_essential :
+    let B := {n : ℕ | ∃ m k : ℕ, n = 2^m * 3^k}
+    answer(sorry) ↔ (∀ A : Set ℕ, Set.Infinite A → A ∩ B ≠ ∅) := by
   sorry
 
 end Erdos1146

@@ -21,18 +21,20 @@ import FormalConjectures.Util.ProblemImports
 
 Primes of the form n - 2^k.
 
+This problem asks whether there are infinitely many primes that can be expressed
+as n - 2^k for some natural numbers n and k. This is related to questions about
+the distribution of primes in arithmetic progressions and sequences involving
+powers of 2.
+
 OPEN
 
 *Reference:* [erdosproblems.com/1142](https://www.erdosproblems.com/1142)
 -/
 
-open Finset Filter
-
-open scoped Topology Real
-
 namespace Erdos1142
 
-/-- Infinitely many primes of form n - 2^k -/
+/-- There exist infinitely many primes of the form n - 2^k where n and k are
+    natural numbers. -/
 @[category research open, AMS 11]
 theorem primes_form_n_minus_power_of_two :
     Set.Infinite {p : ℕ | p.Prime ∧ ∃ n k : ℕ, p = n - 2^k} := by

@@ -37,18 +37,18 @@ These eight values are likely the complete set, with at most one possible except
 [Va99, 1.5]
 -/
 
-open scoped Topology Real
-
 namespace Erdos1140
 
 /-- Property: n - 2x² is prime for all x with 2x² < n -/
 def satisfiesCondition (n : ℕ) : Prop :=
   ∀ x : ℕ, 2 * x^2 < n → (n - 2 * x^2).Prime
 
-/-- Main result: There are only finitely many n satisfying the condition (DISPROVED) -/
+/-- Main result: There are only finitely many n satisfying the condition.
+    The question "Do there exist infinitely many such n?" has been answered: No.
+    Equivalently, the set of such n is finite (disproved by Epure and Gica). -/
 @[category research solved, AMS 11]
 theorem erdos_1140 :
-    answer(sorry) ↔ {n : ℕ | satisfiesCondition n}.Finite := by
+    answer(True) ↔ {n : ℕ | satisfiesCondition n}.Finite := by
   sorry
 
 /-- The known solutions -/
