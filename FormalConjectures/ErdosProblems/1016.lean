@@ -43,7 +43,7 @@ noncomputable def h (n : ℕ) : ℕ := sorry
 /--
 English version:  -/
 @[category research open, AMS 05]
-theorem pancyclic_threshold (answer(sorry) : ℕ → ℝ) :
+theorem pancyclic_threshold : answer(sorry) ↔
     ∃ (f : ℕ → ℝ),
       Filter.Tendsto (fun n => (h n : ℝ) / f n) Filter.atTop (nhds 1) := by
   sorry

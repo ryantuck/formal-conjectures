@@ -36,6 +36,11 @@ namespace Erdos1012
 
 variable {α : Type*}
 
+/-- A cycle in a graph (simplified formulation) -/
+def IsCycle (G : SimpleGraph α) (C : List α) : Prop :=
+  C.length ≥ 3 ∧ C.Nodup ∧
+  (∀ i (hi : i < C.length), G.Adj (C.get ⟨i, hi⟩) (C.get ⟨(i + 1) % C.length, Nat.mod_lt _ (Nat.zero_lt_of_lt hi)⟩))
+
 /--
 English version:  Minimum n for cycle existence threshold -/
 noncomputable def f (k : ℕ) : ℕ := sorry

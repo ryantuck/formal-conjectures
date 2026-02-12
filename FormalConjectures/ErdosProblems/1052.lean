@@ -33,6 +33,12 @@ def properUnitaryDivisors (n : ℕ) : Finset ℕ :=
   {d ∈ Finset.Ico 1 n | d ∣ n ∧ d.Coprime (n / d)}
 
 /--
+English version: A number $n$ is unitary perfect if it is the sum of its
+proper unitary divisors. -/
+def IsUnitaryPerfect (n : ℕ) : Prop :=
+  n = (properUnitaryDivisors n).sum id
+
+/--
 English version:  -/
 @[category research open, AMS 11]
 theorem erdos_1052 :

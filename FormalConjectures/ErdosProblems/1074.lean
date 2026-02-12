@@ -14,9 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
-namespace Erdos1074
-
 import FormalConjectures.Util.ProblemImports
+
+namespace Erdos1074
 
 /-!
 # Erdős Problem 1074
@@ -34,9 +34,14 @@ exists a prime $p\not\equiv 1\pmod{m}$ such that $m! + 1 \equiv 0\pmod{p}$. -/
 abbrev Nat.EHSNumbers : Set ℕ := {m | 1 ≤ m ∧ ∃ p, p.Prime ∧ ¬p ≡ 1 [MOD m] ∧ p ∣ m ! + 1}
 
 /--
+English version: The Pillai primes are those primes $p$ such that there exists an $m$ with
+$p\not\equiv 1\pmod{m}$ such that $m! + 1 \equiv 0\pmod{p}$. -/
+def PillaiPrimes : Set ℕ := {p | p.Prime ∧ ∃ m, 1 ≤ m ∧ ¬p ≡ 1 [MOD m] ∧ p ∣ m ! + 1}
+
+/--
 English version:  -/
 @[category research open, AMS 11]
-theorem erdos_1074.part8_i_i : answer(sorry) ↔ ∃ c, EHSNumbers.HasDensity c := by
+theorem erdos_1074.part8_i_i : answer(sorry) ↔ ∃ c, Set.HasDensity Nat.EHSNumbers c := by
   sorry
 
 /--
@@ -45,7 +50,7 @@ that $m! + 1 \equiv 0\pmod{p}$. What is
 $$
   \lim\frac{|S\cap[1, x]|}{x}?
 $$ -/@[category research open, AMS 11]
-theorem erdos_1074.part_i_ii : EHSNumbers.HasDensity answer(sorry) := by
+theorem erdos_1074.part_i_ii : Set.HasDensity Nat.EHSNumbers answer(sorry) := by
   sorry
 
 /--
@@ -55,7 +60,7 @@ $$
   \lim\frac{|P\cap[1, x]|}{\pi(x)}
 $$
 exist? -/@[category research open, AMS 11]
-theorem erdos_1074.part_ii_i : answer(sorry) ↔ ∃ c, PillaiPrimes.HasDensity c {p | p.Prime} := by
+theorem erdos_1074.part_ii_i : answer(sorry) ↔ ∃ c, Set.HasDensity PillaiPrimes c {p | p.Prime} := by
   sorry
 
 /--
@@ -65,18 +70,18 @@ $$
   \lim\frac{|P\cap[1, x]|}{\pi(x)}?
 $$ -/@[category research open, AMS 11]
 theorem erdos_1074.parts_ii_ii :
-    PillaiPrimes.HasDensity answer(sorry) {p | p.Prime} := by
+    Set.HasDensity PillaiPrimes answer(sorry) {p | p.Prime} := by
   sorry
 
 /--
 English version:  Pillai [Pi30] raised the question of whether there exist any primes in $P$. This was answered
 by Chowla, who noted that, for example, $14! + 1 \equiv 18! + 1 \equiv 0 \pmod{23}$. -/@[category test, AMS 11]
 theorem erdos_1074.variants.mem_pillaiPrimes : 23 ∈ PillaiPrimes := by
-  norm_num
-  exact ⟨14, by decide⟩
+  simp [PillaiPrimes]
+  refine ⟨by norm_num, 14, by norm_num, by decide, by norm_num⟩
 
 /-- English version: Erdős, Hardy, and Subbarao proved that $S$ is infinite. -/@[category research solved, AMS 11]
-theorem erdos_1074.variants.EHSNumbers_infinite : EHSNumbers.Infinite := by
+theorem erdos_1074.variants.EHSNumbers_infinite : Nat.EHSNumbers.Infinite := by
   sorry
 
 /-- English version: Erdős, Hardy, and Subbarao proved that $P$ is infinite. -/@[category research solved, AMS 11]
@@ -85,18 +90,18 @@ theorem erdos_1074.variants.PillaiPrimes_infinite : PillaiPrimes.Infinite := by
 
 /-- English version: The sequence $S$ begins $8, 9, 13, 14, 15, 16, 17, ...$ -/@[category test, AMS 11]
 theorem erdos_1074.variants.EHSNumbers_init :
-    nth EHSNumbers '' (Set.Icc 0 6) = {8, 9, 13, 14, 15, 16, 17} := by
+    Nat.nth Nat.EHSNumbers '' (Set.Icc 0 6) = {8, 9, 13, 14, 15, 16, 17} := by
   sorry
 
 /-- English version: The sequence $P$ begins $23, 29, 59, 61, 67, 71, ...$ -/@[category test, AMS 11]
 theorem erdos_1074.variants.PillaiPrimes_init :
-    nth PillaiPrimes '' (Set.Icc 0 5) = {23, 29, 59, 61, 67, 71} := by
+    Nat.nth PillaiPrimes '' (Set.Icc 0 5) = {23, 29, 59, 61, 67, 71} := by
   sorry
 
 /--
 English version:  Regarding the first question, Hardy and Subbarao computed all EHS numbers up to $2^{10}$, and
 write "...if this trend conditions we expect [the limit] to be around 0.5, if it exists." -/@[category research open, AMS 11]
-theorem erdos_1074.variants.EHSNumbers_one_half : EHSNumbers.HasDensity (1 / 2) := by
+theorem erdos_1074.variants.EHSNumbers_one_half : Set.HasDensity Nat.EHSNumbers (1 / 2) := by
   sorry
 
 end Erdos1074

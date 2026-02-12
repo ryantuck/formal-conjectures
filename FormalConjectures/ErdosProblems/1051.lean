@@ -27,6 +27,12 @@ STATUS: SOLVED
 namespace Erdos1051
 
 /--
+English version: The series $\sum_{n=0}^\infty \frac{1}{a_n a_{n+1}}$.
+-/
+noncomputable def ErdosSeries (a : ℕ → ℤ) : ℝ :=
+  ∑' n, 1 / ((a n : ℝ) * (a (n + 1) : ℝ))
+
+/--
 English version: A sequence of integers `a` satisfies the growth condition if
 $\liminf a_n^{\frac{1}{2^n}} > 1$.
 -/

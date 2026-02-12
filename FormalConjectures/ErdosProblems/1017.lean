@@ -37,15 +37,28 @@ namespace Erdos1017
 variable {α : Type*}
 
 /--
-English version:  Minimum clique partition size -/
-noncomputable def f (n k : ℕ) : ℕ := sorry
+English version: The minimum number of complete graphs that partition the edges of `G`. -/
+noncomputable def cliquePartitionSize (G : SimpleGraph α) : ℕ∞ :=
+  open scoped Classical in
+  iInf (fun (P : Set (Set α)) =>
+    if (∀ s ∈ P, G.IsClique s) ∧ (∀ e ∈ G.edgeSet, ∃! s ∈ P, ∀ x ∈ e, x ∈ s) then
+      Set.encard P
+    else ⊤)
+
+/--
+English version: The maximum clique partition size over all graphs with `n` vertices and `k` edges. -/
+noncomputable def f (n k : ℕ) : ℕ∞ :=
+  open scoped Classical in
+  iSup (fun (G : SimpleGraph (Fin n)) =>
+    if G.edgeFinset.card = k then cliquePartitionSize G else 0)
 
 /--
 English version:  -/
 @[category research open, AMS 05]
-theorem clique_partition_estimate (answer(sorry) : ℕ → ℕ → ℝ) :
-    ∀ k : ℕ,
-      Filter.Tendsto (fun (n : ℕ) => (f n k : ℝ) / answer(sorry) n k) Filter.atTop (nhds 1) := by
+theorem clique_partition_estimate : answer(sorry) ↔
+    ∃ (g : ℕ → ℕ → ℝ),
+      ∀ k_func : ℕ → ℕ, (∀ n, k_func n > n^2 / 4) →
+        Filter.Tendsto (fun (n : ℕ) => (f n (k_func n)).toNat / g n (k_func n)) Filter.atTop (nhds 1) := by
   sorry
 
 end Erdos1017
