@@ -1,3 +1,1 @@
-✔ [7168/7169] Built FormalConjectures.Wikipedia.CollatzConjecture
-✔ [7169/7169] Built FormalConjectures.ErdosProblems.«1135»
 Build completed successfully.

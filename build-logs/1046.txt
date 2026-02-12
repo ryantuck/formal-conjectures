@@ -1,5 +1,5 @@
 ⚠ [7168/7168] Built FormalConjectures.ErdosProblems.«1046»
-warning: FormalConjectures/ErdosProblems/1046.lean:39:25: `Complex.abs` has been deprecated: use the norm instead
-warning: FormalConjectures/ErdosProblems/1046.lean:40:30: `Complex.abs` has been deprecated: use the norm instead
-warning: FormalConjectures/ErdosProblems/1046.lean:41:6: `Complex.abs` has been deprecated: use the norm instead
+warning: FormalConjectures/ErdosProblems/1046.lean:40:25: `Complex.abs` has been deprecated: use the norm instead
+warning: FormalConjectures/ErdosProblems/1046.lean:41:30: `Complex.abs` has been deprecated: use the norm instead
+warning: FormalConjectures/ErdosProblems/1046.lean:42:6: `Complex.abs` has been deprecated: use the norm instead
 Build completed successfully.

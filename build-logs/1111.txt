@@ -1,2 +1,1 @@
-✔ [7168/7168] Built FormalConjectures.ErdosProblems.«1111»
 Build completed successfully.
