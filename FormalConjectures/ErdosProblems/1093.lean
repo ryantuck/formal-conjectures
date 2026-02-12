@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,6 +19,11 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1093
 
+Questions about the deficiency of binomial coefficients $\binom{n}{k}$.
+The deficiency is the number of $i < k$ such that $n-i$ is $k$-smooth.
+
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1093](https://www.erdosproblems.com/1093)
 -/
 
@@ -27,26 +32,26 @@ namespace Erdos1093
 open Finset Nat
 
 /--
-If defined, the deficiency is the count of $0 \le i < k$ such that $n - i$ is $k$-smooth.
+English version: If defined, the deficiency is the count of $0 \le i < k$ such that $n - i$ is $k$-smooth.
 -/
 noncomputable def deficiency (n k : ℕ) : ℕ :=
   #{i ∈ range k | n - i ∈ smoothNumbers k}
 
 /--
-Are there infinitely many binomial coefficients with deficiency 1?
+English version: Are there infinitely many binomial coefficients with deficiency 1?
 -/
-@[category research open, AMS 5]
+@[category research open, AMS 05]
 theorem erdos_1093.parts.i :
     answer(sorry) ↔ {x : ℕ × ℕ | let k := x.1; let n := x.2; 2 * k ≤ n ∧ deficiency n k = 1 ∧
       ∀ p, p.Prime → (p ∣ choose n k) → k < p}.Infinite := by
   sorry
 
 /--
-Are there only finitely many binomial coefficients with deficiency > 1?
+English version: Are there only finitely many binomial coefficients with deficiency > 1?
 -/
-@[category research open, AMS 5]
+@[category research open, AMS 05]
 theorem erdos_1093.parts.ii :
-    {x : ℕ × ℕ | let k := x.1; let n := x.2; 2 * k ≤ n ∧ deficiency n k > 1 ∧
+    answer(sorry) ↔ {x : ℕ × ℕ | let k := x.1; let n := x.2; 2 * k ≤ n ∧ deficiency n k > 1 ∧
       ∀ p, p.Prime → (p ∣ choose n k) → k < p}.Finite := by
   sorry
 

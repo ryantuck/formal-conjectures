@@ -32,13 +32,20 @@ open scoped Topology Real
 
 namespace Erdos1090
 
-/-- Monochromatic k-point lines in 2-colored planar sets -/
+/-- A set of points in a Euclidean space is a line if it is an affine subspace of dimension 1. -/
+def IsLine {V : Type*} [AddCommGroup V] [Module ℝ V] (L : Set V) : Prop :=
+  ∃ (v : V) (w : V), w ≠ 0 ∧ L = {u | ∃ (t : ℝ), u = v + t • w}
+
+/-- English version: Let k ≥ 3. Does there exist a finite set A ⊆ ℝ² such that, in any 2-colouring of A, there exists a line which contains at least k points from A, and all the points of A on the line have the same colour? -/
 @[category research solved, AMS 05]
 theorem monochromatic_lines (k : ℕ) (hk : 3 ≤ k) :
+    answer(True) ↔
     ∃ (A : Finset (EuclideanSpace ℝ (Fin 2))),
       ∀ (f : EuclideanSpace ℝ (Fin 2) → Fin 2),
         ∃ (L : Set (EuclideanSpace ℝ (Fin 2))) (c : Fin 2),
-          sorry := by
+          IsLine L ∧ 
+          letI := Classical.propDecidable
+          k ≤ (A.filter (λ x => x ∈ L ∧ f x = c)).card := by
   sorry
 
 end Erdos1090

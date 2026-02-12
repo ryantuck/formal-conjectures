@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,13 +18,18 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1097
 
+Conjecture: for any finite set of integers $A$ with $|A| = n$, the number of distinct
+common differences in three-term arithmetic progressions is $O(n^{3/2})$.
+
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1097](https://www.erdosproblems.com/1097)
 -/
 
 namespace Erdos1097
 
 /--
-Given a finite set of integers `A` (modelled as a `Finset ℤ`), the set
+English version: Given a finite set of integers `A` (modelled as a `Finset ℤ`), the set
 `CommonDifferencesThreeTermAP A` consists of all integers `d` such that there
 is a non-trivial three-term arithmetic progression `a, b, c ∈ A` with
 `b - a = d` and `c - b = d`.
@@ -33,7 +38,7 @@ def CommonDifferencesThreeTermAP (A : Finset ℤ) : Set ℤ :=
   {d : ℤ | d ≠ 0 ∧ ∃ a ∈ A, ∃ b ∈ A, ∃ c ∈ A, b - a = d ∧ c - b = d}
 
 /--
-The main conjecture: for any finite set of integers $A$ with $|A| = n$, the number of distinct
+English version: for any finite set of integers $A$ with $|A| = n$, the number of distinct
 common differences in three-term arithmetic progressions is $O(n^{3/2})$.
 -/
 @[category research open, AMS 11]
@@ -42,7 +47,7 @@ theorem erdos_1097 : answer(sorry) ↔ ∃ C > (0 : ℝ), ∀ (A : Finset ℤ),
   sorry
 
 /--
-A weaker bound has been proven: there are always at most $n^2$ such values of $d$.
+English version: A weaker bound has been proven: there are always at most $n^2$ such values of $d$.
 -/
 @[category undergraduate, AMS 11]
 theorem erdos_1097.variants.weaker :
@@ -50,7 +55,7 @@ theorem erdos_1097.variants.weaker :
   sorry
 
 /--
-A trivial lower bound: there exist sets $A$ with $|A| = n$ that contain at least $\Omega(n)$
+English version: A trivial lower bound: there exist sets $A$ with $|A| = n$ that contain at least $\Omega(n)$
 distinct common differences of three-term arithmetic progressions.
 -/
 @[category undergraduate, AMS 11]

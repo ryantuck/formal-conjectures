@@ -32,14 +32,15 @@ open scoped Topology Real
 
 namespace Erdos1091
 
-/-- K₄-free graphs with chromatic number 4 contain odd cycles with diagonals -/
+/-- English version: Let G be a K₄-free graph with chromatic number 4. Must G contain an odd cycle with at least two diagonals? -/
 @[category research open, AMS 05]
-theorem odd_cycles_with_diagonals {n : ℕ} (answer : Prop) :
-    answer ↔ ∀ (G : SimpleGraph (Fin n)),
+theorem odd_cycles_with_diagonals :
+    answer(sorry) ↔ ∀ (V : Type*) [Fintype V] (G : SimpleGraph V),
       G.chromaticNumber = 4 →
-      (∀ (K4 : Finset (Fin n)), K4.card = 4 →
-        ∃ u ∈ K4, ∃ v ∈ K4, u ≠ v ∧ ¬G.Adj u v) →
-      ∃ (C : List (Fin n)), C.length ≥ 5 ∧ Odd C.length ∧ sorry := by
+      G.CliqueFree 4 →
+      ∃ (v : V) (w : G.Walk v v), w.IsCycle ∧ Odd w.length ∧
+        letI := Classical.propDecidable
+        2 ≤ (Finset.univ.filter (λ e : Sym2 V => ¬(e ∈ w.edges) ∧ ∀ u ∈ e, u ∈ w.support ∧ e ∈ G.edgeSet)).card := by
   sorry
 
 end Erdos1091

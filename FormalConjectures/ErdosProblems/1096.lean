@@ -32,11 +32,12 @@ open scoped Topology Real
 
 namespace Erdos1096
 
-/-- Gap distribution in q-adic expansions -/
+/-- English version: Let 1 < q < 1 + ε and consider the set of numbers of the shape Σ_{i ∈ S} q^i for all finite S, ordered by size as 0 = x₁ < x₂ < .... Is it true that, provided ε > 0 is sufficiently small, x_{k+1} - x_k → 0? -/
 @[category research open, AMS 11]
-theorem qadic_gap_distribution (q : ℝ) (hq : 1 < q) :
-    ∃ (ε : ℝ), 0 < ε ∧ q < 1 + ε →
-      sorry := by
+theorem qadic_gap_distribution :
+    answer(sorry) ↔ ∃ ε > 0, ∀ q, 1 < q ∧ q < 1 + ε →
+      let X := {x | ∃ (S : Finset ℕ), x = ∑ i ∈ S, q^i}
+      ∀ (δ : ℝ), δ > 0 → ∃ (M : ℝ), ∀ x ∈ X, M < x → ∃ y ∈ X, x < y ∧ y - x < δ := by
   sorry
 
 end Erdos1096

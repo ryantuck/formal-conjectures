@@ -34,13 +34,14 @@ namespace Erdos1098
 
 variable {G : Type*} [Group G]
 
-/-- Non-commuting graph has bounded clique size iff center has finite index -/
+/-- English version: Let G be a group and Γ be the non-commuting graph. If Γ contains no infinite complete subgraph, then is there a finite bound on the size of complete subgraphs of Γ? -/
 @[category research solved, AMS 20]
-theorem non_commuting_graph_cliques [Fintype G] :
-    (∃ (n : ℕ), ∀ (S : Finset G),
+theorem non_commuting_graph_cliques (G : Type*) [Group G] :
+    answer(True) ↔
+    (¬ ∃ (f : ℕ → G), ∀ i j, i ≠ j → f i * f j ≠ f j * f i) →
+    ∃ (n : ℕ), ∀ (S : Finset G),
       (∀ x ∈ S, ∀ y ∈ S, x ≠ y → x * y ≠ y * x) →
-      S.card ≤ n) ↔
-    ∃ (n : ℕ), (Set.center G).ncard * n = Fintype.card G := by
+      S.card ≤ n := by
   sorry
 
 end Erdos1098
