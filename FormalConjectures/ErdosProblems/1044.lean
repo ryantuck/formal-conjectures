@@ -23,6 +23,8 @@ Level set boundary length.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1044](https://www.erdosproblems.com/1044)
 -/
 
@@ -32,10 +34,12 @@ open scoped Topology Real
 
 namespace Erdos1044
 
-/-- Maximum boundary length of level set components -/
+/--
+English version:  Maximum boundary length of level set components -/
 noncomputable def Λ (f : Polynomial ℂ) : ℝ := sorry
 
-/-- Infimum of boundary length is 2 -/
+/--
+English version:  -/
 @[category research solved, AMS 30]
 theorem level_set_boundary_length :
     sInf {y | ∃ (f : Polynomial ℂ), f.Monic ∧

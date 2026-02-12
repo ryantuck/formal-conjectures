@@ -23,6 +23,8 @@ Minimal points with distinct distances.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1088](https://www.erdosproblems.com/1088)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1088
 
-/-- Minimal point sets with distinct distances -/
-@[category research open, AMS 52]
+/-- English version: Minimal point sets with distinct distances -/@[category research open, AMS 52]
 theorem minimal_distinct_distances (n : ℕ) :
     ∃ (m : ℕ), ∀ (S : Finset (EuclideanSpace ℝ (Fin 2))),
       S.card = m →

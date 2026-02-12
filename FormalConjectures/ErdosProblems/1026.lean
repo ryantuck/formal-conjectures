@@ -23,6 +23,8 @@ Maximum monotonic subsequences.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1026](https://www.erdosproblems.com/1026)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1026
 
-/-- Maximum constant for monotonic subsequence sum -/
-@[category research solved, AMS 05]
+/-- English version: Maximum constant for monotonic subsequence sum -/@[category research solved, AMS 05]
 theorem monotonic_subsequence_constant :
     ∃ (c : ℝ), 0 < c ∧
       ∀ (seq : ℕ → ℝ) (n : ℕ),

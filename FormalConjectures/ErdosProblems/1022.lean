@@ -23,6 +23,8 @@ Property B of hypergraphs.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1022](https://www.erdosproblems.com/1022)
 -/
 
@@ -34,8 +36,7 @@ namespace Erdos1022
 
 variable {α : Type*}
 
-/-- Hypergraphs of size ≥t have chromatic number 2 -/
-@[category research solved, AMS 05]
+/-- English version: Hypergraphs of size ≥t have chromatic number 2 -/@[category research solved, AMS 05]
 theorem property_b_hypergraphs (t : ℕ) :
     ∃ (m : ℕ), ∀ (H : Finset (Finset α)) [Fintype α],
       (∀ e ∈ H, e.card = t) →

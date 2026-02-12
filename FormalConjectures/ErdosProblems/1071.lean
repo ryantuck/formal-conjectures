@@ -18,6 +18,8 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1071
 
+STATUS: SOLVED
+
 *References:*
 * [erdosproblems.com/1071](https://www.erdosproblems.com/1071)
 * [Da85] Danzer, L., _Some combinatorial and metric problems in geometry_.
@@ -28,12 +30,13 @@ open Set Metric EuclideanGeometry Order
 
 namespace Erdos1071
 
-/-- Two segments are disjoint if they only intersect at their endpoints (if at all). -/
+/--
+English version:  Two segments are disjoint if they only intersect at their endpoints (if at all). -/
 def SegmentsDisjoint (seg1 seg2 : ℝ² × ℝ²) : Prop :=
   segment ℝ seg1.1 seg1.2 ∩ segment ℝ seg2.1 seg2.2 ⊆ {seg1.1, seg1.2, seg2.1, seg2.2}
 
-/-- Can a finite set of disjoint unit segments in a unit square be maximal?
-Solved affirmatively by [Da85], who gave an explicit construction. -/
+/--
+English version:  -/
 @[category research solved, AMS 52]
 theorem erdos_1071a :
     answer(True) ↔ ∃ S : Finset (ℝ² × ℝ²),
@@ -48,8 +51,7 @@ theorem erdos_1071a :
         T.toSet.Pairwise SegmentsDisjoint) S := by
   sorry
 
-/-- Is there a region $R$ with a maximal set of disjoint unit line segments that is countably infinite? -/
-@[category research open, AMS 52]
+/-- English version: Is there a region $R$ with a maximal set of disjoint unit line segments that is countably infinite? -/@[category research open, AMS 52]
 theorem erdos_1071b :
     answer(sorry) ↔ ∃ (R : Set ℝ²) (S : Set (ℝ² × ℝ²)),
       S.Countable ∧ S.Infinite ∧

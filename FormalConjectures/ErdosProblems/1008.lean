@@ -23,6 +23,8 @@ C₄-free subgraph conjecture.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1008](https://www.erdosproblems.com/1008)
 -/
 
@@ -34,8 +36,7 @@ namespace Erdos1008
 
 variable {α : Type*}
 
-/-- Every graph contains C₄-free subgraph with many edges -/
-@[category research solved, AMS 05]
+/-- English version: Every graph contains C₄-free subgraph with many edges -/@[category research solved, AMS 05]
 theorem c4_free_subgraph (m : ℕ) :
     ∀ (G : SimpleGraph α) [Fintype α] [DecidableRel G.Adj],
       G.edgeFinset.card = m →

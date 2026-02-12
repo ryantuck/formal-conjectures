@@ -23,6 +23,8 @@ Dimension of a graph with minimum edges.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1007](https://www.erdosproblems.com/1007)
 -/
 
@@ -34,10 +36,12 @@ namespace Erdos1007
 
 variable {α : Type*}
 
-/-- Graph dimension -/
+/--
+English version:  Graph dimension -/
 noncomputable def dimension (G : SimpleGraph α) : ℕ := sorry
 
-/-- Minimum edges for dimension 4 is 9 -/
+/--
+English version:  -/
 @[category research solved, AMS 05]
 theorem min_edges_dimension_four :
     (∀ (G : SimpleGraph α) [Fintype α] [DecidableRel G.Adj],

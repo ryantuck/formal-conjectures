@@ -23,6 +23,8 @@ Independent sets in function pairs.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1025](https://www.erdosproblems.com/1025)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1025
 
-/-- Minimum independent set size for function pairs -/
-@[category research solved, AMS 05]
+/-- English version: Minimum independent set size for function pairs -/@[category research solved, AMS 05]
 theorem function_independent_set (n : ℕ) :
     ∀ (f : Fin n → Fin n → Fin n),
       ∃ (S : Finset (Fin n × Fin n)),

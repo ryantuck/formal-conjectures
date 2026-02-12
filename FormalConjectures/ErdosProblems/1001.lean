@@ -23,6 +23,8 @@ Limit of Diophantine approximation set measure.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1001](https://www.erdosproblems.com/1001)
 -/
 
@@ -32,10 +34,12 @@ open scoped Topology Real
 
 namespace Erdos1001
 
-/-- Measure of Diophantine approximation set -/
+/--
+English version:  Measure of Diophantine approximation set -/
 noncomputable def S (N : ℕ) (A c : ℝ) : ℝ := sorry
 
-/-- Limit exists for Diophantine set measure -/
+/--
+English version:  -/
 @[category research solved, AMS 11]
 theorem diophantine_set_limit (A c : ℝ) :
     ∃ (f : ℝ → ℝ → ℝ),

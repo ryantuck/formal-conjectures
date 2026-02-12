@@ -23,6 +23,8 @@ Triangle area determination in point sets.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1086](https://www.erdosproblems.com/1086)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1086
 
-/-- Triangle areas in point sets -/
-@[category research open, AMS 52]
+/-- English version: Triangle areas in point sets -/@[category research open, AMS 52]
 theorem triangle_area_determination (n : ℕ) :
     ∀ (S : Finset (EuclideanSpace ℝ (Fin 2))),
       S.card = n →

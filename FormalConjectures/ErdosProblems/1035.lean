@@ -23,6 +23,8 @@ Hypercube subgraph.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1035](https://www.erdosproblems.com/1035)
 -/
 
@@ -34,10 +36,8 @@ namespace Erdos1035
 
 variable {α : Type*}
 
-/-- Dense graphs contain hypercube subgraph -/
-@[category research open, AMS 05]
-theorem hypercube_subgraph (n : ℕ) (answer : Prop) :
-    answer ↔ ∃ (c : ℝ), 0 < c ∧ c < 1 ∧
+/-- English version: Dense graphs contain hypercube subgraph -/@[category research open, AMS 05]
+theorem hypercube_subgraph (n : ℕ) : answer(sorry) ↔ ∃ (c : ℝ), 0 < c ∧ c < 1 ∧
       ∀ (G : SimpleGraph (Fin (2^n))) [DecidableRel G.Adj],
         (∀ v : Fin (2^n), (G.degree v : ℝ) > (1 - c) * (2^n : ℝ)) →
         ∃ (f : Fin (2^n) → Fin (2^n)), Function.Injective f ∧

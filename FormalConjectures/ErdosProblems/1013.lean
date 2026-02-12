@@ -23,6 +23,8 @@ Asymptotic for triangle-free chromatic graphs.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1013](https://www.erdosproblems.com/1013)
 -/
 
@@ -32,13 +34,14 @@ open scoped Topology Real
 
 namespace Erdos1013
 
-/-- Minimum n for triangle-free graph with chromatic number k -/
+/--
+English version:  Minimum n for triangle-free graph with chromatic number k -/
 noncomputable def h_3 (k : ℕ) : ℕ := sorry
 
-/-- Asymptotic formula and ratio limit -/
+/--
+English version:  -/
 @[category research open, AMS 05]
-theorem triangle_free_chromatic_asymptotic (answer : Prop) :
-    answer ↔ (∃ (f : ℕ → ℝ),
+theorem triangle_free_chromatic_asymptotic : answer(sorry) ↔ (∃ (f : ℕ → ℝ),
       Tendsto (fun k => (h_3 k : ℝ) / f k) atTop (nhds 1)) ∧
       Tendsto (fun k => (h_3 (k + 1) : ℝ) / h_3 k) atTop (nhds 1) := by
   sorry

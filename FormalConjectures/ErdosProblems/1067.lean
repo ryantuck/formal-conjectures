@@ -19,6 +19,8 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1067
 
+STATUS: SOLVED
+
 *References:*
 - [erdosproblems.com/1067](https://www.erdosproblems.com/1067)
 - [BoPi24] N. Bowler and M. Pitz, A note on uncountably chromatic graphs. arXiv:2402.05984 (2024).
@@ -36,7 +38,7 @@ open Cardinal SimpleGraph
 namespace Erdos1067
 
 /--
-A graph is infinitely edge-connected if to disconnect the graph requires deleting
+English version: A graph is infinitely edge-connected if to disconnect the graph requires deleting
 infinitely many edges. In other words, removing any finite set of edges leaves
 the graph connected.
 -/
@@ -44,24 +46,17 @@ def InfinitelyEdgeConnected {V : Type*} (G : SimpleGraph V) : Prop :=
   ∀ ⦃s : Set (Sym2 V)⦄, s.Finite → (G.deleteEdges s).Connected
 
 /--
-Does every graph with chromatic number $\aleph_1$ contain an infinitely connected subgraph with
-chromatic number $\aleph_1$?
-
-Komjáth [Ko13] proved that it is consistent that the answer is no. This was improved by
-Soukup [So15], who constructed a counterexample using no extra set-theoretical assumptions. A
-simpler elementary example was given by Bowler and Pitz [BoPi24].
--/
-@[category research solved, AMS 5]
+English version: -/
+@[category research solved, AMS 05]
 theorem erdos_1067 :
     answer(False) ↔ ∀ (V : Type) (G : SimpleGraph V), G.chromaticNumber = aleph 1 →
       ∃ (H : G.Subgraph), H.coe.chromaticNumber = aleph 1 ∧ InfinitelyConnected H.coe := by
   sorry
 
 /--
-Thomassen [Th17] constructed a counterexample to the version which asks for infinite
+English version: Thomassen [Th17] constructed a counterexample to the version which asks for infinite
 edge-connectivity (that is, to disconnect the graph requires deleting infinitely many edges).
--/
-@[category research solved, AMS 5]
+-/@[category research solved, AMS 05]
 theorem erdos_1067.variant.infinite_edge_connectivity :
     answer(False) ↔ ∀ (V : Type) (G : SimpleGraph V), G.chromaticNumber = aleph 1 →
       ∃ (H : G.Subgraph), H.coe.chromaticNumber = aleph 1 ∧ InfinitelyEdgeConnected H.coe := by

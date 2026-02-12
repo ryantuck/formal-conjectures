@@ -23,6 +23,8 @@ Non-isomorphic induced subgraphs.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1036](https://www.erdosproblems.com/1036)
 -/
 
@@ -34,8 +36,7 @@ namespace Erdos1036
 
 variable {α : Type*}
 
-/-- Graphs without large trivial subgraphs have many non-isomorphic induced subgraphs -/
-@[category research solved, AMS 05]
+/-- English version: Graphs without large trivial subgraphs have many non-isomorphic induced subgraphs -/@[category research solved, AMS 05]
 theorem non_isomorphic_induced_subgraphs (n : ℕ) :
     ∃ (c : ℝ), 0 < c ∧
       ∀ (G : SimpleGraph (Fin n)),

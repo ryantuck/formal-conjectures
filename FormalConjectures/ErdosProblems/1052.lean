@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,52 +19,55 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1052
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1052](https://www.erdosproblems.com/1052)
 -/
 
 namespace Erdos1052
 
-/-- A proper unitary divisor of $n$ is a divisor $d$ of $n$
+/--
+English version:  A proper unitary divisor of $n$ is a divisor $d$ of $n$
 such that $d$ is coprime to $n/d$, and $d < n$. -/
 def properUnitaryDivisors (n : ℕ) : Finset ℕ :=
   {d ∈ Finset.Ico 1 n | d ∣ n ∧ d.Coprime (n / d)}
 
-/-- A number $n > 0$ is a unitary perfect number if it is the sum of its proper unitary divisors. -/
-def IsUnitaryPerfect (n : ℕ) : Prop :=
-  ∑ i ∈ properUnitaryDivisors n, i = n ∧ 0 < n
-
 /--
-Are there only finitely many unitary perfect numbers? -/
+English version:  -/
 @[category research open, AMS 11]
 theorem erdos_1052 :
     answer(sorry) ↔ {n | IsUnitaryPerfect n}.Finite := by
   sorry
 
-/-- All unitary perfect numbers are even. -/
-@[category research solved, AMS 11]
+/-- English version: All unitary perfect numbers are even. -/@[category research solved, AMS 11]
 theorem even_of_isUnitaryPerfect (n : ℕ) (hn : IsUnitaryPerfect n) : Even n := by
   sorry
 
+/-- English version: -/
 @[category test, AMS 11]
 theorem isUnitaryPerfect_6 : IsUnitaryPerfect 6 := by
   norm_num [IsUnitaryPerfect, properUnitaryDivisors]
   decide +kernel
 
+/-- English version: -/
 @[category test, AMS 11]
 theorem isUnitaryPerfect_60 : IsUnitaryPerfect 60 := by
   norm_num [IsUnitaryPerfect, properUnitaryDivisors]
   decide +kernel
 
+/-- English version: -/
 @[category test, AMS 11]
 theorem isUnitaryPerfect_90 : IsUnitaryPerfect 90 := by
   norm_num [IsUnitaryPerfect, properUnitaryDivisors]
   decide +kernel
 
+/-- English version: -/
 @[category test, AMS 11]
 theorem isUnitaryPerfect_87360 : IsUnitaryPerfect 87360 := by
   norm_num [IsUnitaryPerfect, properUnitaryDivisors]
   decide +kernel
 
+/-- English version: -/
 @[category test, AMS 11]
 theorem isUnitaryPerfect_146361946186458562560000 : IsUnitaryPerfect 146361946186458562560000 := by
   sorry

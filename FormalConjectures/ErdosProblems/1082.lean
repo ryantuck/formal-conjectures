@@ -23,6 +23,8 @@ Distinct distances from point sets.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1082](https://www.erdosproblems.com/1082)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1082
 
-/-- Distinct distances in point sets -/
-@[category research open, AMS 52]
+/-- English version: Distinct distances in point sets -/@[category research open, AMS 52]
 theorem distinct_distances (n : ℕ) :
     ∀ (S : Finset (EuclideanSpace ℝ (Fin 2))),
       S.card = n →

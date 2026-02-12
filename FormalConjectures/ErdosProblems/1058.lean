@@ -23,6 +23,8 @@ Primality of factorials plus one.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1058](https://www.erdosproblems.com/1058)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1058
 
-/-- Infinitely many primes of the form n! + 1 -/
-@[category research solved, AMS 11]
+/-- English version: Infinitely many primes of the form n! + 1 -/@[category research solved, AMS 11]
 theorem factorial_plus_one_primes :
     Set.Infinite {p : ℕ | p.Prime ∧ ∃ n, p = Nat.factorial n + 1} := by
   sorry

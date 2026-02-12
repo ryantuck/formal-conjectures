@@ -23,6 +23,8 @@ Level set diameter.
 
 DISPROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1048](https://www.erdosproblems.com/1048)
 -/
 
@@ -32,12 +34,11 @@ open scoped Topology Real
 
 namespace Erdos1048
 
-/-- Level set component diameter bound -/
-@[category research open, AMS 30]
-theorem level_set_diameter (r : ℝ) (answer : Prop) :
+/-- English version: Level set component diameter bound -/@[category research open, AMS 30]
+theorem level_set_diameter (r : ℝ) :
     0 < r →
     r < 2 →
-    answer ↔ ∀ (f : Polynomial ℂ),
+    answer(True) ↔ ∀ (f : Polynomial ℂ),
       f.Monic →
       (∀ z : ℂ, f.IsRoot z → Complex.abs z ≤ r) →
       ∃ (C : Set ℂ), C ⊆ {z : ℂ | Complex.abs (f.eval z) < 1} ∧

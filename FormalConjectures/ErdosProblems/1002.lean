@@ -23,6 +23,8 @@ Asymptotic distribution of fractional part sums.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1002](https://www.erdosproblems.com/1002)
 -/
 
@@ -32,14 +34,15 @@ open scoped Topology Real
 
 namespace Erdos1002
 
-/-- Function f(α,n) for fractional part sums -/
+/--
+English version:  Function f(α,n) for fractional part sums -/
 noncomputable def f (α : ℝ) (n : ℕ) : ℝ :=
   (1 / Real.log (n : ℝ)) * (Finset.range n).sum (fun k => (1/2 - Int.fract (α * (k : ℝ))))
 
-/-- Asymptotic distribution function exists -/
+/--
+English version:  -/
 @[category research open, AMS 11]
-theorem fractional_sum_distribution (answer : Prop) :
-    answer ↔ ∃ (g : ℝ → ℝ) (μ : ℝ → ℝ),
+theorem fractional_sum_distribution : answer(sorry) ↔ ∃ (g : ℝ → ℝ) (μ : ℝ → ℝ),
       ∀ x : ℝ, Tendsto (fun α => μ α)
         atTop (nhds (g x)) := by
   sorry

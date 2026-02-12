@@ -23,6 +23,8 @@ Ramsey number ratio.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1030](https://www.erdosproblems.com/1030)
 -/
 
@@ -32,13 +34,14 @@ open scoped Topology Real
 
 namespace Erdos1030
 
-/-- Diagonal Ramsey number -/
+/--
+English version:  Diagonal Ramsey number -/
 noncomputable def R (k : ℕ) : ℕ := sorry
 
-/-- Ramsey number ratio exceeds 1 -/
+/--
+English version:  -/
 @[category research open, AMS 05]
-theorem ramsey_ratio_bound (answer : Prop) :
-    answer ↔ ∃ (c : ℝ), 0 < c ∧
+theorem ramsey_ratio_bound : answer(sorry) ↔ ∃ (c : ℝ), 0 < c ∧
       Filter.Tendsto (fun k => (R (k + 1) : ℝ) / R k) atTop (nhds (1 + c)) ∧
       1 + c > 1 := by
   sorry

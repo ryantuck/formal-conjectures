@@ -23,6 +23,8 @@ Degenerate sets of four points.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1087](https://www.erdosproblems.com/1087)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1087
 
-/-- Degenerate sets of four points -/
-@[category research open, AMS 52]
+/-- English version: Degenerate sets of four points -/@[category research open, AMS 52]
 theorem degenerate_four_points (n : ℕ) :
     ∀ (S : Finset (EuclideanSpace ℝ (Fin 2))),
       S.card = n →

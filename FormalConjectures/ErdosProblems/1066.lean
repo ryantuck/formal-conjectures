@@ -23,6 +23,8 @@ Independent sets in unit distance graphs.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1066](https://www.erdosproblems.com/1066)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1066
 
-/-- Independent set size in unit distance graph -/
-@[category research open, AMS 05]
+/-- English version: Independent set size in unit distance graph -/@[category research open, AMS 05]
 theorem unit_distance_independent_set (n : ℕ) :
     ∃ (S : Finset (EuclideanSpace ℝ (Fin 2))),
       S.card = n ∧

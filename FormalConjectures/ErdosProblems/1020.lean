@@ -23,6 +23,8 @@ Erdős matching conjecture.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1020](https://www.erdosproblems.com/1020)
 -/
 
@@ -32,13 +34,14 @@ open scoped Topology Real
 
 namespace Erdos1020
 
-/-- Maximum edges in r-uniform hypergraph with no k independent edges -/
+/--
+English version:  Maximum edges in r-uniform hypergraph with no k independent edges -/
 noncomputable def matchingNumber (r k n : ℕ) : ℕ := sorry
 
-/-- Erdős matching conjecture -/
+/--
+English version:  -/
 @[category research open, AMS 05]
-theorem erdos_matching_conjecture (r k : ℕ) (answer : Prop) :
-    answer ↔ ∃ (f : ℕ → ℕ → ℕ),
+theorem erdos_matching_conjecture (r k : ℕ) : answer(sorry) ↔ ∃ (f : ℕ → ℕ → ℕ),
       ∀ n : ℕ, matchingNumber r k n = f r k := by
   sorry
 

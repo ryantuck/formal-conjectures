@@ -23,6 +23,8 @@ k-rich lines bound.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1069](https://www.erdosproblems.com/1069)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1069
 
-/-- Bound on k-rich lines in point sets -/
-@[category research solved, AMS 52]
+/-- English version: Bound on k-rich lines in point sets -/@[category research solved, AMS 52]
 theorem k_rich_lines_bound (n k : ℕ) :
     ∃ (c : ℝ), 0 < c ∧
       ∀ (S : Finset (EuclideanSpace ℝ (Fin 2))),

@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,29 +19,29 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1065
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1065](https://www.erdosproblems.com/1065)
 -/
 
 namespace Erdos1065
 
 /--
-Are there infinitely many primes $p$ such that $p = 2^k * q + 1$
+English version: Are there infinitely many primes $p$ such that $p = 2^k * q + 1$
 for some prime $q$ and $k ≥ 0$?
 
 This is mentioned as B46
 in [Unsolved Problems in Number Theory](https://doi.org/10.1007/978-0-387-26677-0)
 by *Richard K. Guy*
- -/
-@[category research open, AMS 11]
+ -/@[category research open, AMS 11]
 theorem erdos_1065a :
     answer(sorry) ↔ Set.Infinite {p | ∃ q k, p.Prime ∧ q.Prime ∧ p = 2^k * q + 1} := by
   sorry
 
 /--
-Are there infinitely many primes $p$ such that $p = 2^k 3^l q + 1$
+English version: Are there infinitely many primes $p$ such that $p = 2^k 3^l q + 1$
 for some prime $q$ and $k ≥ 0$, $l ≥ 0$?
--/
-@[category research open, AMS 11]
+-/@[category research open, AMS 11]
 theorem erdos_1065b : answer(sorry) ↔
     Set.Infinite {p | ∃ q k l, p.Prime ∧ q.Prime ∧ p = 2^k * 3^l * q + 1} := by
   sorry

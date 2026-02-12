@@ -23,6 +23,8 @@ Logarithmic capacity and level sets.
 
 DISPROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1040](https://www.erdosproblems.com/1040)
 -/
 
@@ -32,16 +34,14 @@ open scoped Topology Real
 
 namespace Erdos1040
 
-/-- Measure of polynomial level set -/
+/--
+English version:  Measure of polynomial level set -/
 noncomputable def μ (F : Set ℂ) : ℝ := sorry
 
-/-- Transfinite diameter of a set -/
-noncomputable def transfiniteDiameter (F : Set ℂ) : ℝ := sorry
-
-/-- Level set measure determined by transfinite diameter -/
+/--
+English version:  -/
 @[category research open, AMS 30]
-theorem logarithmic_capacity (answer : Prop) :
-    answer ↔ ∀ (F : Set ℂ), IsClosed F →
+theorem logarithmic_capacity : answer(True) ↔ ∀ (F : Set ℂ), IsClosed F →
       ∃ (f : ℝ → ℝ), μ F = f (transfiniteDiameter F) := by
   sorry
 

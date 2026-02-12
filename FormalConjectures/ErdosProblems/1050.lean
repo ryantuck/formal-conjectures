@@ -23,6 +23,8 @@ Irrationality of a series.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1050](https://www.erdosproblems.com/1050)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1050
 
-/-- Series with exponential denominator is irrational -/
-@[category research solved, AMS 11]
+/-- English version: Series with exponential denominator is irrational -/@[category research solved, AMS 11]
 theorem series_irrationality :
     Irrational (∑' n : ℕ+, (1 : ℝ) / (2^(n : ℝ) - 3)) := by
   sorry

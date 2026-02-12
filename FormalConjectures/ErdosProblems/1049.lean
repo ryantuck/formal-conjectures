@@ -23,6 +23,8 @@ Series equality and irrationality.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1049](https://www.erdosproblems.com/1049)
 -/
 
@@ -32,10 +34,8 @@ open scoped Topology Real
 
 namespace Erdos1049
 
-/-- Chowla's conjecture on series equality and irrationality -/
-@[category research open, AMS 11]
-theorem series_equality_irrationality (t : ℚ) (ht : 1 < t) (answer : Prop) :
-    answer ↔ (∑' n : ℕ+, (1 : ℝ) / ((t : ℝ)^(n : ℝ) - 1) =
+/-- English version: Chowla's conjecture on series equality and irrationality -/@[category research open, AMS 11]
+theorem series_equality_irrationality (t : ℚ) (ht : 1 < t) : answer(sorry) ↔ (∑' n : ℕ+, (1 : ℝ) / ((t : ℝ)^(n : ℝ) - 1) =
       ∑' n : ℕ+, (Nat.divisors n).card / (t : ℝ)^(n : ℝ)) ∧
       Irrational (∑' n : ℕ+, (1 : ℝ) / ((t : ℝ)^(n : ℝ) - 1)) := by
   sorry

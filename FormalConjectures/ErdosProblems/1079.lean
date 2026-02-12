@@ -23,6 +23,8 @@ Degree and neighborhood conditions.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1079](https://www.erdosproblems.com/1079)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1079
 
-/-- Degree and neighborhood conditions in graphs -/
-@[category research solved, AMS 05]
+/-- English version: Degree and neighborhood conditions in graphs -/@[category research solved, AMS 05]
 theorem degree_neighborhood_condition (n : ℕ) :
     ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
       (∀ v w : Fin n, G.degree v = G.degree w) →

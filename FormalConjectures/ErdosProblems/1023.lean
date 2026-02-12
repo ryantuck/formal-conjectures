@@ -23,6 +23,8 @@ Maximal antichain families.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1023](https://www.erdosproblems.com/1023)
 -/
 
@@ -32,10 +34,12 @@ open scoped Topology Real
 
 namespace Erdos1023
 
-/-- Maximum size of antichain family -/
+/--
+English version:  Maximum size of antichain family -/
 noncomputable def F (n : ℕ) : ℕ := sorry
 
-/-- Antichain family size asymptotic -/
+/--
+English version:  -/
 @[category research solved, AMS 05]
 theorem antichain_family_asymptotic :
     ∃ (c : ℝ), 0 < c ∧

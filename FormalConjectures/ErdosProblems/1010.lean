@@ -23,6 +23,8 @@ Triangle count in dense graphs.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1010](https://www.erdosproblems.com/1010)
 -/
 
@@ -34,8 +36,7 @@ namespace Erdos1010
 
 variable {α : Type*}
 
-/-- Dense graphs have many triangles -/
-@[category research solved, AMS 05]
+/-- English version: Dense graphs have many triangles -/@[category research solved, AMS 05]
 theorem triangle_count_dense (n t : ℕ) (ht : (t : ℝ) < Nat.floor ((n : ℝ) / 2)) :
     ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
       Nat.floor ((n : ℝ) ^ 2 / 4) + t ≤ G.edgeFinset.card →

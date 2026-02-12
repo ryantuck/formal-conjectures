@@ -23,6 +23,8 @@ Convexity of level set components.
 
 DISPROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1047](https://www.erdosproblems.com/1047)
 -/
 
@@ -32,10 +34,8 @@ open scoped Topology Real
 
 namespace Erdos1047
 
-/-- Level set components need not be convex -/
-@[category research open, AMS 30]
-theorem convexity_of_components (answer : Prop) :
-    answer ↔ ∀ (f : Polynomial ℂ) (c : ℝ),
+/-- English version: Level set components need not be convex -/@[category research open, AMS 30]
+theorem convexity_of_components : answer(True) ↔ ∀ (f : Polynomial ℂ) (c : ℝ),
       f.Monic →
       0 < c →
       sorry := by

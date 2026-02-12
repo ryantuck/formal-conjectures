@@ -23,6 +23,8 @@ Graph edge orientation with girth constraint.
 
 DISPROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1006](https://www.erdosproblems.com/1006)
 -/
 
@@ -34,8 +36,7 @@ namespace Erdos1006
 
 variable {α : Type*}
 
-/-- Disproved: edge orientation avoiding cycles and near-cycles -/
-@[category research solved, AMS 05]
+/-- English version: Disproved: edge orientation avoiding cycles and near-cycles -/@[category research solved, AMS 05]
 theorem not_edge_orientation_girth :
     ¬ ∀ (G : SimpleGraph α) [Fintype α],
       G.girth > 4 →

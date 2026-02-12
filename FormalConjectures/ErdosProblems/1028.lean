@@ -23,6 +23,8 @@ Discrepancy function.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1028](https://www.erdosproblems.com/1028)
 -/
 
@@ -32,10 +34,12 @@ open scoped Topology Real
 
 namespace Erdos1028
 
-/-- Minimum discrepancy in ±1 functions -/
+/--
+English version:  Minimum discrepancy in ±1 functions -/
 noncomputable def H (n : ℕ) : ℕ := sorry
 
-/-- Estimate for discrepancy function -/
+/--
+English version:  -/
 @[category research solved, AMS 05]
 theorem discrepancy_function_estimate :
     ∃ (f : ℕ → ℝ),

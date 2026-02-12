@@ -23,6 +23,8 @@ Extremal number for 3-uniform hypergraphs.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1076](https://www.erdosproblems.com/1076)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1076
 
-/-- Extremal number for 3-uniform hypergraphs -/
-@[category research solved, AMS 05]
+/-- English version: Extremal number for 3-uniform hypergraphs -/@[category research solved, AMS 05]
 theorem three_uniform_hypergraph_extremal (n : ℕ) :
     ∃ (ex : ℕ → ℕ),
       sorry := by

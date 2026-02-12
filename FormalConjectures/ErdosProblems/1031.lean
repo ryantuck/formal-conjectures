@@ -23,6 +23,8 @@ Induced regular subgraphs.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1031](https://www.erdosproblems.com/1031)
 -/
 
@@ -34,8 +36,7 @@ namespace Erdos1031
 
 variable {α : Type*}
 
-/-- Graphs without large trivial subgraphs contain induced regular subgraphs -/
-@[category research solved, AMS 05]
+/-- English version: Graphs without large trivial subgraphs contain induced regular subgraphs -/@[category research solved, AMS 05]
 theorem induced_regular_subgraph (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] :
       (∀ S : Finset (Fin n), S.card ≥ 10 * Nat.log n →
         ∃ v ∈ S, ∃ w ∈ S, v ≠ w ∧ (G.Adj v w ∨ ¬G.Adj v w)) →

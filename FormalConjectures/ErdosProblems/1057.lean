@@ -23,6 +23,8 @@ Growth rate of Carmichael numbers.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1057](https://www.erdosproblems.com/1057)
 -/
 
@@ -32,11 +34,13 @@ open scoped Topology Real
 
 namespace Erdos1057
 
-/-- Carmichael number predicate -/
+/--
+English version:  Carmichael number predicate -/
 def isCarmichael (n : ℕ) : Prop :=
   ¬ n.Prime ∧ n > 1 ∧ ∀ a : ℕ, Nat.Coprime a n → a ^ (n - 1) ≡ 1 [MOD n]
 
-/-- Growth rate of Carmichael numbers -/
+/--
+English version:  -/
 @[category research open, AMS 11]
 theorem carmichael_growth :
     ∃ (C : ℕ → ℕ), StrictMono C ∧

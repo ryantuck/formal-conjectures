@@ -23,6 +23,8 @@ import FormalConjectures.Util.ProblemImports
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1032](https://www.erdosproblems.com/1032)
 -/
 
@@ -34,10 +36,8 @@ namespace Erdos1032
 
 variable {α : Type*}
 
-/-- 4-chromatic critical graphs with large minimum degree -/
-@[category research open, AMS 05]
-theorem four_chromatic_critical (answer : Prop) :
-    answer ↔ ∃ (c : ℝ), 0 < c ∧
+/-- English version: 4-chromatic critical graphs with large minimum degree -/@[category research open, AMS 05]
+theorem four_chromatic_critical : answer(sorry) ↔ ∃ (c : ℝ), 0 < c ∧
       ∀ᶠ (n : ℕ) in Filter.atTop, ∃ (G : SimpleGraph (Fin n)),
         G.chromaticNumber = 4 ∧
         (∀ e : Sym2 (Fin n), (G.deleteEdges {e}).chromaticNumber < 4) ∧

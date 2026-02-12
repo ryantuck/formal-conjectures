@@ -23,6 +23,8 @@ Independence number of unit distance graphs.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1070](https://www.erdosproblems.com/1070)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1070
 
-/-- Independence number of unit distance graphs -/
-@[category research open, AMS 52]
+/-- English version: Independence number of unit distance graphs -/@[category research open, AMS 52]
 theorem unit_distance_independence (n : ℕ) :
     ∃ (α : Finset (EuclideanSpace ℝ (Fin 2)) → ℕ),
       ∀ (S : Finset (EuclideanSpace ℝ (Fin 2))),

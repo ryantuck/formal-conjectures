@@ -19,6 +19,8 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1068
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1068](https://www.erdosproblems.com/1068)
 -/
 
@@ -27,10 +29,9 @@ open Cardinal SimpleGraph
 namespace Erdos1068
 
 /--
-Does every graph with chromatic number $\aleph_1$ contain a countable subgraph which is
+English version: Does every graph with chromatic number $\aleph_1$ contain a countable subgraph which is
 infinitely connected?
--/
-@[category research open, AMS 5]
+-/@[category research open, AMS 05]
 theorem erdos_1068 : answer(sorry) ↔
     ∀ (V : Type) (G : SimpleGraph V), G.chromaticNumber = aleph 1 →
       ∃ s : Set V, s.Countable ∧ InfinitelyConnected (G.induce s) := by

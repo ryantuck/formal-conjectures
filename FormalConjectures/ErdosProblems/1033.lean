@@ -23,6 +23,8 @@ Triangle degree sum.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1033](https://www.erdosproblems.com/1033)
 -/
 
@@ -37,6 +39,8 @@ variable {α : Type*}
 /-- Degree sum bound for triangles in dense graphs -/
 noncomputable def h (n : ℕ) : ℕ := sorry
 
+/-- English version: Let G be a bipartite graph on n vertices with edge cardinality at least n^2/4. 
+Must G contain a triangle whose degree sum is at least h(n)? -/
 @[category research open, AMS 05]
 theorem triangle_degree_sum (n : ℕ) :
     ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],

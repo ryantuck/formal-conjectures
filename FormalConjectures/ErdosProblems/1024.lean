@@ -23,6 +23,8 @@ Independent sets in 3-uniform hypergraphs.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1024](https://www.erdosproblems.com/1024)
 -/
 
@@ -34,10 +36,12 @@ namespace Erdos1024
 
 variable {α : Type*}
 
-/-- Minimum independent set size in 3-uniform linear hypergraph -/
+/--
+English version:  Minimum independent set size in 3-uniform linear hypergraph -/
 noncomputable def f (n : ℕ) : ℕ := sorry
 
-/-- Independent set size in 3-uniform hypergraphs -/
+/--
+English version:  -/
 @[category research solved, AMS 05]
 theorem hypergraph_independent_set :
     ∃ (c : ℝ), 0 < c ∧

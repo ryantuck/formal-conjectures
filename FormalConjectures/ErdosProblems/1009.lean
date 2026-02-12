@@ -23,6 +23,8 @@ Edge-disjoint triangles in dense graphs.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1009](https://www.erdosproblems.com/1009)
 -/
 
@@ -34,8 +36,7 @@ namespace Erdos1009
 
 variable {α : Type*}
 
-/-- Dense graphs contain many edge-disjoint triangles -/
-@[category research solved, AMS 05]
+/-- English version: Dense graphs contain many edge-disjoint triangles -/@[category research solved, AMS 05]
 theorem edge_disjoint_triangles (c : ℝ) (hc : 0 < c) :
     ∃ (f : ℝ → ℕ),
       ∀ (n k : ℕ), (k : ℝ) < c * n →

@@ -23,6 +23,8 @@ Connected components of level sets.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1042](https://www.erdosproblems.com/1042)
 -/
 
@@ -32,10 +34,12 @@ open scoped Topology Real
 
 namespace Erdos1042
 
-/-- Number of connected components in polynomial level set -/
+/--
+English version:  Number of connected components in polynomial level set -/
 noncomputable def componentCount (f : Polynomial ℂ) : ℕ := sorry
 
-/-- Level sets can have n components for degree n polynomials -/
+/--
+English version:  -/
 @[category research solved, AMS 30]
 theorem connected_components (n : ℕ) (F : Set ℂ) (d : ℝ) :
     IsClosed F →

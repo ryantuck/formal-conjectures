@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1072
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1072](https://www.erdosproblems.com/1072)
 -/
 
@@ -27,28 +29,28 @@ open scoped Topology
 
 namespace Erdos1072
 
-/-- For any prime $p$, let $f(p)$ be the least integer such that $f(p)! + 1 \equiv 0 \mod p$. -/
+/--
+English version:  For any prime $p$, let $f(p)$ be the least integer such that $f(p)! + 1 \equiv 0 \mod p$. -/
 noncomputable def f (p : ℕ) : ℕ := sInf {n | (n)! + 1 ≡ 0 [MOD p]}
 
-/-- Is it true that there are infinitely many $p$ for which $f(p) = p − 1$? -/
+/--
+English version:  -/
 @[category research open, AMS 11]
 theorem erdos_1072a : answer(sorry) ↔ Set.Infinite {p | p.Prime ∧ f p = p - 1} := by
   sorry
 
-/-- Is it true that $f(p)/p \to 0$ for $p \to \infty$ in a density 1 subset of the primes? -/
-@[category research open, AMS 11]
+/-- English version: Is it true that $f(p)/p \to 0$ for $p \to \infty$ in a density 1 subset of the primes? -/@[category research open, AMS 11]
 theorem erdos_1072b :
     answer(sorry) ↔ ∃ (P : Set ℕ), P ⊆ {p | p.Prime} ∧ P.HasDensity 1 {p | p.Prime} ∧
       Tendsto (fun p => (f p / p : ℝ)) (atTop ⊓ principal P) (𝓝 0) := by
   sorry
 /--
-Erdős, Hardy, and Subbarao [HaSu02], believed that the number of $p \le x$ for which $f(p)=p−1$
+English version: Erdős, Hardy, and Subbarao [HaSu02], believed that the number of $p \le x$ for which $f(p)=p−1$
 is $o(x/\log x)$.
 
 [HaSu02] Hardy, G. E. and Subbarao, M. V., _A modified problem of Pillai and some related questions._
 Amer. Math. Monthly (2002), 554--559.
--/
-@[category research open, AMS 11]
+-/@[category research open, AMS 11]
 theorem erdos_1072a.variants.littleo :
     (fun x ↦ (({p | p.Prime ∧ f p = p - 1}.interIcc 0 x).ncard : ℝ)) =o[atTop]
       (fun x ↦ x / Real.log x) := by

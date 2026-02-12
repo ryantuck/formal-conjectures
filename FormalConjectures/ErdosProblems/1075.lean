@@ -23,6 +23,8 @@ Subgraph density in r-uniform hypergraphs.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1075](https://www.erdosproblems.com/1075)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1075
 
-/-- Subgraph density in r-uniform hypergraphs -/
-@[category research open, AMS 05]
+/-- English version: Subgraph density in r-uniform hypergraphs -/@[category research open, AMS 05]
 theorem hypergraph_subgraph_density (r : ℕ) :
     ∃ (c : ℝ), 0 < c ∧
       ∀ᶠ (n : ℕ) in Filter.atTop, ∀ (H : Finset (Finset (Fin n))),

@@ -23,6 +23,8 @@ Polynomial disc radius.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1039](https://www.erdosproblems.com/1039)
 -/
 
@@ -32,13 +34,14 @@ open scoped Topology Real
 
 namespace Erdos1039
 
-/-- Radius of largest disc in polynomial level set -/
+/--
+English version:  Radius of largest disc in polynomial level set -/
 noncomputable def ρ (f : Polynomial ℂ) : ℝ := sorry
 
-/-- Disc radius bound for polynomials with unit disc roots -/
+/--
+English version:  -/
 @[category research open, AMS 30]
-theorem polynomial_disc_radius (n : ℕ) (answer : Prop) :
-    answer ↔ ∃ (c : ℝ), 0 < c ∧
+theorem polynomial_disc_radius (n : ℕ) : answer(sorry) ↔ ∃ (c : ℝ), 0 < c ∧
       ∀ (f : Polynomial ℂ),
         f.Monic →
         f.degree = n →

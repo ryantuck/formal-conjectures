@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1073
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1073](https://www.erdosproblems.com/1073)
 -/
 
@@ -27,11 +29,12 @@ open Nat Filter
 namespace Erdos1073
 
 /--
-Let $A(x)$ count the number of composite $u < x$ such that $n!+1 \equiv 0 (\mod u)$ for some $n$.
+English version: Let $A(x)$ count the number of composite $u < x$ such that $n!+1 \equiv 0 (\mod u)$ for some $n$.
 -/
 noncomputable def A (x : ℕ) : ℝ := {u | u.Composite ∧ ∃ n, n ! + 1 ≡ 0 [MOD u] ∧ u < x}.ncard
 
-/-- Is it true that $A(x) \le x^{o(1)}$? -/
+/--
+English version:  -/
 @[category research open, AMS 11]
 theorem erdos_1073 :
     answer(sorry) ↔ ∃ (o : ℕ → ℝ), o =o[atTop] (1 : ℕ → ℝ) ∧ ∀ x, A x ≤ x ^ (o x) := by

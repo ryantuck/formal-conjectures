@@ -23,6 +23,8 @@ Farey sequence ordering problem.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1005](https://www.erdosproblems.com/1005)
 -/
 
@@ -32,16 +34,14 @@ open scoped Topology Real
 
 namespace Erdos1005
 
-/-- Farey sequence of order n -/
+/--
+English version:  Farey sequence of order n -/
 noncomputable def farey (n : ℕ) : List (ℚ) := sorry
 
-/-- Maximum window size for consistent ordering -/
-noncomputable def f (n : ℕ) : ℕ := sorry
-
-/-- Farey sequence ordering has linear bound -/
+/--
+English version:  -/
 @[category research open, AMS 11]
-theorem farey_ordering_linear (answer : Prop) :
-    answer ↔ ∃ (c : ℝ), 0 < c ∧
+theorem farey_ordering_linear : answer(sorry) ↔ ∃ (c : ℝ), 0 < c ∧
       Tendsto (fun n => (f n : ℝ) / (c * n)) atTop (nhds 1) := by
   sorry
 

@@ -23,6 +23,8 @@ k-Perfect numbers and growth of k.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1053](https://www.erdosproblems.com/1053)
 -/
 
@@ -32,11 +34,13 @@ open scoped Topology Real
 
 namespace Erdos1053
 
-/-- k-perfect number predicate -/
+/--
+English version:  k-perfect number predicate -/
 def kPerfect (n k : ℕ) : Prop :=
   k * n = (Nat.divisors n).sum id
 
-/-- Growth rate of k for k-perfect numbers -/
+/--
+English version:  -/
 @[category research open, AMS 11]
 theorem k_perfect_growth :
     ∃ (f : ℕ → ℕ), (∀ n, 0 < f n) ∧

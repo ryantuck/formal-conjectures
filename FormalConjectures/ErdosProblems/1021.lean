@@ -23,6 +23,8 @@ Bipartite graph extremal number.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1021](https://www.erdosproblems.com/1021)
 -/
 
@@ -34,8 +36,7 @@ namespace Erdos1021
 
 variable {α β : Type*}
 
-/-- Extremal number for 1-subdivision of K_k -/
-@[category research solved, AMS 05]
+/-- English version: Extremal number for 1-subdivision of K_k -/@[category research solved, AMS 05]
 theorem subdivision_extremal (k : ℕ) :
     ∃ (c : ℝ), 0 < c ∧
       ∀ (n : ℕ) (G : SimpleGraph α) [Fintype α] [DecidableRel G.Adj],

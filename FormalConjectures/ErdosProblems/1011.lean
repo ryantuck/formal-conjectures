@@ -23,6 +23,8 @@ Triangle containment with chromatic number constraints.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1011](https://www.erdosproblems.com/1011)
 -/
 
@@ -34,12 +36,14 @@ namespace Erdos1011
 
 variable {α : Type*}
 
-/-- Minimum edges for triangle in graph with chromatic number ≥ r -/
+/--
+English version:  Minimum edges for triangle in graph with chromatic number ≥ r -/
 noncomputable def f (r n : ℕ) : ℕ := sorry
 
-/-- Formula for f_r(n) -/
+/--
+English version:  -/
 @[category research open, AMS 05]
-theorem triangle_chromatic_threshold (r : ℕ) (answer : ℕ → ℕ) :
+theorem triangle_chromatic_threshold (r : ℕ) : answer(sorry) ↔
     ∃ (g : ℕ → ℕ),
       ∀ n : ℕ, f r n = Nat.floor ((n - g r) ^ 2 / 4) + sorry := by
   sorry

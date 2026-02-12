@@ -23,6 +23,8 @@ Complete subgraph in r-partite graphs.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1078](https://www.erdosproblems.com/1078)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1078
 
-/-- Complete subgraphs in r-partite graphs -/
-@[category research solved, AMS 05]
+/-- English version: Complete subgraphs in r-partite graphs -/@[category research solved, AMS 05]
 theorem r_partite_complete_subgraph (r n : ℕ) :
     ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
       ∃ (partition : Fin r → Finset (Fin n)),

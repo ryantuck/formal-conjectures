@@ -23,6 +23,8 @@ Sums of squarefull numbers.
 
 DISPROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1081](https://www.erdosproblems.com/1081)
 -/
 
@@ -32,14 +34,15 @@ open scoped Topology Real
 
 namespace Erdos1081
 
-/-- Squarefull number predicate -/
+/--
+English version:  Squarefull number predicate -/
 def isSquarefull (n : ℕ) : Prop :=
   ∀ p : ℕ, p.Prime → p ∣ n → p^2 ∣ n
 
-/-- Sums of squarefull numbers -/
+/--
+English version:  -/
 @[category research open, AMS 11]
-theorem squarefull_sums (answer : Prop) :
-    answer ↔ ∀ n : ℕ, ∃ a b : ℕ,
+theorem squarefull_sums : answer(True) ↔ ∀ n : ℕ, ∃ a b : ℕ,
       isSquarefull a ∧ isSquarefull b ∧ a + b = n := by
   sorry
 

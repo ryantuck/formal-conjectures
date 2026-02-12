@@ -23,6 +23,8 @@ Non-planar subgraph existence.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1018](https://www.erdosproblems.com/1018)
 -/
 
@@ -34,10 +36,12 @@ namespace Erdos1018
 
 variable {α : Type*}
 
-/-- Graph is planar -/
+/--
+English version:  Graph is planar -/
 def IsPlanar (G : SimpleGraph α) : Prop := sorry
 
-/-- Dense graphs contain small non-planar subgraphs -/
+/--
+English version:  -/
 @[category research solved, AMS 05]
 theorem nonplanar_subgraph (ε : ℝ) (hε : 0 < ε) :
     ∃ (f : ℝ → ℕ),

@@ -23,6 +23,8 @@ Minimal point sets determining distances.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1089](https://www.erdosproblems.com/1089)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1089
 
-/-- Minimal point sets determining distances -/
-@[category research solved, AMS 52]
+/-- English version: Minimal point sets determining distances -/@[category research solved, AMS 52]
 theorem minimal_point_sets_distances (n : ℕ) :
     ∃ (f : ℕ → ℕ), sorry := by
   sorry

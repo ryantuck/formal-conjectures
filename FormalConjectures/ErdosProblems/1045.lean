@@ -23,6 +23,8 @@ Maximum product of pairwise distances.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1045](https://www.erdosproblems.com/1045)
 -/
 
@@ -32,11 +34,13 @@ open scoped Topology Real
 
 namespace Erdos1045
 
-/-- Product of pairwise distances -/
+/--
+English version:  Product of pairwise distances -/
 noncomputable def Δ {n : ℕ} (z : Fin n → ℂ) : ℝ :=
   ∏ i : Fin n, ∏ j : Fin n, if i ≠ j then ‖z i - z j‖ else 1
 
-/-- Maximum product of pairwise distances -/
+/--
+English version:  -/
 @[category research open, AMS 52]
 theorem max_product_distances (n : ℕ) :
     ∃ (M : ℝ), ∀ (z : Fin n → ℂ),

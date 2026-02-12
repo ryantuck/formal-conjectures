@@ -23,6 +23,8 @@ Monochromatic partition of edges.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1015](https://www.erdosproblems.com/1015)
 -/
 
@@ -34,8 +36,7 @@ namespace Erdos1015
 
 variable {α : Type*}
 
-/-- Partition edges into vertex-disjoint monochromatic cliques -/
-@[category research solved, AMS 05]
+/-- English version: Partition edges into vertex-disjoint monochromatic cliques -/@[category research solved, AMS 05]
 theorem monochromatic_edge_partition (n t : ℕ) :
     ∀ (c : α × α → Fin 2),
       ∃ (cliques : Finset (Finset α)),

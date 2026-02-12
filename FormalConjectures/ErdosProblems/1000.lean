@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -27,6 +27,8 @@ Is there a sequence A such that lim_{N→∞} (1/N)·∑_{k≤N} φₐ(k)/nₖ =
 
 Haight: PROVED - Such a sequence exists (contrary to Erdős' expectations).
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1000](https://www.erdosproblems.com/1000)
 -/
 
@@ -34,11 +36,13 @@ open Filter Topology BigOperators Real Classical
 
 namespace Erdos1000
 
-/-- φₐ(k) counts fractions with new denominators -/
+/--
+English version:  φₐ(k) counts fractions with new denominators -/
 noncomputable def phi_A (A : ℕ → ℕ) (k : ℕ) : ℕ :=
   Nat.card {m : ℕ | 1 ≤ m ∧ m ≤ A k ∧ ∀ j < k, (A k) / (Nat.gcd m (A k)) ≠ A j}
 
-/-- Haight: Sequence with vanishing average -/
+/--
+English version:  -/
 @[category research solved, AMS 11]
 theorem erdos_1000_haight :
     ∃ A : ℕ → ℕ, StrictMono A ∧

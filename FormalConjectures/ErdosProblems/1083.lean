@@ -23,6 +23,8 @@ Distinct distances in higher dimensions.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1083](https://www.erdosproblems.com/1083)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1083
 
-/-- Distinct distances in d-dimensional space -/
-@[category research open, AMS 52]
+/-- English version: Distinct distances in d-dimensional space -/@[category research open, AMS 52]
 theorem distinct_distances_higher_dim (d n : ℕ) :
     ∀ (S : Finset (EuclideanSpace ℝ (Fin d))),
       S.card = n →

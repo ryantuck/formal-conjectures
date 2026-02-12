@@ -23,6 +23,8 @@ Ramsey numbers growth rate.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1029](https://www.erdosproblems.com/1029)
 -/
 
@@ -32,13 +34,14 @@ open scoped Topology Real
 
 namespace Erdos1029
 
-/-- Diagonal Ramsey number -/
+/--
+English version:  Diagonal Ramsey number -/
 noncomputable def R (k : ℕ) : ℕ := sorry
 
-/-- Ramsey number growth faster than exponential -/
+/--
+English version:  -/
 @[category research open, AMS 05]
-theorem ramsey_growth_unbounded (answer : Prop) :
-    answer ↔ Filter.Tendsto (fun k => (R k : ℝ) / (k * 2 ^ (k / 2))) atTop atTop := by
+theorem ramsey_growth_unbounded : answer(sorry) ↔ Filter.Tendsto (fun k => (R k : ℝ) / (k * 2 ^ (k / 2))) atTop atTop := by
   sorry
 
 end Erdos1029

@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,12 +19,15 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1055
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1055](https://www.erdosproblems.com/1055)
 -/
 
 namespace Erdos1055
 
-/-- A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
+/--
+English version:  A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
 $2$ or $3$. In general, a prime $p$ is in class $r$ if every prime factor
 of $p+1$ is in some class $\leq r-1$, with equality for at least one prime factor. -/
 def IsOfClass : ℕ+ → ℕ → Prop := fun r ↦
@@ -36,46 +39,43 @@ def IsOfClass : ℕ+ → ℕ → Prop := fun r ↦
       (∃ r ∈ (p + 1).primeFactors,
         ∀ (m : ℕ+) (hm : m ≤ n), H m hm r → m = n))
 
-/-- A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
-$2$ or $3$. In general, a prime $p$ is in class $r$ if every prime factor
-of $p+1$ is in some class $\leq r-1$, with equality for at least one prime factor.
-Show that for each $r$ there exists a prime $p$ of class $r$. -/
+/--
+English version:  -/
 @[category undergraduate, AMS 11]
 theorem exists_p (r : ℕ+) : ∃ p, p.Prime ∧ IsOfClass r p := by
   sorry
 
 open Classical
 
-/-- A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
+/--
+English version:  A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
 $2$ or $3$. In general, a prime $p$ is in class $r$ if every prime factor
 of $p+1$ is in some class $\leq r-1$, with equality for at least one prime factor.
 Let $p_r$ is the least prime in class $r$. -/
 noncomputable def p (r : ℕ+) : ℕ := Nat.find (exists_p r)
 
-/-- A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
-$2$ or $3$. In general, a prime $p$ is in class $r$ if every prime factor
-of $p+1$ is in some class $\leq r-1$, with equality for at least one prime factor.
-Are there infinitely many primes in each class?-/
+/--
+English version: ?-/
 @[category research open, AMS 11]
 theorem erdos_1055 (r) : {p | p.Prime ∧ IsOfClass r p}.Infinite := by
   sorry
 
-/-- A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
+/--
+English version:  A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
 $2$ or $3$. In general, a prime $p$ is in class $r$ if every prime factor
 of $p+1$ is in some class $\leq r-1$, with equality for at least one prime factor.
 If $p_r$ is the least prime in class $r$, then how does $p_r^{1/r}$ behave?
-Erdos conjectured that this tends to infinity. -/
-@[category research open, AMS 11]
+Erdos conjectured that this tends to infinity. -/@[category research open, AMS 11]
 theorem erdos_1055.variants.erdos_limit :
     Filter.atTop.Tendsto (fun r ↦ (p r : ℝ) ^ (1 / r : ℝ)) Filter.atTop := by
   sorry
 
-/-- A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
+/--
+English version:  A prime $p$ is in class $1$ if the only prime divisors of $p+1$ are
 $2$ or $3$. In general, a prime $p$ is in class $r$ if every prime factor
 of $p+1$ is in some class $\leq r-1$, with equality for at least one prime factor.
 If $p_r$ is the least prime in class $r$, then how does $p_r^{1/r}$ behave?
-Selfridge conjectured that this is bounded. -/
-@[category research open, AMS 11]
+Selfridge conjectured that this is bounded. -/@[category research open, AMS 11]
 theorem erdos_1055.variants.selfridge_limit :
     ∃ M, ∀ r, (p r : ℝ) ^ (1 / r : ℝ) ≤ M := by
   sorry

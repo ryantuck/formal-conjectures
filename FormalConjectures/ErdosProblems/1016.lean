@@ -23,6 +23,8 @@ Pancyclic graphs.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1016](https://www.erdosproblems.com/1016)
 -/
 
@@ -34,12 +36,14 @@ namespace Erdos1016
 
 variable {α : Type*}
 
-/-- Minimum additional edges for pancyclic property -/
+/--
+English version:  Minimum additional edges for pancyclic property -/
 noncomputable def h (n : ℕ) : ℕ := sorry
 
-/-- Estimate for pancyclic threshold -/
+/--
+English version:  -/
 @[category research open, AMS 05]
-theorem pancyclic_threshold (answer : ℕ → ℝ) :
+theorem pancyclic_threshold (answer(sorry) : ℕ → ℝ) :
     ∃ (f : ℕ → ℝ),
       Filter.Tendsto (fun n => (h n : ℝ) / f n) Filter.atTop (nhds 1) := by
   sorry

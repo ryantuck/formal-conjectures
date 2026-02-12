@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1080
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1080](https://www.erdosproblems.com/1080)
 -/
 
@@ -26,16 +28,14 @@ open SimpleGraph
 
 namespace Erdos1080
 
-/-- `IsBipartition G X Y` means that `X` and `Y` form a bipartition of the vertices of `G`. -/
+/--
+English version:  `IsBipartition G X Y` means that `X` and `Y` form a bipartition of the vertices of `G`. -/
 def IsBipartition {V : Type*} (G : SimpleGraph V) (X Y : Set V) : Prop :=
   Disjoint X Y ∧ X ∪ Y = Set.univ ∧ ∀ ⦃u v⦄, G.Adj u v → (u ∈ X ↔ v ∈ Y)
 
 /--
-Let $G$ be a bipartite graph on $n$ vertices such that one part has $\lfloor n^{2/3}\rfloor$
-vertices. Is there a constant $c>0$ such that if $G$ has at least $cn$ edges then $G$ must
-contain a $C_6$?
--/
-@[category research open, AMS 5]
+English version: -/
+@[category research open, AMS 05]
 theorem erdos_1080 :
     answer(sorry) ↔
     ∃ c > (0 : ℝ), ∀ (V : Type) [Fintype V] [Nonempty V] (G : SimpleGraph V) (X Y : Set V),

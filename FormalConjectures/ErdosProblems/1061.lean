@@ -19,6 +19,8 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1061
 
+STATUS: SOLVED
+
 *References:*
  - [erdosproblems.com/1061](https://www.erdosproblems.com/1061)
  - [Gu04] Guy, Richard K., _Unsolved problems in number theory_. (2004), Problem B15.
@@ -29,7 +31,8 @@ open scoped ArithmeticFunction
 
 namespace Erdos1061
 
-/-- Let `S x` count the number of **ordered** pairs of positive integers `(a, b)` with `a + b ≤ x`
+/--
+English version:  Let `S x` count the number of **ordered** pairs of positive integers `(a, b)` with `a + b ≤ x`
 such that `σ(a) + σ(b) = σ(a + b)`, where `σ` is the sum of divisors function.
 
 In particular, `(a, b)` and `(b, a)` are counted separately; an unordered variant could be obtained
@@ -39,9 +42,7 @@ noncomputable abbrev S (x : ℝ) : ℝ :=
       a + b ≤ x ∧ σ 1 a + σ 1 b = σ 1 (a + b)).card
 
 /--
-How many (ordered) solutions are there to `σ(a) + σ(b) = σ(a + b)` with `a + b ≤ x`?
-Is it true that this number is asymptotic to `c * x` for some constant `c > 0`?
--/
+English version: -/
 @[category research open, AMS 11]
 theorem erdos_1061 : answer(sorry) ↔ ∃ c : ℝ, 0 < c ∧ S ~[atTop] (fun x : ℝ ↦ c * x) := by
   sorry

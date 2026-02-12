@@ -23,6 +23,8 @@ Ramsey number limit ratio.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1014](https://www.erdosproblems.com/1014)
 -/
 
@@ -32,13 +34,14 @@ open scoped Topology Real
 
 namespace Erdos1014
 
-/-- Ramsey number R(k,l) -/
+/--
+English version:  Ramsey number R(k,l) -/
 noncomputable def R (k l : ℕ) : ℕ := sorry
 
-/-- Ramsey number ratio approaches 1 -/
+/--
+English version:  -/
 @[category research open, AMS 05]
-theorem ramsey_ratio_limit (k : ℕ) (hk : 3 ≤ k) (answer : Prop) :
-    answer ↔ Filter.Tendsto (fun l => (R k (l + 1) : ℝ) / R k l)
+theorem ramsey_ratio_limit (k : ℕ) (hk : 3 ≤ k) : answer(sorry) ↔ Filter.Tendsto (fun l => (R k (l + 1) : ℝ) / R k l)
       Filter.atTop (nhds 1) := by
   sorry
 

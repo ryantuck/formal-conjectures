@@ -23,6 +23,8 @@ Cycle existence with edge density constraints.
 
 SOLVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1012](https://www.erdosproblems.com/1012)
 -/
 
@@ -34,15 +36,12 @@ namespace Erdos1012
 
 variable {α : Type*}
 
-/-- Minimum n for cycle existence threshold -/
+/--
+English version:  Minimum n for cycle existence threshold -/
 noncomputable def f (k : ℕ) : ℕ := sorry
 
-/-- A cycle in a graph (simplified formulation) -/
-def IsCycle (G : SimpleGraph α) (C : List α) : Prop :=
-  C.length ≥ 3 ∧ C.Nodup ∧
-  (∀ i (hi : i < C.length), ∃ j, ∃ (hj : j < C.length), j = (i + 1) % C.length ∧ G.Adj (C[i]'hi) (C[j]'hj))
-
-/-- Graphs with many edges contain long cycles -/
+/--
+English version:  -/
 @[category research solved, AMS 05]
 theorem cycle_edge_density (k n : ℕ) :
     f k ≤ n →

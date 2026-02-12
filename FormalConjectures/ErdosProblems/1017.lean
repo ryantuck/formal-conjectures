@@ -23,6 +23,8 @@ Clique partition of graphs.
 
 OPEN
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1017](https://www.erdosproblems.com/1017)
 -/
 
@@ -34,14 +36,16 @@ namespace Erdos1017
 
 variable {α : Type*}
 
-/-- Minimum clique partition size -/
+/--
+English version:  Minimum clique partition size -/
 noncomputable def f (n k : ℕ) : ℕ := sorry
 
-/-- Estimate for clique partition threshold -/
+/--
+English version:  -/
 @[category research open, AMS 05]
-theorem clique_partition_estimate (answer : ℕ → ℕ → ℝ) :
+theorem clique_partition_estimate (answer(sorry) : ℕ → ℕ → ℝ) :
     ∀ k : ℕ,
-      Filter.Tendsto (fun (n : ℕ) => (f n k : ℝ) / answer n k) Filter.atTop (nhds 1) := by
+      Filter.Tendsto (fun (n : ℕ) => (f n k : ℝ) / answer(sorry) n k) Filter.atTop (nhds 1) := by
   sorry
 
 end Erdos1017

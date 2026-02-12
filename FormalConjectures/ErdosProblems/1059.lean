@@ -1,5 +1,5 @@
 /-
-Copyright 2025 The Formal Conjectures Authors.
+Copyright 2026 The Formal Conjectures Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1059
 
+STATUS: OPEN
+
 *Reference:* [erdosproblems.com/1059](https://www.erdosproblems.com/1059)
 -/
 
@@ -33,8 +35,7 @@ def factorialsLessThanN (n : ℕ) : Set ℕ :=
 def AllFactorialSubtractionsComposite (n : ℕ) : Prop :=
   ∀d ∈ factorialsLessThanN n, (n - d).Composite
 
-/-- Are there infinitely many primes $p$ such that $p - k!$ is composite for each $k$ such that $1 ≤ k! < p$? -/
-@[category research open, AMS 11]
+/-- English version: Are there infinitely many primes $p$ such that $p - k!$ is composite for each $k$ such that $1 ≤ k! < p$? -/@[category research open, AMS 11]
 theorem erdos_1059 :
     answer(sorry) ↔ Set.Infinite {p | p.Prime ∧ AllFactorialSubtractionsComposite p} := by
   sorry
@@ -48,6 +49,7 @@ def decidableFactorialsLessThanN (n : ℕ) : Finset ℕ :=
 def DecidableAllFactorialSubtractionsComposite (n : ℕ) : Prop :=
   ∀ d ∈ decidableFactorialsLessThanN n, (n - d).Composite
 
+/-- English version: -/
 @[category test, AMS 11]
 lemma isFactorial_equivalent (d : ℕ) :
   IsFactorial d ↔ DecidableIsFactorial d := by
@@ -69,6 +71,7 @@ lemma isFactorial_equivalent (d : ℕ) :
     rw [Finset.mem_filter] at hk
     exact hk.2
 
+/-- English version: -/
 @[category test, AMS 11]
 lemma factorialsLessThanN_equivalent (n : ℕ) :
   factorialsLessThanN n = ↑(decidableFactorialsLessThanN n) := by
@@ -77,6 +80,7 @@ lemma factorialsLessThanN_equivalent (n : ℕ) :
   simp
   exact λ _ => isFactorial_equivalent d
 
+/-- English version: -/
 @[category test, AMS 11]
 lemma allFactorialSubtractionsComposite_equivalent (d : ℕ) :
     DecidableAllFactorialSubtractionsComposite d ↔ AllFactorialSubtractionsComposite d := by
@@ -84,6 +88,7 @@ lemma allFactorialSubtractionsComposite_equivalent (d : ℕ) :
   rw [factorialsLessThanN_equivalent d]
   simp
 
+/-- English version: -/
 @[category test, AMS 11]
 theorem allFactorialSubtractionsComposite_101 : AllFactorialSubtractionsComposite 101 := by
   have h : DecidableAllFactorialSubtractionsComposite 101 := by
@@ -91,6 +96,7 @@ theorem allFactorialSubtractionsComposite_101 : AllFactorialSubtractionsComposit
     decide +kernel
   exact (allFactorialSubtractionsComposite_equivalent 101).mp h
 
+/-- English version: -/
 @[category test, AMS 11]
 theorem allFactorialSubtractionsComposite_211 : AllFactorialSubtractionsComposite 211 := by
   have h : DecidableAllFactorialSubtractionsComposite 211 := by
@@ -98,6 +104,7 @@ theorem allFactorialSubtractionsComposite_211 : AllFactorialSubtractionsComposit
     decide +kernel
   exact (allFactorialSubtractionsComposite_equivalent 211).mp h
 
+/-- English version: -/
 @[category test, AMS 11]
 theorem notAllFactorialSubtractionsComposite_89 : ¬(AllFactorialSubtractionsComposite 89) := by
   have h : ¬(DecidableAllFactorialSubtractionsComposite 89) := by
@@ -109,6 +116,7 @@ theorem notAllFactorialSubtractionsComposite_89 : ¬(AllFactorialSubtractionsCom
   simp [allFactorialSubtractionsComposite_equivalent] at h
   exact h
 
+/-- English version: -/
 @[category test, AMS 11]
 theorem testFactorialsLessThanN : factorialsLessThanN 100 = {1, 2, 6, 24} := by
   have h : decidableFactorialsLessThanN 100 = {1, 2, 6, 24} := by

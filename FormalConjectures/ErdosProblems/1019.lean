@@ -23,6 +23,8 @@ Saturated planar subgraphs.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1019](https://www.erdosproblems.com/1019)
 -/
 
@@ -34,10 +36,12 @@ namespace Erdos1019
 
 variable {α : Type*}
 
-/-- Graph is planar -/
+/--
+English version:  Graph is planar -/
 def IsPlanar (G : SimpleGraph α) : Prop := sorry
 
-/-- Dense graphs contain saturated planar subgraphs -/
+/--
+English version:  -/
 @[category research solved, AMS 05]
 theorem saturated_planar_subgraph (n : ℕ) :
     ∀ (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],

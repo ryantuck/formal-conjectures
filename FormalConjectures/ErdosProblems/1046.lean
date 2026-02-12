@@ -23,6 +23,8 @@ Disc containment of level sets.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1046](https://www.erdosproblems.com/1046)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1046
 
-/-- Connected level sets are contained in disc of radius 2 -/
-@[category research solved, AMS 30]
+/-- English version: Connected level sets are contained in disc of radius 2 -/@[category research solved, AMS 30]
 theorem disc_containment (f : Polynomial ℂ) :
     f.Monic →
     IsConnected {z : ℂ | Complex.abs (f.eval z) < 1} →

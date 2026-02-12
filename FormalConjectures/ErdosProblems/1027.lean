@@ -23,6 +23,8 @@ Chromatic number of set families.
 
 PROVED
 
+STATUS: SOLVED
+
 *Reference:* [erdosproblems.com/1027](https://www.erdosproblems.com/1027)
 -/
 
@@ -32,8 +34,7 @@ open scoped Topology Real
 
 namespace Erdos1027
 
-/-- Set families with bounded size have many transversals -/
-@[category research solved, AMS 05]
+/-- English version: Set families with bounded size have many transversals -/@[category research solved, AMS 05]
 theorem set_family_transversals (n : ℕ) :
     ∃ (c : ℝ), 0 < c ∧
       ∀ (F : Finset (Finset (Fin n))),
