@@ -49,7 +49,7 @@ theorem erdos_87 : answer(sorry) ↔
     ∃ K : ℕ, ∀ k : ℕ, K ≤ k →
     ∀ {V : Type*} [Fintype V] (G : SimpleGraph V),
       G.chromaticNumber = k →
-      (diagRamseyNumber k : ℝ) * (1 - ε) ^ k < (graphRamseyNumber G : ℝ) := by
+      (diagRamseyNumber k : ℝ) * (1 - ε) ^ k < (ramseyNumber G : ℝ) := by
   sorry
 
 /--
@@ -65,7 +65,7 @@ theorem erdos_87.variants.strong : answer(sorry) ↔
     ∃ K : ℕ, ∀ k : ℕ, K ≤ k →
     ∀ {V : Type*} [Fintype V] (G : SimpleGraph V),
       G.chromaticNumber = k →
-      c * (diagRamseyNumber k : ℝ) < (graphRamseyNumber G : ℝ) := by
+      c * (diagRamseyNumber k : ℝ) < (ramseyNumber G : ℝ) := by
   sorry
 
 end Erdos87

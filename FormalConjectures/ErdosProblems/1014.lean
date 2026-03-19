@@ -47,7 +47,7 @@ $|R(k, l+1) / R(k, l) - 1| \leq \varepsilon$.
 theorem erdos_1014 (k : ℕ) (hk : k ≥ 3) :
     ∀ ε : ℝ, ε > 0 →
     ∃ L₀ : ℕ, ∀ l : ℕ, l ≥ L₀ →
-      |(ramseyNumber k (l + 1) : ℝ) / (ramseyNumber k l : ℝ) - 1| ≤ ε := by
+      |(graphRamseyNumber k (l + 1) : ℝ) / (graphRamseyNumber k l : ℝ) - 1| ≤ ε := by
   sorry
 
 end Erdos1014

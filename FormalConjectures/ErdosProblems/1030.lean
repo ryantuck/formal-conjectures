@@ -63,7 +63,7 @@ $R(k+1, k) / R(k, k) \geq 1 + c$.
 theorem erdos_1030 :
     ∃ c : ℝ, c > 0 ∧
     ∃ K₀ : ℕ, ∀ k : ℕ, k ≥ K₀ →
-      (ramseyNumber (k + 1) k : ℝ) / (ramseyNumber k k : ℝ) ≥ 1 + c := by
+      (graphRamseyNumber (k + 1) k : ℝ) / (graphRamseyNumber k k : ℝ) ≥ 1 + c := by
   sorry
 
 /--
@@ -76,7 +76,7 @@ Erdős and Sós could not even prove this weaker statement.
 @[category research open, AMS 5]
 theorem erdos_1030_weak :
     ∃ c : ℝ, c > 1 ∧ ∃ K₀ : ℕ, ∀ k : ℕ, k ≥ K₀ →
-      (ramseyNumber (k + 1) k : ℝ) - (ramseyNumber k k : ℝ) > (k : ℝ) ^ c := by
+      (graphRamseyNumber (k + 1) k : ℝ) - (graphRamseyNumber k k : ℝ) > (k : ℝ) ^ c := by
   sorry
 
 end Erdos1030

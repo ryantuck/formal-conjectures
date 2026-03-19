@@ -78,7 +78,7 @@ theorem erdos_986 (k : ℕ) (hk : 3 ≤ k) :
     ∃ C : ℝ, 0 < C ∧
     ∃ c : ℕ, 0 < c ∧
     ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
-      C * ((n : ℝ) ^ (k - 1) / (Real.log (n : ℝ)) ^ c) ≤ (ramseyNumber k n : ℝ) := by
+      C * ((n : ℝ) ^ (k - 1) / (Real.log (n : ℝ)) ^ c) ≤ (graphRamseyNumber k n : ℝ) := by
   sorry
 
 /--
@@ -94,7 +94,7 @@ theorem erdos_986_k_eq_3 :
     ∃ C : ℝ, 0 < C ∧
     ∃ c : ℕ, 0 < c ∧
     ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
-      C * ((n : ℝ) ^ 2 / (Real.log (n : ℝ)) ^ c) ≤ (ramseyNumber 3 n : ℝ) := by
+      C * ((n : ℝ) ^ 2 / (Real.log (n : ℝ)) ^ c) ≤ (graphRamseyNumber 3 n : ℝ) := by
   sorry
 
 /--
@@ -110,7 +110,7 @@ theorem erdos_986_k_eq_4 :
     ∃ C : ℝ, 0 < C ∧
     ∃ c : ℕ, 0 < c ∧
     ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
-      C * ((n : ℝ) ^ 3 / (Real.log (n : ℝ)) ^ c) ≤ (ramseyNumber 4 n : ℝ) := by
+      C * ((n : ℝ) ^ 3 / (Real.log (n : ℝ)) ^ c) ≤ (graphRamseyNumber 4 n : ℝ) := by
   sorry
 
 /--
@@ -123,7 +123,7 @@ large $n$, $R(k,n) \leq C \cdot n^{k-1} / (\log n)^{k-2}$.
 theorem erdos_986_upper (k : ℕ) (hk : 3 ≤ k) :
     ∃ C : ℝ, 0 < C ∧
     ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
-      (ramseyNumber k n : ℝ) ≤ C * ((n : ℝ) ^ (k - 1) / (Real.log (n : ℝ)) ^ (k - 2)) := by
+      (graphRamseyNumber k n : ℝ) ≤ C * ((n : ℝ) ^ (k - 1) / (Real.log (n : ℝ)) ^ (k - 2)) := by
   sorry
 
 /--
@@ -138,7 +138,7 @@ theorem erdos_986_lower (k : ℕ) (hk : 3 ≤ k) :
     ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
       C * (((n : ℝ) ^ (((k : ℝ) + 1) / 2)) /
         ((Real.log (n : ℝ)) ^ (((k : ℝ) + 1) / 2 - 1 / ((k : ℝ) - 2)))) ≤
-        (ramseyNumber k n : ℝ) := by
+        (graphRamseyNumber k n : ℝ) := by
   sorry
 
 end Erdos986

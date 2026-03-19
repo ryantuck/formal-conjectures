@@ -86,8 +86,8 @@ The conjectured value is $c = 1/2$.
 theorem erdos_165 : answer(sorry) ↔
     ∃ c : ℝ, 0 < c ∧ ∀ ε : ℝ, 0 < ε →
     ∃ N₀ : ℕ, ∀ k : ℕ, N₀ ≤ k →
-      (c - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (ramseyNumber 3 k : ℝ) ∧
-      (ramseyNumber 3 k : ℝ) ≤ (c + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
+      (c - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (graphRamseyNumber 3 k : ℝ) ∧
+      (graphRamseyNumber 3 k : ℝ) ≤ (c + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
   sorry
 
 /--
@@ -103,8 +103,8 @@ $$
 theorem erdos_165_conjectured_value :
     ∀ ε : ℝ, 0 < ε →
     ∃ N₀ : ℕ, ∀ k : ℕ, N₀ ≤ k →
-      (1 / 2 - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (ramseyNumber 3 k : ℝ) ∧
-      (ramseyNumber 3 k : ℝ) ≤ (1 / 2 + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
+      (1 / 2 - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (graphRamseyNumber 3 k : ℝ) ∧
+      (graphRamseyNumber 3 k : ℝ) ≤ (1 / 2 + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
   sorry
 
 end Erdos165
