@@ -33,12 +33,6 @@ open SimpleGraph
 
 namespace Erdos1014
 
-/-- The Ramsey number $R(k, l)$: the minimum $N$ such that every simple graph on $N$
-vertices contains either a $k$-clique or an independent set of size $l$
-(equivalently, an $l$-clique in the complement). -/
-noncomputable def ramseyR (k l : ℕ) : ℕ :=
-  sInf {N : ℕ | ∀ (G : SimpleGraph (Fin N)), ¬G.CliqueFree k ∨ ¬Gᶜ.CliqueFree l}
-
 /--
 Erdős Problem 1014 [Er71, p.99]:
 
@@ -53,7 +47,7 @@ $|R(k, l+1) / R(k, l) - 1| \leq \varepsilon$.
 theorem erdos_1014 (k : ℕ) (hk : k ≥ 3) :
     ∀ ε : ℝ, ε > 0 →
     ∃ L₀ : ℕ, ∀ l : ℕ, l ≥ L₀ →
-      |(ramseyR k (l + 1) : ℝ) / (ramseyR k l : ℝ) - 1| ≤ ε := by
+      |(ramseyNumber k (l + 1) : ℝ) / (ramseyNumber k l : ℝ) - 1| ≤ ε := by
   sorry
 
 end Erdos1014

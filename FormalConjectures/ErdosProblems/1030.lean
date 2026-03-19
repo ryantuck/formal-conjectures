@@ -48,12 +48,6 @@ open SimpleGraph
 
 namespace Erdos1030
 
-/-- The Ramsey number $R(k, l)$: the minimum $N$ such that every simple graph on $N$
-    vertices contains either a $k$-clique or an independent set of size $l$
-    (equivalently, an $l$-clique in the complement). -/
-noncomputable def ramseyR (k l : ℕ) : ℕ :=
-  sInf {N : ℕ | ∀ (G : SimpleGraph (Fin N)), ¬G.CliqueFree k ∨ ¬Gᶜ.CliqueFree l}
-
 /--
 Erdős Problem 1030 [Er93, p. 339]:
 
@@ -69,7 +63,7 @@ $R(k+1, k) / R(k, k) \geq 1 + c$.
 theorem erdos_1030 :
     ∃ c : ℝ, c > 0 ∧
     ∃ K₀ : ℕ, ∀ k : ℕ, k ≥ K₀ →
-      (ramseyR (k + 1) k : ℝ) / (ramseyR k k : ℝ) ≥ 1 + c := by
+      (ramseyNumber (k + 1) k : ℝ) / (ramseyNumber k k : ℝ) ≥ 1 + c := by
   sorry
 
 /--
@@ -82,7 +76,7 @@ Erdős and Sós could not even prove this weaker statement.
 @[category research open, AMS 5]
 theorem erdos_1030_weak :
     ∃ c : ℝ, c > 1 ∧ ∃ K₀ : ℕ, ∀ k : ℕ, k ≥ K₀ →
-      (ramseyR (k + 1) k : ℝ) - (ramseyR k k : ℝ) > (k : ℝ) ^ c := by
+      (ramseyNumber (k + 1) k : ℝ) - (ramseyNumber k k : ℝ) > (k : ℝ) ^ c := by
   sorry
 
 end Erdos1030

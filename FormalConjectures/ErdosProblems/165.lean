@@ -71,12 +71,6 @@ open SimpleGraph Real
 
 namespace Erdos165
 
-/-- The Ramsey number $R(3,k)$: the minimum $N$ such that every simple graph
-on $N$ vertices contains either a triangle ($3$-clique) or an independent
-set of size $k$ (a $k$-clique in the complement). -/
-noncomputable def ramseyR3 (k : ℕ) : ℕ :=
-  sInf {N : ℕ | ∀ (G : SimpleGraph (Fin N)), ¬G.CliqueFree 3 ∨ ¬Gᶜ.CliqueFree k}
-
 /--
 Erdős Conjecture (Problem 165) [Er61, Er71, Er90b, Er93, Er97c]:
 
@@ -92,8 +86,8 @@ The conjectured value is $c = 1/2$.
 theorem erdos_165 : answer(sorry) ↔
     ∃ c : ℝ, 0 < c ∧ ∀ ε : ℝ, 0 < ε →
     ∃ N₀ : ℕ, ∀ k : ℕ, N₀ ≤ k →
-      (c - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (ramseyR3 k : ℝ) ∧
-      (ramseyR3 k : ℝ) ≤ (c + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
+      (c - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (ramseyNumber 3 k : ℝ) ∧
+      (ramseyNumber 3 k : ℝ) ≤ (c + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
   sorry
 
 /--
@@ -109,8 +103,8 @@ $$
 theorem erdos_165_conjectured_value :
     ∀ ε : ℝ, 0 < ε →
     ∃ N₀ : ℕ, ∀ k : ℕ, N₀ ≤ k →
-      (1 / 2 - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (ramseyR3 k : ℝ) ∧
-      (ramseyR3 k : ℝ) ≤ (1 / 2 + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
+      (1 / 2 - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (ramseyNumber 3 k : ℝ) ∧
+      (ramseyNumber 3 k : ℝ) ≤ (1 / 2 + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
   sorry
 
 end Erdos165

@@ -45,6 +45,7 @@ public import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.GraphConject
 public import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.GraphConjectures.Domination
 public import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.GraphConjectures.Invariants
 public import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.Johnson
+public import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.Ramsey
 public import FormalConjecturesForMathlib.Combinatorics.SimpleGraph.SizeRamsey
 public import FormalConjecturesForMathlib.Combinatorics.YoungDiagram
 public import FormalConjecturesForMathlib.Computability.Encoding

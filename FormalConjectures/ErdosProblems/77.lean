@@ -15,7 +15,6 @@ limitations under the License.
 -/
 
 import FormalConjectures.Util.ProblemImports
-import Mathlib.Combinatorics.SimpleGraph.Copy
 
 /-!
 # Erdős Problem 77
@@ -87,17 +86,6 @@ open scoped Topology
 
 namespace Erdos77
 
-/-- The (diagonal) graph Ramsey number $R(H)$: the minimum $N$ such that every simple
-graph $G$ on $N$ vertices either contains a copy of $H$ as a subgraph or its
-complement contains a copy of $H$. -/
-noncomputable def graphRamseyNumber {U : Type*} (H : SimpleGraph U) : ℕ :=
-  sInf {N : ℕ | ∀ (G : SimpleGraph (Fin N)),
-    H.IsContained G ∨ H.IsContained Gᶜ}
-
-/-- The classical diagonal Ramsey number $R(k) := R(K_k, K_k)$. -/
-noncomputable def diagRamsey (k : ℕ) : ℕ :=
-  graphRamseyNumber (⊤ : SimpleGraph (Fin k))
-
 /--
 Erdős Problem 77:
 
@@ -107,7 +95,7 @@ Ramsey number.
 @[category research open, AMS 5]
 theorem erdos_77 :
     Tendsto (fun k : ℕ =>
-      (diagRamsey k : ℝ) ^ ((1 : ℝ) / (k : ℝ)))
+      (diagRamseyNumber k : ℝ) ^ ((1 : ℝ) / (k : ℝ)))
       atTop (nhds (answer(sorry) : ℝ)) := by
   sorry
 
@@ -119,7 +107,7 @@ The limit $\lim_{k \to \infty} R(k)^{1/k}$ exists. Erdős offered \$100 for a pr
 @[category research open, AMS 5]
 theorem erdos_77.variants.limit_exists :
     ∃ L : ℝ, Tendsto (fun k : ℕ =>
-      (diagRamsey k : ℝ) ^ ((1 : ℝ) / (k : ℝ)))
+      (diagRamseyNumber k : ℝ) ^ ((1 : ℝ) / (k : ℝ)))
       atTop (nhds L) := by
   sorry
 
@@ -133,7 +121,7 @@ Erdős offered \$1,000 (later raised to \$10,000) for a proof.
 @[category research open, AMS 5]
 theorem erdos_77.variants.limit_does_not_exist :
     ¬ ∃ L : ℝ, Tendsto (fun k : ℕ =>
-      (diagRamsey k : ℝ) ^ ((1 : ℝ) / (k : ℝ)))
+      (diagRamseyNumber k : ℝ) ^ ((1 : ℝ) / (k : ℝ)))
       atTop (nhds L) := by
   sorry
 

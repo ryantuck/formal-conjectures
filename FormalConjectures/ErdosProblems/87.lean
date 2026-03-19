@@ -15,7 +15,6 @@ limitations under the License.
 -/
 
 import FormalConjectures.Util.ProblemImports
-import Mathlib.Combinatorics.SimpleGraph.Copy
 
 /-!
 # Erdős Problem 87
@@ -37,18 +36,6 @@ open SimpleGraph
 
 namespace Erdos87
 
-/-- The (diagonal) graph Ramsey number $R(H)$: the minimum $N$ such that every simple
-graph $G$ on $N$ vertices either contains a copy of $H$ as a subgraph or its
-complement contains a copy of $H$ (equivalently, every 2-colouring of $K_N$
-contains a monochromatic copy of $H$). -/
-noncomputable def graphRamseyNumber {U : Type*} (H : SimpleGraph U) : ℕ :=
-  sInf {N : ℕ | ∀ (G : SimpleGraph (Fin N)),
-    H.IsContained G ∨ H.IsContained Gᶜ}
-
-/-- The classical diagonal Ramsey number $R(k) := R(K_k, K_k)$. -/
-noncomputable def diagRamsey (k : ℕ) : ℕ :=
-  graphRamseyNumber (⊤ : SimpleGraph (Fin k))
-
 /--
 **Erdős Problem 87** — Weak form (open). [Er95, p. 14]
 
@@ -62,7 +49,7 @@ theorem erdos_87 : answer(sorry) ↔
     ∃ K : ℕ, ∀ k : ℕ, K ≤ k →
     ∀ {V : Type*} [Fintype V] (G : SimpleGraph V),
       G.chromaticNumber = k →
-      (diagRamsey k : ℝ) * (1 - ε) ^ k < (graphRamseyNumber G : ℝ) := by
+      (diagRamseyNumber k : ℝ) * (1 - ε) ^ k < (graphRamseyNumber G : ℝ) := by
   sorry
 
 /--
@@ -78,7 +65,7 @@ theorem erdos_87.variants.strong : answer(sorry) ↔
     ∃ K : ℕ, ∀ k : ℕ, K ≤ k →
     ∀ {V : Type*} [Fintype V] (G : SimpleGraph V),
       G.chromaticNumber = k →
-      c * (diagRamsey k : ℝ) < (graphRamseyNumber G : ℝ) := by
+      c * (diagRamseyNumber k : ℝ) < (graphRamseyNumber G : ℝ) := by
   sorry
 
 end Erdos87
