@@ -67,7 +67,9 @@ just two bites_. arXiv:2510.19718 (2025).
 [Er90b] Erdős, P. (1990). [Er93] Erdős, P. (1993). [Er97c] Erdős, P. (1997).
 -/
 
-open SimpleGraph Real
+open Filter SimpleGraph Real
+
+open scoped Topology
 
 namespace Erdos165
 
@@ -75,36 +77,32 @@ namespace Erdos165
 Erdős Conjecture (Problem 165) [Er61, Er71, Er90b, Er93, Er97c]:
 
 There exists a constant $c > 0$ such that $R(3,k) \sim c \cdot k^2 / \log k$, i.e.,
-for all $\varepsilon > 0$ and all sufficiently large $k$:
 $$
-  (c - \varepsilon) \cdot \frac{k^2}{\log k} \leq R(3,k) \leq (c + \varepsilon) \cdot \frac{k^2}{\log k}.
+  \lim_{k \to \infty} \frac{R(3,k)}{k^2 / \log k} = c.
 $$
 
 The conjectured value is $c = 1/2$.
 -/
 @[category research open, AMS 5]
 theorem erdos_165 : answer(sorry) ↔
-    ∃ c : ℝ, 0 < c ∧ ∀ ε : ℝ, 0 < ε →
-    ∃ N₀ : ℕ, ∀ k : ℕ, N₀ ≤ k →
-      (c - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (graphRamseyNumber 3 k : ℝ) ∧
-      (graphRamseyNumber 3 k : ℝ) ≤ (c + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
+    ∃ c : ℝ, 0 < c ∧
+    Tendsto (fun k : ℕ =>
+      (graphRamseyNumber 3 k : ℝ) / ((k : ℝ) ^ 2 / Real.log (k : ℝ)))
+      atTop (nhds c) := by
   sorry
 
 /--
 Erdős Problem 165 — conjectured value $c = 1/2$:
 
-$R(3,k) \sim \frac{1}{2} \frac{k^2}{\log k}$, i.e., for all $\varepsilon > 0$
-and all sufficiently large $k$:
 $$
-  (1/2 - \varepsilon) \cdot \frac{k^2}{\log k} \leq R(3,k) \leq (1/2 + \varepsilon) \cdot \frac{k^2}{\log k}.
+  \lim_{k \to \infty} \frac{R(3,k)}{k^2 / \log k} = \frac{1}{2}.
 $$
 -/
 @[category research open, AMS 5]
 theorem erdos_165_conjectured_value :
-    ∀ ε : ℝ, 0 < ε →
-    ∃ N₀ : ℕ, ∀ k : ℕ, N₀ ≤ k →
-      (1 / 2 - ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) ≤ (graphRamseyNumber 3 k : ℝ) ∧
-      (graphRamseyNumber 3 k : ℝ) ≤ (1 / 2 + ε) * ((k : ℝ) ^ 2 / Real.log (k : ℝ)) := by
+    Tendsto (fun k : ℕ =>
+      (graphRamseyNumber 3 k : ℝ) / ((k : ℝ) ^ 2 / Real.log (k : ℝ)))
+      atTop (nhds (1 / 2)) := by
   sorry
 
 end Erdos165

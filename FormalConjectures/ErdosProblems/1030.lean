@@ -44,7 +44,7 @@ Vol. 2 (Keszthely, 1993), 97–132, p. 339.
 _On the difference between consecutive Ramsey numbers_. Utilitas Math. (1989), 115–118.
 -/
 
-open SimpleGraph
+open Filter SimpleGraph
 
 namespace Erdos1030
 
@@ -56,13 +56,13 @@ $$
   \lim_{k \to \infty} \frac{R(k+1, k)}{R(k, k)} > 1 + c.
 $$
 
-Formulated as: there exist $c > 0$ and $K_0$ such that for all $k \geq K_0$,
+Formulated as: there exists $c > 0$ such that eventually (for all sufficiently large $k$),
 $R(k+1, k) / R(k, k) \geq 1 + c$.
 -/
 @[category research open, AMS 5]
 theorem erdos_1030 :
     ∃ c : ℝ, c > 0 ∧
-    ∃ K₀ : ℕ, ∀ k : ℕ, k ≥ K₀ →
+    ∀ᶠ k : ℕ in atTop,
       (graphRamseyNumber (k + 1) k : ℝ) / (graphRamseyNumber k k : ℝ) ≥ 1 + c := by
   sorry
 
@@ -75,7 +75,8 @@ Erdős and Sós could not even prove this weaker statement.
 -/
 @[category research open, AMS 5]
 theorem erdos_1030_weak :
-    ∃ c : ℝ, c > 1 ∧ ∃ K₀ : ℕ, ∀ k : ℕ, k ≥ K₀ →
+    ∃ c : ℝ, c > 1 ∧
+    ∀ᶠ k : ℕ in atTop,
       (graphRamseyNumber (k + 1) k : ℝ) - (graphRamseyNumber k k : ℝ) > (k : ℝ) ^ c := by
   sorry
 

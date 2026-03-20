@@ -40,7 +40,7 @@ combinatorial number theory*.
 **20** (1977), 69–76.
 -/
 
-open SimpleGraph
+open Filter SimpleGraph
 
 namespace Erdos159
 
@@ -72,7 +72,7 @@ $c > 0$ remains open.
 theorem erdos_159 :
     ∃ c : ℝ, 0 < c ∧
     ∃ C : ℝ, 0 < C ∧
-    ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
+    ∀ᶠ n : ℕ in atTop,
       (ramseyC4Kn n : ℝ) ≤ C * (n : ℝ) ^ (2 - c) := by
   sorry
 

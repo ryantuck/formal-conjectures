@@ -45,7 +45,7 @@ _An improved lower bound for Folkman's theorem_. Bulletin of the London Mathemat
 Society **49** (2017), 745–747.
 -/
 
-open Finset
+open Filter Finset
 
 open scoped BigOperators
 
@@ -86,7 +86,7 @@ Balogh, Eberhard, Narayanan, Treglown, and Wagner.
 -/
 @[category research solved, AMS 5]
 theorem erdos_531 :
-    ∃ k₀ : ℕ, ∀ k : ℕ, k₀ ≤ k →
+    ∀ᶠ k : ℕ in atTop,
       (folkmanNumber k : ℝ) ≥ (2 : ℝ) ^ ((2 : ℝ) ^ ((k : ℝ) - 1) / (k : ℝ)) := by
   sorry
 

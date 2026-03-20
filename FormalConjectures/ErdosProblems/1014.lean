@@ -29,7 +29,9 @@ See also problems [544] and [1030].
 [Er71] Erdős, P., _Topics in combinatorial analysis_, pp. 95-99, 1971.
 -/
 
-open SimpleGraph
+open Filter SimpleGraph
+
+open scoped Topology
 
 namespace Erdos1014
 
@@ -39,15 +41,12 @@ Erdős Problem 1014 [Er71, p.99]:
 For fixed $k \geq 3$,
 $$\lim_{l \to \infty} R(k, l+1) / R(k, l) = 1,$$
 where $R(k, l)$ is the Ramsey number.
-
-Formulated as: for every $\varepsilon > 0$, there exists $L_0$ such that for all $l \geq L_0$,
-$|R(k, l+1) / R(k, l) - 1| \leq \varepsilon$.
 -/
 @[category research open, AMS 5]
 theorem erdos_1014 (k : ℕ) (hk : k ≥ 3) :
-    ∀ ε : ℝ, ε > 0 →
-    ∃ L₀ : ℕ, ∀ l : ℕ, l ≥ L₀ →
-      |(graphRamseyNumber k (l + 1) : ℝ) / (graphRamseyNumber k l : ℝ) - 1| ≤ ε := by
+    Tendsto (fun l : ℕ =>
+      (graphRamseyNumber k (l + 1) : ℝ) / (graphRamseyNumber k l : ℝ))
+      atTop (nhds 1) := by
   sorry
 
 end Erdos1014

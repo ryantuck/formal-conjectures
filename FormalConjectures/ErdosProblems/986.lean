@@ -59,7 +59,7 @@ connection).
 OEIS sequences: [A000791](https://oeis.org/A000791), [A059442](https://oeis.org/A059442).
 -/
 
-open SimpleGraph Real
+open Filter SimpleGraph Real
 
 namespace Erdos986
 
@@ -77,7 +77,7 @@ In asymptotic notation: $R(k,n) \gg n^{k-1}/(\log n)^c$ for some $c > 0$.
 theorem erdos_986 (k : ℕ) (hk : 3 ≤ k) :
     ∃ C : ℝ, 0 < C ∧
     ∃ c : ℕ, 0 < c ∧
-    ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
+    ∀ᶠ n : ℕ in atTop,
       C * ((n : ℝ) ^ (k - 1) / (Real.log (n : ℝ)) ^ c) ≤ (graphRamseyNumber k n : ℝ) := by
   sorry
 
@@ -93,7 +93,7 @@ See also Problem 165.
 theorem erdos_986_k_eq_3 :
     ∃ C : ℝ, 0 < C ∧
     ∃ c : ℕ, 0 < c ∧
-    ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
+    ∀ᶠ n : ℕ in atTop,
       C * ((n : ℝ) ^ 2 / (Real.log (n : ℝ)) ^ c) ≤ (graphRamseyNumber 3 n : ℝ) := by
   sorry
 
@@ -109,7 +109,7 @@ See also Problem 166.
 theorem erdos_986_k_eq_4 :
     ∃ C : ℝ, 0 < C ∧
     ∃ c : ℕ, 0 < c ∧
-    ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
+    ∀ᶠ n : ℕ in atTop,
       C * ((n : ℝ) ^ 3 / (Real.log (n : ℝ)) ^ c) ≤ (graphRamseyNumber 4 n : ℝ) := by
   sorry
 
@@ -122,7 +122,7 @@ large $n$, $R(k,n) \leq C \cdot n^{k-1} / (\log n)^{k-2}$.
 @[category research solved, AMS 5]
 theorem erdos_986_upper (k : ℕ) (hk : 3 ≤ k) :
     ∃ C : ℝ, 0 < C ∧
-    ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
+    ∀ᶠ n : ℕ in atTop,
       (graphRamseyNumber k n : ℝ) ≤ C * ((n : ℝ) ^ (k - 1) / (Real.log (n : ℝ)) ^ (k - 2)) := by
   sorry
 
@@ -135,7 +135,7 @@ large $n$, $R(k,n) \geq C \cdot n^{(k+1)/2} / (\log n)^{(k+1)/2 - 1/(k-2)}$.
 @[category research solved, AMS 5]
 theorem erdos_986_lower (k : ℕ) (hk : 3 ≤ k) :
     ∃ C : ℝ, 0 < C ∧
-    ∃ N₀ : ℕ, ∀ n : ℕ, N₀ ≤ n →
+    ∀ᶠ n : ℕ in atTop,
       C * (((n : ℝ) ^ (((k : ℝ) + 1) / 2)) /
         ((Real.log (n : ℝ)) ^ (((k : ℝ) + 1) / 2 - 1 / ((k : ℝ) - 2)))) ≤
         (graphRamseyNumber k n : ℝ) := by
