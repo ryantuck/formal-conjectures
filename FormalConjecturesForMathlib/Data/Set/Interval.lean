@@ -13,16 +13,19 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -/
+module
 
-import FormalConjectures.ErdosProblems.«398»
+public import Mathlib.Order.Interval.Finset.Defs
 
-/-!
-# Brocard's Problem
+variable {β : Type*} [Preorder β]
+variable {S : Set β} {a b : β}
 
-Brocard's problem asks whether the only solutions to $n! + 1 = m^2$ are
-$n = 4, 5, 7$.
+namespace Set
 
-*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Brocard%27s_problem)
+noncomputable instance [LocallyFiniteOrderBot β] : Fintype (S ∩ Iio b : Set β) :=
+  (Set.finite_Iio b |>.inter_of_right S).fintype
 
-This file points to the canonical formalization in `FormalConjectures.ErdosProblems.«398»`.
--/
+noncomputable instance [LocallyFiniteOrder β] [OrderBot β] : Fintype (S ∩ Icc a b : Set β) :=
+  (Set.finite_Icc a b |>.inter_of_right S).fintype
+
+end Set
