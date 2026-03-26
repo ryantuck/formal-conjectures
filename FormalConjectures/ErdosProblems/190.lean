@@ -19,23 +19,12 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 190
 
-*Reference:* [erdosproblems.com/190](https://www.erdosproblems.com/190)
-
-Let $H(k)$ be the smallest $N$ such that in any finite colouring of $\{1,\ldots,N\}$
-(into any number of colours) there is always either a monochromatic $k$-term
-arithmetic progression or a rainbow arithmetic progression (i.e. all
-elements are different colours). Estimate $H(k)$. Is it true that
-$H(k)^{1/k}/k \to \infty$ as $k \to \infty$?
-
-This type of problem belongs to 'canonical' Ramsey theory. The existence
-of $H(k)$ follows from Szemerédi's theorem, and it is easy to show that
-$H(k)^{1/k} \to \infty$.
-
-[ErGr79] Erdős, P. and Graham, R., _Old and new problems and results in combinatorial
-number theory: van der Waerden's theorem and related topics_. Enseign. Math. (1979).
-
-[ErGr80] Erdős, P. and Graham, R., _Old and new problems and results in combinatorial
-number theory_. Monographies de L'Enseignement Mathématique (1980).
+*References:*
+- [erdosproblems.com/190](https://www.erdosproblems.com/190)
+- [ErGr79] Erdős, P. and Graham, R., _Old and new problems and results in combinatorial
+  number theory: van der Waerden's theorem and related topics_. Enseign. Math. (1979).
+- [ErGr80] Erdős, P. and Graham, R., _Old and new problems and results in combinatorial
+  number theory_. Monographies de L'Enseignement Mathématique (1980).
 -/
 
 open Filter Real

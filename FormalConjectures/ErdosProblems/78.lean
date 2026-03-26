@@ -19,40 +19,26 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 78
 
-*Reference:* [erdosproblems.com/78](https://www.erdosproblems.com/78)
+See also OEIS sequence [A059442](https://oeis.org/A059442) and related problems
+[77](https://www.erdosproblems.com/77), [1029](https://www.erdosproblems.com/1029).
 
-Give a constructive proof that $R(k) > C^k$ for some constant $C > 1$, where $R(k)$ is the
-diagonal Ramsey number. Erdős's probabilistic proof that $R(k) \gg k \cdot 2^{k/2}$ is
-non-constructive. Prize: \$100.
-
-Partial progress: Cohen [Co15] constructed a graph on $n$ vertices with no clique or independent
-set of size $\geq 2^{(\log \log n)^C}$. Li [Li23b] improved this to $(\log n)^C$.
-
-See also OEIS sequence A059442 and related problems #77, #1029.
-
-[Er69b] Erdős, P., _Some applications of Ramsey's theorem to additive number theory_.
-European J. Combin. (1969).
-
-[Er71] Erdős, P., _On some extremal problems on r-graphs_. Discrete Math. **1** (1971), 1–6.
-
-[Er88] Erdős, P., _Problems and results on chromatic numbers in finite and infinite graphs_.
-Graph Theory with Applications to Algorithms and Computer Science (1988).
-
-[Er93] Erdős, P., _On some of my favourite theorems_. Combinatorics, Paul Erdős is Eighty,
-Vol. 2 (1993), p. 337.
-
-[Er95] Erdős, P., _Some of my favourite problems in various branches of combinatorics_.
-Congressus Numerantium **107** (1995).
-
-[Er97c] Erdős, P., _Some recent problems and results in graph theory_. Discrete Math.
-**164** (1997), 81–85.
-
-[Va99] Vaughan, R. C., _On the number of monochromatic complete subgraphs_. (1999), 3.49.
-
-[Co15] Cohen, D., _Two-source dispersers for polylogarithmic entropy and improved Ramsey
-graphs_. (2015).
-
-[Li23b] Li, Z., _Explicit Ramsey graphs and two-source extractors_. (2023).
+*References:*
+- [erdosproblems.com/78](https://www.erdosproblems.com/78)
+- [Er69b] Erdős, P., _Some applications of Ramsey's theorem to additive number theory_.
+  European J. Combin. (1969).
+- [Er71] Erdős, P., _On some extremal problems on r-graphs_. Discrete Math. **1** (1971), 1–6.
+- [Er88] Erdős, P., _Problems and results on chromatic numbers in finite and infinite graphs_.
+  Graph Theory with Applications to Algorithms and Computer Science (1988).
+- [Er93] Erdős, P., _On some of my favourite theorems_. Combinatorics, Paul Erdős is Eighty,
+  Vol. 2 (1993), p. 337.
+- [Er95] Erdős, P., _Some of my favourite problems in various branches of combinatorics_.
+  Congressus Numerantium **107** (1995).
+- [Er97c] Erdős, P., _Some recent problems and results in graph theory_. Discrete Math.
+  **164** (1997), 81–85.
+- [Va99] Vaughan, R. C., _On the number of monochromatic complete subgraphs_. (1999), 3.49.
+- [Co15] Cohen, D., _Two-source dispersers for polylogarithmic entropy and improved Ramsey
+  graphs_. (2015).
+- [Li23b] Li, Z., _Explicit Ramsey graphs and two-source extractors_. (2023).
 -/
 
 open SimpleGraph

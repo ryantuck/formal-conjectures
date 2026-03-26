@@ -19,23 +19,13 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1029
 
-*Reference:* [erdosproblems.com/1029](https://www.erdosproblems.com/1029)
-
-If $R(k)$ is the diagonal Ramsey number for $K_k$, the minimal $n$ such that every
-2-colouring of the edges of $K_n$ contains a monochromatic copy of $K_k$, then
-$$
-  R(k) / (k \cdot 2^{k/2}) \to \infty.
-$$
-
-Erdős and Szekeres [ErSz35] proved $k \cdot 2^{k/2} \ll R(k) \leq \binom{2k-1}{k-1}$.
-The probabilistic method gives $R(k) \geq (1+o(1)) \cdot \frac{1}{\sqrt{2}\, e} \cdot k \cdot 2^{k/2}$,
-improved by Spencer [Sp75] to $R(k) \geq (1+o(1)) \cdot \frac{\sqrt{2}}{e} \cdot k \cdot 2^{k/2}$.
-
-[ErSz35] Erdős, P. and Szekeres, G., *A combinatorial problem in geometry*, Compositio Math. 2 (1935), 463–470.
-
-[Sp75] Spencer, J., *Ramsey's theorem — a new lower bound*, J. Combin. Theory Ser. A 18 (1975), 108–115.
-
-[Er93] Erdős, P., *On some of my favourite theorems* (1993).
+*References:*
+- [erdosproblems.com/1029](https://www.erdosproblems.com/1029)
+- [ErSz35] Erdős, P. and Szekeres, G., *A combinatorial problem in geometry*, Compositio
+  Math. 2 (1935), 463–470.
+- [Sp75] Spencer, J., *Ramsey's theorem — a new lower bound*, J. Combin. Theory Ser. A 18
+  (1975), 108–115.
+- [Er93] Erdős, P., *On some of my favourite theorems* (1993).
 -/
 
 open Filter Finset SimpleGraph
@@ -55,5 +45,8 @@ theorem erdos_1029 :
       (diagRamseyNumber k : ℝ) / ((k : ℝ) * (2 : ℝ) ^ ((k : ℝ) / 2)))
       atTop atTop := by
   sorry
+
+-- TODO: Formalize the Erdős–Szekeres upper bound R(k) ≤ C(2k-2, k-1) and
+-- Spencer's lower bound R(k) ≥ (1+o(1)) · (√2/e) · k · 2^{k/2}.
 
 end Erdos1029

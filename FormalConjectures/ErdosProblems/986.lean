@@ -19,44 +19,26 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 986
 
-*Reference:* [erdosproblems.com/986](https://www.erdosproblems.com/986)
-
-Erdős conjectured that for any fixed $k \geq 3$, the Ramsey number $R(k,n)$ satisfies
-$R(k,n) \gg n^{k-1}/(\log n)^c$ for some constant $c > 0$.
-
-Spencer [Sp77] proved the $k = 3$ case and Mattheus and Verstraëte [MaVe23]
-proved the $k = 4$ case.
-
-The best general bounds available are:
-$$
-n^{(k+1)/2} / (\log n)^{1/(k-2) - (k+1)/2} \ll_k R(k,n) \ll_k n^{k-1} / (\log n)^{k-2}
-$$
-The lower bound was proved by Bohman and Keevash [BoKe10].
-The upper bound was proved by Ajtai, Komlós, and Szemerédi [AKS80].
-Li, Rousseau, and Zang [LRZ01] improved the upper bound constant.
-
-[Sp77] Spencer, J., _Asymptotic lower bounds for Ramsey functions_. Discrete Math. 20 (1977),
-69-76.
-
-[MaVe23] Mattheus, S. and Verstraëte, J., _The asymptotics of $r(4,t)$_. Ann. of Math. 199
-(2024), 919-941.
-
-[BoKe10] Bohman, T. and Keevash, P., _The early evolution of the $H$-free process_. Invent.
-Math. 181 (2010), 291-336.
-
-[AKS80] Ajtai, M., Komlós, J. and Szemerédi, E., _A note on Ramsey numbers_. J. Combin.
-Theory Ser. A 29 (1980), 354-360.
-
-[LRZ01] Li, Y., Rousseau, C. C. and Zang, W., _Asymptotic upper bounds for Ramsey functions_.
-Graphs Combin. 17 (2001), 123-128.
-
-[Er90b] Erdős, P., _Some of my favourite problems in various branches of combinatorics_.
-Matematiche (Catania) 47 (1992), 231-240.
-
-See also Problem 165 (k=3 case), Problem 166 (k=4 case), Problem 920 (chromatic number
-connection).
+See also Problem [165](https://www.erdosproblems.com/165) (k=3 case),
+Problem [166](https://www.erdosproblems.com/166) (k=4 case),
+Problem [920](https://www.erdosproblems.com/920) (chromatic number connection).
 
 OEIS sequences: [A000791](https://oeis.org/A000791), [A059442](https://oeis.org/A059442).
+
+*References:*
+- [erdosproblems.com/986](https://www.erdosproblems.com/986)
+- [Sp77] Spencer, J., _Asymptotic lower bounds for Ramsey functions_. Discrete Math. 20 (1977),
+  69–76.
+- [MaVe23] Mattheus, S. and Verstraëte, J., _The asymptotics of $r(4,t)$_. Ann. of Math. 199
+  (2024), 919–941.
+- [BoKe10] Bohman, T. and Keevash, P., _The early evolution of the $H$-free process_. Invent.
+  Math. 181 (2010), 291–336.
+- [AKS80] Ajtai, M., Komlós, J. and Szemerédi, E., _A note on Ramsey numbers_. J. Combin.
+  Theory Ser. A 29 (1980), 354–360.
+- [LRZ01] Li, Y., Rousseau, C. C. and Zang, W., _Asymptotic upper bounds for Ramsey functions_.
+  Graphs Combin. 17 (2001), 123–128.
+- [Er90b] Erdős, P., _Some of my favourite problems in various branches of combinatorics_.
+  Matematiche (Catania) 47 (1992), 231–240.
 -/
 
 open Filter SimpleGraph Real

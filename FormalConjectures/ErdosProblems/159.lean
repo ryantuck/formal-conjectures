@@ -19,25 +19,19 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 159
 
-Is there some constant $c > 0$ such that $R(C_4, K_n) \ll n^{2-c}$?
-
-*Reference:* [erdosproblems.com/159](https://www.erdosproblems.com/159)
-
-[Er78] Erdős, P., *Problems and results in combinatorial analysis and combinatorial number
-theory*, Proceedings of the Ninth Southeastern Conference on Combinatorics, Graph Theory, and
-Computing (1978), 29–40.
-
-[Er81] Erdős, P., *On the combinatorial problems which I would most like to see solved*,
-Combinatorica 1 (1981), 25–42.
-
-[Er84d] Erdős, P., *On some problems in graph theory, combinatorial analysis and
-combinatorial number theory*.
-
-[EFRS78] Erdős, P., Faudree, R. J., Rousseau, C. C., and Schelp, R. H.,
-*On cycle-complete graph Ramsey numbers*, J. Graph Theory 2 (1978), 53–64.
-
-[Sp77] Spencer, J., *Asymptotic lower bounds for Ramsey functions*, Discrete Math.
-**20** (1977), 69–76.
+*References:*
+- [erdosproblems.com/159](https://www.erdosproblems.com/159)
+- [Er78] Erdős, P., *Problems and results in combinatorial analysis and combinatorial number
+  theory*, Proceedings of the Ninth Southeastern Conference on Combinatorics, Graph Theory, and
+  Computing (1978), 29–40.
+- [Er81] Erdős, P., *On the combinatorial problems which I would most like to see solved*,
+  Combinatorica 1 (1981), 25–42.
+- [Er84d] Erdős, P., *On some problems in graph theory, combinatorial analysis and
+  combinatorial number theory*.
+- [EFRS78] Erdős, P., Faudree, R. J., Rousseau, C. C., and Schelp, R. H.,
+  *On cycle-complete graph Ramsey numbers*, J. Graph Theory 2 (1978), 53–64.
+- [Sp77] Spencer, J., *Asymptotic lower bounds for Ramsey functions*, Discrete Math.
+  **20** (1977), 69–76.
 -/
 
 open Filter SimpleGraph
@@ -75,5 +69,7 @@ theorem erdos_159 :
     ∀ᶠ n : ℕ in atTop,
       (ramseyC4Kn n : ℝ) ≤ C * (n : ℝ) ^ (2 - c) := by
   sorry
+
+-- TODO: Formalize the known bounds n^{3/2}/(log n)^{3/2} ≪ R(C₄, Kₙ) ≪ n²/(log n)².
 
 end Erdos159

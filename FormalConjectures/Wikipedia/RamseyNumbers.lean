@@ -75,4 +75,20 @@ theorem ramsey_number_five_five_upper_bound :
     IsGraphRamsey 46 5 5 := by
   sorry
 
+/--
+Is $R(5,5) \geq 44$? The current best lower bound is $43$; improving it to $44$
+is an open problem.
+-/
+@[category research open, AMS 5]
+theorem ramsey_number_five_five_strict_lower : answer(sorry) ↔ 43 < R(5, 5) := by
+  sorry
+
+/--
+Is $R(5,5) \leq 45$? The current best upper bound is $46$; improving it to $45$
+is an open problem.
+-/
+@[category research open, AMS 5]
+theorem ramsey_number_five_five_strict_upper : answer(sorry) ↔ R(5, 5) < 46 := by
+  sorry
+
 end RamseyNumbers

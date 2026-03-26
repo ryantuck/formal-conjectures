@@ -77,4 +77,20 @@ noncomputable def ramseyNumber {U : Type*} (H : SimpleGraph U) : ℕ :=
 noncomputable def diagRamseyNumber (k : ℕ) : ℕ :=
   ramseyNumber (⊤ : SimpleGraph (Fin k))
 
+/-- The two Ramsey number definitions agree on the diagonal:
+`graphRamseyNumber k k = diagRamseyNumber k`. -/
+theorem graphRamseyNumber_self_eq_diagRamseyNumber (k : ℕ) :
+    graphRamseyNumber k k = diagRamseyNumber k := by
+  sorry
+
+/-- `IsGraphRamsey n 2 l` holds iff `l ≤ n`: any graph on `n ≥ l` vertices
+either has an edge (2-clique) or is edgeless (complement contains `l`-clique). -/
+theorem isGraphRamsey_two_iff {n l : ℕ} :
+    IsGraphRamsey n 2 l ↔ l ≤ n := by
+  sorry
+
+/-- `R(2, l) = l` for all `l`. -/
+theorem graphRamseyNumber_two (l : ℕ) : graphRamseyNumber 2 l = l := by
+  sorry
+
 end SimpleGraph

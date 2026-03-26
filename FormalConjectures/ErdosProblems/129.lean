@@ -19,20 +19,13 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 129
 
-*Reference:* [erdosproblems.com/129](https://www.erdosproblems.com/129)
-
-Let $R(n; k, r)$ be the smallest $N$ such that if the edges of $K_N$ are $r$-coloured
-then there is a set of $n$ vertices which does not contain a copy of $K_k$ in at
-least one of the $r$ colours. Erdős and Gyárfás conjectured that there exists a
-constant $C = C(r) > 1$ such that $R(n; 3, r) < C^{\sqrt{n}}$.
-
-As pointed out by Antonio Girao, the problem as stated is easily
-disproved. A probabilistic argument shows $R(n; 3, 2) \geq C^n$ for some $C > 1$,
-contradicting the claimed bound. The correct formulation is unclear.
-
-[Er97b] Erdős, P. and Gyárfás, A., *A variant of the classical Ramsey problem*,
-Combinatorica **17** (1997), 459–467.
+*References:*
+- [erdosproblems.com/129](https://www.erdosproblems.com/129)
+- [Er97b] Erdős, P. and Gyárfás, A., *A variant of the classical Ramsey problem*,
+  Combinatorica **17** (1997), 459–467.
 -/
+
+open Filter
 
 namespace Erdos129
 
@@ -86,13 +79,14 @@ for all positive integers $n$.
 theorem erdos_129_lower_bound :
     ∀ r : ℕ, 1 ≤ r →
       ∃ C : ℝ, 1 < C ∧
-        ∀ n : ℕ, C ^ Real.sqrt (n : ℝ) < (multicolorRamseyNum n 3 r : ℝ) := by
+        ∀ n : ℕ, 1 ≤ n →
+          C ^ Real.sqrt (n : ℝ) < (multicolorRamseyNum n 3 r : ℝ) := by
   sorry
 
 /--
 Generalized Erdős–Gyárfás conjecture [Er97b]: for all $r, k \geq 2$,
 there exist constants $C_1, C_2 > 1$ (depending only on $r$) such that
-$C_1^{n^{1/(k-1)}} < R(n; k, r) < C_2^{n^{1/(k-1)}}$.
+$C_1^{n^{1/(k-1)}} < R(n; k, r) < C_2^{n^{1/(k-1)}}$ for all sufficiently large $n$.
 The status of this generalized conjecture is unclear given the issues with
 the $k = 3$ upper bound.
 -/
@@ -100,10 +94,11 @@ the $k = 3$ upper bound.
 theorem erdos_129_general_bounds :
     ∀ r : ℕ, 2 ≤ r → ∀ k : ℕ, 2 ≤ k →
       ∃ C₁ C₂ : ℝ, 1 < C₁ ∧ 1 < C₂ ∧
-        ∀ n : ℕ, C₁ ^ (n : ℝ) ^ ((1 : ℝ) / ((k : ℝ) - 1))
-          < (multicolorRamseyNum n k r : ℝ)
-        ∧ (multicolorRamseyNum n k r : ℝ)
-          < C₂ ^ (n : ℝ) ^ ((1 : ℝ) / ((k : ℝ) - 1)) := by
+        ∀ᶠ n : ℕ in Filter.atTop,
+          C₁ ^ (n : ℝ) ^ ((1 : ℝ) / ((k : ℝ) - 1))
+            < (multicolorRamseyNum n k r : ℝ)
+          ∧ (multicolorRamseyNum n k r : ℝ)
+            < C₂ ^ (n : ℝ) ^ ((1 : ℝ) / ((k : ℝ) - 1)) := by
   sorry
 
 end Erdos129

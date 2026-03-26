@@ -19,17 +19,12 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 112
 
-*Reference:* [erdosproblems.com/112](https://www.erdosproblems.com/112)
-
-A problem of Erdős and Rado on directed Ramsey numbers $k(n,m)$: the minimal $k$ such that
-any directed graph on $k$ vertices must contain either an independent set of size $n$ or a
-transitive tournament of size $m$. Determine $k(n,m)$.
-
-[ErRa67] Erdős, P. and Rado, R., _Partition relations and transitivity domains of binary
-relations_, J. London Math. Soc. (1967), 624–633.
-
-[LaMi97] Larson, J. and Mitchell, W., _On a problem of Erdős and Rado_, Ann. Comb. (1997),
-245–252.
+*References:*
+- [erdosproblems.com/112](https://www.erdosproblems.com/112)
+- [ErRa67] Erdős, P. and Rado, R., _Partition relations and transitivity domains of binary
+  relations_, J. London Math. Soc. (1967), 624–633.
+- [LaMi97] Larson, J. and Mitchell, W., _On a problem of Erdős and Rado_, Ann. Comb. (1997),
+  245–252.
 -/
 
 namespace Erdos112
@@ -66,12 +61,23 @@ noncomputable def dirRamseyNum (n m : ℕ) : ℕ :=
 
 /--
 Erdős Problem 112: Determine the directed Ramsey number $k(n,m)$.
-The exact value is still open.
 -/
 @[category research open, AMS 5]
 theorem erdos_112 :
     ∀ n m : ℕ, 2 ≤ n → 2 ≤ m →
-      dirRamseyNum n m = answer(sorry) := by
+      dirRamseyNum n m = (answer(sorry) : ℕ → ℕ → ℕ) n m := by
+  sorry
+
+/-- Smallest open case: determine $k(3, 3)$. Known bounds: $7 \leq k(3,3) \leq 14$. -/
+@[category research open, AMS 5]
+theorem erdos_112.variants.k_3_3 :
+    dirRamseyNum 3 3 = answer(sorry) := by
+  sorry
+
+/-- Smallest open case: determine $k(3, 4)$. -/
+@[category research open, AMS 5]
+theorem erdos_112.variants.k_3_4 :
+    dirRamseyNum 3 4 = answer(sorry) := by
   sorry
 
 /--
@@ -94,18 +100,18 @@ theorem erdos_112.variants.larson_mitchell :
   sorry
 
 /-- The classical 2-color graph Ramsey number $R(n, m)$: the minimal $k$ such that every
-2-coloring of the edges of $K_k$ contains either a red clique of size $n$ or a blue clique
-of size $m$. -/
+symmetric 2-coloring of the edges of $K_k$ contains either a red clique of size $n$ or a
+blue clique of size $m$. -/
 noncomputable def graphRamseyNum (n m : ℕ) : ℕ :=
-  sInf {k : ℕ | ∀ (c : Fin k → Fin k → Bool),
+  sInf {k : ℕ | ∀ (c : Fin k → Fin k → Bool), (∀ x y, c x y = c y x) →
     (∃ S : Finset (Fin k), S.card = n ∧ ∀ u ∈ S, ∀ v ∈ S, u ≠ v → c u v = true) ∨
     (∃ S : Finset (Fin k), S.card = m ∧ ∀ u ∈ S, ∀ v ∈ S, u ≠ v → c u v = false)}
 
 /-- The 3-color graph Ramsey number $R(a, b, c)$: the minimal $k$ such that every
-3-coloring of the edges of $K_k$ contains a monochromatic clique of size $a$, $b$, or $c$
-in the respective color. -/
+symmetric 3-coloring of the edges of $K_k$ contains a monochromatic clique of size $a$, $b$,
+or $c$ in the respective color. -/
 noncomputable def graphRamseyNum3 (a b c : ℕ) : ℕ :=
-  sInf {k : ℕ | ∀ (col : Fin k → Fin k → Fin 3),
+  sInf {k : ℕ | ∀ (col : Fin k → Fin k → Fin 3), (∀ x y, col x y = col y x) →
     (∃ S : Finset (Fin k), S.card = a ∧ ∀ u ∈ S, ∀ v ∈ S, u ≠ v → col u v = 0) ∨
     (∃ S : Finset (Fin k), S.card = b ∧ ∀ u ∈ S, ∀ v ∈ S, u ≠ v → col u v = 1) ∨
     (∃ S : Finset (Fin k), S.card = c ∧ ∀ u ∈ S, ∀ v ∈ S, u ≠ v → col u v = 2)}
@@ -150,5 +156,8 @@ theorem erdos_112.variants.hunter_steiner :
     ∀ n m : ℕ, 2 ≤ n → 2 ≤ m →
       dirPathRamseyNum n m = (n - 1) * (m - 1) + 1 := by
   sorry
+
+-- TODO: Formalize additional variants from erdosproblems.com/112 (e.g., exact values
+-- for small cases, further bounds on k(n,m) for specific n,m).
 
 end Erdos112

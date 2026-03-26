@@ -19,29 +19,17 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1030
 
-*Reference:* [erdosproblems.com/1030](https://www.erdosproblems.com/1030)
-
-If $R(k,l)$ is the Ramsey number then prove the existence of some $c > 0$ such that
-$$
-  \lim_{k \to \infty} \frac{R(k+1, k)}{R(k, k)} > 1 + c.
-$$
-
-A problem of Erdős and Sós, who could not even prove whether
-$R(k+1,k) - R(k,k) > k^c$ for any $c > 1$.
-
-Burr, Erdős, Faudree, and Schelp [BEFS89] proved that
-$R(k+1,k) - R(k,k) \geq 2k - 5$.
-
 See also problems [544](https://www.erdosproblems.com/544) and
 [1014](https://www.erdosproblems.com/1014).
 
 OEIS: [A000791](https://oeis.org/A000791), [A059442](https://oeis.org/A059442).
 
-[Er93] Erdős, P., _On some of my favourite theorems_. Combinatorics, Paul Erdős is eighty,
-Vol. 2 (Keszthely, 1993), 97–132, p. 339.
-
-[BEFS89] Burr, S.A., Erdős, P., Faudree, R.J., and Schelp, R.H.,
-_On the difference between consecutive Ramsey numbers_. Utilitas Math. (1989), 115–118.
+*References:*
+- [erdosproblems.com/1030](https://www.erdosproblems.com/1030)
+- [Er93] Erdős, P., _On some of my favourite theorems_. Combinatorics, Paul Erdős is eighty,
+  Vol. 2 (Keszthely, 1993), 97–132, p. 339.
+- [BEFS89] Burr, S.A., Erdős, P., Faudree, R.J., and Schelp, R.H.,
+  _On the difference between consecutive Ramsey numbers_. Utilitas Math. (1989), 115–118.
 -/
 
 open Filter SimpleGraph
@@ -74,10 +62,12 @@ There exists $c > 1$ such that $R(k+1,k) - R(k,k) > k^c$ for all sufficiently la
 Erdős and Sós could not even prove this weaker statement.
 -/
 @[category research open, AMS 5]
-theorem erdos_1030_weak :
+theorem erdos_1030.variants.weak :
     ∃ c : ℝ, c > 1 ∧
     ∀ᶠ k : ℕ in atTop,
       (graphRamseyNumber (k + 1) k : ℝ) - (graphRamseyNumber k k : ℝ) > (k : ℝ) ^ c := by
   sorry
+
+-- TODO: Formalize the Burr–Erdős–Faudree–Schelp bound R(k+1,k) - R(k,k) ≥ 2k - 5 [BEFS89].
 
 end Erdos1030

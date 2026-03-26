@@ -19,14 +19,12 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 948
 
-*Reference:* [erdosproblems.com/948](https://www.erdosproblems.com/948)
+See also Problem [532](https://www.erdosproblems.com/532) (Hindman's theorem).
 
-[Er77c] Erdős, P., _Problems and results on combinatorial number theory. III._. Number Theory Day
-(Proc. Conf., Rockefeller Univ., New York, 1976) (1977), 43–72.
-
-Erdős initially asked whether this is possible with the set being monochromatic,
-but Galvin showed that this is not always possible. This is a variant of
-Hindman's theorem (see [532]).
+*References:*
+- [erdosproblems.com/948](https://www.erdosproblems.com/948)
+- [Er77c] Erdős, P., _Problems and results on combinatorial number theory. III._. Number Theory
+  Day (Proc. Conf., Rockefeller Univ., New York, 1976) (1977), 43–72.
 -/
 
 open Finset BigOperators

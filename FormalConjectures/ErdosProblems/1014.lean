@@ -19,14 +19,13 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Erdős Problem 1014
 
-Erdős conjectured that for fixed $k \geq 3$, the ratio of consecutive Ramsey numbers
-$R(k, l+1) / R(k, l)$ tends to $1$ as $l \to \infty$.
+See also problems [544](https://www.erdosproblems.com/544) and
+[1030](https://www.erdosproblems.com/1030).
 
-See also problems [544] and [1030].
-
-*Reference:* [erdosproblems.com/1014](https://www.erdosproblems.com/1014)
-
-[Er71] Erdős, P., _Topics in combinatorial analysis_, pp. 95-99, 1971.
+*References:*
+- [erdosproblems.com/1014](https://www.erdosproblems.com/1014)
+- [Er71] Erdős, P., _Topics in combinatorial analysis_, Proc. Second Louisiana Conference on
+  Combinatorics (1971), 95–99.
 -/
 
 open Filter SimpleGraph
@@ -46,6 +45,31 @@ where $R(k, l)$ is the Ramsey number.
 theorem erdos_1014 (k : ℕ) (hk : k ≥ 3) :
     Tendsto (fun l : ℕ =>
       (graphRamseyNumber k (l + 1) : ℝ) / (graphRamseyNumber k l : ℝ))
+      atTop (nhds 1) := by
+  sorry
+
+/--
+The $k = 3$ case of Erdős Problem 1014 [Er71]:
+
+$$\lim_{l \to \infty} R(3, l+1) / R(3, l) = 1.$$
+
+This is already open.
+-/
+@[category research open, AMS 5]
+theorem erdos_1014.variants.k_eq_3 :
+    Tendsto (fun l : ℕ =>
+      (graphRamseyNumber 3 (l + 1) : ℝ) / (graphRamseyNumber 3 l : ℝ))
+      atTop (nhds 1) := by
+  sorry
+
+/--
+The $k = 2$ case of Erdős Problem 1014: $R(2, l+1) / R(2, l) \to 1$, since
+$R(2, l) = l$ for all $l$.
+-/
+@[category undergraduate, AMS 5]
+theorem erdos_1014.variants.k_eq_2 :
+    Tendsto (fun l : ℕ =>
+      (graphRamseyNumber 2 (l + 1) : ℝ) / (graphRamseyNumber 2 l : ℝ))
       atTop (nhds 1) := by
   sorry
 
